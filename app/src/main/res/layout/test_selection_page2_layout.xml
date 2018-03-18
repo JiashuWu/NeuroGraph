@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/test_selection_page2">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test3"
+                android:id="@+id/test_selection_test3_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the dynamic background (only appear once) test"
+                android:id="@+id/test_selection_test3_introduction"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test3_title" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test3_introduction"
+                android:text="@string/test3"
+                android:id="@+id/test_selection_page2_test3_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test4"
+                android:id="@+id/test_selection_test4_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="70dp"
+                android:layout_below="@id/test_selection_page2_test3_button"
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the seasonal background test"
+                android:id="@+id/test_selection_test4_introduction"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test4_title" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test4_introduction"
+                android:text="@string/test4"
+                android:id="@+id/test_selection_page2_test4_button" />
+
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

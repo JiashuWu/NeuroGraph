@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/test_selection_page1">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test1"
+                android:id="@+id/test_selection_test1_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the static background (full screen) test"
+                android:id="@+id/test_selection_test1_introduction"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test1_title" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test1_introduction"
+                android:text="@string/test1"
+                android:id="@+id/test_selection_page1_test1_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test2"
+                android:id="@+id/test_selection_test2_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="70dp"
+                android:layout_below="@id/test_selection_page1_test1_button"
+                android:textSize="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the static background (top-right corner) test"
+                android:id="@+id/test_selection_test2_introduction"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test2_title" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/test_selection_test2_introduction"
+                android:text="@string/test2"
+                android:id="@+id/test_selection_page1_test2_button" />
+
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

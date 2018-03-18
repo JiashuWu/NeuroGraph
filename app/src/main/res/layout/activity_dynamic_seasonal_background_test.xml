@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiashuwu.neurograph.DynamicSeasonalBackgroundTestActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.example.jiashuwu.neurograph.MySurfaceViewForDynamicSeasonalBackground
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mySurfaceViewForDynamicSeasonalBackground" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dynamic_seasonal_background_test_finish_button"
+            android:text="@string/finish_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/dynamic_seasonal_background_test_clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/dynamic_seasonal_background_test_finish_button"
+            android:layout_alignLeft="@+id/dynamic_seasonal_background_test_finish_button"
+            android:layout_alignStart="@+id/dynamic_seasonal_background_test_finish_button"
+            android:text="@string/clear_button" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

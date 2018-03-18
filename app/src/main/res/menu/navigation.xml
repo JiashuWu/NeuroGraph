@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_static_tests"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/static_tests" />
+
+    <item
+        android:id="@+id/navigation_dynamic_tests"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/dynamic_tests" />
+
+
+
+
+</menu>
