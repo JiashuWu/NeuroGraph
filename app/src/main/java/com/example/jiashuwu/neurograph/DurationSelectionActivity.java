@@ -25,7 +25,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        user_id = getIntent().getIntExtra("user_id", -100000);
+        user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type").toString();
         image_type = getIntent().getStringExtra("image_type").toString();
 
@@ -39,10 +39,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
                     if (test_type.equalsIgnoreCase("static_full_background"))
                     {
                         Intent intent = new Intent(DurationSelectionActivity.this, StaticBackgroundTestActivity.class);
-                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("user_id", String.valueOf(user_id));
                         intent.putExtra("test_type", test_type);
                         intent.putExtra("image_type", image_type);
-                        intent.putExtra("interval_duration", 0);
+                        intent.putExtra("interval_duration", String.valueOf(0));
                         Sharing.user_id = user_id;
                         Sharing.test_type = test_type;
                         Sharing.image_type = image_type;
@@ -52,10 +52,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
                     else if (test_type.equalsIgnoreCase("static_corner_background"))
                     {
                         Intent intent = new Intent(DurationSelectionActivity.this, StaticCornerBackgroundTestActivity.class);
-                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("user_id", String.valueOf(user_id));
                         intent.putExtra("test_type", test_type);
                         intent.putExtra("image_type", image_type);
-                        intent.putExtra("interval_duration", 0);
+                        intent.putExtra("interval_duration", String.valueOf(0));
                         Sharing.user_id = user_id;
                         Sharing.test_type = test_type;
                         Sharing.image_type = image_type;
@@ -97,10 +97,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
                     if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                     {
                         Intent intent = new Intent(DurationSelectionActivity.this, DynamicShowBackgroundActivity.class);
-                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("user_id", String.valueOf(user_id));
                         intent.putExtra("test_type", test_type);
                         intent.putExtra("image_type", image_type);
-                        intent.putExtra("interval_duration", interval_duration);
+                        intent.putExtra("interval_duration", String.valueOf(interval_duration));
                         Sharing.user_id = user_id;
                         Sharing.test_type = test_type;
                         Sharing.image_type = image_type;
@@ -110,10 +110,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
                     else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                     {
                         Intent intent = new Intent (DurationSelectionActivity.this, DynamicSeasonalBackgroundTestActivity.class);
-                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("user_id", String.valueOf(user_id));
                         intent.putExtra("test_type", test_type);
                         intent.putExtra("image_type", image_type);
-                        intent.putExtra("interval_duration", interval_duration);
+                        intent.putExtra("interval_duration", String.valueOf(interval_duration));
                         Sharing.user_id = user_id;
                         Sharing.test_type = test_type;
                         Sharing.image_type = image_type;

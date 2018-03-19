@@ -19,6 +19,7 @@ public class SettingPageActivity extends AppCompatActivity {
     private Spinner setting_page_fontsize_spinner;
 
     private Button setting_page_start_button;
+    private Button setting_page_data_list_button;
 
     private ArrayAdapter language_adapter;
     private ArrayAdapter font_adapter;
@@ -33,6 +34,7 @@ public class SettingPageActivity extends AppCompatActivity {
         setting_page_fontsize_spinner = (Spinner) findViewById(R.id.setting_page_font_size_spinner);
 
         setting_page_start_button = (Button) findViewById(R.id.setting_page_start_button);
+        setting_page_data_list_button = (Button) findViewById(R.id.setting_page_data_list_button);
 
         final String [] language_list = getResources().getStringArray(R.array.language_array);
         language_adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, language_list);
@@ -91,6 +93,15 @@ public class SettingPageActivity extends AppCompatActivity {
                 Intent intent = new Intent (SettingPageActivity.this, InformationCollectionActivity.class);
                 intent.putExtra("language", language);
                 intent.putExtra("fontsize", fontsize);
+                startActivity(intent);
+                SettingPageActivity.this.finish();
+            }
+        });
+
+        setting_page_data_list_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
                 startActivity(intent);
                 SettingPageActivity.this.finish();
             }

@@ -55,7 +55,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             if (test_type.equalsIgnoreCase("static_full_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "spiral";
                                 intent.putExtra("image_type", image_type);
@@ -64,7 +64,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("static_corner_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "spiral";
                                 intent.putExtra("image_type", image_type);
@@ -73,7 +73,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "spiral";
                                 intent.putExtra("image_type", image_type);
@@ -82,7 +82,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "spiral";
                                 intent.putExtra("image_type", image_type);
@@ -101,7 +101,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             if (test_type.equalsIgnoreCase("static_full_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "pentagon";
                                 intent.putExtra("image_type", image_type);
@@ -110,7 +110,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("static_corner_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "pentagon";
                                 intent.putExtra("image_type", image_type);
@@ -119,7 +119,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "pentagon";
                                 intent.putExtra("image_type", image_type);
@@ -128,7 +128,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                             else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                             {
                                 Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("user_id", String.valueOf(user_id));
                                 intent.putExtra("test_type", test_type);
                                 image_type = "pentagon";
                                 intent.putExtra("image_type", image_type);
@@ -150,7 +150,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        user_id = getIntent().getIntExtra("user_id", -100000);
+        user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type").toString();
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -239,7 +239,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 if (test_type.equalsIgnoreCase("static_full_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
@@ -248,7 +248,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("static_corner_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
@@ -257,7 +257,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
@@ -266,7 +266,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
@@ -283,7 +283,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 if (test_type.equalsIgnoreCase("static_full_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
@@ -292,7 +292,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("static_corner_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
@@ -301,7 +301,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
@@ -310,7 +310,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                 else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                 {
                     Intent intent = new Intent(ImageSelectionActivity.this, DurationSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);

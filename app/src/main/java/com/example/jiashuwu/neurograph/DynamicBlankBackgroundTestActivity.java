@@ -78,10 +78,10 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();
 
-        user_id = getIntent().getIntExtra("user_id", -100000);
+        user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type");
         image_type = getIntent().getStringExtra("image_type");
-        interval_duration = getIntent().getIntExtra("interval_duration", -100000);
+        interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
 
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
@@ -123,6 +123,7 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
                 test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
                 Intent intent = new Intent(DynamicBlankBackgroundTestActivity.this, ThankYouActivity.class);
+                intent.putExtra("user_id", String.valueOf(user_id));
                 startActivity(intent);
                 finish();
             }

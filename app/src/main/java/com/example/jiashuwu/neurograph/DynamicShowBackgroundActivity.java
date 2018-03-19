@@ -30,10 +30,10 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_dynamic_show_background);
 
-        user_id = getIntent().getIntExtra("user_id", -100000);
-        test_type = getIntent().getStringExtra("test_type").toString();
-        image_type = getIntent().getStringExtra("image_type").toString();
-        interval_duration = getIntent().getIntExtra("interval_duration", -100000);
+        user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
+        test_type = getIntent().getStringExtra("test_type");
+        image_type = getIntent().getStringExtra("image_type");
+        interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
 
         imageView = (ImageView) findViewById(R.id.dynamic_show_background_imageview);
         if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
@@ -53,10 +53,10 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
                 {
                     intent = new Intent(DynamicShowBackgroundActivity.this , DynamicBlankBackgroundTestActivity.class);
 
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     intent.putExtra("test_type", test_type);
                     intent.putExtra("image_type", image_type);
-                    intent.putExtra("interval_duration", interval_duration);
+                    intent.putExtra("interval_duration", String.valueOf(interval_duration));
 
                     DynamicShowBackgroundActivity.this.startActivity(intent);
                     DynamicShowBackgroundActivity.this.finish();

@@ -57,7 +57,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "static_full_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
@@ -69,7 +69,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "static_corner_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
@@ -87,7 +87,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "dynamic_blank_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
@@ -99,7 +99,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "dynamic_seasonal_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
@@ -121,7 +121,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         user_id = 0;
-        user_id = getIntent().getIntExtra("user_id", -100000);
+        user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -210,7 +210,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                intent.putExtra("user_id", user_id);
+                intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "static_full_background";
                 intent.putExtra("test_type", test_type);
                 startActivity(intent);
@@ -222,7 +222,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                intent.putExtra("user_id", user_id);
+                intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "static_corner_background";
                 intent.putExtra("test_type", test_type);
                 startActivity(intent);
@@ -234,7 +234,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                intent.putExtra("user_id", user_id);
+                intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "dynamic_blank_background";
                 intent.putExtra("test_type", test_type);
                 startActivity(intent);
@@ -246,7 +246,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TestSelectionActivity.this, ImageSelectionActivity.class);
-                intent.putExtra("user_id", user_id);
+                intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "dynamic_seasonal_background";
                 intent.putExtra("test_type", test_type);
                 startActivity(intent);

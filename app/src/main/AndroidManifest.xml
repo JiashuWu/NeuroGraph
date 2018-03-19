@@ -48,6 +48,14 @@
         <activity
             android:name=".DynamicSeasonalBackgroundTestActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".DataListActivity"
+            android:label="@string/title_activity_data_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TestDetailScrollingActivity"
+            android:label="@string/title_activity_test_detail_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

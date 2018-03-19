@@ -310,7 +310,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     }
 
                     Intent intent = new Intent(InformationCollectionActivity.this, TestSelectionActivity.class);
-                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("user_id", String.valueOf(user_id));
                     startActivity(intent);
                     InformationCollectionActivity.this.finish();
                 }
