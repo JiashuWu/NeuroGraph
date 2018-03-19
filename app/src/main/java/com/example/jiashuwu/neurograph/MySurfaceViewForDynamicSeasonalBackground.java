@@ -72,6 +72,10 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
     public int delay = 0;
     public Handler handler;
 
+    public int initial_second = 0;
+    public int changing_second = 0;
+    public int current_second = 0;
+
 
     public MySurfaceViewForDynamicSeasonalBackground(Context context, AttributeSet attrs)
     {
@@ -94,6 +98,10 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         y_list = new ArrayList<Float>();
         pressure_list = new ArrayList<Float>();
 
+        calendar = Calendar.getInstance();
+        initial_second = calendar.get(Calendar.SECOND);
+
+        Sharing.changing = false;
 
     }
 
@@ -135,12 +143,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         try
         {
             mCanvas = mSurfaceHolder.lockCanvas();
-            mCanvas.drawColor(Color.WHITE);
-            mpaint.setStyle(Paint.Style.STROKE);
-
-            mpaint.setStrokeWidth(5);
-            mpaint.setColor(Color.BLACK);
-            mCanvas.drawPath(mPath, mpaint);
+            //mCanvas.drawColor(Color.WHITE);
 
             Display display = ((DynamicSeasonalBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
             displayWidth = display.getWidth();
@@ -149,7 +152,28 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
 
             // The code below change the background dynamically
 
+            calendar = Calendar.getInstance();
+            current_second = calendar.get(Calendar.SECOND);
 
+            if (Math.abs(current_second - initial_second) % Sharing.interval_duration == 0 && changing_second != current_second)
+            {
+                Sharing.changing = !Sharing.changing;
+                changing_second = current_second;
+            }
+
+            if (Sharing.changing)
+            {
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner);
+            }
+            else
+            {
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.white_background), displayWidth, displayHeight, true),0,0,null);//top-right corner
+            }
+
+            mpaint.setStyle(Paint.Style.STROKE);
+            mpaint.setStrokeWidth(5);
+            mpaint.setColor(Color.BLACK);
+            mCanvas.drawPath(mPath, mpaint);
 
         }
         catch (Exception e)

@@ -22,6 +22,8 @@ public class Sharing {
 
     public static String sharing_image;
 
+    public static boolean changing;
+
     public Sharing()
     {
 
