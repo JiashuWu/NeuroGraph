@@ -24,11 +24,17 @@ public class SettingPageActivity extends AppCompatActivity {
     private ArrayAdapter language_adapter;
     private ArrayAdapter font_adapter;
 
+    private boolean initial_isScale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_setting_page);
+
+        initial_isScale = Sharing.isScale;
 
         setting_page_language_spinner = (Spinner) findViewById(R.id.setting_page_language_spinner);
         setting_page_fontsize_spinner = (Spinner) findViewById(R.id.setting_page_font_size_spinner);
@@ -69,16 +75,31 @@ public class SettingPageActivity extends AppCompatActivity {
             }
         });
 
+        if (!Sharing.isScale)
+        {
+            setting_page_fontsize_spinner.setSelection(0);
+        }
+        else
+        {
+            setting_page_fontsize_spinner.setSelection(1);
+        }
+
         setting_page_fontsize_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position)
                 {
-                    case 0: fontsize = "Normal";break;
-                    case 1: fontsize = "Large";break;
-                    default: fontsize = "Normal";break;
+                    case 0: fontsize = "Normal";Sharing.isScale = false;break;
+                    case 1: fontsize = "Large";Sharing.isScale = true;break;
+                    default: fontsize = "Normal";Sharing.isScale = false;break;
                 }
                 Log.d("fontsize", fontsize);
+                if (Sharing.isScale != initial_isScale)
+                {
+                    Intent intent = new Intent (SettingPageActivity.this, TransferActivity.class);
+                    startActivity(intent);
+                    SettingPageActivity.this.finish();
+                }
             }
 
             @Override
@@ -86,6 +107,8 @@ public class SettingPageActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         setting_page_start_button.setOnClickListener(new View.OnClickListener() {
             @Override

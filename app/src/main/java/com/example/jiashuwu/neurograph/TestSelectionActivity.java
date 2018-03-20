@@ -1,6 +1,8 @@
 package com.example.jiashuwu.neurograph;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
@@ -8,6 +10,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,8 +44,6 @@ public class TestSelectionActivity extends AppCompatActivity {
     private int user_id;
 
     private String test_type = "";
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -120,6 +121,7 @@ public class TestSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(TestSelectionActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -282,5 +284,4 @@ public class TestSelectionActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

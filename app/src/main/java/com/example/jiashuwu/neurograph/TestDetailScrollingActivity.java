@@ -40,6 +40,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(TestDetailScrollingActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_detail_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

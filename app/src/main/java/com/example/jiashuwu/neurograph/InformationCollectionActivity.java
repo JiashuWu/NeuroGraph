@@ -55,6 +55,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(InformationCollectionActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_collection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

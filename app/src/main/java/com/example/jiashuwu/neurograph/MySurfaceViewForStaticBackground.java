@@ -177,6 +177,8 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         y_list.add(y);
         pressure_list.add(pressure);
         Log.d("destroy", String.valueOf(x_list.size()));
+        Log.d("TAG_DATA", current_time + " x = " + String.valueOf(x) + " y = " + String.valueOf(y) + " pressure = " + String.valueOf(pressure));
+
 
         switch (event.getAction())
         {

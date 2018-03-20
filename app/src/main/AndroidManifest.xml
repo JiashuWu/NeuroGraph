@@ -55,7 +55,8 @@
         <activity
             android:name=".TestDetailScrollingActivity"
             android:label="@string/title_activity_test_detail_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TransferActivity"></activity>
     </application>
 
 </manifest>

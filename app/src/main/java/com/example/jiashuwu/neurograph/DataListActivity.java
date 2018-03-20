@@ -101,6 +101,7 @@ public class DataListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(DataListActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

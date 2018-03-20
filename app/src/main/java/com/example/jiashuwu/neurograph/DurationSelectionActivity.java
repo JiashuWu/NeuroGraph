@@ -23,6 +23,8 @@ public class DurationSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(DurationSelectionActivity.this, Sharing.isScale);
+
         super.onCreate(savedInstanceState);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());

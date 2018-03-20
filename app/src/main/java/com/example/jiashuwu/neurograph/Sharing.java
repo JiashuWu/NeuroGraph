@@ -24,6 +24,8 @@ public class Sharing {
 
     public static boolean changing;
 
+    public static boolean isScale;
+
     public Sharing()
     {
 
