@@ -205,6 +205,8 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     dialog.show();
                 }
                 ratingscore = ratingscore_edittext.getText().toString();
+                // RatingScore can now be empty
+                /*
                 if (can_continue && ratingscore.equalsIgnoreCase(""))
                 {
                     can_continue = false;
@@ -220,6 +222,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     });
                     dialog.show();
                 }
+                */
                 count = 0;
                 for (i = 0 ; i < ratingscore.length() ; i++)
                 {
@@ -267,6 +270,10 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 }
                 if (can_continue)
                 {
+                    if (ratingscore.equalsIgnoreCase(""))
+                    {
+                        ratingscore = "0";
+                    }
                     // If can_continue is true, then we need to store the user's information into the database.
                     SQLiteDatabase database = databaseHelper.getWritableDatabase();
                     ContentValues values = new ContentValues();

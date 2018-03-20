@@ -17,6 +17,7 @@ public class WelcomeActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                Sharing.isScale = false;
                 Intent intent = new Intent(WelcomeActivity.this , SettingPageActivity.class);
                 WelcomeActivity.this.startActivity(intent);
                 WelcomeActivity.this.finish();
