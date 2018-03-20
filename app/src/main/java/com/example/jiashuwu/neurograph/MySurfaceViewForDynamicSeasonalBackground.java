@@ -178,7 +178,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
             }
 
             mpaint.setStyle(Paint.Style.STROKE);
-            mpaint.setStrokeWidth(5);
+            mpaint.setStrokeWidth(Sharing.painter_width);
             mpaint.setColor(Color.BLACK);
             mCanvas.drawPath(mPath, mpaint);
 

@@ -26,6 +26,8 @@ public class Sharing {
 
     public static boolean isScale;
 
+    public static int painter_width;
+
     public Sharing()
     {
 

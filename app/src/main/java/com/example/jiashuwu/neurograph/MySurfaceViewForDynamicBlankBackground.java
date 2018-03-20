@@ -120,7 +120,7 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
             mCanvas.drawColor(Color.WHITE);
             mpaint.setStyle(Paint.Style.STROKE);
 
-            mpaint.setStrokeWidth(5);
+            mpaint.setStrokeWidth(Sharing.painter_width);
             mpaint.setColor(Color.BLACK);
             mCanvas.drawPath(mPath, mpaint);
 

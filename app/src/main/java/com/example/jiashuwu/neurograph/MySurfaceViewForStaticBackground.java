@@ -134,7 +134,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
 
             mpaint.setStyle(Paint.Style.STROKE);
 
-            mpaint.setStrokeWidth(5);
+            mpaint.setStrokeWidth(Sharing.painter_width);
             mpaint.setColor(Color.BLACK);
             mCanvas.drawPath(mPath, mpaint);
 

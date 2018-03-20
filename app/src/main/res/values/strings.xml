@@ -185,5 +185,14 @@
     <string name="data_list_button">Data List</string>
     <string name="title_activity_test_detail_scrolling">TestDetailScrollingActivity</string>
 
+    <string name="select_painter_width">Please select your preferred painter width</string>
+
+    <string-array name="painter_width">
+        <item>Width 5</item>
+        <item>Width 10</item>
+        <item>Width 15</item>
+    </string-array>
+
+
 
 </resources>

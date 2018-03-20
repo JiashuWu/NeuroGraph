@@ -64,6 +64,8 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
     public int test_id;
 
+    private int painter_width;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

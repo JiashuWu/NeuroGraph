@@ -41,6 +41,24 @@
             android:text="PLACEHOLDER"
             android:layout_below="@id/duration_selection_seekbar"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/duration_with_seekbar_width_textview"
+            android:text="@string/select_painter_width"
+            android:layout_below="@id/duration_progress_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="45dp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/duration_with_seekbar_width_spinner"
+            android:layout_below="@id/duration_with_seekbar_width_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +66,7 @@
             android:layout_marginTop="30dp"
             android:id="@+id/duration_selection_page_start_test_button"
             android:text="Start Test"
-            android:layout_below="@id/duration_progress_textview"/>
+            android:layout_below="@id/duration_with_seekbar_width_spinner"/>
 
 
 
