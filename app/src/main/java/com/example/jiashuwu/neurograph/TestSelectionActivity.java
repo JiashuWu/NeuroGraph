@@ -76,7 +76,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "static_corner_background";
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
-                            // startActivity(intent);
+                            startActivity(intent);
 
                         }
                     });
@@ -95,7 +95,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "dynamic_blank_background";
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
-                            //startActivity(intent);
+                            startActivity(intent);
 
                         }
                     });
@@ -108,7 +108,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "dynamic_seasonal_background";
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
-                            //startActivity(intent);
+                            startActivity(intent);
 
                         }
                     });
@@ -233,7 +233,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "static_corner_background";
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
-                // startActivity(intent);
+                startActivity(intent);
 
             }
         });
@@ -246,7 +246,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "dynamic_blank_background";
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
-                // startActivity(intent);
+                startActivity(intent);
 
             }
         });
@@ -259,7 +259,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "dynamic_seasonal_background";
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
-                // startActivity(intent);
+                startActivity(intent);
             }
         });
 
@@ -280,7 +280,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             Intent intent = new Intent(TestSelectionActivity.this, DataListActivity.class);
             intent.putExtra("user_id", String.valueOf(user_id));
             // TODO FIX
-            // startActivity(intent);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
