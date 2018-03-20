@@ -163,7 +163,14 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
 
             if (Sharing.changing)
             {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner);
+                if (Sharing.image_type.equalsIgnoreCase("spiral"))
+                {
+                    mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true), 0, 0, null);//top-right corner);
+                }
+                if (Sharing.image_type.equalsIgnoreCase("pentagon"))
+                {
+                    mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon1), displayWidth, displayHeight, true), 0, 0, null);//top-right corner);
+                }
             }
             else
             {

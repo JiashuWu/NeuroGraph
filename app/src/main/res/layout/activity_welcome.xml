@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:id="@+id/welcome_activity_icon"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/ic_launcher_foreground"
             />
 
         <TextView
