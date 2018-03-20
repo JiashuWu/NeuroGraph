@@ -130,6 +130,11 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
 
             //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_dashboard_black_24dp), 120, 120, true),displayWidth-120,0,null);//top-right corner
 
+            // TODO SOLUTION ONE
+            // NOTICE: HERE IS SOLUTION NUMBER ONE IF YOU WANT TO SET THE IMAGE AS THE BACKGROUND OF CANVAS
+            // WARNING: THIS MAY CAUSE UNSOLVABLE DELAYS
+            // END OF NOTICE
+            /*
             if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_templete), 300, 180, true), displayWidth - 300, 0,null);//top-right corner
@@ -138,6 +143,7 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.interlocking_pentagon_template), 300, 180, true),displayWidth - 300,0,null);//top-right corner
             }
+            */
         }
         catch (Exception e)
         {

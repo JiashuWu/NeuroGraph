@@ -23,6 +23,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -62,6 +63,8 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
     private int databaseVersion = 1;
     private String databaseName = "information.db";
 
+    private ImageView imageView;
+
     public int test_id;
 
 
@@ -99,6 +102,20 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
         context = this;
 
         viewForStaticCornerBackground = (MySurfaceViewForStaticCornerBackground) findViewById(R.id.mySurfaceViewForStaticCornerBackground);
+
+        // TODO SOLUTION TWO
+        // NOTICE: THIS IS SOLUTION NUMBER TWO, AS WE SET THE BACKGROUND THROUGH AN IMAGEVIEW
+        // NOTICE: THIS IS THE SOLUTION WHICH WE CAN USE TO GEI RID OF THAT DELAY
+        // WARNING: BUT THIS SOLUTION MAY OVERLAP THE TOP RIGHT CORNER OF THE CANVAS, MAKING IT NO ABLE TO BE DRAWED.
+        imageView = (ImageView) findViewById(R.id.static_corner_background_imageview);
+        if (Sharing.image_type.equalsIgnoreCase("spiral"))
+        {
+            imageView.setImageResource(R.drawable.spiral1);
+        }
+        if (Sharing.image_type.equalsIgnoreCase("pentagon"))
+        {
+            imageView.setImageResource(R.drawable.pentagon1);
+        }
 
         clear_button = (Button) findViewById(R.id.static_corner_background_test_clear_button);
         clear_button.setOnClickListener(new View.OnClickListener() {
