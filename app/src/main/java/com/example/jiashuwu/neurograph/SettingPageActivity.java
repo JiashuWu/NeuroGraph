@@ -102,8 +102,9 @@ public class SettingPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
-                startActivity(intent);
-                SettingPageActivity.this.finish();
+                // TODO FIX
+                //startActivity(intent);
+                //SettingPageActivity.this.finish();
             }
         });
     }
