@@ -87,7 +87,7 @@ public class emailSender{
 
             //message.setContent(multipart);
 
-            String signature = "\n\n\n\n\n\n" + "===================" + "\n" + "Neurograph Data Transfer Service" + "\n" + "===================";
+            String signature = "\n\n\n\n\n\n" + "======================" + "\n" + "Neurograph Data Transfer Service" + "\n" + "======================";
             messageContent = messageContent + signature;
             message.setText(messageContent);
 
@@ -120,3 +120,53 @@ public class emailSender{
     }
 }
 
+/*
+
+// REFERENCE FOR ATTACHING FILES AS ATTACHMENT
+
+// https://stackoverflow.com/questions/16117365/sending-mail-attachment-using-java
+
+Properties props = new java.util.Properties();
+    props.put("mail.smtp.host", "yourHost");
+    props.put("mail.smtp.port", "yourHostPort");
+    props.put("mail.smtp.auth", "true");
+    props.put("mail.smtp.starttls.enable", "true");
+
+
+    // Session session = Session.getDefaultInstance(props, null);
+    Session session = Session.getInstance(props,
+              new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("user", "password");
+                }
+              });
+
+
+    Message msg = new MimeMessage(session);
+    try {
+        msg.setFrom(new InternetAddress(mailFrom));
+        msg.setRecipient(Message.RecipientType.TO, new InternetAddress(mailTo));
+        msg.setSubject("your subject");
+
+        Multipart multipart = new MimeMultipart();
+
+        MimeBodyPart textBodyPart = new MimeBodyPart();
+        textBodyPart.setText("your text");
+
+        MimeBodyPart attachmentBodyPart= new MimeBodyPart();
+        DataSource source = new FileDataSource(attachementPath); // ex : "C:\\test.pdf"
+        attachmentBodyPart.setDataHandler(new DataHandler(source));
+        attachmentBodyPart.setFileName(fileName); // ex : "test.pdf"
+
+        multipart.addBodyPart(textBodyPart);  // add the text part
+        multipart.addBodyPart(attachmentBodyPart); // add the attachement part
+
+        msg.setContent(multipart);
+
+
+        Transport.send(msg);
+    } catch (MessagingException e) {
+        LOGGER.log(Level.SEVERE,"Error while sending email",e);
+    }
+
+ */

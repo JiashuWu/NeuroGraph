@@ -56,7 +56,7 @@ public class DataListActivity extends AppCompatActivity {
     {
         datalist.clear();
 
-        database = databaseHelper.getWritableDatabase();
+        database = databaseHelper.getReadableDatabase();
         String query = "SELECT * FROM Test";
         String query1 = "";
 

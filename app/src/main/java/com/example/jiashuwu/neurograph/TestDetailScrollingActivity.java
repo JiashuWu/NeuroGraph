@@ -59,13 +59,13 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
         test_detail =
                 "test_id = " + String.valueOf(test_id) + "\n"
-                + "name = " + name + "n"
+                + "name = " + name + "\n"
                 + "user_id = " + String.valueOf(user_id) + "\n"
                 + "test_starting_time = " + test_starting_time + "\n"
                 + "test_ending_time = " + test_ending_time + "\n"
                 + "test type = " + test_type + "\n"
                 + "image type = " + image_type + "\n"
-                + "interval duration" + String.valueOf(interval_duration) + "\n";
+                + "interval duration = " + String.valueOf(interval_duration) + "\n";
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getReadableDatabase();
@@ -73,7 +73,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         String query = "SELECT * FROM Data WHERE test_id = ?";
         String [] paramaters = new String[] {String.valueOf(test_id)};
 
-        database = databaseHelper.getWritableDatabase();
+        database = databaseHelper.getReadableDatabase();
 
         Cursor cursor = database.rawQuery(query, paramaters);
         String new_line = "";
