@@ -11,6 +11,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -164,7 +166,50 @@ public class DataListActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_data_list_activity, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_share_data)
+        {
+            Intent intent = new Intent(DataListActivity.this, SendDataEmailActivity.class);
+            intent.putExtra("user_id", String.valueOf(user_id));
+            // TODO FIX
+            startActivity(intent);
+        }
+        else if (id == R.id.action_delete)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
+            builder.setTitle("Delete all data");
+            builder.setCancelable(false);
+            builder.setMessage("Delete all data ?");
+            builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    database = databaseHelper.getWritableDatabase();
+                    database.delete("Data", "", new String[] {});
+                    database.delete("Test", "", new String[] {});
+                    build_data_list();
+
+                }
+            });
+            builder.setPositiveButton("Go Back", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here;
+                }
+            });
+            builder.create();
+            builder.show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
