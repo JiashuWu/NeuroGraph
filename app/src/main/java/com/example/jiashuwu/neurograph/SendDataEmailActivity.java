@@ -114,7 +114,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
             output_string = output_string + "gender = " + gender + "\n";
             output_string = output_string + "education = " + education + "\n";
             output_string = output_string + "rating score = " + String.valueOf(rating_score) + "\n";
-            output_string = output_string + "current receive treatment" + current_receive_treatment + "\n";
+            output_string = output_string + "current receive treatment = " + current_receive_treatment + "\n";
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
