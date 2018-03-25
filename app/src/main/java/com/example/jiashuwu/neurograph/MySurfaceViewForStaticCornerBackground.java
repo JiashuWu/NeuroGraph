@@ -138,6 +138,7 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
             //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_dashboard_black_24dp), 120, 120, true),displayWidth-120,0,null);//top-right corner
 
             // TODO SOLUTION ONE
+            // TODO SOLUTION ONE TAG
             // NOTICE: HERE IS SOLUTION NUMBER ONE IF YOU WANT TO SET THE IMAGE AS THE BACKGROUND OF CANVAS
             // WARNING: THIS MAY CAUSE UNSOLVABLE DELAYS
             // END OF NOTICE

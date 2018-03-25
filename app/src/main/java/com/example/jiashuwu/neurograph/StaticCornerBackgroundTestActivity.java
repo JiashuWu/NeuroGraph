@@ -166,6 +166,7 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
         viewForStaticCornerBackground = (MySurfaceViewForStaticCornerBackground) findViewById(R.id.mySurfaceViewForStaticCornerBackground);
 
         // TODO SOLUTION TWO
+        // TODO SOLUTION TWO TAG
         // NOTICE: THIS IS SOLUTION NUMBER TWO, AS WE SET THE BACKGROUND THROUGH AN IMAGEVIEW
         // NOTICE: THIS IS THE SOLUTION WHICH WE CAN USE TO GEI RID OF THAT DELAY
         // WARNING: BUT THIS SOLUTION MAY OVERLAP THE TOP RIGHT CORNER OF THE CANVAS, MAKING IT NO ABLE TO BE DRAWED.
