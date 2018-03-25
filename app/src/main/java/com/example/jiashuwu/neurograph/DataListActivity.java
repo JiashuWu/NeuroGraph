@@ -205,6 +205,9 @@ public class DataListActivity extends AppCompatActivity {
             intent.putExtra("user_id", String.valueOf(user_id));
             // TODO FIX
             startActivity(intent);
+            DataListActivity.this.finish();
+            // The DataListActivity finishes when we go to SendDataEmailActivity;
+            // FIXED
         }
         else if (id == R.id.action_delete)
         {
