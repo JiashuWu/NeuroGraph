@@ -171,9 +171,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_data_email);
 
         // REQUEST PERMISSION
-        ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE}, 200);
-        ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 200);
-        ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{INTERNET, ACCESS_NETWORK_STATE}, 200);
+        ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
+        //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 200);
+        //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{INTERNET, ACCESS_NETWORK_STATE}, 200);
 
         send_button = (Button) findViewById(R.id.send_email_send_button);
         cancel_button = (Button) findViewById(R.id.send_email_cancel_button);
@@ -182,7 +182,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         subject_edittext = (EditText) findViewById(R.id.send_email_subject_editview);
 
         content_checkbox = (CheckBox) findViewById(R.id.send_email_checkbox);
-        Sharing.show_as_content = false;
+        Sharing.show_as_content = true;
 
         // INITIALLY SET CHECKBOX TO CHECKED (TRUE)
         content_checkbox.setChecked(true);
