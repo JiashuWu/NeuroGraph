@@ -117,7 +117,9 @@ public class SettingPageActivity extends AppCompatActivity {
                 intent.putExtra("language", language);
                 intent.putExtra("fontsize", fontsize);
                 startActivity(intent);
-                SettingPageActivity.this.finish();
+
+                // Setting page shouldn't finish at this point
+                //SettingPageActivity.this.finish();
             }
         });
 
@@ -127,7 +129,9 @@ public class SettingPageActivity extends AppCompatActivity {
                 Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
                 // TODO FIX
                 startActivity(intent);
-                SettingPageActivity.this.finish();
+
+                // Setting page shouldn't finish at this point
+                //SettingPageActivity.this.finish();
             }
         });
     }
