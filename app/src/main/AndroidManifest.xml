@@ -15,55 +15,70 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".WelcomeActivity"
+            android:configChanges="locale" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingPageActivity" />
+        <activity android:name=".SettingPageActivity"
+            android:configChanges="locale" />
         <activity
             android:name=".InformationCollectionActivity"
             android:label="@string/title_activity_information_collection"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="locale" />
         <activity
             android:name=".TestSelectionActivity"
             android:label="@string/title_activity_test_selection"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="locale" />
         <activity
             android:name=".ImageSelectionActivity"
             android:label="@string/title_activity_image_selection"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DurationSelectionActivity" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="locale" />
+        <activity android:name=".DurationSelectionActivity"
+            android:configChanges="locale" />
         <activity
             android:name=".StaticBackgroundTestActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".StaticCornerBackgroundTestActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".DynamicBlankBackgroundTestActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".DynamicShowBackgroundActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".ThankYouActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".DynamicSeasonalBackgroundTestActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="locale" />
         <activity
             android:name=".DataListActivity"
             android:label="@string/title_activity_data_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="locale" />
         <activity
             android:name=".TestDetailScrollingActivity"
             android:label="@string/title_activity_test_detail_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="locale" />
         <activity android:name=".TransferActivity" />
-        <activity android:name=".SendDataEmailActivity"></activity>
+        <activity android:name=".SendDataEmailActivity"
+            android:configChanges="locale" ></activity>
     </application>
 
 

@@ -32,6 +32,8 @@ public class Sharing {
 
     public static String file_path;
 
+    public static String language = "";
+
     public Sharing()
     {
 
