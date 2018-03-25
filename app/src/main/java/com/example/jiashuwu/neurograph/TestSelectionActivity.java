@@ -64,7 +64,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "static_full_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
-                            //TestSelectionActivity.this.finish();
                         }
                     });
 

@@ -89,6 +89,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.interval_duration = 0;
                         Sharing.painter_width = painter_width;
                         startActivity(intent);
+                        DurationSelectionActivity.this.finish();
                     }
                     else if (test_type.equalsIgnoreCase("static_corner_background"))
                     {
@@ -104,6 +105,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.interval_duration = 0;
                         Sharing.painter_width = painter_width;
                         startActivity(intent);
+                        DurationSelectionActivity.this.finish();
                     }
                 }
             });
@@ -177,6 +179,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.interval_duration = interval_duration;
                         Sharing.painter_width = painter_width;
                         startActivity(intent);
+                        DurationSelectionActivity.this.finish();
                     }
                     else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                     {
@@ -192,6 +195,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.interval_duration = interval_duration;
                         Sharing.painter_width = painter_width;
                         startActivity(intent);
+                        DurationSelectionActivity.this.finish();
                     }
                 }
             });
