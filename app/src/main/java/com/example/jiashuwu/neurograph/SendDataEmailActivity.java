@@ -351,21 +351,23 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         NotificationChannel channel = null;
                                         if (channel == null)
                                         {
-                                            channel = new NotificationChannel("4655", "Neurograph_Notification", importance);
-                                            channel.setDescription("Neurograph Notification");
+                                            channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
+                                            channel.setDescription("Neurograph_Notification");
                                             channel.enableLights(true);
+                                            channel.setLightColor(Color.RED);
+                                            channel.enableVibration(true);
+                                            channel.setVibrationPattern(new long []{100, 200, 300, 400, 500, 400, 300, 200, 100});
                                             manager.createNotificationChannel(channel);
                                         }
                                         Notification notification = new NotificationCompat.Builder(getApplicationContext())
                                                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                                                .setTicker("Neurograph Notification")
-                                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                                                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                                                 .setContentTitle("Email sent and file saved")
                                                 .setContentInfo("Neurograph Notification")
                                                 .setContentText(Sharing.file_path)
                                                 .setAutoCancel(true)
-                                                .setChannelId("4655")
+                                                .setOngoing(true)
+                                                .setChannelId("my_channel_01")
                                                 .setDefaults(Notification.DEFAULT_ALL)
                                                 .build();
                                         manager.notify(0, notification);

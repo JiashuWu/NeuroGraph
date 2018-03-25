@@ -199,5 +199,7 @@
         <item>Delete all user and test data, this will restart the app</item>
     </string-array>
 
+    <string name="channel_name">neurograph1</string>
+
 
 </resources>

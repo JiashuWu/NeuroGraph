@@ -1,9 +1,12 @@
 package com.example.jiashuwu.neurograph;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -74,7 +77,15 @@ public class SettingPageActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_setting_page);
 
-        ActivityCompat.requestPermissions(SettingPageActivity.this, new String[]{ACCESS_NOTIFICATION_POLICY}, 200);
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(SettingPageActivity.this, new String[]{Manifest.permission.ACCESS_NOTIFICATION_POLICY}, 200);
+        }
+        else
+        {
+            Log.d("GRANTED", "GRANTED");
+        }
 
         initial_isScale = Sharing.isScale;
         initial_language = Sharing.language;
