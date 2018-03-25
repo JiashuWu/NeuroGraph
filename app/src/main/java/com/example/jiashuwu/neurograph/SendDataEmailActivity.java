@@ -179,6 +179,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
         content_checkbox = (CheckBox) findViewById(R.id.send_email_checkbox);
         Sharing.show_as_content = false;
+
+        // INITIALLY SET CHECKBOX TO CHECKED (TRUE)
+        content_checkbox.setChecked(true);
+
         content_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
