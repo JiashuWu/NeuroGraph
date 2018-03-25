@@ -28,6 +28,8 @@ public class Sharing {
 
     public static int painter_width;
 
+    public static boolean show_as_content;
+
     public Sharing()
     {
 

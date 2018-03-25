@@ -1,7 +1,16 @@
 package com.example.jiashuwu.neurograph;
 
+import android.content.Context;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.Properties;
 
@@ -12,6 +21,8 @@ import android.util.Log;
 import java.util.Calendar;
 import java.util.Properties;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.BodyPart;
@@ -25,6 +36,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.sql.DataSource;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Jiashu Wu on 21/03/2018.
@@ -90,6 +104,64 @@ public class emailSender{
             String signature = "\n\n\n\n\n\n" + "======================" + "\n" + "Neurograph Data Transfer Service" + "\n" + "======================";
             messageContent = messageContent + signature;
             message.setText(messageContent);
+
+            String output_file_name = "NeurographOutputDataFile.txt";
+
+            File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
+            if (!file.exists())
+            {
+                file.mkdirs();
+            }
+
+
+            File output_file = new File(Environment.getExternalStorageDirectory(), "/" + "NeurographDataOutput.txt");
+            FileWriter fileWriter = new FileWriter(output_file);
+            try
+            {
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                bufferedWriter.write(messageContent);
+                bufferedWriter.close();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            String file_path = Environment.getExternalStorageDirectory() + "/" + "NeurographDataOutput.txt";
+            Log.d("file_path1", file_path);
+
+            Multipart multipart = new MimeMultipart();
+
+
+            // TODO THIS IS OPTIONAL
+
+
+            MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+            javax.activation.DataSource source = new FileDataSource(file_path);
+            attachmentBodyPart.setDataHandler(new DataHandler(source));
+            attachmentBodyPart.setFileName("NeurographOutputDataFile.txt");
+
+            MimeBodyPart textBodyPart = new MimeBodyPart();
+
+            // TODO THIS IS OPTIONAL
+            if (!Sharing.show_as_content)
+            {
+                textBodyPart.setText("NeurographDataOutputFile");
+            }
+            else
+            {
+                textBodyPart.setText(messageContent);
+            }
+
+
+            multipart.addBodyPart(textBodyPart);
+            multipart.addBodyPart(attachmentBodyPart);
+
+            message.setContent(multipart);
 
             Thread thread = new Thread(new Runnable() {
                 @Override

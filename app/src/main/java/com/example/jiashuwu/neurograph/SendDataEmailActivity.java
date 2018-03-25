@@ -1,11 +1,15 @@
 package com.example.jiashuwu.neurograph;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +17,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class SendDataEmailActivity extends AppCompatActivity {
 
@@ -52,6 +61,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private float x;
     private float y;
     private float pressure;
+
+    private CheckBox content_checkbox;
 
 
 
@@ -144,6 +155,12 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
 
 
+    private boolean checkPermission() {
+        int read_permission = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        int write_permission = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+
+        return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,11 +168,30 @@ public class SendDataEmailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_data_email);
 
+        // REQUEST PERMISSION
+        ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
+
         send_button = (Button) findViewById(R.id.send_email_send_button);
         cancel_button = (Button) findViewById(R.id.send_email_cancel_button);
 
         recipient_edittext = (EditText) findViewById(R.id.send_email_recipient_edittext);
         subject_edittext = (EditText) findViewById(R.id.send_email_subject_editview);
+
+        content_checkbox = (CheckBox) findViewById(R.id.send_email_checkbox);
+        Sharing.show_as_content = false;
+        content_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.show_as_content = true;
+                }
+                else
+                {
+                    Sharing.show_as_content = false;
+                }
+            }
+        });
 
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,6 +281,23 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     builder.create();
                     builder.show();
                 }
+                else if (!checkPermission())
+                {
+                    readyToSend = false;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+                    builder.setTitle("Permission not granted");
+                    builder.setCancelable(false);
+                    builder.setMessage("Permission not granted. Please go to system setting to grant the app permission");
+                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // should do nothing here
+                            // LEAVE THIS AS BLANK BLOCK
+                        }
+                    });
+                    builder.create();
+                    builder.show();
+                }
 
                 confirm_to_send = false;
 
@@ -273,6 +326,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                 try
                                 {
                                     String content = generate_string_from_database();
+
                                     emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
                                 }
                                 catch (Exception e)

@@ -60,11 +60,20 @@
             android:layout_marginRight="30dp"
             android:layout_below="@id/send_email_subject_textview"/>
 
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Also show data as content? "
+            android:id="@+id/send_email_checkbox"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/send_email_subject_editview" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/send_email_button_group"
-            android:layout_below="@+id/send_email_subject_editview"
+            android:layout_below="@+id/send_email_checkbox"
             android:layout_marginTop="30dp"
             android:orientation="horizontal" >
 
