@@ -6,8 +6,10 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class DynamicShowBackgroundActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
     private int interval_duration;
 
     private ImageView imageView;
+
+    private long exitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,4 +71,24 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
         }, 1000 * interval_duration);
 
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            if ((System.currentTimeMillis() - exitTime) > 2000)
+            {
+                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            }
+            else
+            {
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

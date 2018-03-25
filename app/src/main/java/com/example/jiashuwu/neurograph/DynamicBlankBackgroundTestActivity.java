@@ -17,12 +17,16 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.Toast;
+
+import org.w3c.dom.ProcessingInstruction;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -69,6 +73,8 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
     private String databaseName = "information.db";
 
     public int test_id;
+
+    private long exitTime;
 
 
     @Override
@@ -241,6 +247,25 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            if ((System.currentTimeMillis() - exitTime) > 2000)
+            {
+                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            }
+            else
+            {
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
