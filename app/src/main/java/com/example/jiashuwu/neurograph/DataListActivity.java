@@ -184,7 +184,7 @@ public class DataListActivity extends AppCompatActivity {
                 });
                 builder.create();
                 builder.show();
-                return false;
+                return true;
             }
         });
     }
