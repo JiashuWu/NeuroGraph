@@ -1,6 +1,7 @@
 package com.example.jiashuwu.neurograph;
 
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
 
 public class SettingPageActivity extends AppCompatActivity {
 
@@ -37,6 +40,8 @@ public class SettingPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_setting_page);
+
+        ActivityCompat.requestPermissions(SettingPageActivity.this, new String[]{ACCESS_NOTIFICATION_POLICY}, 200);
 
         initial_isScale = Sharing.isScale;
 

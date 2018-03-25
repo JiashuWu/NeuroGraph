@@ -22,6 +22,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
+import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
 import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -174,6 +175,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 200);
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{INTERNET, ACCESS_NETWORK_STATE}, 200);
+
 
         send_button = (Button) findViewById(R.id.send_email_send_button);
         cancel_button = (Button) findViewById(R.id.send_email_cancel_button);
