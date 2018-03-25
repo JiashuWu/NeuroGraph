@@ -45,7 +45,7 @@
         <item>Postgraduate</item>
         <item>Doctor or higher</item>
     </string-array>
-    <string name="rating_score">Previous Alzheimer Rating Score (If Applicable)</string>
+    <string name="rating_score">Previous Alzheimer Rating Score (If Applicable), otherwise leave it as blank</string>
     <string name="enter_rating_score">Please Enter Your Rating Score</string>
     <string name="current_receiving_treatment">Are you currently receiving treatment? </string>
     <string name="yes">Yes</string>
