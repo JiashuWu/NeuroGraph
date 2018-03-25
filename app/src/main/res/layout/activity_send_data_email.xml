@@ -63,7 +63,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Also show data as content? "
+            android:text="Also show data as text content? "
             android:id="@+id/send_email_checkbox"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
