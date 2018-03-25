@@ -3,26 +3,26 @@
     <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
     <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
     <string name="setting_page_choose_language">请选择语言</string>
-    <string name="english">English (EN_GB)</string>
-    <string name="chinese_simplified">Simplified Chinese (CH_ZN)</string>
-    <string name="chinese_traditional">Traditional Chinese (CH_TW)</string>
+    <string name="english">英语 (EN_GB)</string>
+    <string name="chinese_simplified">简体中文 (CH_ZN)</string>
+    <string name="chinese_traditional">繁体中文 (CH_TW)</string>
     <string-array name="language_array">
-        <item>English (EN_GB)</item>
-        <item>Simplified Chinese (CH_ZN)</item>
-        <item>Traditional Chinese (CH_TW)</item>
+        <item>英语 (EN_GB)</item>
+        <item>简体中文 (CH_ZN)</item>
+        <item>繁体中文 (CH_TW)</item>
     </string-array>
 
     <string-array name="font_array">
-        <item>Normal</item>
-        <item>Large</item>
+        <item>正常字号</item>
+        <item>大字号</item>
     </string-array>
-    <string name="setting_page_choose_font_size">Please choose font size</string>
-    <string name="normal_font_size">Normal</string>
-    <string name="large_font_size">Large</string>
+    <string name="setting_page_choose_font_size">请选择字号大小</string>
+    <string name="normal_font_size">正常字号</string>
+    <string name="large_font_size">大字号</string>
 
-    <string name="welcome">Welcome to NeuroGraph</string>
+    <string name="welcome">欢迎使用 NeuroGraph</string>
 
-    <string name="setting_page_start_button">Let\'s Start</string>
+    <string name="setting_page_start_button">开始</string>
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
