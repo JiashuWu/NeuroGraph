@@ -1,14 +1,20 @@
 package com.example.jiashuwu.neurograph;
 
 import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -338,6 +344,51 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                     String content = generate_string_from_database();
 
                                     emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
+                                    NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+                                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O)
+                                    {
+                                        int importance = NotificationManager.IMPORTANCE_LOW;
+                                        NotificationChannel channel = null;
+                                        if (channel == null)
+                                        {
+                                            channel = new NotificationChannel("4655", "Neurograph_Notification", importance);
+                                            channel.setDescription("Neurograph Notification");
+                                            channel.enableLights(true);
+                                            manager.createNotificationChannel(channel);
+                                        }
+                                        Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                                                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                                                .setTicker("Neurograph Notification")
+                                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                                .setContentTitle("Email sent and file saved")
+                                                .setContentInfo("Neurograph Notification")
+                                                .setContentText(Sharing.file_path)
+                                                .setAutoCancel(true)
+                                                .setChannelId("4655")
+                                                .setDefaults(Notification.DEFAULT_ALL)
+                                                .build();
+                                        manager.notify(0, notification);
+                                    }
+                                    else
+                                    {
+                                        Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                                                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                                                .setTicker("Neurograph Notification")
+                                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                                .setContentTitle("Email sent and file saved")
+                                                .setContentInfo("Neurograph Notification")
+                                                .setContentText(Sharing.file_path)
+                                                .setAutoCancel(true)
+                                                .setDefaults(Notification.DEFAULT_ALL)
+                                                .build();
+                                        manager.notify(0, notification);
+                                    }
+
+
+
+
                                 }
                                 catch (Exception e)
                                 {

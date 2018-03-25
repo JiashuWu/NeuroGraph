@@ -133,6 +133,7 @@ public class emailSender{
 
             String file_path = Environment.getExternalStorageDirectory() + "/" + "NeurographDataOutput.txt";
             Log.d("file_path1", file_path);
+            Sharing.file_path = file_path;
 
             Multipart multipart = new MimeMultipart();
 

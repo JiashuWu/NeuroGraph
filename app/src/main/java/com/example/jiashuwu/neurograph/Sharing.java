@@ -30,6 +30,8 @@ public class Sharing {
 
     public static boolean show_as_content;
 
+    public static String file_path;
+
     public Sharing()
     {
 
