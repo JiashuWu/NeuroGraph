@@ -193,5 +193,11 @@
         <item>Width 15</item>
     </string-array>
 
+    <string-array name="delete_options">
+        <item>Delete all test data</item>
+        <item>Delete test data before a specific date</item>
+        <item>Delete all user and test data, this will restart the app</item>
+    </string-array>
+
 
 </resources>

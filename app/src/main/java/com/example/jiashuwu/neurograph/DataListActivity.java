@@ -11,14 +11,19 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,7 +55,20 @@ public class DataListActivity extends AppCompatActivity {
     private float y;
     private float pressure;
 
+    private Spinner delete_option_spinner;
+    private DatePicker delete_date_datepicker;
+
+    private ArrayAdapter delete_option_adapter;
+
     private SQLiteDatabase database;
+
+    private String delete_option = "";
+
+    private int delete_year;
+    private int delete_month;
+    private int delete_day;
+    private String delete_month_s;
+    private String delete_day_s;
 
     public void build_data_list ()
     {
@@ -187,18 +205,127 @@ public class DataListActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_delete)
         {
+            LayoutInflater inflater = LayoutInflater.from(DataListActivity.this);
+            View view = inflater.inflate(R.layout.activity_data_list_delete_option_alertdialog, null);
+
             AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
-            builder.setTitle("Delete all data");
+            builder.setTitle("Delete data");
             builder.setCancelable(false);
-            builder.setMessage("Delete all data ?");
+            builder.setView(view);
+
+            delete_option_spinner = (Spinner) view.findViewById(R.id.alertdialog_delete_option_spinner);
+
+            final String [] delete_option_list = getResources().getStringArray(R.array.delete_options);
+            delete_option_adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, delete_option_list);
+            delete_option_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            delete_option_spinner.setAdapter(delete_option_adapter);
+
+            delete_option_spinner.setSelection(0);
+
+            delete_option_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    switch (position)
+                    {
+                        case 0: delete_option = "test";break;
+                        case 1: delete_option = "specific";break;
+                        case 2: delete_option = "all";break;
+                        default: delete_option = "test";break;
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
             builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    database = databaseHelper.getWritableDatabase();
-                    database.delete("Data", "", new String[] {});
-                    database.delete("Test", "", new String[] {});
-                    build_data_list();
+                    if (delete_option.equalsIgnoreCase("all"))
+                    {
+                        database = databaseHelper.getWritableDatabase();
+                        database.delete("Data", "", new String[] {});
+                        database.delete("Test", "", new String[] {});
+                        database.delete("User", "", new String[] {});
+                        //build_data_list();
+                        Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
+                        startActivity(intent);
+                        DataListActivity.this.finish();
+                    }
+                    if (delete_option.equalsIgnoreCase("test"))
+                    {
+                        database = databaseHelper.getWritableDatabase();
+                        database.delete("Data", "", new String[] {});
+                        database.delete("Test", "", new String[] {});
+                        build_data_list();
+                    }
+                    if (delete_option.equalsIgnoreCase("specific"))
+                    {
+                        LayoutInflater inflater = LayoutInflater.from(DataListActivity.this);
+                        View view = inflater.inflate(R.layout.activity_data_list_delete_date_alertdialog, null);
 
+                        AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
+                        builder.setTitle("Delete data before this date");
+                        builder.setCancelable(false);
+                        builder.setView(view);
+                        delete_date_datepicker = (DatePicker) view.findViewById(R.id.delete_time_datepicker);
+
+                        Calendar calendar = Calendar.getInstance();
+
+                        delete_year = calendar.get(Calendar.YEAR);
+                        delete_month = calendar.get(Calendar.MONTH) + 1;
+                        delete_day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                        builder.setPositiveButton("Go Back", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Should do nothing here;
+                            }
+                        });
+
+                        builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                delete_year = delete_date_datepicker.getYear();
+                                delete_month = delete_date_datepicker.getMonth() + 1;
+                                delete_day = delete_date_datepicker.getDayOfMonth();
+
+                                if (String.valueOf(delete_month).length() == 1)
+                                {
+                                    delete_month_s = "0" + String.valueOf(delete_month);
+                                }
+                                else
+                                {
+                                    delete_month_s = String.valueOf(delete_month);
+                                }
+                                if (String.valueOf(delete_day).length() == 1)
+                                {
+                                    delete_day_s = "0" + String.valueOf(delete_day);
+                                }
+                                else
+                                {
+                                    delete_day_s = String.valueOf(delete_day);
+                                }
+
+
+                                String delete_before_this_date = String.valueOf(delete_year) + "-" + delete_month_s + "-" + delete_day_s + " " + "00:00:00.000";
+
+                                database = databaseHelper.getWritableDatabase();
+                                //database.delete("Data", "", new String[] {});
+                                database.delete("Test", "test_ending_time < ?", new String[] {delete_before_this_date});
+
+
+                                build_data_list();
+                            }
+                        });
+                        builder.create();
+                        builder.show();
+
+
+
+                    }
                 }
             });
             builder.setPositiveButton("Go Back", new DialogInterface.OnClickListener() {

@@ -64,6 +64,13 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
 
     public int test_id;
 
+    public String month_s;
+    public String day_s;
+    public String hour_s;
+    public String minute_s;
+    public String second_s;
+    public String millisecond_s;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +101,62 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
         second = calendar.get(Calendar.SECOND);
         millisecond = calendar.get(Calendar.MILLISECOND);
 
-        test_starting_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
+        if (String.valueOf(month).length() == 1)
+        {
+            month_s = "0" + String.valueOf(month);
+        }
+        else
+        {
+            month_s = String.valueOf(month);
+        }
+        if (String.valueOf(day).length() == 1)
+        {
+            day_s = "0" + String.valueOf(day);
+        }
+        else
+        {
+            day_s = String.valueOf(day);
+        }
+        if (String.valueOf(hour).length() == 1)
+        {
+            hour_s = "0" + String.valueOf(hour);
+        }
+        else
+        {
+            hour_s = String.valueOf(hour);
+        }
+        if (String.valueOf(minute).length() == 1)
+        {
+            minute_s = "0" + String.valueOf(minute);
+        }
+        else
+        {
+            minute_s = String.valueOf(minute);
+        }
+        if (String.valueOf(second).length() == 1)
+        {
+            second_s = "0" + String.valueOf(second);
+        }
+        else
+        {
+            second_s = String.valueOf(second);
+        }
+        if (String.valueOf(millisecond).length() == 1)
+        {
+            millisecond_s = "00" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 2)
+        {
+            millisecond_s = "0" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 3)
+        {
+            millisecond_s = String.valueOf(millisecond);
+        }
+
+        test_starting_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
+
+        //test_starting_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
         context = this;
 
@@ -122,7 +184,62 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
                 second = calendar.get(Calendar.SECOND);
                 millisecond = calendar.get(Calendar.MILLISECOND);
 
-                test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
+                if (String.valueOf(month).length() == 1)
+                {
+                    month_s = "0" + String.valueOf(month);
+                }
+                else
+                {
+                    month_s = String.valueOf(month);
+                }
+                if (String.valueOf(day).length() == 1)
+                {
+                    day_s = "0" + String.valueOf(day);
+                }
+                else
+                {
+                    day_s = String.valueOf(day);
+                }
+                if (String.valueOf(hour).length() == 1)
+                {
+                    hour_s = "0" + String.valueOf(hour);
+                }
+                else
+                {
+                    hour_s = String.valueOf(hour);
+                }
+                if (String.valueOf(minute).length() == 1)
+                {
+                    minute_s = "0" + String.valueOf(minute);
+                }
+                else
+                {
+                    minute_s = String.valueOf(minute);
+                }
+                if (String.valueOf(second).length() == 1)
+                {
+                    second_s = "0" + String.valueOf(second);
+                }
+                else
+                {
+                    second_s = String.valueOf(second);
+                }
+                if (String.valueOf(millisecond).length() == 1)
+                {
+                    millisecond_s = "00" + String.valueOf(millisecond);
+                }
+                else if (String.valueOf(millisecond).length() == 2)
+                {
+                    millisecond_s = "0" + String.valueOf(millisecond);
+                }
+                else if (String.valueOf(millisecond).length() == 3)
+                {
+                    millisecond_s = String.valueOf(millisecond);
+                }
+
+                test_ending_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
+
+                //test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
                 Intent intent = new Intent(DynamicSeasonalBackgroundTestActivity.this, ThankYouActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));

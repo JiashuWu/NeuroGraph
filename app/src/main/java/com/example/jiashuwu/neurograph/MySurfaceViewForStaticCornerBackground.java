@@ -56,6 +56,13 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
     public ArrayList millisecond_list;
     public ArrayList<String> timestamp_list;
 
+    public String month_s;
+    public String day_s;
+    public String hour_s;
+    public String minute_s;
+    public String second_s;
+    public String millisecond_s;
+
     public MySurfaceViewForStaticCornerBackground(Context context, AttributeSet attrs)
     {
         super(context, attrs);
@@ -173,7 +180,62 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         second = calendar.get(Calendar.SECOND);
         millisecond = calendar.get(Calendar.MILLISECOND);
 
-        current_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
+        if (String.valueOf(month).length() == 1)
+        {
+            month_s = "0" + String.valueOf(month);
+        }
+        else
+        {
+            month_s = String.valueOf(month);
+        }
+        if (String.valueOf(day).length() == 1)
+        {
+            day_s = "0" + String.valueOf(day);
+        }
+        else
+        {
+            day_s = String.valueOf(day);
+        }
+        if (String.valueOf(hour).length() == 1)
+        {
+            hour_s = "0" + String.valueOf(hour);
+        }
+        else
+        {
+            hour_s = String.valueOf(hour);
+        }
+        if (String.valueOf(minute).length() == 1)
+        {
+            minute_s = "0" + String.valueOf(minute);
+        }
+        else
+        {
+            minute_s = String.valueOf(minute);
+        }
+        if (String.valueOf(second).length() == 1)
+        {
+            second_s = "0" + String.valueOf(second);
+        }
+        else
+        {
+            second_s = String.valueOf(second);
+        }
+        if (String.valueOf(millisecond).length() == 1)
+        {
+            millisecond_s = "00" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 2)
+        {
+            millisecond_s = "0" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 3)
+        {
+            millisecond_s = String.valueOf(millisecond);
+        }
+
+        current_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
+
+        //current_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
         timestamp_list.add(current_time);
         x_list.add(x);
