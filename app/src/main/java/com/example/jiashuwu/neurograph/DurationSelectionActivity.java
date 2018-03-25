@@ -213,6 +213,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
     }
 
     // TODO OPTIONAL 2/4
+    /*
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -232,5 +233,6 @@ public class DurationSelectionActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+    */
 
 }

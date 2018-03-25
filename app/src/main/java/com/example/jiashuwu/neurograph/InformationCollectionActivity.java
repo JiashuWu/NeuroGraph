@@ -337,6 +337,8 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     // TODO OPTIONAL 4/4
 
+    /*
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -355,5 +357,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    */
 
 }

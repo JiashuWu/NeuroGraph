@@ -326,6 +326,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
     }
 
     // TODO OPTIONAL 3/4
+    /*
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -345,5 +346,6 @@ public class ImageSelectionActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+    */
 
 }

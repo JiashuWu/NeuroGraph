@@ -346,6 +346,7 @@ public class DataListActivity extends AppCompatActivity {
     // TODO OPTIONAL 1/4
 
 
+    /*
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -364,5 +365,6 @@ public class DataListActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+    */
 
 }
