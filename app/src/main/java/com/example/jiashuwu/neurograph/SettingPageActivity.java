@@ -195,7 +195,7 @@ public class SettingPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
                 // TODO FIX
-                startActivity(intent);
+                // startActivity(intent);
 
                 // Setting page shouldn't finish at this point
                 //SettingPageActivity.this.finish();
