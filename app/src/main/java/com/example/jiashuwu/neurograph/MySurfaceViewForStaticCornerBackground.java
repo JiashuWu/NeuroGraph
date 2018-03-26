@@ -172,6 +172,8 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         x = (float) event.getX();
         y = (float) event.getY();
         pressure = (float) event.getPressure();
+        float size  = (float) event.getSize();
+        Log.d("TAG_TEST", String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(size));
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH) + 1;
