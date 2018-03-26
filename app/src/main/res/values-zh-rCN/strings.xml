@@ -26,16 +26,16 @@
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
-    <string name="full_name">Full Name</string>
-    <string name="enter_full_name">Please Enter Your Full Name</string>
-    <string name="age">Age</string>
-    <string name="enter_age">Please Enter Your Age</string>
-    <string name="gender">Gender</string>
-    <string name="enter_gender">Please Select Your Gender</string>
+    <string name="full_name">姓名</string>
+    <string name="enter_full_name">请输入姓名</string>
+    <string name="age">年龄</string>
+    <string name="enter_age">请输入年龄</string>
+    <string name="gender">性别</string>
+    <string name="enter_gender">请输入性别</string>
     <string-array name="gender_list">
-        <item>Male</item>
-        <item>Female</item>
-        <item>Others</item>
+        <item>男</item>
+        <item>女</item>
+        <item>其他</item>
     </string-array>
     <string name="select_education">Please Select Your Education Level</string>
     <string-array name="education_level">
@@ -48,9 +48,9 @@
     <string name="rating_score">Previous Alzheimer Rating Score (If Applicable), otherwise leave it as blank</string>
     <string name="enter_rating_score">Please Enter Your Rating Score</string>
     <string name="current_receiving_treatment">Are you currently receiving treatment? </string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="next">Next</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="next">继续</string>
     <string name="title_activity_information_collection">InformationCollectionActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
