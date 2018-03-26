@@ -1,20 +1,26 @@
 package com.example.jiashuwu.neurograph;
 
 import android.Manifest;
+import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +32,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
@@ -163,6 +173,28 @@ public class SendDataEmailActivity extends AppCompatActivity {
     }
 
 
+    private void goToSetting(){
+        if (Build.VERSION.SDK_INT >= 26) {
+            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", SendDataEmailActivity.this.getApplicationContext().getPackageName());
+            startActivity(intent);
+        } else if (Build.VERSION.SDK_INT >= 21 && Build.VERSION.SDK_INT < 26) {
+            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", SendDataEmailActivity.this.getApplicationContext().getPackageName());
+            intent.putExtra("app_uid", SendDataEmailActivity.this.getApplicationInfo().uid);
+            startActivity(intent);
+        } else if (Build.VERSION.SDK_INT < 21)
+        {
+            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            intent.setData(Uri.fromParts("package", SendDataEmailActivity.this.getApplicationContext().getPackageName(), null));
+            startActivity(intent);
+        }
+    }
+
+
+
 
     private boolean checkPermission() {
         int read_permission = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
@@ -194,6 +226,12 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
         // INITIALLY SET CHECKBOX TO CHECKED (TRUE)
         content_checkbox.setChecked(true);
+
+        if (!NotificationManagerCompat.from(SendDataEmailActivity.this.getApplicationContext()).areNotificationsEnabled())
+        {
+            Log.d("NOTIFICATIONHHH", "NOTIFICATION");
+            goToSetting();
+        }
 
         content_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -345,7 +383,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
                                     emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
                                     NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-                                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O)
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
                                     {
                                         int importance = NotificationManager.IMPORTANCE_LOW;
                                         NotificationChannel channel = null;
@@ -370,7 +408,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                                 .setChannelId("my_channel_01")
                                                 .setDefaults(Notification.DEFAULT_ALL)
                                                 .build();
-                                        manager.notify(0, notification);
+                                        manager.notify(90, notification);
                                     }
                                     else
                                     {
