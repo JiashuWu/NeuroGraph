@@ -5,6 +5,8 @@ import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,6 +34,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -377,7 +380,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
                 if (readyToSend)
                 {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
                     builder.setTitle("Confirm");
                     builder.setCancelable(false);
                     builder.setMessage("Confirm sending this email ?");
@@ -447,17 +450,41 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                     }
 
 
-
-
                                 }
                                 catch (Exception e)
                                 {
                                     e.printStackTrace();
                                 }
 
-                                Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
-                                startActivity(intent);
-                                SendDataEmailActivity.this.finish();
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(SendDataEmailActivity.this);
+                                builder1.setTitle("Successfully Sent");
+                                builder1.setCancelable(false);
+                                builder1.setMessage("The email has been successfully sent and the file has been saved into the file system.");
+                                builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
+                                        startActivity(intent);
+                                        SendDataEmailActivity.this.finish();
+                                    }
+                                });
+                                builder1.setNegativeButton("Copy File Path", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
+                                        clipboardManager.setPrimaryClip(clipData);
+                                        Toast.makeText(SendDataEmailActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
+
+                                        Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
+                                        startActivity(intent);
+                                        SendDataEmailActivity.this.finish();
+
+                                    }
+                                });
+                                builder1.create();
+                                builder1.show();
+
                             }
                         }
                     });
