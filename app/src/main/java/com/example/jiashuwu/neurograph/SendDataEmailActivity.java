@@ -419,11 +419,11 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         }
                                         Notification notification = new NotificationCompat.Builder(getApplicationContext())
                                                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                                                 .setContentTitle("Email sent and file saved")
                                                 .setContentInfo("Neurograph Notification")
                                                 .setContentText(Sharing.file_path)
-                                                .setAutoCancel(true)
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                                .setAutoCancel(false)
                                                 .setOngoing(true)
                                                 .setChannelId("my_channel_01")
                                                 .setDefaults(Notification.DEFAULT_ALL)
@@ -440,7 +440,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                                 .setContentTitle("Email sent and file saved")
                                                 .setContentInfo("Neurograph Notification")
                                                 .setContentText(Sharing.file_path)
-                                                .setAutoCancel(true)
+                                                .setAutoCancel(false)
                                                 .setDefaults(Notification.DEFAULT_ALL)
                                                 .build();
                                         manager.notify(0, notification);
