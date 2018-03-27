@@ -209,6 +209,14 @@ public class DataListActivity extends AppCompatActivity {
             // The DataListActivity finishes when we go to SendDataEmailActivity;
             // FIXED
         }
+        else if (id == R.id.action_store_file)
+        {
+            Intent intent = new Intent (DataListActivity.this, StoreDataFileActivity.class);
+            intent.putExtra("user_id", String.valueOf(user_id));
+            startActivity(intent);
+            DataListActivity.this.finish();
+
+        }
         else if (id == R.id.action_delete)
         {
             LayoutInflater inflater = LayoutInflater.from(DataListActivity.this);
