@@ -230,7 +230,27 @@ public class SendDataEmailActivity extends AppCompatActivity {
         if (!NotificationManagerCompat.from(SendDataEmailActivity.this.getApplicationContext()).areNotificationsEnabled())
         {
             Log.d("NOTIFICATIONHHH", "NOTIFICATION");
-            goToSetting();
+            AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+            builder.setTitle("Notification permission");
+            builder.setCancelable(false);
+            builder.setMessage("Turn on notification");
+            builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here
+                    // WARNING
+                    // LEAVE THIS AS EMPRT BLOCK !!!
+                }
+            });
+            builder.setPositiveButton("Go To Setting", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    goToSetting();
+                    // The program will go to setting page if the user willing to turn on the notification;
+                }
+            });
+            builder.create();
+            builder.show();
         }
 
         content_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
