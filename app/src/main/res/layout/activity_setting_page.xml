@@ -87,13 +87,15 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/setting_page_introduction_button"
-            android:text="Introduction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/setting_page_language_textview"
+            android:layout_alignRight="@+id/setting_page_language_textview"
+            android:layout_below="@id/setting_page_button_group_linearlayout"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:layout_below="@id/setting_page_button_group_linearlayout" />
+            android:text="@string/button_introduction" />
 
     </RelativeLayout>
 

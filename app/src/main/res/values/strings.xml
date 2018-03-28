@@ -205,4 +205,13 @@
 
     <string name="button_generate">Generate</string>
 
+    <string name="button_introduction">Introduction</string>
+    <string name="placeholder">PLACEHOLDER</string>
+    <string name="introduction_content">"Welcome to Neurograph.\n"
+        "This is an app which can be used to assist the diagnostics of Alzheimer\'s Disease.\n"
+        "By doing some tests like drawing a spiral or pentagon, we will analyse your drawing pattern and using artificial intelligence to predict the level of the disease.\n\n\n"
+        "Version 1.0 (2018.04)\n"
+        "This version contains ......\n"
+    </string>
+
 </resources>

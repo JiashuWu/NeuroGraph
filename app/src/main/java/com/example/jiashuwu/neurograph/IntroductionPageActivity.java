@@ -76,7 +76,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
                                     public void onAnimationEnd(Animation animation) {
                                         introduction_textview.setText("");
                                         // ANIMATION NUMBER 5
-                                        introduction_content_textview.setText("INTRODUCTION OF THIS APP PLACEHOLER");
+                                        introduction_content_textview.setText(getResources().getString(R.string.introduction_content));
                                         AlphaAnimation alphaAnimation4 = new AlphaAnimation(0.0f, 6.0f);
                                         alphaAnimation4.setDuration(2000);
                                         introduction_content_textview.setAnimation(alphaAnimation4);
