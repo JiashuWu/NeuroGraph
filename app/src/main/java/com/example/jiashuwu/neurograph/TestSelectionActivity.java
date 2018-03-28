@@ -18,10 +18,15 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
+
+import junit.framework.Test;
 
 import java.util.ArrayList;
 
@@ -31,6 +36,7 @@ public class TestSelectionActivity extends AppCompatActivity {
     private MenuItem menuItem;
     private BottomNavigationView navigation;
 
+    private View view_practice;
     private View view_static;
     private View view_dynamic;
 
@@ -38,10 +44,13 @@ public class TestSelectionActivity extends AppCompatActivity {
 
     private PagerAdapter pageAdapter;
 
+    private Button practice_button;
     private Button test1_button;
     private Button test2_button;
     private Button test3_button;
     private Button test4_button;
+
+    private Spinner parallel_line_practice_width_spinner;
 
     private int user_id;
 
@@ -49,14 +58,56 @@ public class TestSelectionActivity extends AppCompatActivity {
 
     private long exitTime;
 
+    private int painter_width = 0;
+
+    private ArrayAdapter adapter;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_static_tests:
+                case R.id.navigation_practice_tests:
                     viewPager.setCurrentItem(0);
+                    practice_button = (Button) findViewById(R.id.test_selection_page0_test0_button);
+                    parallel_line_practice_width_spinner = (Spinner) findViewById(R.id.test_selection_test0_width_spinner);
+                    String [] mList = getResources().getStringArray(R.array.painter_width);
+                    adapter = new ArrayAdapter(TestSelectionActivity.this , android.R.layout.simple_spinner_dropdown_item, mList);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    parallel_line_practice_width_spinner.setAdapter(adapter);
+                    parallel_line_practice_width_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            switch (position)
+                            {
+                                case 0: painter_width = 5;break;
+                                case 1: painter_width = 10;break;
+                                case 2: painter_width = 15;break;
+                                default: painter_width = 5;break;
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    practice_button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
+                            intent.putExtra("user_id", String.valueOf(user_id));
+                            test_type = "parallel_line";
+                            Sharing.painter_width = painter_width;
+                            intent.putExtra("test_type", test_type);
+                            startActivity(intent);
+                        }
+                    });
+                    break;
+                case R.id.navigation_static_tests:
+                    viewPager.setCurrentItem(1);
                     test1_button = (Button) findViewById(R.id.test_selection_page1_test1_button);
                     test2_button = (Button) findViewById(R.id.test_selection_page1_test2_button);
 
@@ -86,7 +137,7 @@ public class TestSelectionActivity extends AppCompatActivity {
 
                     break;
                 case R.id.navigation_dynamic_tests:
-                    viewPager.setCurrentItem(1);
+                    viewPager.setCurrentItem(2);
                     test3_button = (Button) findViewById(R.id.test_selection_page2_test3_button);
                     test4_button = (Button) findViewById(R.id.test_selection_page2_test4_button);
 
@@ -129,6 +180,10 @@ public class TestSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String [] mList = getResources().getStringArray(R.array.painter_width);
+        adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, mList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         user_id = 0;
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
@@ -177,10 +232,12 @@ public class TestSelectionActivity extends AppCompatActivity {
         });
 
         LayoutInflater inflater = getLayoutInflater();
+        view_practice = inflater.inflate(R.layout.test_selection_page0_layout, null);
         view_static = inflater.inflate(R.layout.test_selection_page1_layout, null);
         view_dynamic = inflater.inflate(R.layout.test_selection_page2_layout, null);
 
         viewList = new ArrayList<View>();
+        viewList.add(view_practice);
         viewList.add(view_static);
         viewList.add(view_dynamic);
 
@@ -211,10 +268,43 @@ public class TestSelectionActivity extends AppCompatActivity {
 
         viewPager.setAdapter(pageAdapter);
 
+        practice_button = (Button) view_practice.findViewById(R.id.test_selection_page0_test0_button);
         test1_button = (Button) view_static.findViewById(R.id.test_selection_page1_test1_button);
         test2_button = (Button) view_static.findViewById(R.id.test_selection_page1_test2_button);
         test3_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test3_button);
         test4_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test4_button);
+        parallel_line_practice_width_spinner = (Spinner) view_practice.findViewById(R.id.test_selection_test0_width_spinner);
+        parallel_line_practice_width_spinner.setAdapter(adapter);
+        parallel_line_practice_width_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position)
+                {
+                    case 0: painter_width = 5;break;
+                    case 1: painter_width = 10;break;
+                    case 2: painter_width = 15;break;
+                    default: painter_width = 5;break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        practice_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
+                intent.putExtra("user_id", String.valueOf(user_id));
+                test_type = "parallel_line";
+                Sharing.painter_width = painter_width;
+                intent.putExtra("test_type", test_type);
+                startActivity(intent);
+            }
+        });
 
         test1_button.setOnClickListener(new View.OnClickListener() {
             @Override
