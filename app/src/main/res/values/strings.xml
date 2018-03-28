@@ -51,7 +51,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="next">Next</string>
-    <string name="title_activity_information_collection">InformationCollectionActivity</string>
+    <string name="title_activity_information_collection">Collect some information</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -178,7 +178,6 @@
 
     <string name="treatment_empty">Please select treatment infomation</string>
 
-    <string name="ok">OK</string>
     <string name="dismiss">Dismiss</string>
     <string name="title_activity_data_list">DataListActivity</string>
 
@@ -213,5 +212,37 @@
         "Version 1.0 (2018.04)\n"
         "This version contains ......\n"
     </string>
+    <string name="notification_permission_title">Notification permission</string>
+    <string name="turn_on_notification">Turn on notification</string>
+    <string name="button_dismiss">Dismiss</string>
+    <string name="go_to_system_setting">Go To Setting</string>
+    <string name="network_error">Network Error</string>
+    <string name="network_unavailable_message">Network unavailable, please check your network connection.</string>
+    <string name="ok">OK</string>
+    <string name="invalid_information">Invalid Information</string>
+    <string name="email_address_empty">Email address cannot be empty</string>
+    <string name="email_address_invalid">Email address invalid</string>
+    <string name="email_subject_empty">Subject cannot be empty</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="permission_not_granted_message">Permission not granted. Please go to system setting to grant the app permission.</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_sending_email">Confirm sending this email ?</string>
+    <string name="go_back">Go Back</string>
+    <string name="neurograph_notification">Neurograph_Notification</string>
+    <string name="successful_message_email_file">Email sent and file saved</string>
+    <string name="successfully_sent">Successfully Sent</string>
+    <string name="copy_file_path">Copy File Path</string>
+    <string name="success_message1">The email has been successfully sent and the file has been saved into the file system.</string>
+    <string name="cancel_sending">Cancel Sending</string>
+    <string name="quit_message">Want to quit without sending?</string>
+    <string name="exit_without_sending">Exit without sending</string>
+    <string name="send_email_introduction_text">Outputting all your data via email</string>
+    <string name="recipient">Recipient</string>
+    <string name="subject">Subject</string>
+    <string name="subject_cannot_empty">Subject cannot be empty</string>
+    <string name="email_address_format_requirement">Email Address must contain @ and .</string>
+    <string name="email_checkbox_message">Also show data as text content?</string>
+    <string name="send_button">Send</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

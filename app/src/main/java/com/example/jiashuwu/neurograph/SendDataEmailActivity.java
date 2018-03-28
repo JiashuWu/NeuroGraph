@@ -236,10 +236,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
         {
             Log.d("NOTIFICATIONHHH", "NOTIFICATION");
             AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-            builder.setTitle("Notification permission");
+            builder.setTitle(R.string.notification_permission_title);
             builder.setCancelable(false);
-            builder.setMessage("Turn on notification");
-            builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.turn_on_notification);
+            builder.setNegativeButton(R.string.button_dismiss, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here
@@ -247,7 +247,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     // LEAVE THIS AS EMPRT BLOCK !!!
                 }
             });
-            builder.setPositiveButton("Go To Setting", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.go_to_system_setting, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     goToSetting();
@@ -295,10 +295,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Network Error");
+                    builder.setTitle(R.string.network_error);
                     builder.setCancelable(false);
-                    builder.setMessage("Network not available");
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.network_unavailable_message);
+                    builder.setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here
@@ -313,10 +313,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Invalid Information");
+                    builder.setTitle(R.string.invalid_information);
                     builder.setCancelable(false);
-                    builder.setMessage("Email address cannot be empty");
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.email_address_empty);
+                    builder.setNegativeButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // should do nothing here
@@ -330,10 +330,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Invalid Information");
+                    builder.setTitle(getResources().getString(R.string.invalid_information));
                     builder.setCancelable(false);
-                    builder.setMessage("Email address invalid");
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.email_address_invalid);
+                    builder.setNegativeButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // should do nothing here;
@@ -347,10 +347,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Invalid Information");
+                    builder.setTitle(getResources().getString(R.string.invalid_information));
                     builder.setCancelable(false);
-                    builder.setMessage("Subject cannot be empty");
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.email_subject_empty);
+                    builder.setNegativeButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // should do nothing here
@@ -364,10 +364,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Permission not granted");
+                    builder.setTitle(R.string.permission_not_granted);
                     builder.setCancelable(false);
-                    builder.setMessage("Permission not granted. Please go to system setting to grant the app permission");
-                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.permission_not_granted_message);
+                    builder.setNegativeButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // should do nothing here
@@ -383,10 +383,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 if (readyToSend)
                 {
                     final AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Confirm");
+                    builder.setTitle(R.string.confirm);
                     builder.setCancelable(false);
-                    builder.setMessage("Confirm sending this email ?");
-                    builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.confirm_sending_email);
+                    builder.setNegativeButton(R.string.go_back, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             confirm_to_send = false;
@@ -394,7 +394,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                         }
                     });
 
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             confirm_to_send = true;
@@ -415,7 +415,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         if (channel == null)
                                         {
                                             channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
-                                            channel.setDescription("Neurograph_Notification");
+                                            channel.setDescription(getString(R.string.neurograph_notification));
                                             channel.enableLights(true);
                                             channel.setLightColor(Color.RED);
                                             channel.enableVibration(true);
@@ -424,7 +424,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         }
                                         Notification notification = new NotificationCompat.Builder(getApplicationContext())
                                                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                                                .setContentTitle("Email sent and file saved")
+                                                .setContentTitle(getString(R.string.successful_message_email_file))
                                                 .setContentInfo("Neurograph Notification")
                                                 .setContentText(Sharing.file_path)
                                                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -442,7 +442,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                                 .setTicker("Neurograph Notification")
                                                 .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                                                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                                                .setContentTitle("Email sent and file saved")
+                                                .setContentTitle(getResources().getString(R.string.successful_message_email_file))
                                                 .setContentInfo("Neurograph Notification")
                                                 .setContentText(Sharing.file_path)
                                                 .setAutoCancel(false)
@@ -459,10 +459,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                 }
 
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(SendDataEmailActivity.this);
-                                builder1.setTitle("Successfully Sent");
+                                builder1.setTitle(R.string.successfully_sent);
                                 builder1.setCancelable(false);
-                                builder1.setMessage("The email has been successfully sent and the file has been saved into the file system.");
-                                builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                builder1.setMessage(R.string.success_message1);
+                                builder1.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
@@ -470,7 +470,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         SendDataEmailActivity.this.finish();
                                     }
                                 });
-                                builder1.setNegativeButton("Copy File Path", new DialogInterface.OnClickListener() {
+                                builder1.setNegativeButton(R.string.copy_file_path, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -501,10 +501,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                builder.setTitle("Cancel Sending");
+                builder.setTitle(R.string.cancel_sending);
                 builder.setCancelable(false);
-                builder.setMessage("Want to quit without sending?");
-                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.quit_message);
+                builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here
@@ -512,7 +512,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     }
                 });
 
-                builder.setPositiveButton("Exit without sending", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(R.string.exit_without_sending, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);

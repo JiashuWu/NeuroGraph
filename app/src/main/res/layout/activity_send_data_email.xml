@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/send_email_introduction_textview"
-            android:text="Outputting all your data via email"
+            android:text="@string/send_email_introduction_text"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="50dp"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/send_email_recipient_textview"
-            android:text="Recipient"
+            android:text="@string/recipient"
             android:layout_below="@id/send_email_introduction_textview"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
@@ -39,7 +39,8 @@
             android:layout_below="@id/send_email_recipient_textview"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp" />
+            android:layout_marginRight="30dp"
+            android:hint="@string/email_address_format_requirement"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -49,7 +50,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Subject"/>
+            android:text="@string/subject"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -58,12 +59,13 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:hint="@string/subject_cannot_empty"
             android:layout_below="@id/send_email_subject_textview"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Also show data as text content? "
+            android:text="@string/email_checkbox_message"
             android:id="@+id/send_email_checkbox"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
@@ -82,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/send_email_send_button"
-                android:text="Send"
+                android:text="@string/send_button"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="6dp" />
 
@@ -91,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/send_email_cancel_button"
-                android:text="Cancel"
+                android:text="@string/cancel"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="30dp" />
 
