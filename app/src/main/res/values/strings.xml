@@ -201,5 +201,8 @@
 
     <string name="channel_name">Neurograph</string>
 
+    <string name="store_data_file_introduction_text">Thank you for using Neurograph. You can now store all test data into a data file in the Android file system.</string>
+
+    <string name="button_generate">Generate</string>
 
 </resources>
