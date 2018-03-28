@@ -88,6 +88,8 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_dynamic_seasonal_background_test);
 
+        Sharing.changing = true;
+
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();
 

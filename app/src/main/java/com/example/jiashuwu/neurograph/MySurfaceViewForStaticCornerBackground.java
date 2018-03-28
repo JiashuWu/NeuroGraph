@@ -43,10 +43,12 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
     public float x;
     public float y;
     public float pressure;
+    public float touch_point_size;
 
     public ArrayList<Float> x_list;
     public ArrayList<Float> y_list;
     public ArrayList<Float> pressure_list;
+    public ArrayList<Float> touch_point_size_list;
     public ArrayList year_list;
     public ArrayList month_list;
     public ArrayList day_list;
@@ -83,6 +85,8 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         x_list = new ArrayList<Float>();
         y_list = new ArrayList<Float>();
         pressure_list = new ArrayList<Float>();
+        touch_point_size_list = new ArrayList<Float>();
+
     }
 
     @Override
@@ -115,6 +119,7 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         Sharing.y_list = y_list;
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
+        Sharing.touch_point_size_list = touch_point_size_list;
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
     }
@@ -171,7 +176,8 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
     {
         x = (float) event.getX();
         y = (float) event.getY();
-        pressure = (float) event.getPressure();
+        pressure = (float) event.getPressure(event.getPointerCount() - 1);
+        touch_point_size = (float) event.getSize(event.getPointerCount() - 1);
         float size  = (float) event.getSize();
         Log.d("TAG_TEST", String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(size));
         calendar = Calendar.getInstance();
@@ -244,6 +250,7 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         x_list.add(x);
         y_list.add(y);
         pressure_list.add(pressure);
+        touch_point_size_list.add(touch_point_size);
         Log.d("destroy", String.valueOf(x_list.size()));
 
         switch (event.getAction())

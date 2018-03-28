@@ -44,10 +44,12 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
     public float x;
     public float y;
     public float pressure;
+    public float touch_point_size;
 
     public ArrayList<Float> x_list;
     public ArrayList<Float> y_list;
     public ArrayList<Float> pressure_list;
+    public ArrayList<Float> touch_point_size_list;
     public ArrayList year_list;
     public ArrayList month_list;
     public ArrayList day_list;
@@ -85,6 +87,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         x_list = new ArrayList<Float>();
         y_list = new ArrayList<Float>();
         pressure_list = new ArrayList<Float>();
+        touch_point_size_list = new ArrayList<Float>();
     }
 
     @Override
@@ -117,6 +120,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         Sharing.y_list = y_list;
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
+        Sharing.touch_point_size_list = touch_point_size_list;
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
     }
@@ -168,7 +172,8 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
     {
         x = (float) event.getX();
         y = (float) event.getY();
-        pressure = (float) event.getPressure();
+        pressure = (float) event.getPressure(event.getPointerCount() - 1);
+        touch_point_size = (float) event.getSize(event.getPointerCount() - 1);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH) + 1;
@@ -239,8 +244,9 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         x_list.add(x);
         y_list.add(y);
         pressure_list.add(pressure);
+        touch_point_size_list.add(touch_point_size);
         Log.d("destroy", String.valueOf(x_list.size()));
-        Log.d("TAG_DATA", current_time + " x = " + String.valueOf(x) + " y = " + String.valueOf(y) + " pressure = " + String.valueOf(pressure));
+        Log.d("TAG_DATA", current_time + " x = " + String.valueOf(x) + " y = " + String.valueOf(y) + " pressure = " + String.valueOf(pressure) + " size = " + String.valueOf(touch_point_size));
 
 
         switch (event.getAction())

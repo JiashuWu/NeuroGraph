@@ -19,6 +19,7 @@ public class Sharing {
     public static ArrayList<Float> y_list;
     public static ArrayList<Float> pressure_list;
     public static ArrayList<String> timestamp_list;
+    public static ArrayList<Float> touch_point_size_list;
 
     public static String sharing_image;
 
