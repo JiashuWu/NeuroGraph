@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/image_selection_page1">
+    android:id="@+id/image_selection_page2">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,11 +15,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_selection_page2_introduction_textview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/pentagon_image_title"
+                android:textSize="36dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_selection_page2_introduction_textview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/image_selection_page2_content"
+                android:text="@string/pentagon_introduction" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_selection_page2_image"
+                android:src="@drawable/pentagon_template"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_below="@id/image_selection_page2_content"
+                android:layout_centerHorizontal="true"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
+                android:layout_below="@id/image_selection_page2_image"
                 android:id="@+id/image_selection_pentagon_button"
                 android:text="@string/pentagon_image" />
 
