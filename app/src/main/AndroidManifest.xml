@@ -83,7 +83,8 @@
         <activity
             android:name=".SendDataEmailActivity"
             android:configChanges="locale" />
-        <activity android:name=".StoreDataFileActivity"></activity>
+        <activity android:name=".StoreDataFileActivity" />
+        <activity android:name=".IntroductionPageActivity"></activity>
     </application>
 
 </manifest>
