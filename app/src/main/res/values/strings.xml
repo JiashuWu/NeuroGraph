@@ -250,5 +250,6 @@
     <string name="pentagon_image_title">Pentagon Image</string>
     <string name="spiral_image_title">Spiral Image</string>
     <string name="pentagon_introduction">A pentagon template will be used during the test.</string>
+    <string name="generate_data_file_title">Generate Data File</string>
 
 </resources>
