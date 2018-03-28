@@ -15,76 +15,105 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".WelcomeActivity"
-            android:configChanges="locale">
+            android:configChanges="locale"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SettingPageActivity"
-            android:configChanges="locale" />
+            android:configChanges="locale"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".InformationCollectionActivity"
             android:configChanges="locale"
             android:label="@string/title_activity_information_collection"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".TestSelectionActivity"
             android:configChanges="locale"
             android:label="@string/title_activity_test_selection"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ImageSelectionActivity"
             android:configChanges="locale"
             android:label="@string/title_activity_image_selection"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".DurationSelectionActivity"
-            android:configChanges="locale" />
+            android:configChanges="locale"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".StaticBackgroundTestActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".StaticCornerBackgroundTestActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".DynamicBlankBackgroundTestActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".DynamicShowBackgroundActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".ThankYouActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".DynamicSeasonalBackgroundTestActivity"
             android:configChanges="locale"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".DataListActivity"
             android:configChanges="locale"
             android:label="@string/title_activity_data_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale"
             android:label="@string/title_activity_test_detail_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
         <activity android:name=".TransferActivity" />
+
         <activity
             android:name=".SendDataEmailActivity"
-            android:configChanges="locale" />
-        <activity android:name=".StoreDataFileActivity" />
-        <activity android:name=".IntroductionPageActivity"></activity>
+            android:configChanges="locale"
+            android:screenOrientation="portrait" />
+        <activity android:name=".StoreDataFileActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".IntroductionPageActivity"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
 </manifest>
