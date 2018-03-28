@@ -63,8 +63,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private String databaseName = "information.db";
-    private int databaseVersion = 1;
+    private String databaseName = DatabaseInformation.databaseName;
+    private int databaseVersion = DatabaseInformation.databaseVersion;
 
     private int test_id;
     private int user_id;
@@ -83,6 +83,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private float x;
     private float y;
     private float pressure;
+    private float touch_point_size;
 
     private CheckBox content_checkbox;
 
@@ -157,7 +158,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 x = cursor2.getFloat(3);
                 y = cursor2.getFloat(4);
                 pressure = cursor2.getFloat(5);
-                String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + "\n";
+                touch_point_size = cursor2.getFloat(6);
+                String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
             }
             if (cursor2 != null)

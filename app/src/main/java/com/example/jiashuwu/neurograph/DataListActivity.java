@@ -37,9 +37,9 @@ public class DataListActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
 
-    private String databaseName = "information.db";
+    private String databaseName = DatabaseInformation.databaseName;
 
-    private int databaseVersion = 1;
+    private int databaseVersion = DatabaseInformation.databaseVersion;
 
     private ArrayList<Map<String, Object>> datalist;
 

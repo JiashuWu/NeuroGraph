@@ -26,8 +26,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
 
-    private String databaseName = "information.db";
-    private int databaseVersion = 1;
+    private String databaseName = DatabaseInformation.databaseName;
+    private int databaseVersion = DatabaseInformation.databaseVersion;
 
     private SQLiteDatabase database;
 
@@ -37,6 +37,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
     private float y;
     private float pressure;
     private String timestamp_of_point;
+    private Float touch_point_size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             x = cursor.getFloat(3);
             y = cursor.getFloat(4);
             pressure = cursor.getFloat(5);
-            new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + "\n";
+            touch_point_size = cursor.getFloat(6);
+            new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
             test_detail = test_detail + new_line;
         }
         if (cursor != null)

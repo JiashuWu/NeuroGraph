@@ -48,8 +48,8 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     private int user_id;
 
-    private int databaseVersion = 1;
-    private String databaseName = "information.db";
+    private int databaseVersion = DatabaseInformation.databaseVersion;
+    private String databaseName = DatabaseInformation.databaseName;
 
     private long exitTime;
 

@@ -19,8 +19,8 @@ public class outputStringGenerator {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private String databaseName = "information.db";
-    private int databaseVersion = 1;
+    private String databaseName = DatabaseInformation.databaseName;
+    private int databaseVersion = DatabaseInformation.databaseVersion;
 
     private int test_id;
     private int user_id;
@@ -39,6 +39,7 @@ public class outputStringGenerator {
     private float x;
     private float y;
     private float pressure;
+    private float touch_point_size;
 
 
     public String generate_string_from_database (Context context)
@@ -105,7 +106,8 @@ public class outputStringGenerator {
                 x = cursor.getFloat(3);
                 y = cursor.getFloat(4);
                 pressure = cursor.getFloat(5);
-                String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + "\n";
+                touch_point_size = cursor.getFloat(6);
+                String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
             }
             if (cursor2 != null)

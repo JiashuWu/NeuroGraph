@@ -70,8 +70,8 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
 
-    private int databaseVersion = 1;
-    private String databaseName = "information.db";
+    private int databaseVersion = DatabaseInformation.databaseVersion;
+    private String databaseName = DatabaseInformation.databaseName;
 
     public int test_id;
 
