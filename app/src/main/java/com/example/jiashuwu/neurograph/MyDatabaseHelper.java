@@ -25,10 +25,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public static final String CREATE_USER_TABLE = "CREATE TABLE User ("
             + "user_id INTEGER PRIMARY KEY AUTOINCREMENT, "
             + "name VARCHAR(600) NOT NULL, "
-            + "age INTEGER NOT NULL,"
-            + "gender VARCHAR(10) NOT NULL,"
-            + "education VARCHAR(100) NOT NULL,"
-            + "rating_score REAL,"
+            + "age INTEGER NOT NULL, "
+            + "gender VARCHAR(10) NOT NULL, "
+            + "education VARCHAR(100) NOT NULL, "
+            + "rating_score REAL, "
             + "current_receiving_treatment VARCHAR(100)"
             + " ) ";
 
@@ -37,23 +37,24 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public static final String CREATE_TEST_TABLE = "CREATE TABLE Test ("
             + "test_id INTEGER PRIMARY KEY AUTOINCREMENT, "
             + "user_id INTEGER REFERENCES User (user_id) ON UPDATE CASCADE ON DELETE CASCADE, "
-            + "test_starting_time TEXT NOT NULL,"
-            + "test_ending_time TEXT NOT NULL,"
-            + "test_type TEXT NOT NULL,"
-            + "image_type TEXT NOT NULL,"
+            + "test_starting_time TEXT NOT NULL, "
+            + "test_ending_time TEXT NOT NULL, "
+            + "test_type TEXT NOT NULL, "
+            + "image_type TEXT NOT NULL, "
             + "interval_duration INTEGER"
             + " ) ";
 
 
     // Date Table
-    // data_id, test_id, timestamp_of_point, x, y, pressure
+    // data_id, test_id, timestamp_of_point, x, y, pressure, touch_point_size
     public static final String CREATE_DATA_TABLE = "CREATE TABLE Data ("
             + "data_id INTEGER PRIMARY KEY AUTOINCREMENT, "
             + "test_id INTEGER REFERENCES Test (test_id) ON UPDATE CASCADE ON DELETE CASCADE, "
             + "timestamp_of_point TEXT NOT NULL, "
-            + "x REAL NOT NULL,"
-            + "y REAL NOT NULL,"
-            + "pressure REAL"
+            + "x REAL NOT NULL, "
+            + "y REAL NOT NULL, "
+            + "pressure REAL, "
+            + "touch_point_size REAL "
             + " ) ";
 
 
