@@ -353,6 +353,8 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
             Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));
             Log.d("TAG_DATA_INFO", String.valueOf(y_list.get(i)));
             Log.d("TAG_DATA_INFO", String.valueOf(pressure_list.get(i)));
+            Log.d("TAG_DATA_INFO", String.valueOf(touch_point_size_list.get(i)));
+
             database.insert("Data", null, values);
         }
 
