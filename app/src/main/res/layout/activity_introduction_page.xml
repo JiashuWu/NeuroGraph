@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.example.jiashuwu.neurograph.IntroductionPageActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLACEHOLDER"
+            android:id="@+id/introduction_page_centre_textview"
+            android:textSize="30dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/introduction_page_content_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:text="" />
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

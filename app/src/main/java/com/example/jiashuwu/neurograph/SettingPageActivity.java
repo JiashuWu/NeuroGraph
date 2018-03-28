@@ -33,6 +33,7 @@ public class SettingPageActivity extends AppCompatActivity {
 
     private Button setting_page_start_button;
     private Button setting_page_data_list_button;
+    private Button setting_page_introduction_button;
 
     private ArrayAdapter language_adapter;
     private ArrayAdapter font_adapter;
@@ -95,6 +96,7 @@ public class SettingPageActivity extends AppCompatActivity {
 
         setting_page_start_button = (Button) findViewById(R.id.setting_page_start_button);
         setting_page_data_list_button = (Button) findViewById(R.id.setting_page_data_list_button);
+        setting_page_introduction_button = (Button) findViewById(R.id.setting_page_introduction_button);
 
         final String [] language_list = getResources().getStringArray(R.array.language_array);
         language_adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, language_list);
@@ -199,6 +201,15 @@ public class SettingPageActivity extends AppCompatActivity {
 
                 // Setting page shouldn't finish at this point
                 //SettingPageActivity.this.finish();
+            }
+        });
+
+        setting_page_introduction_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingPageActivity.this, IntroductionPageActivity.class);
+                // TODO FIX
+                startActivity(intent);
             }
         });
     }
