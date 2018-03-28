@@ -59,6 +59,7 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
     public static ArrayList<Float> y_list;
     public static ArrayList<Float> pressure_list;
     public static ArrayList<String> timestamp_list;
+    public static ArrayList<Float> touch_point_size_list;
 
     private MyDatabaseHelper databaseHelper;
 
@@ -303,6 +304,7 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
         y_list = Sharing.y_list;
         pressure_list = Sharing.pressure_list;
         timestamp_list = Sharing.timestamp_list;
+        touch_point_size_list = Sharing.touch_point_size_list;
 
         //Log.d("destroy", String.valueOf(x_list.size()));
 
@@ -345,6 +347,7 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
             values.put("x", x_list.get(i));
             values.put("y", y_list.get(i));
             values.put("pressure", pressure_list.get(i));
+            values.put("touch_point_size", touch_point_size_list.get(i));
             Log.d("TAG_DATA_INFO", String.valueOf(test_id));
             Log.d("TAG_DATA_INFO", timestamp_list.get(i));
             Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));
