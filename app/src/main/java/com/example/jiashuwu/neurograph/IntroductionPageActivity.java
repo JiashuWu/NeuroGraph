@@ -15,6 +15,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_page);
 
