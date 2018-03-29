@@ -263,6 +263,7 @@
     <string name="button_done">Done</string>
     <string name="parallel_thank_you">
         "Thank you for your participation.\n""We are now calculating your test result."</string>
+    <string name="button_tutorial">Tutorial</string>
 
 
 </resources>
