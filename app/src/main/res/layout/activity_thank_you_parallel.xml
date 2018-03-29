@@ -8,16 +8,31 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" >
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/parallel_thank_you"
-            android:layout_centerInParent="true"
-            android:textSize="26dp"
-            android:id="@+id/thank_you_activity_parallel_word" />
-
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thank_you"
+                android:textSize="26dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/thank_you_activity_parallel_word" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="We are calculating your test result"
+                android:textSize="26dp"
+                android:id="@+id/thank_you_activity_parallel_word1"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/thank_you_activity_parallel_word"/>
+        </RelativeLayout>
 
     </RelativeLayout>
 
