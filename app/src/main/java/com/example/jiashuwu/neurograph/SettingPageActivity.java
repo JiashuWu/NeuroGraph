@@ -49,21 +49,23 @@ public class SettingPageActivity extends AppCompatActivity {
         Resources resource = getApplicationContext().getResources();
         Configuration configuration = resource.getConfiguration();
         DisplayMetrics displayMetrics = resource.getDisplayMetrics();
+        Locale DUTCH = new Locale("nl", "NL");
+        Locale PORTUGAL = new Locale("pt", "PT");
+        Locale RUSSIA = new Locale("ru", "RU");
+        Locale SPAIN = new Locale("es", "ES");
         switch (Sharing.language)
         {
-            case "English (EN-GB)":configuration.locale = Locale.UK;break;
-            case "Simplified Chinese (CH-ZN)":configuration.locale = Locale.CHINA;break;
-            case "Traditional Chinese (CH-TW)":configuration.locale = Locale.TAIWAN;break;
-            case "Japanese (JA-JP)":configuration.locale = Locale.JAPAN;break;
-            case "French (FR-FA)":configuration.locale = Locale.FRANCE;break;
-
-            case "English (EN_GB)":configuration.locale = Locale.UK;break;
-            case "Simplified Chinese (CH_ZN)":configuration.locale = Locale.CHINA;break;
-            case "Traditional Chinese (CH_TW)":configuration.locale = Locale.TAIWAN;break;
-            case "Japanese (JA_JP)":configuration.locale = Locale.JAPAN;break;
-            case "French (FR_FA)":configuration.locale = Locale.FRANCE;break;
-
-            default:configuration.locale = Locale.getDefault();break;
+            case "English": configuration.locale = Locale.UK;break;
+            case "Simplified Chinese": configuration.locale = Locale.CHINA;break;
+            case "Traditional Chinese": configuration.locale = Locale.TAIWAN;break;
+            case "Dutch": configuration.locale = DUTCH;break;
+            case "French": configuration.locale = Locale.FRANCE;break;
+            case "German": configuration.locale = Locale.GERMANY;break;
+            case "Italian": configuration.locale = Locale.ITALY;break;
+            case "Portuguese": configuration.locale = PORTUGAL;break;
+            case "Russian": configuration.locale = RUSSIA;break;
+            case "Spanish": configuration.locale = SPAIN;break;
+            default: configuration.locale = Locale.UK;break;
         }
         resource.updateConfiguration(configuration, displayMetrics);
         getBaseContext().getResources().updateConfiguration(configuration, null);
@@ -112,9 +114,18 @@ public class SettingPageActivity extends AppCompatActivity {
 
         switch (Sharing.language)
         {
-            case "English (EN_GB)": setting_page_language_spinner.setSelection(0); break;
-            case "Simplified Chinese (CH_ZN)": setting_page_language_spinner.setSelection(1); break;
-            case "Traditional Chinese (CH_TW)": setting_page_language_spinner.setSelection(2); break;
+            case "English": setting_page_language_spinner.setSelection(0); break;
+            case "Simplified Chinese": setting_page_language_spinner.setSelection(1); break;
+            case "Traditional Chinese": setting_page_language_spinner.setSelection(2); break;
+            case "Dutch": setting_page_language_spinner.setSelection(3);break;
+            case "French": setting_page_language_spinner.setSelection(4);break;
+            case "German": setting_page_language_spinner.setSelection(5);break;
+            case "Italian": setting_page_language_spinner.setSelection(6);break;
+            case "Japanese": setting_page_language_spinner.setSelection(7);break;
+            case "Portuguese":setting_page_language_spinner.setSelection(8);break;
+            case "Russian": setting_page_language_spinner.setSelection(9);break;
+            case "Spanish": setting_page_language_spinner.setSelection(10);break;
+            default: setting_page_language_spinner.setSelection(0);break;
         }
 
         setting_page_fontsize_spinner.setSelection(0);
@@ -124,10 +135,18 @@ public class SettingPageActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position)
                 {
-                    case 0: language = "English (EN_GB)";Sharing.language = "English (EN_GB)";break;
-                    case 1: language = "Simplified Chinese (CH_ZN)";Sharing.language = "Simplified Chinese (CH_ZN)";break;
-                    case 2: language = "Traditional Chinese (CH_TW)";Sharing.language = "Traditional Chinese (CH_TW)";break;
-                    default: language = Locale.getDefault().getLanguage();Sharing.language = Locale.getDefault().getLanguage().toString();break;
+                    case 0: language = "English";Sharing.language = "English";break;
+                    case 1: language = "Simplified Chinese";Sharing.language = "Simplified Chinese";break;
+                    case 2: language = "Traditional Chinese";Sharing.language = "Traditional Chinese";break;
+                    case 3: language = "Dutch"; Sharing.language = "Dutch";break;
+                    case 4: language = "French"; Sharing.language = "French";break;
+                    case 5: language = "German"; Sharing.language = "German";break;
+                    case 6: language = "Italian"; Sharing.language = "Italian";break;
+                    case 7: language = "Japanese"; Sharing.language = "Japanese";break;
+                    case 8: language = "Portuguese"; Sharing.language = "Portuguese";break;
+                    case 9: language = "Russian"; Sharing.language = "Russian";break;
+                    case 10: language = "Spanish";Sharing.language = "Spanish";break;
+                    default: language = "English"; Sharing.language = "English";break;
                 }
                 Log.d("language", language);
                 if (!Sharing.language.equalsIgnoreCase(initial_language))

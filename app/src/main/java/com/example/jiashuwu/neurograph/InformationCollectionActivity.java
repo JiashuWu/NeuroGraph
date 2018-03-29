@@ -3,6 +3,8 @@ package com.example.jiashuwu.neurograph;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.IDNA;
@@ -12,6 +14,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -23,6 +26,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class InformationCollectionActivity extends AppCompatActivity {
 
@@ -53,6 +58,35 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     private long exitTime;
 
+    public void initLocaleLanguage ()
+    {
+        Resources resource = getApplicationContext().getResources();
+        Configuration configuration = resource.getConfiguration();
+        DisplayMetrics displayMetrics = resource.getDisplayMetrics();
+        Locale DUTCH = new Locale("nl", "NL");
+        Locale PORTUGAL = new Locale("pt", "PT");
+        Locale RUSSIA = new Locale("ru", "RU");
+        Locale SPAIN = new Locale("es", "ES");
+        switch (Sharing.language)
+        {
+            case "English": configuration.locale = Locale.UK;break;
+            case "Simplified Chinese": configuration.locale = Locale.CHINA;break;
+            case "Traditional Chinese": configuration.locale = Locale.TAIWAN;break;
+            case "Dutch": configuration.locale = DUTCH;break;
+            case "French": configuration.locale = Locale.FRANCE;break;
+            case "German": configuration.locale = Locale.GERMANY;break;
+            case "Italian": configuration.locale = Locale.ITALY;break;
+            case "Portuguese": configuration.locale = PORTUGAL;break;
+            case "Russian": configuration.locale = RUSSIA;break;
+            case "Spanish": configuration.locale = SPAIN;break;
+            default: configuration.locale = Locale.UK;break;
+        }
+        resource.updateConfiguration(configuration, displayMetrics);
+        getBaseContext().getResources().updateConfiguration(configuration, null);
+    }
+
+
+
 
 
 
@@ -60,6 +94,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TextScaleUtils.scaleTextSize(InformationCollectionActivity.this, Sharing.isScale);
+        initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_collection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

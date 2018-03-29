@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -23,6 +25,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +35,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Locale;
 
 import javax.mail.Store;
 
@@ -65,6 +69,33 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private float y;
     private float pressure;
     private float touch_point_size;
+
+    public void initLocaleLanguage ()
+    {
+        Resources resource = getApplicationContext().getResources();
+        Configuration configuration = resource.getConfiguration();
+        DisplayMetrics displayMetrics = resource.getDisplayMetrics();
+        Locale DUTCH = new Locale("nl", "NL");
+        Locale PORTUGAL = new Locale("pt", "PT");
+        Locale RUSSIA = new Locale("ru", "RU");
+        Locale SPAIN = new Locale("es", "ES");
+        switch (Sharing.language)
+        {
+            case "English": configuration.locale = Locale.UK;break;
+            case "Simplified Chinese": configuration.locale = Locale.CHINA;break;
+            case "Traditional Chinese": configuration.locale = Locale.TAIWAN;break;
+            case "Dutch": configuration.locale = DUTCH;break;
+            case "French": configuration.locale = Locale.FRANCE;break;
+            case "German": configuration.locale = Locale.GERMANY;break;
+            case "Italian": configuration.locale = Locale.ITALY;break;
+            case "Portuguese": configuration.locale = PORTUGAL;break;
+            case "Russian": configuration.locale = RUSSIA;break;
+            case "Spanish": configuration.locale = SPAIN;break;
+            default: configuration.locale = Locale.UK;break;
+        }
+        resource.updateConfiguration(configuration, displayMetrics);
+        getBaseContext().getResources().updateConfiguration(configuration, null);
+    }
 
     private void goToSetting(){
         if (Build.VERSION.SDK_INT >= 26) {
@@ -183,6 +214,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
+
+        initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_data_file);

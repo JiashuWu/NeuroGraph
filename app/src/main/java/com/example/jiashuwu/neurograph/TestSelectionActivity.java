@@ -29,6 +29,7 @@ import android.widget.Toast;
 import junit.framework.Test;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class TestSelectionActivity extends AppCompatActivity {
 
@@ -62,6 +63,33 @@ public class TestSelectionActivity extends AppCompatActivity {
     private int painter_width = 0;
 
     private ArrayAdapter adapter;
+
+    public void initLocaleLanguage ()
+    {
+        Resources resource = getApplicationContext().getResources();
+        Configuration configuration = resource.getConfiguration();
+        DisplayMetrics displayMetrics = resource.getDisplayMetrics();
+        Locale DUTCH = new Locale("nl", "NL");
+        Locale PORTUGAL = new Locale("pt", "PT");
+        Locale RUSSIA = new Locale("ru", "RU");
+        Locale SPAIN = new Locale("es", "ES");
+        switch (Sharing.language)
+        {
+            case "English": configuration.locale = Locale.UK;break;
+            case "Simplified Chinese": configuration.locale = Locale.CHINA;break;
+            case "Traditional Chinese": configuration.locale = Locale.TAIWAN;break;
+            case "Dutch": configuration.locale = DUTCH;break;
+            case "French": configuration.locale = Locale.FRANCE;break;
+            case "German": configuration.locale = Locale.GERMANY;break;
+            case "Italian": configuration.locale = Locale.ITALY;break;
+            case "Portuguese": configuration.locale = PORTUGAL;break;
+            case "Russian": configuration.locale = RUSSIA;break;
+            case "Spanish": configuration.locale = SPAIN;break;
+            default: configuration.locale = Locale.UK;break;
+        }
+        resource.updateConfiguration(configuration, displayMetrics);
+        getBaseContext().getResources().updateConfiguration(configuration, null);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -190,6 +218,7 @@ public class TestSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TextScaleUtils.scaleTextSize(TestSelectionActivity.this, Sharing.isScale);
+        initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

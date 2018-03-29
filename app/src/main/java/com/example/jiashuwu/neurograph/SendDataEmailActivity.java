@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -27,6 +29,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -39,6 +42,7 @@ import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Locale;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
@@ -86,6 +90,33 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private float touch_point_size;
 
     private CheckBox content_checkbox;
+
+    public void initLocaleLanguage ()
+    {
+        Resources resource = getApplicationContext().getResources();
+        Configuration configuration = resource.getConfiguration();
+        DisplayMetrics displayMetrics = resource.getDisplayMetrics();
+        Locale DUTCH = new Locale("nl", "NL");
+        Locale PORTUGAL = new Locale("pt", "PT");
+        Locale RUSSIA = new Locale("ru", "RU");
+        Locale SPAIN = new Locale("es", "ES");
+        switch (Sharing.language)
+        {
+            case "English": configuration.locale = Locale.UK;break;
+            case "Simplified Chinese": configuration.locale = Locale.CHINA;break;
+            case "Traditional Chinese": configuration.locale = Locale.TAIWAN;break;
+            case "Dutch": configuration.locale = DUTCH;break;
+            case "French": configuration.locale = Locale.FRANCE;break;
+            case "German": configuration.locale = Locale.GERMANY;break;
+            case "Italian": configuration.locale = Locale.ITALY;break;
+            case "Portuguese": configuration.locale = PORTUGAL;break;
+            case "Russian": configuration.locale = RUSSIA;break;
+            case "Spanish": configuration.locale = SPAIN;break;
+            default: configuration.locale = Locale.UK;break;
+        }
+        resource.updateConfiguration(configuration, displayMetrics);
+        getBaseContext().getResources().updateConfiguration(configuration, null);
+    }
 
 
 
@@ -211,6 +242,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TextScaleUtils.scaleTextSize(SendDataEmailActivity.this, Sharing.isScale);
+        initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_data_email);
 

@@ -7,9 +7,17 @@
     <string name="chinese_simplified">Simplified Chinese (CH_ZN)</string>
     <string name="chinese_traditional">Traditional Chinese (CH_TW)</string>
     <string-array name="language_array">
-        <item>English (EN_GB)</item>
-        <item>Simplified Chinese (CH_ZN)</item>
-        <item>Traditional Chinese (CH_TW)</item>
+        <item>English</item>
+        <item>Simplified Chinese</item>
+        <item>Traditional Chinese</item>
+        <item>Dutch</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
     </string-array>
 
     <string-array name="font_array">
