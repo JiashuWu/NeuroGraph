@@ -124,6 +124,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.image_type = image_type;
                         Sharing.interval_duration = 0;
                         Sharing.painter_width = painter_width;
+                        Sharing.sharing_image = "parallel_line";
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
                     }

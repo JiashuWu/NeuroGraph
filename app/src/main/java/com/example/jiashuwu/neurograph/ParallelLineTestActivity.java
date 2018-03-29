@@ -33,7 +33,7 @@ import java.util.prefs.PreferenceChangeListener;
 public class ParallelLineTestActivity extends AppCompatActivity {
 
     private Context context;
-    private MySurfaceViewForStaticBackground viewForStaticBackground;
+    private MySurfaceViewForParallelLineTest viewForParallelLineTest;
     private Button clear_button;
     private Button finish_button;
 
@@ -89,7 +89,7 @@ public class ParallelLineTestActivity extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
-        setContentView(R.layout.activity_static_background_test);
+        setContentView(R.layout.activity_parallel_line_test);
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();
@@ -167,19 +167,19 @@ public class ParallelLineTestActivity extends AppCompatActivity {
 
         context = this;
 
-        viewForStaticBackground = (MySurfaceViewForStaticBackground) findViewById(R.id.mySurfaceViewForStaticBackground);
+        viewForParallelLineTest = (MySurfaceViewForParallelLineTest) findViewById(R.id.mySurfaceViewForParallelLineTest);
 
-        clear_button = (Button) findViewById(R.id.static_background_test_clear_button);
+        clear_button = (Button) findViewById(R.id.parallel_line_test_clear_button);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 //清除
-                viewForStaticBackground.reset();
+                viewForParallelLineTest.reset();
             }
         });
 
-        finish_button = (Button) findViewById(R.id.static_background_test_finish_button);
+        finish_button = (Button) findViewById(R.id.parallel_line_test_finish_button);
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

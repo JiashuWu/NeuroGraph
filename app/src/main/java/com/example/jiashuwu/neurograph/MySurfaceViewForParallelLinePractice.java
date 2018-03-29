@@ -134,7 +134,7 @@ public class MySurfaceViewForParallelLinePractice extends SurfaceView implements
             mpaint.setColor(Color.BLACK);
             mCanvas.drawPath(mPath, mpaint);
 
-            Display display = ((StaticBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
+            Display display = ((ParallelLinePracticeActivity)getContext()).getWindowManager().getDefaultDisplay();
             int displayWidth = display.getWidth();
             int displayHeight = display.getHeight();
             //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_dashboard_black_24dp), displayWidth, displayHeight, true),0,0,null);//top-right corner

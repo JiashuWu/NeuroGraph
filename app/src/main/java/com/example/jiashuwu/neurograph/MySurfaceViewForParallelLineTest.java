@@ -131,17 +131,13 @@ public class MySurfaceViewForParallelLineTest extends SurfaceView implements Sur
             mCanvas = mSurfaceHolder.lockCanvas();
             mCanvas.drawColor(Color.WHITE);
 
-            Display display = ((StaticBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
+            Display display = ((ParallelLineTestActivity)getContext()).getWindowManager().getDefaultDisplay();
             int displayWidth = display.getWidth();
             int displayHeight = display.getHeight();
-            if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
-            {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-            }
-            if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
-            {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-            }
+
+            Log.d("SHARING", Sharing.sharing_image);
+            Log.d("SHARING", String.valueOf(Sharing.painter_width));
+
             if (Sharing.sharing_image.equalsIgnoreCase("parallel_line"))
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
