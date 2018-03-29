@@ -95,18 +95,24 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".StoreDataFileActivity"
+            android:configChanges="locale"
             android:screenOrientation="portrait" />
         <activity
             android:name=".IntroductionPageActivity"
+            android:configChanges="locale"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ParallelLinePracticeActivity"
+            android:configChanges="locale"
             android:screenOrientation="landscape" />
-        <activity android:name=".ParallelLinePracticeResultActivity" />
+        <activity android:name=".ParallelLinePracticeResultActivity"
+            android:configChanges="locale"/>
         <activity
             android:name=".ThankYouParallelActivity"
+            android:configChanges="locale"
             android:screenOrientation="landscape" />
         <activity android:name=".ParallelLineTestActivity"
+            android:configChanges="locale"
             android:screenOrientation="landscape"></activity>
     </application>
 
