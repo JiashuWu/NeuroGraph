@@ -113,7 +113,7 @@
             android:screenOrientation="landscape" />
         <activity android:name=".ParallelLineTestActivity"
             android:configChanges="locale"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
