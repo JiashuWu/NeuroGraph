@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiashuwu.neurograph.ParallelLineTestActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <com.example.jiashuwu.neurograph.MySurfaceViewForParallelLineTest
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mySurfaceViewForParallelLineTest" />
+
+
+        <Button
+            android:id="@+id/parallel_line_test_clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/parallel_line_test_finish_button"
+            android:layout_alignLeft="@+id/parallel_line_test_finish_button"
+            android:layout_alignStart="@+id/parallel_line_test_finish_button"
+            android:text="@string/clear_button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parallel_line_test_finish_button"
+            android:text="@string/finish_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

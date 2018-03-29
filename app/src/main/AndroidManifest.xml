@@ -102,8 +102,10 @@
             android:name=".ParallelLinePracticeActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".ParallelLinePracticeResultActivity" />
-        <activity android:name=".ThankYouParallelActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".ThankYouParallelActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ParallelLineTestActivity"></activity>
     </application>
 
 </manifest>
