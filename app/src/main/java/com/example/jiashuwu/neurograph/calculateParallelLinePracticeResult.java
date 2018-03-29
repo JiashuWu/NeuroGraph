@@ -112,17 +112,17 @@ public class calculateParallelLinePracticeResult {
         Log.d("FINAL_RESULT", String.valueOf(final_result));
         String result = "";
         String result_description = "";
-        if (final_result <= 0.07)
+        if (final_result <= 0.04)
         {
             result = "Perfect";
             result_description = "The two lines you drew are perfectly parallel";
         }
-        else if (final_result <= 0.20)
+        else if (final_result <= 0.15)
         {
             result = "Good";
             result_description = "The two lines you drew are relatively parallel";
         }
-        else if (final_result <= 0.40)
+        else if (final_result <= 0.23)
         {
             result = "Acceptable";
             result_description = "The two lines you drew are parallel but not that good";
@@ -132,6 +132,13 @@ public class calculateParallelLinePracticeResult {
             result = "Bad";
             result_description = "The two lines you drew are not parallel";
         }
+        /* TODO
+        if ((y_list_line_1.get(0) - y_list_line_1.get(y_list_line_1.size()-1)) * (y_list_line_2.get(0) - y_list_line_2.size()-1) < 0)
+        {
+            result = "Crossing";
+            result_description = "The two lines you drew cross each other";
+        }
+        */
         return new String[]{result, result_description};
     }
 

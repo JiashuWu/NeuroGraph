@@ -253,5 +253,7 @@
     <string name="generate_data_file_title">Generate Data File</string>
     <string name="practice">Practice</string>
     <string name="button_done">Done</string>
+    <string name="parallel_thank_you">
+        "Thank you for your participation.\n""We are now calculating your test result."</string>
 
 </resources>

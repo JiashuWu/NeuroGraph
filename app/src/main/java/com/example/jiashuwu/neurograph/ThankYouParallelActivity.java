@@ -17,7 +17,7 @@ public class ThankYouParallelActivity extends AppCompatActivity {
         TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
         initial_isScale = Sharing.isScale;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thank_you);
+        setContentView(R.layout.activity_thank_you_parallel);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 
