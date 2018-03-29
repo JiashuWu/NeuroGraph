@@ -12,10 +12,10 @@
         android:layout_height="wrap_content">
 
 
-        <com.example.jiashuwu.neurograph.MySurfaceViewForDynamicBlankBackground
+        <com.example.jiashuwu.neurograph.MySurfaceViewForParallelLinePractice
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/mySurfaceViewForDynamicBlankBackgroundForParallelLinePractice" />
+            android:id="@+id/mySurfaceViewForParallelLinePractice" />
 
         <Button
             android:layout_width="wrap_content"

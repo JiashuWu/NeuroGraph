@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is a practice exercise. Draw two line as parallel as possible !"
+                android:text="This is a practice exercise. Please draw two line as parallel as possible !"
                 android:id="@+id/test_selection_test0_introduction"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"

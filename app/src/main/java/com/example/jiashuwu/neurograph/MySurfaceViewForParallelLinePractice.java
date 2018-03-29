@@ -1,13 +1,10 @@
 package com.example.jiashuwu.neurograph;
 
 /**
- * Created by Jiashu Wu on 18/03/2018.
+ * Created by Jiashu Wu on 29/03/2018.
  */
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -22,7 +19,8 @@ import android.view.SurfaceView;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MySurfaceViewForStaticBackground extends SurfaceView implements SurfaceHolder.Callback, Runnable
+
+public class MySurfaceViewForParallelLinePractice extends SurfaceView implements SurfaceHolder.Callback, Runnable
 {
     private SurfaceHolder mSurfaceHolder;
     private Canvas mCanvas;
@@ -66,8 +64,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
     public String second_s;
     public String millisecond_s;
 
-
-    public MySurfaceViewForStaticBackground(Context context, AttributeSet attrs)
+    public MySurfaceViewForParallelLinePractice(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         initView();
@@ -122,7 +119,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         Sharing.timestamp_list = timestamp_list;
         Sharing.touch_point_size_list = touch_point_size_list;
         startDraw = false;
-        //Log.d("destroy", "surface_destroy");
+        Log.d("destroy", "surface_destroy");
     }
 
     private void draw()
@@ -131,27 +128,16 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         {
             mCanvas = mSurfaceHolder.lockCanvas();
             mCanvas.drawColor(Color.WHITE);
-
-            Display display = ((StaticBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
-            int displayWidth = display.getWidth();
-            int displayHeight = display.getHeight();
-            if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
-            {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-            }
-            if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
-            {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-            }
-
             mpaint.setStyle(Paint.Style.STROKE);
 
             mpaint.setStrokeWidth(Sharing.painter_width);
             mpaint.setColor(Color.BLACK);
             mCanvas.drawPath(mPath, mpaint);
 
-
-
+            Display display = ((StaticBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
+            int displayWidth = display.getWidth();
+            int displayHeight = display.getHeight();
+            //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ic_dashboard_black_24dp), displayWidth, displayHeight, true),0,0,null);//top-right corner
 
         }
         catch (Exception e)
@@ -173,7 +159,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         x = (float) event.getX();
         y = (float) event.getY();
         pressure = (float) event.getPressure(event.getPointerCount() - 1);
-        touch_point_size = (float) event.getSize(event.getPointerCount() - 1);
+        touch_point_size = event.getSize(event.getPointerCount() - 1);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH) + 1;
@@ -240,14 +226,14 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
 
         //current_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
+        Log.d("TAG_DATA_0", current_time + " x = " + String.valueOf(x) + " y = " + String.valueOf(y) + " pressure = " + String.valueOf(pressure) + " size = " + String.valueOf(touch_point_size));
+
         timestamp_list.add(current_time);
         x_list.add(x);
         y_list.add(y);
         pressure_list.add(pressure);
         touch_point_size_list.add(touch_point_size);
         Log.d("destroy", String.valueOf(x_list.size()));
-        Log.d("TAG_DATA", current_time + " x = " + String.valueOf(x) + " y = " + String.valueOf(y) + " pressure = " + String.valueOf(pressure) + " size = " + String.valueOf(touch_point_size));
-
 
         switch (event.getAction())
         {
@@ -257,11 +243,22 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
                 break;
 
             case MotionEvent.ACTION_MOVE:
-
+                Log.d("TAG_DATA", "ACTION_MOVING");
                 mPath.lineTo(x, y);
                 break;
 
             case MotionEvent.ACTION_UP:
+
+                Float float_object = new Float(0.0);
+                x_list.add(float_object);
+                y_list.add(float_object);
+                pressure_list.add(float_object);
+                touch_point_size_list.add(float_object);
+                timestamp_list.add("0");
+
+                Log.d("TAG_DATA_0", "0.0" + " x = " + "0.0" + " y = " + "0.0" + " pressure = " + "0.0" + " size = " + "0.0");
+
+
                 break;
         }
         return true;
@@ -269,11 +266,11 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
 
     public void reset()
     {
+        mPath.reset();
         x_list.clear();
         y_list.clear();
         pressure_list.clear();
         touch_point_size_list.clear();
         timestamp_list.clear();
-        mPath.reset();
     }
 }

@@ -273,6 +273,11 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
 
     public void reset()
     {
+        x_list.clear();
+        y_list.clear();
+        pressure_list.clear();
+        touch_point_size_list.clear();
+        timestamp_list.clear();
         mPath.reset();
     }
 }

@@ -20,7 +20,7 @@ import java.util.Calendar;
 public class ParallelLinePracticeActivity extends AppCompatActivity {
 
     private Context context;
-    private MySurfaceViewForDynamicBlankBackground viewForDynamicBlankBackgroundForParallelLinePractice;
+    private MySurfaceViewForParallelLinePractice viewForParallelLinePractice;
     private Button clear_button;
     private Button finish_button;
 
@@ -75,6 +75,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();
 
+        user_id = 0;
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type");
 
@@ -146,7 +147,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
 
         context = this;
 
-        viewForDynamicBlankBackgroundForParallelLinePractice = (MySurfaceViewForDynamicBlankBackground) findViewById(R.id.mySurfaceViewForDynamicBlankBackgroundForParallelLinePractice);
+        viewForParallelLinePractice = (MySurfaceViewForParallelLinePractice) findViewById(R.id.mySurfaceViewForParallelLinePractice);
 
         clear_button = (Button) findViewById(R.id.parallel_line_practice_clear_button);
         clear_button.setOnClickListener(new View.OnClickListener() {
@@ -154,7 +155,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //清除
-                viewForDynamicBlankBackgroundForParallelLinePractice.reset();
+                viewForParallelLinePractice.reset();
             }
         });
 
@@ -225,7 +226,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
 
                 test_ending_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
 
-                Intent intent = new Intent(ParallelLinePracticeActivity.this, ParallelLinePracticeResultActivity.class);
+                Intent intent = new Intent(ParallelLinePracticeActivity.this, ThankYouParallelActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 startActivity(intent);
                 finish();
@@ -252,6 +253,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+
     @Override
     public void onPause()
     {
@@ -260,13 +262,15 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onStop ()
+    public void onStop()
     {
         x_list = Sharing.x_list;
         y_list = Sharing.y_list;
         pressure_list = Sharing.pressure_list;
         timestamp_list = Sharing.timestamp_list;
         touch_point_size_list = Sharing.touch_point_size_list;
+
+        Log.d("NULL_DETECTOR", String.valueOf(x_list == null));
 
         //Log.d("destroy", String.valueOf(x_list.size()));
 
@@ -338,8 +342,9 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         }
 
         super.onStop();
-        Log.d("destroy", "activity_goes_away2");
+        Log.d("destroy", "activity_goes_away1");
     }
+
 
     @Override
     public void onDestroy ()

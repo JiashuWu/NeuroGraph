@@ -95,15 +95,15 @@
         <activity
             android:name=".StoreDataFileActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".IntroductionPageActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".ParallelLinePracticeActivity"
-            android:screenOrientation="landscape"/>
-
-        <activity android:name=".ParallelLinePracticeResultActivity"></activity>
+        <activity
+            android:name=".ParallelLinePracticeActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ParallelLinePracticeResultActivity" />
+        <activity android:name=".ThankYouParallelActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
