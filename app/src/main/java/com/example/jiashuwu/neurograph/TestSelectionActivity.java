@@ -45,6 +45,7 @@ public class TestSelectionActivity extends AppCompatActivity {
     private PagerAdapter pageAdapter;
 
     private Button practice_button;
+    private Button parallel_test_button;
     private Button test1_button;
     private Button test2_button;
     private Button test3_button;
@@ -71,6 +72,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 case R.id.navigation_practice_tests:
                     viewPager.setCurrentItem(0);
                     practice_button = (Button) findViewById(R.id.test_selection_page0_test0_button);
+                    parallel_test_button = (Button) findViewById(R.id.test_selection_page0_parallel_line_test_button);
                     parallel_line_practice_width_spinner = (Spinner) findViewById(R.id.test_selection_test0_width_spinner);
                     String [] mList = getResources().getStringArray(R.array.painter_width);
                     adapter = new ArrayAdapter(TestSelectionActivity.this , android.R.layout.simple_spinner_dropdown_item, mList);
@@ -99,9 +101,21 @@ public class TestSelectionActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
                             intent.putExtra("user_id", String.valueOf(user_id));
-                            test_type = "parallel_line";
+                            test_type = "parallel_line_practice";
                             Sharing.painter_width = painter_width;
                             intent.putExtra("test_type", test_type);
+                            startActivity(intent);
+                        }
+                    });
+
+                    parallel_test_button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent (TestSelectionActivity.this, DurationSelectionActivity.class);
+                            intent.putExtra("user_id", String.valueOf(user_id));
+                            test_type = "parallel_line_test";
+                            intent.putExtra("test_type", test_type);
+                            intent.putExtra("image_type", "parallel_line");
                             startActivity(intent);
                         }
                     });
@@ -269,6 +283,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         viewPager.setAdapter(pageAdapter);
 
         practice_button = (Button) view_practice.findViewById(R.id.test_selection_page0_test0_button);
+        parallel_test_button = (Button) view_practice.findViewById(R.id.test_selection_page0_parallel_line_test_button);
         test1_button = (Button) view_static.findViewById(R.id.test_selection_page1_test1_button);
         test2_button = (Button) view_static.findViewById(R.id.test_selection_page1_test2_button);
         test3_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test3_button);
@@ -299,9 +314,21 @@ public class TestSelectionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
-                test_type = "parallel_line";
+                test_type = "parallel_line_practice";
                 Sharing.painter_width = painter_width;
                 intent.putExtra("test_type", test_type);
+                startActivity(intent);
+            }
+        });
+
+        parallel_test_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (TestSelectionActivity.this, DurationSelectionActivity.class);
+                intent.putExtra("user_id", String.valueOf(user_id));
+                test_type = "parallel_line_test";
+                intent.putExtra("test_type", test_type);
+                intent.putExtra("image_type", "parallel_line");
                 startActivity(intent);
             }
         });

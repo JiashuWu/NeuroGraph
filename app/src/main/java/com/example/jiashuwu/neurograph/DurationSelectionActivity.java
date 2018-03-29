@@ -46,7 +46,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
         test_type = getIntent().getStringExtra("test_type").toString();
         image_type = getIntent().getStringExtra("image_type").toString();
 
-        if (test_type.contains("static"))
+        if (test_type.contains("static") || test_type.contains("parallel"))
         {
             setContentView(R.layout.activity_duration_selection_without_seekbar);
 
@@ -110,6 +110,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.painter_width = painter_width;
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
+                    }
+                    else if (test_type.equalsIgnoreCase("parallel_line_test"))
+                    {
+                        // TODO
                     }
                 }
             });

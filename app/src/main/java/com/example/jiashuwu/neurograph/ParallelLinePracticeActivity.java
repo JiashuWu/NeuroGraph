@@ -79,7 +79,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type");
 
-        image_type = "parallel_line";
+        image_type = "Blank";
         interval_duration = 0;
 
         calendar = Calendar.getInstance();
