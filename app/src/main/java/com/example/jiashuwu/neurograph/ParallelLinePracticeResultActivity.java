@@ -50,9 +50,9 @@ public class ParallelLinePracticeResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(ParallelLinePracticeResultActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
+        TextScaleUtils.scaleTextSize(ParallelLinePracticeResultActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_parallel_line_practice_result);
 
         Log.d("destroy", "starting");

@@ -112,11 +112,12 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(StaticCornerBackgroundTestActivity.this, Sharing.isScale);
 
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
+
+        TextScaleUtils.scaleTextSize(StaticCornerBackgroundTestActivity.this, Sharing.isScale);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (getSupportActionBar() != null){

@@ -111,11 +111,12 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
 
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
+
+        TextScaleUtils.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (getSupportActionBar() != null){

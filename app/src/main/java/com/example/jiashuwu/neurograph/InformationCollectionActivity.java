@@ -93,9 +93,9 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(InformationCollectionActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
+        TextScaleUtils.scaleTextSize(InformationCollectionActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_information_collection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

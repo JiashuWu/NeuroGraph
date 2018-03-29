@@ -213,11 +213,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
-
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
+        TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_store_data_file);
 
         ActivityCompat.requestPermissions(StoreDataFileActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);

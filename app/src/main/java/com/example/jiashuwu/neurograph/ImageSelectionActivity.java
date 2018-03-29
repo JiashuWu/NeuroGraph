@@ -181,9 +181,9 @@ public class ImageSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
+        TextScaleUtils.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_image_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

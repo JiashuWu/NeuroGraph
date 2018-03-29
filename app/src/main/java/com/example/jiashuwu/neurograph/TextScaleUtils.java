@@ -13,6 +13,7 @@ public class TextScaleUtils {
     {
         float size;
         Configuration configuration = activity.getResources().getConfiguration();
+        configuration.setToDefaults();
         if (isScale)
         {
             size = 1.5f;

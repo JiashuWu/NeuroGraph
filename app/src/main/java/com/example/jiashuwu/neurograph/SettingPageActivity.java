@@ -73,10 +73,12 @@ public class SettingPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
         initLocaleLanguage();
+        Log.d("is_scale", String.valueOf(Sharing.isScale));
 
         super.onCreate(savedInstanceState);
+
+        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
 
         setContentView(R.layout.activity_setting_page);
 
