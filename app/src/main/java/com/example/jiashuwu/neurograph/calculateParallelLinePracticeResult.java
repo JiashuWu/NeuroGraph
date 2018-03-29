@@ -112,17 +112,17 @@ public class calculateParallelLinePracticeResult {
         Log.d("FINAL_RESULT", String.valueOf(final_result));
         String result = "";
         String result_description = "";
-        if (final_result <= 0.04)
+        if (final_result <= 0.09)
         {
             result = "Perfect";
             result_description = "The two lines you drew are perfectly parallel";
         }
-        else if (final_result <= 0.15)
+        else if (final_result <= 0.20)
         {
             result = "Good";
             result_description = "The two lines you drew are relatively parallel";
         }
-        else if (final_result <= 0.23)
+        else if (final_result <= 0.30)
         {
             result = "Acceptable";
             result_description = "The two lines you drew are parallel but not that good";
