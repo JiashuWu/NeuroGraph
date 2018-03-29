@@ -60,6 +60,27 @@
                 android:text="Practice Test"
                 android:id="@+id/test_selection_page0_test0_button" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test_selection_test0_page0_parallel_test_textview"
+                android:layout_below="@id/test_selection_page0_test0_button"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="Parallel Line Test"
+                android:textSize="26dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test_selection_page0_parallel_line_test_button"
+                android:text="@string/start_test"
+                android:layout_below="@id/test_selection_test0_page0_parallel_test_textview"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
 
         </RelativeLayout>
 
