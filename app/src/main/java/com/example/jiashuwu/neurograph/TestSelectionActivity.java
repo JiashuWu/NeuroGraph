@@ -434,6 +434,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -447,6 +448,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             else
             {
                 System.exit(0);
+                finish();
             }
             return true;
         }

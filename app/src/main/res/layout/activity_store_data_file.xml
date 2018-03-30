@@ -28,7 +28,7 @@
             android:text="@string/store_data_file_introduction_text"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="36dp"
             android:layout_below="@id/store_data_file_title_textview"
             android:id="@+id/store_data_file_introduction_textview"/>
 

@@ -266,6 +266,7 @@
     <string name="button_tutorial">Tutorial</string>
     <string name="title_activity_tutorial">TutorialActivity</string>
     <string name="button_previous">Previous</string>
+    <string name="data_output_via_email">Data output via email</string>
 
 
 </resources>
