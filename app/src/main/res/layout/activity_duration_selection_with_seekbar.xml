@@ -16,6 +16,7 @@
             android:text="@string/instruction_of_test"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
             android:id="@+id/duration_selection_page_test_instruction"/>
 
         <SeekBar

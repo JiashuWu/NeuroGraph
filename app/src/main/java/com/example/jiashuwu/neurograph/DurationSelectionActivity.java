@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
 
 import javax.xml.datatype.Duration;
@@ -29,6 +31,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
     private Button start_test_button;
     private SeekBar duration_seekbar;
     private TextView duration_progress_textview;
+    private TextView duration_test_instruction;
 
     private Spinner duration_selection_page_with_seekbar_width_spinner;
     private Spinner duration_selection_page_without_seekbar_width_spinner;
@@ -109,6 +112,24 @@ public class DurationSelectionActivity extends AppCompatActivity {
                 }
             });
 
+            duration_test_instruction = (TextView) findViewById(R.id.duration_selection_page_test_instruction);
+            if (test_type.equalsIgnoreCase("static_full_background"))
+            {
+                duration_test_instruction.setText("This is the static full background test. During the test the background will always be here. Remember to follow the background image to draw the required shape. ");
+            }
+            else if (test_type.equalsIgnoreCase("static_corner_background"))
+            {
+                duration_test_instruction.setText("This is the static corner background. The image template will always stays at the top right corner of the screen. Remember to follow the background to draw the required shape.");
+            }
+            else if (test_type.equalsIgnoreCase("parallel_practice"))
+            {
+                duration_test_instruction.setText("This is the parallel practice. You are required to draw exactly two lines on the screen, as parallel as possible. ");
+            }
+            else if (test_type.equalsIgnoreCase("parallel_test"))
+            {
+                duration_test_instruction.setText("This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines. ");
+            }
+
             start_test_button = (Button) findViewById(R.id.duration_selection_page_start_test_button);
             start_test_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -173,6 +194,17 @@ public class DurationSelectionActivity extends AppCompatActivity {
             duration_seekbar = (SeekBar) findViewById(R.id.duration_selection_seekbar);
             duration_progress_textview = (TextView) findViewById(R.id.duration_progress_textview);
             duration_progress_textview.setText("Current time interval " + duration_seekbar.getProgress() + " seconds");
+            duration_test_instruction = (TextView) findViewById(R.id.duration_selection_page_test_instruction);
+
+            if (test_type.equalsIgnoreCase("dynamic_blank_background"))
+            {
+                duration_test_instruction.setText("This is the dynamic blank background test. The background will first appear for a given time period, then disappear. You need to remember the background pattern and draw it on a blank screen. ");
+            }
+            else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
+            {
+                duration_test_instruction.setText("This is the dynamic seasonal background test. The background image will keep appearing and disappearing, with certain time interval specified. You are required to follow the background image to draw the required shape. ");
+            }
+            
             duration_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean b)
