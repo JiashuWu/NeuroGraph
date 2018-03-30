@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test3"
+                android:text="@string/blank_background_test"
                 android:id="@+id/test_selection_test3_title"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
@@ -40,13 +40,13 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test3_introduction"
-                android:text="@string/test3"
+                android:text="@string/start_test_3"
                 android:id="@+id/test_selection_page2_test3_button" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test4"
+                android:text="@string/seasonal_background_test"
                 android:id="@+id/test_selection_test4_title"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="70dp"
@@ -68,7 +68,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test4_introduction"
-                android:text="@string/test4"
+                android:text="@string/start_test_4"
                 android:id="@+id/test_selection_page2_test4_button" />
 
             <TextView

@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test1"
+                android:text="@string/full_background_test"
                 android:id="@+id/test_selection_test1_title"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
@@ -40,13 +40,13 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test1_introduction"
-                android:text="@string/test1"
+                android:text="@string/start_test_1"
                 android:id="@+id/test_selection_page1_test1_button" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test2"
+                android:text="@string/corner_background_test"
                 android:id="@+id/test_selection_test2_title"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="70dp"
@@ -69,7 +69,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test2_introduction"
-                android:text="@string/test2"
+                android:text="@string/start_test_2"
                 android:id="@+id/test_selection_page1_test2_button" />
 
             <TextView
