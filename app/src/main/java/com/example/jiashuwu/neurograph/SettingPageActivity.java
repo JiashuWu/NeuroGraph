@@ -403,6 +403,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_dynamic_test_selection);
         tutorial_text.setText("You can choose a dynamic test here.");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -430,6 +431,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_static_test_selection);
         tutorial_text.setText("You can select a static test here. ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
