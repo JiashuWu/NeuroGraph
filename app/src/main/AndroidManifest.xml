@@ -118,7 +118,6 @@
             android:name=".ParallelLineTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-        <activity android:name=".TutorialsActivity"></activity>
     </application>
 
 </manifest>
