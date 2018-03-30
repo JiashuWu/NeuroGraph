@@ -122,6 +122,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_delete_1);
         tutorial_text.setText("Here you can delete all test data, delete test data prior to a specific data, or delete all data (This will restart the app) ");
         builder.setPositiveButton("All Done", new DialogInterface.OnClickListener() {
             @Override
@@ -149,6 +150,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_file_output_page);
         tutorial_text.setText("You can also store data file into Android file system, and send it to your PC by connecting your phone via a cabel. You can copy the file path to clipboard. Easy to use! ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -176,6 +178,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_send_email_page);
         tutorial_text.setText("Want to outputting all test data? Send it via email. ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -203,6 +206,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_long_click_delete);
         tutorial_text.setText("Delete a piece of data by long clicking it. ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -230,6 +234,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_data_list);
         tutorial_text.setText("Here you can all the test data, including test ID, test type, image type, detailed coordinates and more! ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -257,6 +262,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_drawing);
         tutorial_text.setText("Draw the required shape here. You can click \"Clear\" to clear the canvas, and click \"Finish\" to finish the test");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -284,6 +290,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_width_selection);
         tutorial_text.setText("You can choose the painter width you preferred. We have thin, normal and thick width available. ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -311,6 +318,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_duration_selection);
         tutorial_text.setText("You can choose the interval duration of the test. The interval duration only applies to dynamic tests. ");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -338,6 +346,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_test_instruction);
         tutorial_text.setText("This page contains some important test instructions. Remember to read them carefully.");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
@@ -365,6 +374,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_image_selection);
         tutorial_text.setText("Here you can choose the background image of the test. We have spiral and pentagon.");
         builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
             @Override
