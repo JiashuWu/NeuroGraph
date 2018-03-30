@@ -2,6 +2,7 @@ package com.example.jiashuwu.neurograph;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -14,6 +15,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Build;
+import android.os.CancellationSignal;
+import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -30,6 +34,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -81,7 +88,128 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
     public String second_s;
     public String millisecond_s;
 
+    public static Calendar calendar11;
+    public static int year11;
+    public static int month11;
+    public static int day11;
+    public static int hour11;
+    public static int minute11;
+    public static int second11;
+    public static int millisecond11;
+    public static String month_s11;
+    public static String day_s11;
+    public static String hour_s11;
+    public static String minute_s11;
+    public static String second_s11;
+    public static String millisecond_s11;
+
+    public String user_name;
+
     private long exitTime;
+
+    public void getScreenShot (View view)
+    {
+        calendar11 = Calendar.getInstance();
+        year11 = calendar11.get(Calendar.YEAR);
+        month11 = calendar11.get(Calendar.MONTH) + 1;
+        day11 = calendar11.get(Calendar.DAY_OF_MONTH);
+        hour11 = calendar11.get(Calendar.HOUR_OF_DAY);
+        minute11 = calendar11.get(Calendar.MINUTE);
+        second11= calendar11.get(Calendar.SECOND);
+        millisecond11 = calendar11.get(Calendar.MILLISECOND);
+
+        if (String.valueOf(month11).length() == 1)
+        {
+            month_s11 = "0" + String.valueOf(month11);
+        }
+        else
+        {
+            month_s11 = String.valueOf(month11);
+        }
+        if (String.valueOf(day11).length() == 1)
+        {
+            day_s11 = "0" + String.valueOf(day11);
+        }
+        else
+        {
+            day_s11 = String.valueOf(day11);
+        }
+        if (String.valueOf(hour11).length() == 1)
+        {
+            hour_s11 = "0" + String.valueOf(hour11);
+        }
+        else
+        {
+            hour_s11 = String.valueOf(hour11);
+        }
+        if (String.valueOf(minute11).length() == 1)
+        {
+            minute_s11 = "0" + String.valueOf(minute11);
+        }
+        else
+        {
+            minute_s11 = String.valueOf(minute11);
+        }
+        if (String.valueOf(second11).length() == 1)
+        {
+            second_s11 = "0" + String.valueOf(second11);
+        }
+        else
+        {
+            second_s11 = String.valueOf(second11);
+        }
+        if (String.valueOf(millisecond11).length() == 1)
+        {
+            millisecond_s11 = "00" + String.valueOf(millisecond11);
+        }
+        else if (String.valueOf(millisecond11).length() == 2)
+        {
+            millisecond_s11 = "0" + String.valueOf(millisecond11);
+        }
+        else if (String.valueOf(millisecond11).length() == 3)
+        {
+            millisecond_s11 = String.valueOf(millisecond11);
+        }
+
+        String file_time = String.valueOf(year11) + month_s11 + day_s11 + hour_s11 + minute_s11 + second_s11 + millisecond_s11;
+
+        try
+        {
+            File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        String output_file_name = "NeurographScreenShotFile" + "_" + user_name + "_" + test_type + "_" + image_type + "_" + file_time + ".png";
+        String file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name;
+
+        try
+        {
+            Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas();
+            canvas.setBitmap(bitmap);
+            view.draw(canvas);
+            try
+            {
+                FileOutputStream fileOutputStream = new FileOutputStream(file_path);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+            }
+            catch (FileNotFoundException fnfe)
+            {
+                fnfe.printStackTrace();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 
     public void initLocaleLanguage ()
     {
@@ -139,6 +267,23 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         test_type = getIntent().getStringExtra("test_type");
         image_type = getIntent().getStringExtra("image_type");
         interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
+
+        SQLiteDatabase database11 = databaseHelper.getReadableDatabase();
+        String query11 = "SELECT name FROM User WHERE user_id = ?";
+        String [] parameter11 = new String[] {String.valueOf(user_id)};
+        Cursor cursor11 = database11.rawQuery(query11, parameter11);
+        while (cursor11.moveToNext())
+        {
+            user_name = cursor11.getString(0).toString();
+        }
+        if (cursor11 != null)
+        {
+            cursor11.close();
+        }
+        if (database11 != null)
+        {
+            database11.close();
+        }
 
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
@@ -224,6 +369,8 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // TODO IF YOU WANT A SCREENSHOT
+                // getScreenShot((View) getWindow().getDecorView());
                 year = calendar.get(Calendar.YEAR);
                 month = calendar.get(Calendar.MONTH) + 1;
                 day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -232,56 +379,36 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
                 second = calendar.get(Calendar.SECOND);
                 millisecond = calendar.get(Calendar.MILLISECOND);
 
-                if (String.valueOf(month).length() == 1)
-                {
+                if (String.valueOf(month).length() == 1) {
                     month_s = "0" + String.valueOf(month);
-                }
-                else
-                {
+                } else {
                     month_s = String.valueOf(month);
                 }
-                if (String.valueOf(day).length() == 1)
-                {
+                if (String.valueOf(day).length() == 1) {
                     day_s = "0" + String.valueOf(day);
-                }
-                else
-                {
+                } else {
                     day_s = String.valueOf(day);
                 }
-                if (String.valueOf(hour).length() == 1)
-                {
+                if (String.valueOf(hour).length() == 1) {
                     hour_s = "0" + String.valueOf(hour);
-                }
-                else
-                {
+                } else {
                     hour_s = String.valueOf(hour);
                 }
-                if (String.valueOf(minute).length() == 1)
-                {
+                if (String.valueOf(minute).length() == 1) {
                     minute_s = "0" + String.valueOf(minute);
-                }
-                else
-                {
+                } else {
                     minute_s = String.valueOf(minute);
                 }
-                if (String.valueOf(second).length() == 1)
-                {
+                if (String.valueOf(second).length() == 1) {
                     second_s = "0" + String.valueOf(second);
-                }
-                else
-                {
+                } else {
                     second_s = String.valueOf(second);
                 }
-                if (String.valueOf(millisecond).length() == 1)
-                {
+                if (String.valueOf(millisecond).length() == 1) {
                     millisecond_s = "00" + String.valueOf(millisecond);
-                }
-                else if (String.valueOf(millisecond).length() == 2)
-                {
+                } else if (String.valueOf(millisecond).length() == 2) {
                     millisecond_s = "0" + String.valueOf(millisecond);
-                }
-                else if (String.valueOf(millisecond).length() == 3)
-                {
+                } else if (String.valueOf(millisecond).length() == 3) {
                     millisecond_s = String.valueOf(millisecond);
                 }
 
@@ -289,10 +416,12 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
                 //test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
+
                 Intent intent = new Intent(StaticBackgroundTestActivity.this, ThankYouActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 startActivity(intent);
                 finish();
+
             }
         });
     }

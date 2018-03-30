@@ -438,7 +438,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     }
 
 
-                    File output_file = new File(Environment.getExternalStorageDirectory(), "/" + output_file_name);
+                    File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
                     try {
                         FileWriter fileWriter = new FileWriter(output_file);
                         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -451,7 +451,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     }
 
 
-                    File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/" + output_csv_file_name);
+                    File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
                     FileWriter fileWriter1 = new FileWriter(output_csv_file);
                     try {
                         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
@@ -471,12 +471,12 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                String file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name + "\n";
-                file_path = file_path + Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
+                String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
+                file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
                 Log.d("file_path1", file_path);
                 Sharing.file_path = file_path;
-                String txt_file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name;
-                String csv_file_path = Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
+                String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
+                String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
 
                 NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
