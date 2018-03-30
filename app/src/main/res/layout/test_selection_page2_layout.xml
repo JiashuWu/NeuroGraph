@@ -27,9 +27,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is the dynamic background (only appear once) test"
+                android:text="This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears."
                 android:id="@+id/test_selection_test3_introduction"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test3_title" />
 
@@ -55,7 +56,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is the seasonal background test"
+                android:text="This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency."
                 android:id="@+id/test_selection_test4_introduction"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"

@@ -27,9 +27,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is the static background (full screen) test"
+                android:text="This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly."
                 android:id="@+id/test_selection_test1_introduction"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test1_title" />
 
@@ -55,9 +56,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is the static background (top-right corner) test"
+                android:text="This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear. "
                 android:id="@+id/test_selection_test2_introduction"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test2_title" />
 
