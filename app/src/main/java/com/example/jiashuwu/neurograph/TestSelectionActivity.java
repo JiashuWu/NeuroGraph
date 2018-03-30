@@ -1,5 +1,6 @@
 package com.example.jiashuwu.neurograph;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -9,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
@@ -440,16 +442,37 @@ public class TestSelectionActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
+
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Press again to switch user", Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else
             {
-                System.exit(0);
-                finish();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
+                builder.setTitle("Switch User");
+                builder.setCancelable(false);
+                builder.setMessage("Want to switch user ? ");
+                builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
+                        startActivity(intent);
+                        TestSelectionActivity.this.finish();
+                    }
+                });
+                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Should do nothing here;
+                    }
+                });
+                builder.create();
+                builder.show();
             }
+
             return true;
         }
         return super.onKeyDown(keyCode, event);
