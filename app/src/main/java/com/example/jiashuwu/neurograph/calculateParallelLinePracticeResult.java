@@ -44,10 +44,12 @@ public class calculateParallelLinePracticeResult {
         boolean judge = true;
         x_list = Sharing.x_list;
         y_list = Sharing.y_list;
+        Log.d("LENGTH", String.valueOf(x_list.size()) + " " + String.valueOf(y_list.size()));
         if (x_list.size() == 0 || y_list.size() == 0)
         {
             judge = false;
         }
+        Log.d("LENGTH", String.valueOf(judge));
         if (judge) {
             Log.d("debuggggg", String.valueOf(x_list.get(1)));
             int i = 0;
@@ -69,6 +71,7 @@ public class calculateParallelLinePracticeResult {
                     break;
                 }
             }
+
             for (i = 1; i < x_list_line_1.size(); i++) {
                 slope_list_line_1.add((float) ((y_list_line_1.get(i) - y_list_line_1.get(0)) / (x_list_line_1.get(i) - x_list_line_1.get(0))));
             }
@@ -107,10 +110,10 @@ public class calculateParallelLinePracticeResult {
         }
         String result = "";
         String result_description = "";
-        if (!judge)
+
+        if (x_list_line_1.size() == 0 || x_list_line_2.size() == 0 || y_list_line_1.size() == 0 || y_list_line_2.size() == 0)
         {
-            result = "No drawing detected";
-            result_description = "No drawing detected! ";
+            judge = false;
         }
 
 
@@ -135,6 +138,11 @@ public class calculateParallelLinePracticeResult {
             result = "Bad";
             result_description = "The two lines you drew are not parallel";
         }
+        if (!judge)
+        {
+            result = "No drawing detected";
+            result_description = "No drawing detected! ";
+        }
 
         /* TODO
         if ((y_list_line_1.get(0) - y_list_line_1.get(y_list_line_1.size()-1)) * (y_list_line_2.get(0) - y_list_line_2.size()-1) < 0)
@@ -148,10 +156,12 @@ public class calculateParallelLinePracticeResult {
         // DECIDE WHETHER TWO LINES ARE CROSSING EACH OTHER
 
 
-        if (Math.min(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) <= Math.max(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) && Math.min(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1)) <= Math.max(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) && Math.min(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) <= Math.max(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) && Math.min(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) <= Math.max(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1)))
+        if (judge)
         {
-            result = "Crossing";
-            result_description = "The two lines you drew cross each other";
+            if (Math.min(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) <= Math.max(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) && Math.min(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1)) <= Math.max(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) && Math.min(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) <= Math.max(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) && Math.min(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) <= Math.max(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1))) {
+                result = "Crossing";
+                result_description = "The two lines you drew cross each other";
+            }
         }
         return new String[]{result, result_description};
     }
