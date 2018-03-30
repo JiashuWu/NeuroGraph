@@ -17,7 +17,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:text="test 1"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="12dp" />
 
@@ -28,10 +28,11 @@
             android:layout_below="@+id/list_item_test_number"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="12dp"
+            android:layout_marginRight="10dp"
             android:minLines="1"
             android:maxLines="2"
             android:text="zhangsan"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,8 +44,9 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="12dp"
             android:layout_marginBottom="12dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="12dp"
-            android:textSize="16sp"/>
+            android:textSize="16dp"/>
 
 
         <TextView
@@ -53,20 +55,22 @@
             android:id="@+id/list_item_test_type"
             android:layout_marginTop="12dp"
             android:layout_marginRight="12dp"
+            android:layout_marginLeft="10dp"
             android:text="test type"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_alignParentRight="true" />
 
         <TextView
             android:id="@+id/list_item_image_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_alignBaseline="@+id/list_item_test_time"
             android:layout_alignBottom="@+id/list_item_test_time"
             android:layout_alignRight="@+id/list_item_test_type"
             android:layout_alignEnd="@+id/list_item_test_type"
             android:text="image type"
-            android:textSize="22sp" />
+            android:textSize="16sp" />
 
 
 
