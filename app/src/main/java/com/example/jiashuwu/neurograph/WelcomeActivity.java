@@ -21,9 +21,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //TextScaleUtils.scaleTextSize(WelcomeActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        //TextScaleUtils.scaleTextSize(WelcomeActivity.this, Sharing.isScale);
 
         // get the system language
         language = Locale.getDefault().toString();
