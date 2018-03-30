@@ -241,9 +241,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(SendDataEmailActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
-        TextScaleUtils.scaleTextSize(SendDataEmailActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_send_data_email);
 
         // REQUEST PERMISSION

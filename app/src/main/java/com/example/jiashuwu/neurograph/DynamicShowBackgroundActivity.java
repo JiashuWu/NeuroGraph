@@ -58,11 +58,10 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        TextScaleUtils.scaleTextSize(DynamicShowBackgroundActivity.this, Sharing.isScale);
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
-
-        TextScaleUtils.scaleTextSize(DynamicShowBackgroundActivity.this, Sharing.isScale);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (getSupportActionBar() != null){

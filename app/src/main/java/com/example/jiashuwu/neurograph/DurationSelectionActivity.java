@@ -71,11 +71,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        TextScaleUtils.scaleTextSize(DurationSelectionActivity.this, Sharing.isScale);
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
-
-        TextScaleUtils.scaleTextSize(DurationSelectionActivity.this, Sharing.isScale);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type").toString();

@@ -46,10 +46,10 @@ public class ThankYouActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(ThankYouActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;
-        TextScaleUtils.scaleTextSize(ThankYouActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_thank_you);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());

@@ -1,22 +1,27 @@
 package com.example.jiashuwu.neurograph;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -34,6 +39,7 @@ public class SettingPageActivity extends AppCompatActivity {
     private Button setting_page_start_button;
     private Button setting_page_data_list_button;
     private Button setting_page_introduction_button;
+    private Button setting_page_tutorial_button;
 
     private ArrayAdapter language_adapter;
     private ArrayAdapter font_adapter;
@@ -43,6 +49,9 @@ public class SettingPageActivity extends AppCompatActivity {
     private String initial_language;
 
     private long exitTime;
+
+    private ImageView tutorial_image;
+    private TextView tutorial_text;
 
     public void initLocaleLanguage ()
     {
@@ -71,14 +80,19 @@ public class SettingPageActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
         initLocaleLanguage();
         Log.d("is_scale", String.valueOf(Sharing.isScale));
 
         super.onCreate(savedInstanceState);
-
-        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
 
         setContentView(R.layout.activity_setting_page);
 
@@ -101,6 +115,7 @@ public class SettingPageActivity extends AppCompatActivity {
         setting_page_start_button = (Button) findViewById(R.id.setting_page_start_button);
         setting_page_data_list_button = (Button) findViewById(R.id.setting_page_data_list_button);
         setting_page_introduction_button = (Button) findViewById(R.id.setting_page_introduction_button);
+        setting_page_tutorial_button = (Button) findViewById(R.id.setting_page_tutorial_button);
 
         final String [] language_list = getResources().getStringArray(R.array.language_array);
         language_adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, language_list);
@@ -233,6 +248,17 @@ public class SettingPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        setting_page_tutorial_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
+
     }
 
     @Override

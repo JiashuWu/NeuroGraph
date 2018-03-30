@@ -46,10 +46,10 @@ public class ThankYouParallelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;
-        TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_thank_you_parallel);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());

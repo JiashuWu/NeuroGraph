@@ -217,9 +217,9 @@ public class TestSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TextScaleUtils.scaleTextSize(TestSelectionActivity.this, Sharing.isScale);
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
-        TextScaleUtils.scaleTextSize(TestSelectionActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_test_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

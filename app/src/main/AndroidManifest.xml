@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".WelcomeActivity"
             android:configChanges="locale|fontScale"
@@ -28,120 +27,98 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SettingPageActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".InformationCollectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_information_collection"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".TestSelectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_test_selection"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ImageSelectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_image_selection"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".DurationSelectionActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".StaticBackgroundTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".StaticCornerBackgroundTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".DynamicBlankBackgroundTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".DynamicShowBackgroundActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".ThankYouActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".DynamicSeasonalBackgroundTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".DataListActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_data_list"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_test_detail_scrolling"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".TransferActivity"
             android:configChanges="locale|fontScale" />
-
         <activity
             android:name=".SendDataEmailActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".StoreDataFileActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".IntroductionPageActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ParallelLinePracticeActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".ParallelLinePracticeResultActivity"
             android:configChanges="locale|fontScale" />
-
         <activity
             android:name=".ThankYouParallelActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".ParallelLineTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-
     </application>
 
 </manifest>

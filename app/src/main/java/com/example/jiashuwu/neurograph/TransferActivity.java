@@ -43,7 +43,6 @@ public class TransferActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //TextScaleUtils.scaleTextSize(TransferActivity.this, Sharing.isScale);
         super.onCreate(savedInstanceState);
-        TextScaleUtils.scaleTextSize(TransferActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_transfer);
         Log.d("transferring","transferring");
         Intent intent = new Intent(TransferActivity.this, SettingPageActivity.class);
