@@ -26,7 +26,7 @@ public class TextScaleUtils {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         metrics.scaledDensity = configuration.fontScale * metrics.density;
-        activity.getBaseContext().getResources().updateConfiguration(configuration, metrics);
+        activity.getApplicationContext().getResources().updateConfiguration(configuration, metrics);
 
     }
 }
