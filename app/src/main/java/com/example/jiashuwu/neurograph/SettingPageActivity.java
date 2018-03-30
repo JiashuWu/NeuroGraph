@@ -382,6 +382,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.show();
     }
 
+
     public void showAppTutorialDynamicTestSelection ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
