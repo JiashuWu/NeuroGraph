@@ -2,6 +2,7 @@ package com.example.jiashuwu.neurograph;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -47,7 +48,14 @@ public class IntroductionPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_page);

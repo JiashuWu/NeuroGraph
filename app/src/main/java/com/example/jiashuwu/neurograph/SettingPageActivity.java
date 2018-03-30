@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -644,7 +645,14 @@ public class SettingPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
         Log.d("is_scale", String.valueOf(Sharing.isScale));
 

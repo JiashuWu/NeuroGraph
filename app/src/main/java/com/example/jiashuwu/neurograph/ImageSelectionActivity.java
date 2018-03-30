@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -182,8 +183,15 @@ public class ImageSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         initLocaleLanguage();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
+        }
         super.onCreate(savedInstanceState);
-        TextScaleUtils.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
         setContentView(R.layout.activity_image_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

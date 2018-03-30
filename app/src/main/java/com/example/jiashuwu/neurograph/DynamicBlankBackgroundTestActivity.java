@@ -13,6 +13,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -112,7 +113,14 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        TextScaleUtils.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);

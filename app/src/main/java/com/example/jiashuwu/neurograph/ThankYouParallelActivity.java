@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,7 +47,14 @@ public class ThankYouParallelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;

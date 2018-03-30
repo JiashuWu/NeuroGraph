@@ -213,7 +213,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);

@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -50,7 +51,14 @@ public class ParallelLinePracticeResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextScaleUtils.scaleTextSize(ParallelLinePracticeResultActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(ParallelLinePracticeResultActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(ParallelLinePracticeResultActivity.this, Sharing.isScale);
+        }
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parallel_line_practice_result);
