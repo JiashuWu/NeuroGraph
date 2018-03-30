@@ -265,6 +265,7 @@
         "Thank you for your participation.\n""We are now calculating your test result."</string>
     <string name="button_tutorial">Tutorial</string>
     <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="button_previous">Previous</string>
 
 
 </resources>

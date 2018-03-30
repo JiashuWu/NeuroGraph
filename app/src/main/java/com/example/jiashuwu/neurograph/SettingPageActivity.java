@@ -252,7 +252,8 @@ public class SettingPageActivity extends AppCompatActivity {
         setting_page_tutorial_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (SettingPageActivity.this, TutorialsActivity.class);
+                startActivity (intent);
             }
         });
 

@@ -6,5 +6,58 @@
     android:layout_height="match_parent"
     tools:context="com.example.jiashuwu.neurograph.TutorialsActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/tutorial_title"
+            android:textSize="26dp"
+            android:text="TUTORIAL TITLE"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="480dp"
+            android:layout_height="320dp"
+            android:src="@drawable/screen1"
+            android:layout_below="@+id/tutorial_title"
+            android:id="@+id/tutorial_image"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tutorial_description"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/tutorial_image"
+            android:text="DESCRIPTION PLACEHOLDER" />
+
+        <Button
+            android:id="@+id/tutorial_button_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tutorial_description"
+            android:layout_alignStart="@+id/tutorial_description"
+            android:layout_below="@+id/tutorial_description"
+            android:text="@string/button_previous" />
+
+        <Button
+            android:id="@+id/tutorial_button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tutorial_description"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_toEndOf="@+id/tutorial_description"
+            android:layout_toRightOf="@+id/tutorial_description"
+            android:text="@string/next" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
