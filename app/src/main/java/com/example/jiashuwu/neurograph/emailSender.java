@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Properties;
 
@@ -45,6 +46,21 @@ import static android.content.Context.MODE_PRIVATE;
  */
 
 public class emailSender{
+
+    public static Calendar calendar;
+    public static int year;
+    public static int month;
+    public static int day;
+    public static int hour;
+    public static int minute;
+    public static int second;
+    public static int millisecond;
+    public static String month_s;
+    public static String day_s;
+    public static String hour_s;
+    public static String minute_s;
+    public static String second_s;
+    public static String millisecond_s;
 
     public static void sendMessage(String smtpHost, String from, String fromUserPassword, String to, String subject, String messageContent) throws MessagingException
     {
@@ -105,7 +121,75 @@ public class emailSender{
             messageContent = messageContent + signature;
             message.setText(messageContent);
 
-            String output_file_name = "NeurographOutputDataFile.txt";
+            calendar = Calendar.getInstance();
+            year = calendar.get(Calendar.YEAR);
+            month = calendar.get(Calendar.MONTH) + 1;
+            day = calendar.get(Calendar.DAY_OF_MONTH);
+            hour = calendar.get(Calendar.HOUR_OF_DAY);
+            minute = calendar.get(Calendar.MINUTE);
+            second = calendar.get(Calendar.SECOND);
+            millisecond = calendar.get(Calendar.MILLISECOND);
+
+            if (String.valueOf(month).length() == 1)
+            {
+                month_s = "0" + String.valueOf(month);
+            }
+            else
+            {
+                month_s = String.valueOf(month);
+            }
+            if (String.valueOf(day).length() == 1)
+            {
+                day_s = "0" + String.valueOf(day);
+            }
+            else
+            {
+                day_s = String.valueOf(day);
+            }
+            if (String.valueOf(hour).length() == 1)
+            {
+                hour_s = "0" + String.valueOf(hour);
+            }
+            else
+            {
+                hour_s = String.valueOf(hour);
+            }
+            if (String.valueOf(minute).length() == 1)
+            {
+                minute_s = "0" + String.valueOf(minute);
+            }
+            else
+            {
+                minute_s = String.valueOf(minute);
+            }
+            if (String.valueOf(second).length() == 1)
+            {
+                second_s = "0" + String.valueOf(second);
+            }
+            else
+            {
+                second_s = String.valueOf(second);
+            }
+            if (String.valueOf(millisecond).length() == 1)
+            {
+                millisecond_s = "00" + String.valueOf(millisecond);
+            }
+            else if (String.valueOf(millisecond).length() == 2)
+            {
+                millisecond_s = "0" + String.valueOf(millisecond);
+            }
+            else if (String.valueOf(millisecond).length() == 3)
+            {
+                millisecond_s = String.valueOf(millisecond);
+            }
+
+            String file_time = String.valueOf(year) +  month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
+
+
+            // TRYING TO CREATE A TXT FILE AND A CSV FILE;
+            String output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
+            String output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
+            // Sharing.file_version = Sharing.file_version + 1;
 
             File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
             if (!file.exists())
@@ -114,7 +198,7 @@ public class emailSender{
             }
 
 
-            File output_file = new File(Environment.getExternalStorageDirectory(), "/" + "NeurographDataOutput.txt");
+            File output_file = new File(Environment.getExternalStorageDirectory(), "/" + output_file_name);
             FileWriter fileWriter = new FileWriter(output_file);
             try
             {
@@ -131,9 +215,33 @@ public class emailSender{
                 e.printStackTrace();
             }
 
-            String file_path = Environment.getExternalStorageDirectory() + "/" + "NeurographDataOutput.txt";
+            File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/" + output_csv_file_name);
+            FileWriter fileWriter1 = new FileWriter(output_csv_file);
+            try
+            {
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
+                int i = 0;
+                for (i = 0 ; i < Sharing.csv_string_arraylist.size() ; i++)
+                {
+                    bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                }
+                bufferedWriter.close();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+            String file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name + "\n";
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
             Log.d("file_path1", file_path);
             Sharing.file_path = file_path;
+            String txt_file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name;
+            String csv_file_path = Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
 
             Multipart multipart = new MimeMultipart();
 
@@ -142,9 +250,14 @@ public class emailSender{
 
 
             MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-            javax.activation.DataSource source = new FileDataSource(file_path);
+            javax.activation.DataSource source = new FileDataSource(txt_file_path);
             attachmentBodyPart.setDataHandler(new DataHandler(source));
-            attachmentBodyPart.setFileName("NeurographOutputDataFile.txt");
+            attachmentBodyPart.setFileName(output_file_name);
+
+            MimeBodyPart attachmentBodyPart1 = new MimeBodyPart();
+            javax.activation.DataSource source1 = new FileDataSource(csv_file_path);
+            attachmentBodyPart1.setDataHandler(new DataHandler(source1));
+            attachmentBodyPart1.setFileName(output_csv_file_name);
 
             MimeBodyPart textBodyPart = new MimeBodyPart();
 
@@ -161,6 +274,7 @@ public class emailSender{
 
             multipart.addBodyPart(textBodyPart);
             multipart.addBodyPart(attachmentBodyPart);
+            multipart.addBodyPart(attachmentBodyPart1);
 
             message.setContent(multipart);
 

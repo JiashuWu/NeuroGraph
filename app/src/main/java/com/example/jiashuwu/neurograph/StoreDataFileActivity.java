@@ -35,6 +35,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Locale;
 
 import javax.mail.Store;
@@ -69,6 +71,23 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private float y;
     private float pressure;
     private float touch_point_size;
+
+    public static Calendar calendar;
+    public static int year;
+    public static int month;
+    public static int day;
+    public static int hour;
+    public static int minute;
+    public static int second;
+    public static int millisecond;
+    public static String month_s;
+    public static String day_s;
+    public static String hour_s;
+    public static String minute_s;
+    public static String second_s;
+    public static String millisecond_s;
+
+    private ArrayList<String> output_csv_strings;
 
     public void initLocaleLanguage ()
     {
@@ -126,6 +145,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
         String output_string = "";
 
+        String time_year;
+        String time_month;
+        String time_day;
+        String time_hour;
+        String time_minute;
+        String time_second;
+        String time_millisecond = "";
+
         String query = "SELECT * FROM Test";
         String query1 = "";
         String query2 = "";
@@ -137,6 +164,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         Cursor cursor = database.rawQuery(query, new String[] {});
         Cursor cursor1;
         Cursor cursor2;
+        output_csv_strings = new ArrayList<>();
         while (cursor.moveToNext())
         {
             test_id = cursor.getInt(0);
@@ -163,18 +191,31 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 cursor1.close();
             }
             output_string = output_string + "test_id = " + String.valueOf(test_id) + "\n";
+            output_csv_strings.add("test_id = " + String.valueOf(test_id) + "\n");
             output_string = output_string + "user_id = " + String.valueOf(user_id) + "\n";
+            output_csv_strings.add("user_id = " + String.valueOf(user_id) + "\n");
             output_string = output_string + "test_starting_time = " + test_starting_time + "\n";
+            output_csv_strings.add("test_starting_time = " + test_starting_time + "\n");
             output_string = output_string + "test_ending_time = " + test_ending_time + "\n";
+            output_csv_strings.add("test_ending_time = " + test_ending_time + "\n");
             output_string = output_string + "test_type = " + test_type + "\n";
+            output_csv_strings.add("test_type = " + test_type + "\n");
             output_string = output_string + "image_type = " + image_type + "\n";
+            output_csv_strings.add("image_type = " + image_type + "\n");
             output_string = output_string + "interval duration = " + String.valueOf(interval_duration) + "\n";
+            output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
             output_string = output_string + "user name = " + name + "\n";
+            output_csv_strings.add("user name = " + name + "\n");
             output_string = output_string + "age = " + String.valueOf(age) + "\n";
+            output_csv_strings.add("age = " + String.valueOf(age) + "\n");
             output_string = output_string + "gender = " + gender + "\n";
+            output_csv_strings.add("gender = " + gender + "\n");
             output_string = output_string + "education = " + education + "\n";
+            output_csv_strings.add("education = " + education + "\n");
             output_string = output_string + "rating score = " + String.valueOf(rating_score) + "\n";
+            output_csv_strings.add("rating score = " + String.valueOf(rating_score) + "\n");
             output_string = output_string + "current receive treatment = " + current_receive_treatment + "\n";
+            output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
@@ -187,7 +228,69 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 touch_point_size = cursor2.getFloat(6);
                 String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
+
+                time_year = timestamp_of_point.split(" ")[0].split("-")[0];
+                time_month = timestamp_of_point.split(" ")[0].split("-")[1];
+                time_day = timestamp_of_point.split(" ")[0].split("-")[2];
+                Log.d("testingsss", timestamp_of_point.split(" ")[1].split(":")[0]);
+                time_hour = timestamp_of_point.split(" ")[1].split(":")[0];
+                time_minute = timestamp_of_point.split(" ")[1].split(":")[1];
+                time_second = timestamp_of_point.split(" ")[1].split(":")[2];
+                Log.d("testingggg", String.valueOf(time_second.contains(".")));
+                int k = 0;
+                int count = 0;
+                time_millisecond = "";
+                for (k = 0 ; k < time_second.length() ; k++)
+                {
+                    if (count == 1)
+                    {
+                        time_millisecond = time_millisecond + time_second.charAt(k);
+                    }
+                    if (time_second.charAt(k) == '.')
+                    {
+                        count = 1;
+                    }
+                }
+                String new_time_second = "";
+                k = 0;
+                count = 0;
+                for (k = 0 ; k < time_second.length() ; k++)
+                {
+                    if (time_second.charAt(k) != '.')
+                    {
+                        new_time_second = new_time_second + time_second.charAt(k);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                /*
+                if (new_time_second.length() == 1)
+                {
+                    new_time_second = "0" + new_time_second;
+                }
+                if (time_millisecond.length() == 1)
+                {
+                    time_millisecond = "00" + time_millisecond;
+                }
+                else if (time_millisecond.length() == 2)
+                {
+                    time_millisecond = "0" + time_millisecond;
+                }
+                if (time_month.length() == 1)
+                {
+                    time_month = "0" + time_month;
+                }
+                if (time_minute.length() == 1)
+                {
+                    time_minute = "0" + time_minute;
+                }
+                */
+                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "\n";
+                output_csv_strings.add(new_csv_line);
             }
+
             if (cursor2 != null)
             {
                 cursor2.close();
@@ -199,6 +302,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         {
             cursor.close();
         }
+        Sharing.csv_string_arraylist = output_csv_strings;
 
         return output_string;
     }
@@ -258,35 +362,121 @@ public class StoreDataFileActivity extends AppCompatActivity {
         button_generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String output_file_name = "NeurographOutputDataFile.txt";
 
-                File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
-                if (!file.exists())
+                calendar = Calendar.getInstance();
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH) + 1;
+                day = calendar.get(Calendar.DAY_OF_MONTH);
+                hour = calendar.get(Calendar.HOUR_OF_DAY);
+                minute = calendar.get(Calendar.MINUTE);
+                second = calendar.get(Calendar.SECOND);
+                millisecond = calendar.get(Calendar.MILLISECOND);
+
+                if (String.valueOf(month).length() == 1)
                 {
-                    file.mkdirs();
+                    month_s = "0" + String.valueOf(month);
+                }
+                else
+                {
+                    month_s = String.valueOf(month);
+                }
+                if (String.valueOf(day).length() == 1)
+                {
+                    day_s = "0" + String.valueOf(day);
+                }
+                else
+                {
+                    day_s = String.valueOf(day);
+                }
+                if (String.valueOf(hour).length() == 1)
+                {
+                    hour_s = "0" + String.valueOf(hour);
+                }
+                else
+                {
+                    hour_s = String.valueOf(hour);
+                }
+                if (String.valueOf(minute).length() == 1)
+                {
+                    minute_s = "0" + String.valueOf(minute);
+                }
+                else
+                {
+                    minute_s = String.valueOf(minute);
+                }
+                if (String.valueOf(second).length() == 1)
+                {
+                    second_s = "0" + String.valueOf(second);
+                }
+                else
+                {
+                    second_s = String.valueOf(second);
+                }
+                if (String.valueOf(millisecond).length() == 1)
+                {
+                    millisecond_s = "00" + String.valueOf(millisecond);
+                }
+                else if (String.valueOf(millisecond).length() == 2)
+                {
+                    millisecond_s = "0" + String.valueOf(millisecond);
+                }
+                else if (String.valueOf(millisecond).length() == 3)
+                {
+                    millisecond_s = String.valueOf(millisecond);
                 }
 
+                String file_time = String.valueOf(year) + month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
 
-                File output_file = new File(Environment.getExternalStorageDirectory(), "/" + "NeurographDataOutput.txt");
-                try
-                {
-                    FileWriter fileWriter = new FileWriter(output_file);
-                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                    bufferedWriter.write(generate_string_from_database());
-                    bufferedWriter.close();
-                }
-                catch (IOException ioe)
-                {
-                    ioe.printStackTrace();
+                String output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
+                String output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
+
+                try {
+
+                    File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
+                    if (!file.exists()) {
+                        file.mkdirs();
+                    }
+
+
+                    File output_file = new File(Environment.getExternalStorageDirectory(), "/" + output_file_name);
+                    try {
+                        FileWriter fileWriter = new FileWriter(output_file);
+                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                        bufferedWriter.write(generate_string_from_database());
+                        bufferedWriter.close();
+                    } catch (IOException ioe) {
+                        ioe.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+                    File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/" + output_csv_file_name);
+                    FileWriter fileWriter1 = new FileWriter(output_csv_file);
+                    try {
+                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
+                        int i = 0;
+                        for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
+                            bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                        }
+                        bufferedWriter.close();
+                    } catch (IOException ioe) {
+                        ioe.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
                 catch (Exception e)
                 {
                     e.printStackTrace();
                 }
 
-                String file_path = Environment.getExternalStorageDirectory() + "/" + "NeurographDataOutput.txt";
+                String file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name + "\n";
+                file_path = file_path + Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
                 Log.d("file_path1", file_path);
                 Sharing.file_path = file_path;
+                String txt_file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name;
+                String csv_file_path = Environment.getExternalStorageDirectory() + "/" + output_csv_file_name;
 
                 NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)

@@ -21,6 +21,7 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
+import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
@@ -39,9 +40,11 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Locale;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
@@ -89,6 +92,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private float pressure;
     private float touch_point_size;
 
+    private ArrayList<String> output_csv_strings;
+    private ArrayList<String> output_string;
+
     private CheckBox content_checkbox;
 
     public void initLocaleLanguage ()
@@ -122,6 +128,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     // GENERATE STRING FROM THE DATABASE
 
+
     public String generate_string_from_database ()
     {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -130,6 +137,14 @@ public class SendDataEmailActivity extends AppCompatActivity {
         database = databaseHelper.getReadableDatabase();
 
         String output_string = "";
+
+        String time_year;
+        String time_month;
+        String time_day;
+        String time_hour;
+        String time_minute;
+        String time_second;
+        String time_millisecond = "";
 
         String query = "SELECT * FROM Test";
         String query1 = "";
@@ -142,6 +157,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         Cursor cursor = database.rawQuery(query, new String[] {});
         Cursor cursor1;
         Cursor cursor2;
+        output_csv_strings = new ArrayList<>();
         while (cursor.moveToNext())
         {
             test_id = cursor.getInt(0);
@@ -168,18 +184,31 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 cursor1.close();
             }
             output_string = output_string + "test_id = " + String.valueOf(test_id) + "\n";
+            output_csv_strings.add("test_id = " + String.valueOf(test_id) + "\n");
             output_string = output_string + "user_id = " + String.valueOf(user_id) + "\n";
+            output_csv_strings.add("user_id = " + String.valueOf(user_id) + "\n");
             output_string = output_string + "test_starting_time = " + test_starting_time + "\n";
+            output_csv_strings.add("test_starting_time = " + test_starting_time + "\n");
             output_string = output_string + "test_ending_time = " + test_ending_time + "\n";
+            output_csv_strings.add("test_ending_time = " + test_ending_time + "\n");
             output_string = output_string + "test_type = " + test_type + "\n";
+            output_csv_strings.add("test_type = " + test_type + "\n");
             output_string = output_string + "image_type = " + image_type + "\n";
+            output_csv_strings.add("image_type = " + image_type + "\n");
             output_string = output_string + "interval duration = " + String.valueOf(interval_duration) + "\n";
+            output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
             output_string = output_string + "user name = " + name + "\n";
+            output_csv_strings.add("user name = " + name + "\n");
             output_string = output_string + "age = " + String.valueOf(age) + "\n";
+            output_csv_strings.add("age = " + String.valueOf(age) + "\n");
             output_string = output_string + "gender = " + gender + "\n";
+            output_csv_strings.add("gender = " + gender + "\n");
             output_string = output_string + "education = " + education + "\n";
+            output_csv_strings.add("education = " + education + "\n");
             output_string = output_string + "rating score = " + String.valueOf(rating_score) + "\n";
+            output_csv_strings.add("rating score = " + String.valueOf(rating_score) + "\n");
             output_string = output_string + "current receive treatment = " + current_receive_treatment + "\n";
+            output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
@@ -192,7 +221,69 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 touch_point_size = cursor2.getFloat(6);
                 String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
+
+                time_year = timestamp_of_point.split(" ")[0].split("-")[0];
+                time_month = timestamp_of_point.split(" ")[0].split("-")[1];
+                time_day = timestamp_of_point.split(" ")[0].split("-")[2];
+                Log.d("testingsss", timestamp_of_point.split(" ")[1].split(":")[0]);
+                time_hour = timestamp_of_point.split(" ")[1].split(":")[0];
+                time_minute = timestamp_of_point.split(" ")[1].split(":")[1];
+                time_second = timestamp_of_point.split(" ")[1].split(":")[2];
+                Log.d("testingggg", String.valueOf(time_second.contains(".")));
+                int k = 0;
+                int count = 0;
+                time_millisecond = "";
+                for (k = 0 ; k < time_second.length() ; k++)
+                {
+                    if (count == 1)
+                    {
+                        time_millisecond = time_millisecond + time_second.charAt(k);
+                    }
+                    if (time_second.charAt(k) == '.')
+                    {
+                        count = 1;
+                    }
+                }
+                String new_time_second = "";
+                k = 0;
+                count = 0;
+                for (k = 0 ; k < time_second.length() ; k++)
+                {
+                    if (time_second.charAt(k) != '.')
+                    {
+                        new_time_second = new_time_second + time_second.charAt(k);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                /*
+                if (new_time_second.length() == 1)
+                {
+                    new_time_second = "0" + new_time_second;
+                }
+                if (time_millisecond.length() == 1)
+                {
+                    time_millisecond = "00" + time_millisecond;
+                }
+                else if (time_millisecond.length() == 2)
+                {
+                    time_millisecond = "0" + time_millisecond;
+                }
+                if (time_month.length() == 1)
+                {
+                    time_month = "0" + time_month;
+                }
+                if (time_minute.length() == 1)
+                {
+                    time_minute = "0" + time_minute;
+                }
+                */
+                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "\n";
+                output_csv_strings.add(new_csv_line);
             }
+
             if (cursor2 != null)
             {
                 cursor2.close();
@@ -204,6 +295,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         {
             cursor.close();
         }
+        Sharing.csv_string_arraylist = output_csv_strings;
 
         return output_string;
     }
@@ -444,6 +536,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                 try
                                 {
                                     String content = generate_string_from_database();
+                                    //output_csv_strings = generate_csv_string_from_database();
+                                    //Sharing.csv_string_arraylist = output_csv_strings;
 
                                     emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
                                     NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);

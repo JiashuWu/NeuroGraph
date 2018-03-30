@@ -35,6 +35,10 @@ public class Sharing {
 
     public static String language = "";
 
+    public static int file_version = 1;
+
+    public static ArrayList<String> csv_string_arraylist;
+
     public Sharing()
     {
 
