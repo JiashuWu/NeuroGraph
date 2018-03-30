@@ -72,6 +72,12 @@
                 android:text="@string/test2"
                 android:id="@+id/test_selection_page1_test2_button" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_below="@id/test_selection_page1_test2_button" />
+
 
 
         </RelativeLayout>
