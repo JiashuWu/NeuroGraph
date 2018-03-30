@@ -161,4 +161,28 @@ public class IntroductionPageActivity extends AppCompatActivity {
 
 
     }
+
+
+    /*
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            if ((System.currentTimeMillis() - exitTime) > 2000)
+            {
+                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            }
+            else
+            {
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+     */
 }
