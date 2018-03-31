@@ -48,6 +48,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
     private MySurfaceViewForStaticBackground viewForStaticBackground;
     private Button clear_button;
     private Button finish_button;
+    private Button capture_button;
 
     public int user_id;
     public String test_type;
@@ -107,7 +108,8 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
     private long exitTime;
 
-    public void getScreenShot (View view)
+
+    public void getScreenShot ()
     {
         calendar11 = Calendar.getInstance();
         year11 = calendar11.get(Calendar.YEAR);
@@ -186,14 +188,14 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         }
 
         String output_file_name = "NeurographScreenShotFile" + "_" + user_name + "_" + test_type + "_" + image_type + "_" + file_time + ".png";
-        String file_path = Environment.getExternalStorageDirectory() + "/" + output_file_name;
+        String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
 
         try
         {
-            Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas();
-            canvas.setBitmap(bitmap);
-            view.draw(canvas);
+            View view = getWindow().getDecorView().getRootView();
+            view.setDrawingCacheEnabled(true);
+            Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
+            view.setDrawingCacheEnabled(false);
             try
             {
                 FileOutputStream fileOutputStream = new FileOutputStream(file_path);
@@ -210,6 +212,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         }
 
     }
+
 
     public void initLocaleLanguage ()
     {
@@ -268,6 +271,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         image_type = getIntent().getStringExtra("image_type");
         interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
 
+        /*
         SQLiteDatabase database11 = databaseHelper.getReadableDatabase();
         String query11 = "SELECT name FROM User WHERE user_id = ?";
         String [] parameter11 = new String[] {String.valueOf(user_id)};
@@ -284,6 +288,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         {
             database11.close();
         }
+        */
 
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
@@ -364,6 +369,17 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
                 viewForStaticBackground.reset();
             }
         });
+
+        /*
+        capture_button = (Button) findViewById(R.id.static_background_test_capture_button);
+        capture_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO IF YOU WANT A SCREENSHOT
+                getScreenShot();
+            }
+        });
+        */
 
         finish_button = (Button) findViewById(R.id.static_background_test_finish_button);
         finish_button.setOnClickListener(new View.OnClickListener() {

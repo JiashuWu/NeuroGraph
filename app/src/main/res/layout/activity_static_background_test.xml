@@ -18,6 +18,17 @@
             android:layout_height="match_parent"
             android:id="@+id/mySurfaceViewForStaticBackground" />
 
+        <!--
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/static_background_test_capture_button"
+            android:layout_above="@id/static_background_test_clear_button"
+            android:layout_alignLeft="@id/static_background_test_clear_button"
+            android:layout_alignStart="@id/static_background_test_clear_button"
+            android:text="@string/button_capture"/>
+            -->
+
 
         <Button
             android:id="@+id/static_background_test_clear_button"
