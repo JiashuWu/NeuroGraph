@@ -90,7 +90,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         // ANIMATION NUMBER 3
-                        introduction_textview.setText("Welcome to Neurograph");
+                        introduction_textview.setText(getResources().getString(R.string.welcome_to_neurograph));
                         AlphaAnimation alphaAnimation2 = new AlphaAnimation(0.0f, 3.0f);
                         alphaAnimation2.setDuration(3000);
                         introduction_textview.setAnimation(alphaAnimation2);
@@ -103,7 +103,8 @@ public class IntroductionPageActivity extends AppCompatActivity {
                             @Override
                             public void onAnimationEnd(Animation animation) {
                                 // ANIMATION NUMBER 4
-                                introduction_textview.setText("Welcome to Neurograph");
+
+                                introduction_textview.setText(getResources().getString(R.string.welcome_to_neurograph));
                                 AlphaAnimation alphaAnimation3 = new AlphaAnimation(3.0f, 0.0f);
                                 alphaAnimation3.setDuration(2000);
                                 introduction_textview.setAnimation(alphaAnimation3);

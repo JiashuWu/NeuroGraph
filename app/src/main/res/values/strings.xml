@@ -278,5 +278,8 @@
     <string name="start_test_4">Start Test 4</string>
     <string name="button_capture">Capture</string>
 
+    <string name="welcome_to_neurograph">"Welcome to\n"
+    "Neurograph"</string>
+
 
 </resources>
