@@ -149,7 +149,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">设置</string>
     <string name="title_activity_test_selection">TestSelectionActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="tab_text_1">Tab 1</string>
@@ -158,9 +158,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="static_tests">Static Tests</string>
-    <string name="dynamic_tests">Dynamic Tests</string>
-    <string name="data_list">Data List</string>
+    <string name="static_tests">静态测试</string>
+    <string name="dynamic_tests">动态测试</string>
+    <string name="data_list">数据列表</string>
 
     <string name="test1">Test 1</string>
     <string name="test2">Test 2</string>
@@ -168,25 +168,25 @@
     <string name="test4">Test 4</string>
     <string name="title_activity_image_selection">ImageSelectionActivity</string>
 
-    <string name="spiral_image">Spiral</string>
-    <string name="pentagon_image">Pentagon</string>
+    <string name="spiral_image">螺旋线</string>
+    <string name="pentagon_image">五边形</string>
 
-    <string name="finish_button">Finish</string>
-    <string name="clear_button">Clear</string>
+    <string name="finish_button">完成</string>
+    <string name="clear_button">清除</string>
 
-    <string name="thank_you">Thank you for your participation</string>
+    <string name="thank_you">感谢您的参与</string>
 
     <string name="information_empty">Information Empty</string>
     <string name="information_invalid">Information Invalid</string>
-    <string name="name_empty">Name cannot be empty</string>
-    <string name="age_empty">Age cannot be empty</string>
-    <string name="age_invalid">Invalid Age</string>
+    <string name="name_empty">姓名不能为空</string>
+    <string name="age_empty">年龄不能为空</string>
+    <string name="age_invalid">无效年龄信息</string>
     <string name="rating_score_empty">Rating score cannot be empty</string>
-    <string name="rating_score_invalid">Invalid rating score</string>
+    <string name="rating_score_invalid">无效评分信息</string>
 
     <string name="treatment_empty">Please select treatment infomation</string>
 
-    <string name="ok">OK</string>
+    <string name="ok">好</string>
     <string name="dismiss">Dismiss</string>
     <string name="title_activity_data_list">DataListActivity</string>
 
@@ -196,15 +196,15 @@
     <string name="select_painter_width">Please select your preferred painter width</string>
 
     <string-array name="painter_width">
-        <item>Width 5</item>
-        <item>Width 10</item>
-        <item>Width 15</item>
+        <item>宽度 5</item>
+        <item>宽度 10</item>
+        <item>宽度 15</item>
     </string-array>
 
     <string-array name="delete_options">
-        <item>Delete all test data</item>
-        <item>Delete test data before a specific date</item>
-        <item>Delete all user and test data, this will restart the app</item>
+        <item>删除所有测试数据</item>
+        <item>删除在制定日期之前的所有测试数据</item>
+        <item>删除所有用户和测试数据，这将重启应用</item>
     </string-array>
 
 
