@@ -254,7 +254,7 @@ public class MySurfaceViewForParallelLinePractice extends SurfaceView implements
                 y_list.add(float_object);
                 pressure_list.add(float_object);
                 touch_point_size_list.add(float_object);
-                timestamp_list.add("0");
+                timestamp_list.add("0000-00-00 00:00:00.000");
 
                 Log.d("TAG_DATA_0", "0.0" + " x = " + "0.0" + " y = " + "0.0" + " pressure = " + "0.0" + " size = " + "0.0");
 

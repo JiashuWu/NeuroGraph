@@ -222,6 +222,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
 
+                Log.d("TIMESSTAMP", timestamp_of_point);
                 time_year = timestamp_of_point.split(" ")[0].split("-")[0];
                 time_month = timestamp_of_point.split(" ")[0].split("-")[1];
                 time_day = timestamp_of_point.split(" ")[0].split("-")[2];

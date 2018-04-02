@@ -313,7 +313,18 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (can_continue && findViewById(selectedId) != null)
                 {
                     final RadioButton radioSelectedButton = (RadioButton)findViewById(selectedId);
-                    current_receiving_treatment = radioSelectedButton.getText().toString();
+                    Log.d("RADIO_SELECTED", String.valueOf(selectedId));
+                    if (selectedId == R.id.information_collection_radio_yes)
+                    {
+                        Log.d("RADIO_SELECTED", "YES");
+                        current_receiving_treatment = "yes";
+                    }
+                    if (selectedId == R.id.information_collection_radio_no)
+                    {
+                        Log.d("RADIO_SELECTED", "NO");
+                        current_receiving_treatment = "no";
+                    }
+                    //current_receiving_treatment = radioSelectedButton.getText().toString();
                 }
                 if (can_continue)
                 {
