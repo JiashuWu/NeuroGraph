@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -126,6 +127,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             y = cursor.getFloat(4);
             pressure = cursor.getFloat(5);
             touch_point_size = cursor.getFloat(6);
+            Log.d("TOUCH_SIZE", String.valueOf(touch_point_size));
             new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
             test_detail = test_detail + new_line;
         }

@@ -160,7 +160,7 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
         x = (float) event.getX();
         y = (float) event.getY();
         pressure = (float) event.getPressure(event.getPointerCount() - 1);
-        touch_point_size = event.getSize(event.getPointerCount() - 1);
+        touch_point_size = (float) event.getSize(event.getPointerCount() - 1);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH) + 1;
