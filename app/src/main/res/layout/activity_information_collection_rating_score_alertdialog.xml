@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/information_collection_rating_score_alertdialog_textview"
+        android:text="We detected that you left rating score as blank. If you do have a rating score but forget to fill it, then you can write it in the text box below. Otherwise click Finish" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/information_collection_rating_score_alertdialog_textview"
+        android:hint="Please enter your rating score if you have one, otherwise leave it as blank." />
+
+</RelativeLayout>
