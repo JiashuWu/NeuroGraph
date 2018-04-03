@@ -441,6 +441,29 @@ public class TestSelectionActivity extends AppCompatActivity {
             // TODO FIX
             startActivity(intent);
         }
+        else if (id == R.id.action_switch_user)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
+            builder.setTitle("Switch User");
+            builder.setCancelable(false);
+            builder.setMessage("Want to switch user ? ");
+            builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
+                    startActivity(intent);
+                    TestSelectionActivity.this.finish();
+                }
+            });
+            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here;
+                }
+            });
+            builder.create();
+            builder.show();
+        }
         return super.onOptionsItemSelected(item);
     }
 
