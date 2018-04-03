@@ -8,7 +8,21 @@
         android:orderInCategory="100"
         android:title="Data List"
         android:icon="@drawable/ic_action_data_list"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_switch_user"
+        android:orderInCategory="200"
+        android:title="Switch User"
+        android:icon="@drawable/ic_action_user"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_trigger_setting"
+        android:orderInCategory="300"
+        android:title="Setting"
+        android:icon="@drawable/ic_action_setting"
+        app:showAsAction="always" />
 
 
 </menu>
