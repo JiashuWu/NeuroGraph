@@ -392,7 +392,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     // TODO OPTIONAL 4/4
 
-    /*
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -407,12 +407,13 @@ public class InformationCollectionActivity extends AppCompatActivity {
             else
             {
                 System.exit(0);
+                InformationCollectionActivity.this.finish();
             }
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
 
-    */
+
 
 }
