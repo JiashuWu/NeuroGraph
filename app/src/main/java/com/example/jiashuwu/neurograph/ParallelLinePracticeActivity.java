@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -190,6 +191,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         viewForParallelLinePractice = (MySurfaceViewForParallelLinePractice) findViewById(R.id.mySurfaceViewForParallelLinePractice);
 
         clear_button = (Button) findViewById(R.id.parallel_line_practice_clear_button);
+        clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override

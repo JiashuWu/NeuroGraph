@@ -207,6 +207,7 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         viewForDynamicBlankBackground = (MySurfaceViewForDynamicBlankBackground) findViewById(R.id.mySurfaceViewForDynamicBlankBackground);
 
         clear_button = (Button) findViewById(R.id.dynamic_blank_background_test_clear_button);
+        clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -227,6 +227,7 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
         }
 
         clear_button = (Button) findViewById(R.id.static_corner_background_test_clear_button);
+        clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override

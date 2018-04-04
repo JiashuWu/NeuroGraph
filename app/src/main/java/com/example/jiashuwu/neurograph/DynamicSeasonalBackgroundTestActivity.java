@@ -211,6 +211,7 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
         viewForDynamicSeasonalBackground = (MySurfaceViewForDynamicSeasonalBackground) findViewById(R.id.mySurfaceViewForDynamicSeasonalBackground);
 
         clear_button = (Button) findViewById(R.id.dynamic_seasonal_background_test_clear_button);
+        clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -211,6 +211,7 @@ public class ParallelLineTestActivity extends AppCompatActivity {
         viewForParallelLineTest = (MySurfaceViewForParallelLineTest) findViewById(R.id.mySurfaceViewForParallelLineTest);
 
         clear_button = (Button) findViewById(R.id.parallel_line_test_clear_button);
+        clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
