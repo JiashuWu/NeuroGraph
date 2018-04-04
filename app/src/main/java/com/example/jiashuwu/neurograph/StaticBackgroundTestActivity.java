@@ -27,6 +27,7 @@ import android.view.ContextThemeWrapper;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -37,10 +38,17 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.nio.Buffer;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.prefs.PreferenceChangeListener;
+
+import javax.microedition.khronos.opengles.GL10;
+
+import static java.security.AccessController.getContext;
 
 public class StaticBackgroundTestActivity extends AppCompatActivity {
 
@@ -109,109 +117,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
     private long exitTime;
 
 
-    public void getScreenShot ()
-    {
-        calendar11 = Calendar.getInstance();
-        year11 = calendar11.get(Calendar.YEAR);
-        month11 = calendar11.get(Calendar.MONTH) + 1;
-        day11 = calendar11.get(Calendar.DAY_OF_MONTH);
-        hour11 = calendar11.get(Calendar.HOUR_OF_DAY);
-        minute11 = calendar11.get(Calendar.MINUTE);
-        second11= calendar11.get(Calendar.SECOND);
-        millisecond11 = calendar11.get(Calendar.MILLISECOND);
 
-        if (String.valueOf(month11).length() == 1)
-        {
-            month_s11 = "0" + String.valueOf(month11);
-        }
-        else
-        {
-            month_s11 = String.valueOf(month11);
-        }
-        if (String.valueOf(day11).length() == 1)
-        {
-            day_s11 = "0" + String.valueOf(day11);
-        }
-        else
-        {
-            day_s11 = String.valueOf(day11);
-        }
-        if (String.valueOf(hour11).length() == 1)
-        {
-            hour_s11 = "0" + String.valueOf(hour11);
-        }
-        else
-        {
-            hour_s11 = String.valueOf(hour11);
-        }
-        if (String.valueOf(minute11).length() == 1)
-        {
-            minute_s11 = "0" + String.valueOf(minute11);
-        }
-        else
-        {
-            minute_s11 = String.valueOf(minute11);
-        }
-        if (String.valueOf(second11).length() == 1)
-        {
-            second_s11 = "0" + String.valueOf(second11);
-        }
-        else
-        {
-            second_s11 = String.valueOf(second11);
-        }
-        if (String.valueOf(millisecond11).length() == 1)
-        {
-            millisecond_s11 = "00" + String.valueOf(millisecond11);
-        }
-        else if (String.valueOf(millisecond11).length() == 2)
-        {
-            millisecond_s11 = "0" + String.valueOf(millisecond11);
-        }
-        else if (String.valueOf(millisecond11).length() == 3)
-        {
-            millisecond_s11 = String.valueOf(millisecond11);
-        }
-
-        String file_time = String.valueOf(year11) + month_s11 + day_s11 + hour_s11 + minute_s11 + second_s11 + millisecond_s11;
-
-        try
-        {
-            File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
-            if (!file.exists()) {
-                file.mkdirs();
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        String output_file_name = "NeurographScreenShotFile" + "_" + user_name + "_" + test_type + "_" + image_type + "_" + file_time + ".png";
-        String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
-
-        try
-        {
-            View view = getWindow().getDecorView().getRootView();
-            view.setDrawingCacheEnabled(true);
-            Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
-            view.setDrawingCacheEnabled(false);
-            try
-            {
-                FileOutputStream fileOutputStream = new FileOutputStream(file_path);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-            }
-            catch (FileNotFoundException fnfe)
-            {
-                fnfe.printStackTrace();
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
 
 
     public void initLocaleLanguage ()
@@ -370,16 +276,18 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
             }
         });
 
+
         /*
         capture_button = (Button) findViewById(R.id.static_background_test_capture_button);
         capture_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO IF YOU WANT A SCREENSHOT
-                getScreenShot();
+                //getScreenShot();
             }
         });
         */
+
 
         finish_button = (Button) findViewById(R.id.static_background_test_finish_button);
         finish_button.setOnClickListener(new View.OnClickListener() {
