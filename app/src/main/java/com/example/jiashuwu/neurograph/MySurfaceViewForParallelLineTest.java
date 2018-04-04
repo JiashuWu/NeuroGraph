@@ -140,7 +140,7 @@ public class MySurfaceViewForParallelLineTest extends SurfaceView implements Sur
 
             if (Sharing.sharing_image.equalsIgnoreCase("parallel_line"))
             {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.parallel_line_matlab_corrected_version_1), displayWidth, displayHeight, true),0,0,null);//top-right corner
             }
 
             mpaint.setStyle(Paint.Style.STROKE);
