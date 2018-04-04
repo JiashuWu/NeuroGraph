@@ -464,6 +464,10 @@ public class TestSelectionActivity extends AppCompatActivity {
             builder.create();
             builder.show();
         }
+        else if (id == R.id.action_trigger_setting)
+        {
+
+        }
         return super.onOptionsItemSelected(item);
     }
 
