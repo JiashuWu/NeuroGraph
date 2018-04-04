@@ -33,7 +33,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + " ) ";
 
     //Test Table
-    //test_id, user_id, test_starting_time, test_ending_time, test_type, image_type, interval_duration
+    //test_id, user_id, test_starting_time, test_ending_time, test_type, image_type, interval_duration, number_of_points
     public static final String CREATE_TEST_TABLE = "CREATE TABLE Test ("
             + "test_id INTEGER PRIMARY KEY AUTOINCREMENT, "
             + "user_id INTEGER REFERENCES User (user_id) ON UPDATE CASCADE ON DELETE CASCADE, "
