@@ -19,7 +19,7 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private boolean initial_isScale;
 
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
 
     private int progress;
     private int progress_total;
@@ -67,7 +67,7 @@ public class ThankYouActivity extends AppCompatActivity {
         initial_isScale = Sharing.isScale;
         setContentView(R.layout.activity_thank_you);
 
-        progressBar = (ProgressBar) findViewById(R.id.thank_you_activity_progressbar);
+        //progressBar = (ProgressBar) findViewById(R.id.thank_you_activity_progressbar);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 
