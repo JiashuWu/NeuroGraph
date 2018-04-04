@@ -67,6 +67,8 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
     public String test_starting_time;
     public String test_ending_time;
 
+    public int number_of_points;
+
     public static ArrayList<Float> x_list;
     public static ArrayList<Float> y_list;
     public static ArrayList<Float> pressure_list;
@@ -327,6 +329,8 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         timestamp_list = Sharing.timestamp_list;
         touch_point_size_list = Sharing.touch_point_size_list;
 
+        number_of_points = x_list.size();
+
         //Log.d("destroy", String.valueOf(x_list.size()));
 
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
@@ -337,19 +341,21 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         values.put("test_type", test_type);
         values.put("image_type", image_type);
         values.put("interval_duration", interval_duration);
+        values.put("number_of_points", number_of_points);
         Log.d("TAG_TEST_INFO", String.valueOf(user_id));
         Log.d("TAG_TEST_INFO", test_starting_time);
         Log.d("TAG_TEST_INFO", test_ending_time);
         Log.d("TAG_TEST_INFO", test_type);
         Log.d("TAG_TEST_INFO", image_type);
         Log.d("TAG_TEST_INFO", String.valueOf(interval_duration));
+        Log.d("TAG_TEST_INFO", String.valueOf(number_of_points));
         database.insert("Test", null, values);
 
         // We now want to get this test's test_id
 
         database = databaseHelper.getReadableDatabase();
-        String query = "SELECT test_id FROM Test WHERE user_id = ? AND test_starting_time = ? AND test_ending_time = ? AND test_type = ? AND image_type = ? AND interval_duration = ?";
-        String [] parameters = new String [] {String.valueOf(user_id), test_starting_time, test_ending_time, test_type, image_type, String.valueOf(interval_duration)};
+        String query = "SELECT test_id FROM Test WHERE user_id = ? AND test_starting_time = ? AND test_ending_time = ? AND test_type = ? AND image_type = ? AND interval_duration = ? AND number_of_points = ? ";
+        String [] parameters = new String [] {String.valueOf(user_id), test_starting_time, test_ending_time, test_type, image_type, String.valueOf(interval_duration), String.valueOf(number_of_points)};
         Cursor cursor = database.rawQuery(query, parameters);
         while (cursor.moveToNext())
         {
@@ -376,6 +382,8 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
             Log.d("TAG_DATA_INFO", String.valueOf(pressure_list.get(i)));
             Log.d("TAG_DATA_INFO", String.valueOf(touch_point_size_list.get(i)));
             database.insert("Data", null, values);
+
+
         }
 
 
