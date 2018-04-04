@@ -90,7 +90,7 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
         }
         if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
         {
-            imageView.setImageResource(R.drawable.pentagon_matlab_corrected_version_1);
+            imageView.setImageResource(R.drawable.pentagon_matlab_corrected_version_fixed_1);
         }
 
         new Handler().postDelayed(new Runnable() {
