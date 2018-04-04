@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -35,6 +36,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -50,6 +52,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
+
+    private MyDatabaseHelper databaseHelper1;
+    private SQLiteDatabase database1;
+
     private String databaseName = DatabaseInformation.databaseName;
     private int databaseVersion = DatabaseInformation.databaseVersion;
 
@@ -87,7 +93,12 @@ public class StoreDataFileActivity extends AppCompatActivity {
     public static String second_s;
     public static String millisecond_s;
 
+    public int number_of_item_finished;
+    public int number_of_item_in_total;
+
     private ArrayList<String> output_csv_strings;
+
+    public ProgressDialog progressDialog;
 
     public void initLocaleLanguage ()
     {
@@ -134,6 +145,50 @@ public class StoreDataFileActivity extends AppCompatActivity {
             intent.setData(Uri.fromParts("package", StoreDataFileActivity.this.getApplicationContext().getPackageName(), null));
             startActivity(intent);
         }
+    }
+
+    public int getNumber_of_item_in_total ()
+    {
+        databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
+        databaseHelper1.getReadableDatabase();
+
+        database1 = databaseHelper1.getReadableDatabase();
+
+        int answer = 0;
+
+        String query = "SELECT number_of_points FROM Test";
+        String [] parameter = new String [] {};
+        Cursor cursor = database1.rawQuery(query, parameter);
+        while (cursor.moveToNext())
+        {
+            answer = answer + cursor.getInt(0);
+        }
+
+        return answer;
+    }
+
+    public void showProgressBar()
+    {
+        final ProgressDialog progressDialog = new ProgressDialog(StoreDataFileActivity.this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setTitle("Generating file");
+        progressDialog.setMax(100);
+        progressDialog.setMessage("Generating files");
+        progressDialog.show();
+        Log.d("showing", "showing");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (number_of_item_finished != number_of_item_in_total)
+                {
+                    int number = number_of_item_finished * 100 / number_of_item_in_total;
+                    progressDialog.setProgress(number);
+                }
+                progressDialog.dismiss();
+            }
+        }).start();
     }
 
     public String generate_string_from_database ()
@@ -221,6 +276,20 @@ public class StoreDataFileActivity extends AppCompatActivity {
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
             while (cursor2.moveToNext())
             {
+                number_of_item_finished = number_of_item_finished + 1;
+                //int number = number_of_item_finished * 100 / number_of_item_in_total;
+                //
+                // progressDialog.setProgress(number);
+                /*
+                if (number_of_item_finished == number_of_item_in_total)
+                {
+                    Log.d("showing", "dismiss");
+                    progressDialog.dismiss();
+                }
+                */
+
+                Log.d("STATISTICS", String.valueOf(number_of_item_finished));
+
                 timestamp_of_point = cursor2.getString(2).toString();
                 x = cursor2.getFloat(3);
                 y = cursor2.getFloat(4);
@@ -362,6 +431,18 @@ public class StoreDataFileActivity extends AppCompatActivity {
         button_generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                number_of_item_finished = 0;
+                number_of_item_in_total = 0;
+                number_of_item_in_total = getNumber_of_item_in_total();
+                Log.d("STATISTICS", String.valueOf(number_of_item_in_total));
+
+                //showProgressBar();
+
+
+
+
+
 
                 calendar = Calendar.getInstance();
                 year = calendar.get(Calendar.YEAR);
@@ -522,6 +603,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     manager.notify(0, notification);
                 }
 
+
+
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
                 builder1.setTitle("Successfully Saved");
                 builder1.setCancelable(false);
@@ -549,6 +632,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 });
                 builder1.create();
                 builder1.show();
+
+
             }
         });
     }
