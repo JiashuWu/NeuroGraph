@@ -7,6 +7,6 @@ package com.example.jiashuwu.neurograph;
 public class DatabaseInformation {
 
     public static String databaseName = "information.db";
-    public static int databaseVersion = 6;
+    public static int databaseVersion = 7;
 
 }
