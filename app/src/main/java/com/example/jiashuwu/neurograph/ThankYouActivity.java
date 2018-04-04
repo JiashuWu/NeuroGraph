@@ -81,6 +81,6 @@ public class ThankYouActivity extends AppCompatActivity {
                 ThankYouActivity.this.startActivity(intent);
                 ThankYouActivity.this.finish();
             }
-        }, 3000);
+        }, 3600);
     }
 }

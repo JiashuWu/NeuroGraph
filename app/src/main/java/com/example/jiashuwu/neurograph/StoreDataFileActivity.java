@@ -303,20 +303,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 int number1 = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
                 float number2 = (float) Sharing.number_of_item_finished * 100 / (float) Sharing.number_of_item_in_total;
                 progressBar.setProgress(number1);
-                percent_number_textview.setText(number2 + "%");
                 numbers_textview.setText(Sharing.number_of_item_finished + "/" + Sharing.number_of_item_in_total);
-
-
-
-                //
-                // progressDialog.setProgress(number);
-                /*
-                if (number_of_item_finished == number_of_item_in_total)
-                {
-                    Log.d("showing", "dismiss");
-                    progressDialog.dismiss();
-                }
-                */
+                percent_number_textview.setText(number2 + "%");
 
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_finished));
 
@@ -389,6 +377,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "\n";
                 output_csv_strings.add(new_csv_line);
             }
+
 
             if (cursor2 != null)
             {
@@ -474,14 +463,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 Sharing.number_of_item_in_total = getNumber_of_item_in_total();
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
-
-
-
-
                 //showProgressBar();
-
-
-
 
 
 
@@ -552,8 +534,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
                 output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
 
-
-
                 try {
 
                     File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
@@ -594,6 +574,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 {
                     e.printStackTrace();
                 }
+
+
+
+
 
 
 
@@ -649,8 +633,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
                             .build();
                     manager.notify(0, notification);
                 }
-
-
 
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
                 builder1.setTitle("Successfully Saved");

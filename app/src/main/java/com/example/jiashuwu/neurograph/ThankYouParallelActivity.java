@@ -72,6 +72,6 @@ public class ThankYouParallelActivity extends AppCompatActivity {
                 ThankYouParallelActivity.this.startActivity(intent);
                 ThankYouParallelActivity.this.finish();
             }
-        }, 3000);
+        }, 3600);
     }
 }
