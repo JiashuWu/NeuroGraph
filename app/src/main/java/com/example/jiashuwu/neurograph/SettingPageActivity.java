@@ -787,8 +787,8 @@ public class SettingPageActivity extends AppCompatActivity {
                 intent.putExtra("fontsize", fontsize);
                 startActivity(intent);
 
-                // Setting page shouldn't finish at this point
-                //SettingPageActivity.this.finish();
+                // Setting page should finish at this point
+                SettingPageActivity.this.finish();
             }
         });
 
@@ -799,8 +799,8 @@ public class SettingPageActivity extends AppCompatActivity {
                 // TODO FIX
                 startActivity(intent);
 
-                // Setting page shouldn't finish at this point
-                //SettingPageActivity.this.finish();
+                // Setting page should finish at this point
+                SettingPageActivity.this.finish();
             }
         });
 
@@ -810,6 +810,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 Intent intent = new Intent(SettingPageActivity.this, IntroductionPageActivity.class);
                 // TODO FIX
                 startActivity(intent);
+                SettingPageActivity.this.finish();
             }
         });
 
@@ -900,6 +901,7 @@ public class SettingPageActivity extends AppCompatActivity {
             else
             {
                 System.exit(0);
+                SettingPageActivity.this.finish();
             }
             return true;
         }
