@@ -18,6 +18,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
@@ -30,6 +32,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -55,6 +59,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper1;
     private SQLiteDatabase database1;
+
+    public String output_file_name;
+    public String output_csv_file_name;
 
     private String databaseName = DatabaseInformation.databaseName;
     private int databaseVersion = DatabaseInformation.databaseVersion;
@@ -93,12 +100,15 @@ public class StoreDataFileActivity extends AppCompatActivity {
     public static String second_s;
     public static String millisecond_s;
 
-    public int number_of_item_finished;
-    public int number_of_item_in_total;
+
 
     private ArrayList<String> output_csv_strings;
 
     public ProgressDialog progressDialog;
+
+    public ProgressBar progressBar;
+    public TextView percent_number_textview;
+    public TextView numbers_textview;
 
     public void initLocaleLanguage ()
     {
@@ -193,9 +203,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (number_of_item_finished != number_of_item_in_total)
+                while (Sharing.number_of_item_finished != Sharing.number_of_item_in_total)
                 {
-                    int number = number_of_item_finished * 100 / number_of_item_in_total;
+                    int number = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
                     progressDialog.setProgress(number);
                 }
                 progressDialog.dismiss();
@@ -288,8 +298,16 @@ public class StoreDataFileActivity extends AppCompatActivity {
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
             while (cursor2.moveToNext())
             {
-                number_of_item_finished = number_of_item_finished + 1;
-                //int number = number_of_item_finished * 100 / number_of_item_in_total;
+                Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
+
+                int number1 = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
+                float number2 = (float) Sharing.number_of_item_finished * 100 / (float) Sharing.number_of_item_in_total;
+                progressBar.setProgress(number1);
+                percent_number_textview.setText(number2 + "%");
+                numbers_textview.setText(Sharing.number_of_item_finished + "/" + Sharing.number_of_item_in_total);
+
+
+
                 //
                 // progressDialog.setProgress(number);
                 /*
@@ -300,7 +318,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 }
                 */
 
-                Log.d("STATISTICS", String.valueOf(number_of_item_finished));
+                Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_finished));
 
                 timestamp_of_point = cursor2.getString(2).toString();
                 x = cursor2.getFloat(3);
@@ -439,15 +457,26 @@ public class StoreDataFileActivity extends AppCompatActivity {
             builder.show();
         }
 
+        progressBar = (ProgressBar) findViewById(R.id.store_data_file_progressbar);
+        numbers_textview = (TextView) findViewById(R.id.store_data_file_numbers);
+        percent_number_textview = (TextView) findViewById(R.id.store_data_file_percent_number);
+        progressBar.setProgress(0);
+        numbers_textview.setText("0/0");
+        percent_number_textview.setText("0.0%");
+
         button_generate = (Button) findViewById(R.id.store_data_file_generate_button);
         button_generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                number_of_item_finished = 0;
-                number_of_item_in_total = 0;
-                number_of_item_in_total = getNumber_of_item_in_total();
-                Log.d("STATISTICS", String.valueOf(number_of_item_in_total));
+                Sharing.number_of_item_finished = 0;
+                Sharing.number_of_item_in_total = 0;
+                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
+
+
+
+
 
                 //showProgressBar();
 
@@ -520,8 +549,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
                 String file_time = String.valueOf(year) + month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
 
-                String output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
-                String output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
+                output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
+                output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
+
+
 
                 try {
 
@@ -563,6 +594,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 {
                     e.printStackTrace();
                 }
+
+
+
+
 
                 String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
                 file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;

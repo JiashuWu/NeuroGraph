@@ -42,6 +42,9 @@ public class Sharing {
     public static int progress;
     public static int progress_total;
 
+    public static int number_of_item_finished;
+    public static int number_of_item_in_total;
+
     public Sharing()
     {
 

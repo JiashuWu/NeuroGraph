@@ -42,6 +42,50 @@
             android:layout_marginRight="30dp"
             android:layout_below="@id/store_data_file_introduction_textview" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/store_data_file_file_generating_progress_title"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_below="@id/store_data_file_generate_button"
+            android:text="Progress"
+            android:textSize="30dp" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:id="@+id/store_data_file_progressbar"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/store_data_file_file_generating_progress_title"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:min="0"
+            android:max="100"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/store_data_file_progressbar"
+            android:layout_alignLeft="@id/store_data_file_progressbar"
+            android:text="0%"
+            android:id="@+id/store_data_file_percent_number"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/store_data_file_progressbar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/store_data_file_progressbar"
+            android:layout_alignRight="@id/store_data_file_progressbar"
+            android:text="0/100"
+            android:layout_marginTop="6dp"
+            android:id="@+id/store_data_file_numbers"
+            android:layout_below="@id/store_data_file_progressbar" />
+
 
 
     </RelativeLayout>
