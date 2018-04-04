@@ -212,17 +212,18 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
 
         // TODO SOLUTION TWO
         // TODO SOLUTION TWO TAG
+        // THIS IS THE SOLUTION WHICH I AM CURRENTLY USING;
         // NOTICE: THIS IS SOLUTION NUMBER TWO, AS WE SET THE BACKGROUND THROUGH AN IMAGEVIEW
-        // NOTICE: THIS IS THE SOLUTION WHICH WE CAN USE TO GEI RID OF THAT DELAY
+        // NOTICE: THIS IS THE SOLUTION WHICH WE CAN USE TO GET RID OF THAT DELAY
         // WARNING: BUT THIS SOLUTION MAY OVERLAP THE TOP RIGHT CORNER OF THE CANVAS, MAKING IT NO ABLE TO BE DRAWED.
         imageView = (ImageView) findViewById(R.id.static_corner_background_imageview);
         if (Sharing.image_type.equalsIgnoreCase("spiral"))
         {
-            imageView.setImageResource(R.drawable.spiral1);
+            imageView.setImageResource(R.drawable.spiral_matlab_corrected_version_1);
         }
         if (Sharing.image_type.equalsIgnoreCase("pentagon"))
         {
-            imageView.setImageResource(R.drawable.pentagon1);
+            imageView.setImageResource(R.drawable.pentagon_matlab_corrected_version_fixed_1);
         }
 
         clear_button = (Button) findViewById(R.id.static_corner_background_test_clear_button);
