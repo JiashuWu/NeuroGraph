@@ -164,6 +164,18 @@ public class StoreDataFileActivity extends AppCompatActivity {
             answer = answer + cursor.getInt(0);
         }
 
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database1 != null)
+        {
+            database1.close();
+        }
+        if (databaseHelper1 != null)
+        {
+            databaseHelper1.close();
+        }
         return answer;
     }
 
