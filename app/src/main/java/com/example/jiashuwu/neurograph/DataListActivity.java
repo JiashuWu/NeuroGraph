@@ -302,9 +302,7 @@ public class DataListActivity extends AppCompatActivity {
                     if (delete_option.equalsIgnoreCase("all"))
                     {
                         database = databaseHelper.getWritableDatabase();
-                        database.delete("Data", "", new String[] {});
-                        database.delete("Test", "", new String[] {});
-                        database.delete("User", "", new String[] {});
+                        MyDatabaseHelper.upgradeDatabase(database);
                         //build_data_list();
                         Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
                         startActivity(intent);

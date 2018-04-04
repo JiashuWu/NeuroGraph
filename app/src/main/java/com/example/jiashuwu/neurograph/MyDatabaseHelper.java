@@ -41,7 +41,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + "test_ending_time TEXT NOT NULL, "
             + "test_type TEXT NOT NULL, "
             + "image_type TEXT NOT NULL, "
-            + "interval_duration INTEGER"
+            + "interval_duration INTEGER, "
+            + "number_of_points INTEGER"
             + " ) ";
 
 
@@ -75,6 +76,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Test");
         db.execSQL("DROP TABLE IF EXISTS Data");
         onCreate(db);
+    }
+
+    public static void upgradeDatabase (SQLiteDatabase db)
+    {
+        db.execSQL("DROP TABLE IF EXISTS User");
+        db.execSQL("DROP TABLE IF EXISTS Test");
+        db.execSQL("DROP TABLE IF EXISTS Data");
+        db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_TEST_TABLE);
+        db.execSQL(CREATE_DATA_TABLE);
     }
 
 
