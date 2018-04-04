@@ -138,12 +138,12 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
             if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
             {
                 //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_matlab_corrected_version), displayWidth, displayHeight, true), 0, 0, null);
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_matlab_corrected_version_1), displayWidth, displayHeight, true), 0, 0, null);
             }
             if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
             {
                 //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version), displayWidth, displayHeight, true),0,0,null);//top-right corner
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), displayWidth, displayHeight, true),0,0,null);//top-right corner
             }
 
             mpaint.setStyle(Paint.Style.STROKE);
