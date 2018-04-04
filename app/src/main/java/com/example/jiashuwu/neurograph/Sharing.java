@@ -39,6 +39,9 @@ public class Sharing {
 
     public static ArrayList<String> csv_string_arraylist;
 
+    public static int progress;
+    public static int progress_total;
+
     public Sharing()
     {
 

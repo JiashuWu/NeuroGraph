@@ -419,9 +419,11 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         database = databaseHelper.getWritableDatabase();
         int i = 0;
         values = new ContentValues();
+        Sharing.progress_total = x_list.size();
         for (i = 0 ; i < x_list.size() ; i++)
         {
-
+            Sharing.progress = i;
+            Log.d("PROGRESSES", String.valueOf((float) Sharing.progress / (float) Sharing.progress_total));
             values.put("test_id", test_id);
             values.put("timestamp_of_point", timestamp_list.get(i));
             values.put("x", x_list.get(i));
