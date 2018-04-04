@@ -50,9 +50,10 @@ public class TransferTestSelectionActivity extends AppCompatActivity {
         Log.d("transferring","transferring");
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
+        Log.d("user_id", String.valueOf(user_id));
 
         Intent intent = new Intent(TransferTestSelectionActivity.this, TestSelectionActivity.class);
-        intent.putExtra("user_id", user_id);
+        intent.putExtra("user_id", String.valueOf(user_id));
         startActivity(intent);
         TransferTestSelectionActivity.this.finish();
     }

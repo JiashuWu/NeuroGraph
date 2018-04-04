@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -66,6 +67,16 @@ public class TestSelectionActivity extends AppCompatActivity {
     private int painter_width = 0;
 
     private ArrayAdapter adapter;
+
+    private Spinner alertdialog_language_spinner;
+    private Spinner alertdialog_font_spinner;
+
+    private ArrayAdapter language_adapter;
+    private ArrayAdapter font_adapter;
+
+    private String initial_language;
+    private boolean initial_isScale;
+
 
     public void initLocaleLanguage ()
     {
@@ -466,6 +477,136 @@ public class TestSelectionActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_trigger_setting)
         {
+            LayoutInflater inflater = LayoutInflater.from(TestSelectionActivity.this);
+            View view = inflater.inflate(R.layout.activity_test_selection_page_setting_alertdialog , null);
+            initial_language = Sharing.language;
+            initial_isScale = Sharing.isScale;
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
+            builder.setTitle("Change Settings");
+            builder.setCancelable(false);
+            builder.setView(view);
+            alertdialog_language_spinner = (Spinner) view.findViewById(R.id.setting_alertdialog_language_spinner);
+            alertdialog_font_spinner = (Spinner) view.findViewById(R.id.setting_alertdialog_font_size_spinner);
+
+            final String [] language_list = getResources().getStringArray(R.array.language_array);
+            language_adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, language_list);
+            language_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            alertdialog_language_spinner.setAdapter(language_adapter);
+
+            alertdialog_language_spinner.setSelection(0);
+
+            switch (initial_language)
+            {
+                case "English": alertdialog_language_spinner.setSelection(0); break;
+                case "Simplified Chinese": alertdialog_language_spinner.setSelection(1); break;
+                case "Traditional Chinese": alertdialog_language_spinner.setSelection(2); break;
+                case "Dutch": alertdialog_language_spinner.setSelection(3);break;
+                case "French": alertdialog_language_spinner.setSelection(4);break;
+                case "German": alertdialog_language_spinner.setSelection(5);break;
+                case "Italian": alertdialog_language_spinner.setSelection(6);break;
+                case "Japanese": alertdialog_language_spinner.setSelection(7);break;
+                case "Portuguese": alertdialog_language_spinner.setSelection(8);break;
+                case "Russian": alertdialog_language_spinner.setSelection(9);break;
+                case "Spanish": alertdialog_language_spinner.setSelection(10);break;
+                default: alertdialog_language_spinner.setSelection(0);break;
+            }
+
+            alertdialog_language_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                    switch (position)
+                    {
+                        case 0: Sharing.language = "English";break;
+                        case 1: Sharing.language = "Simplified Chinese";break;
+                        case 2: Sharing.language = "Traditional Chinese";break;
+                        case 3: Sharing.language = "Dutch";break;
+                        case 4: Sharing.language = "French";break;
+                        case 5: Sharing.language = "German";break;
+                        case 6: Sharing.language = "Italian";break;
+                        case 7: Sharing.language = "Japanese";break;
+                        case 8: Sharing.language = "Portuguese";break;
+                        case 9: Sharing.language = "Russian";break;
+                        case 10: Sharing.language = "Spanish";break;
+                        default: Sharing.language = "English";break;
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
+
+            final String [] fontsize_list = getResources().getStringArray(R.array.font_array);
+            font_adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, fontsize_list);
+            font_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            alertdialog_font_spinner.setAdapter(font_adapter);
+
+            alertdialog_font_spinner.setSelection(0);
+
+            if (!initial_isScale)
+            {
+                alertdialog_font_spinner.setSelection(0);
+            }
+            else
+            {
+                alertdialog_font_spinner.setSelection(1);
+            }
+
+            alertdialog_font_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                    switch (position)
+                    {
+                        case 0: Sharing.isScale = false;break;
+                        case 1: Sharing.isScale = true;break;
+                        default: Sharing.isScale = false;break;
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
+
+            builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (!Sharing.language.equalsIgnoreCase(initial_language))
+                    {
+                        Intent intent = new Intent (TestSelectionActivity.this, TransferTestSelectionActivity.class);
+                        intent.putExtra("user_id", String.valueOf(user_id));
+                        startActivity(intent);
+                        TestSelectionActivity.this.finish();
+                    }
+                    else if (Sharing.isScale != initial_isScale)
+                    {
+                        Intent intent = new Intent (TestSelectionActivity.this, TransferTestSelectionActivity.class);
+                        intent.putExtra("user_id", String.valueOf(user_id));
+                        startActivity(intent);
+                        TestSelectionActivity.this.finish();
+                    }
+                    else
+                    {
+                        Toast.makeText(TestSelectionActivity.this, "No setting changes", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            builder.setNegativeButton("Discard changes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here;
+                    // null
+                    // revert the initial values;
+                    Sharing.language = initial_language;
+                    Sharing.isScale = initial_isScale;
+                }
+            });
+            builder.create();
+            builder.show();
+
 
         }
         return super.onOptionsItemSelected(item);
