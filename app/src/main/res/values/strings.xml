@@ -187,7 +187,7 @@
     <string name="treatment_empty">Please select treatment infomation</string>
 
     <string name="dismiss">Dismiss</string>
-    <string name="title_activity_data_list">DataListActivity</string>
+    <string name="title_activity_data_list">Data List</string>
 
     <string name="data_list_button">Data List</string>
     <string name="title_activity_test_detail_scrolling">Detailed information about the test</string>
