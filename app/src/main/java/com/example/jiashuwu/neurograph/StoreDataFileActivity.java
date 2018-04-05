@@ -422,6 +422,29 @@ public class StoreDataFileActivity extends AppCompatActivity {
         return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
     }
 
+    private Handler handler = new Handler()
+    {
+        @Override
+        public void handleMessage (Message message)
+        {
+            switch (message.what)
+            {
+                case 0: progressDialog = new ProgressDialog(StoreDataFileActivity.this);
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    progressDialog.setCancelable(false);
+                    progressDialog.setCanceledOnTouchOutside(false);
+                    progressDialog.setTitle("Generating file");
+                    progressDialog.setMax(100);
+                    progressDialog.setMessage("Generating files");
+                    progressDialog.show();
+                    break;
+                case 1:
+                    progressDialog.dismiss();
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -484,6 +507,25 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
                 //showProgressDialog();
+                /*
+                handler.sendEmptyMessage(0);
+                new Thread () {
+                    public void run ()
+                    {
+                        try
+                        {
+                            Thread.sleep(3000);
+                            progressDialog.setProgress(50);
+                            Thread.sleep(3000);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                        handler.sendEmptyMessage (1);
+                    }
+                }.start();
+                */
 
 
 
