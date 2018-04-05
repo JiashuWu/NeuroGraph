@@ -70,6 +70,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
+
+    private MyDatabaseHelper databaseHelper1;
+    private SQLiteDatabase database1;
+
     private String databaseName = DatabaseInformation.databaseName;
     private int databaseVersion = DatabaseInformation.databaseVersion;
 
@@ -405,6 +409,38 @@ public class SendDataEmailActivity extends AppCompatActivity {
         }
     }
 
+    public int getNumber_of_item_in_total ()
+    {
+        databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
+        databaseHelper1.getReadableDatabase();
+
+        database1 = databaseHelper1.getReadableDatabase();
+
+        int answer = 0;
+
+        String query = "SELECT number_of_points FROM Test";
+        String [] parameter = new String [] {};
+        Cursor cursor = database1.rawQuery(query, parameter);
+        while (cursor.moveToNext())
+        {
+            answer = answer + cursor.getInt(0);
+        }
+
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database1 != null)
+        {
+            database1.close();
+        }
+        if (databaseHelper1 != null)
+        {
+            databaseHelper1.close();
+        }
+        return answer;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
@@ -609,6 +645,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
                             {
                                 //sendEmailWorker();
 
+                                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                                /*
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(SendDataEmailActivity.this);
                                 builder1.setTitle(R.string.successfully_sent);
                                 builder1.setCancelable(false);
@@ -635,6 +673,12 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                 });
                                 builder1.create();
                                 builder1.show();
+                                */
+
+                                Intent intent = new Intent(SendDataEmailActivity.this, DisplaySendingActivity.class);
+                                startActivity(intent);
+                                SendDataEmailActivity.this.finish();
+
 
                             }
                         }

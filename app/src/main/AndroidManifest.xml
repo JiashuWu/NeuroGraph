@@ -119,7 +119,8 @@
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
         <activity android:name=".TransferTestSelectionActivity" />
-        <activity android:name=".DisplayProgressActivity"></activity>
+        <activity android:name=".DisplayProgressActivity" />
+        <activity android:name=".DisplaySendingActivity"></activity>
     </application>
 
 </manifest>
