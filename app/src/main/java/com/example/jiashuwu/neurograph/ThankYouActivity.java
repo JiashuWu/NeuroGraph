@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Handler;
+import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -20,11 +21,10 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private boolean initial_isScale;
 
-    //private ProgressBar progressBar;
+    private ProgressBar progressBar;
 
-    private int progress;
-    private int progress_total;
-    private float percentage = 0;
+    private float progress;
+    private int count = 0;
 
     public void initLocaleLanguage ()
     {
@@ -68,10 +68,12 @@ public class ThankYouActivity extends AppCompatActivity {
         initial_isScale = Sharing.isScale;
         setContentView(R.layout.activity_thank_you);
 
+        Log.d("ORDER", "ON_START");
 
         //progressBar = (ProgressBar) findViewById(R.id.thank_you_activity_progressbar);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -84,5 +86,8 @@ public class ThankYouActivity extends AppCompatActivity {
                 ThankYouActivity.this.finish();
             }
         }, 3600);
+
+
+
     }
 }

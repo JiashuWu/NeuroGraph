@@ -120,6 +120,7 @@ public class MySurfaceViewForStaticCornerBackground extends SurfaceView implemen
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
         Sharing.touch_point_size_list = touch_point_size_list;
+        Sharing.number_of_item_in_total = x_list.size();
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
     }

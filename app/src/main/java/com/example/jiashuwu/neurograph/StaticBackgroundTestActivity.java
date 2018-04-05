@@ -390,6 +390,8 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
         number_of_points = x_list.size();
 
+        Log.d("ORDER", "ON_STOP");
+
         //Log.d("destroy", String.valueOf(x_list.size()));
 
         SQLiteDatabase database = databaseHelper.getWritableDatabase();

@@ -22,7 +22,7 @@
                 android:textSize="26dp"
                 android:id="@+id/thank_you_activity_word" />
 
-            <!--
+
             <ProgressBar
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
@@ -35,7 +35,9 @@
                 android:layout_below="@id/thank_you_activity_word"
                 android:layout_centerHorizontal="true"
                 android:visibility="visible" />
-                -->
+
+
+
 
 
         </RelativeLayout>
