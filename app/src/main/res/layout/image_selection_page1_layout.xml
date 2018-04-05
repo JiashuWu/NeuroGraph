@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/image_selection_page1_image"
-                android:src="@drawable/spiral_templete01"
+                android:src="@drawable/spiral_matlab_corrected_introduction_version"
                 android:layout_below="@id/image_selection_page1_content"
                 android:layout_centerHorizontal="true"/>
 

@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/image_selection_page2_image"
-                android:src="@drawable/pentagon_template"
+                android:src="@drawable/pentagon_matlab_corrected_introduction_version"
                 android:layout_marginLeft="60dp"
                 android:layout_marginRight="60dp"
                 android:layout_below="@id/image_selection_page2_content"

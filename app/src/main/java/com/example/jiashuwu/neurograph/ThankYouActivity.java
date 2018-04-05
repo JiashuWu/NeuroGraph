@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -66,6 +67,7 @@ public class ThankYouActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;
         setContentView(R.layout.activity_thank_you);
+
 
         //progressBar = (ProgressBar) findViewById(R.id.thank_you_activity_progressbar);
 
