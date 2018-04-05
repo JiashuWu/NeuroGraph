@@ -128,7 +128,7 @@ public class ThankYouActivity extends AppCompatActivity {
 
         if (Sharing.number_of_item_in_total > 3000)
         {
-            waiting_time = Sharing.number_of_item_in_total / 800;
+            waiting_time = 6000;
         }
         else
         {

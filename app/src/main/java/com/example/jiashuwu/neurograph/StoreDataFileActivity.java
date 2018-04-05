@@ -307,17 +307,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
             while (cursor2.moveToNext())
             {
-                Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
-
-
-                int number1 = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
-                float number2 = (float) Sharing.number_of_item_finished * 100 / (float) Sharing.number_of_item_in_total;
-                progressBar.setProgress(number1);
-                numbers_textview.setText(Sharing.number_of_item_finished + "/" + Sharing.number_of_item_in_total);
-                percent_number_textview.setText(number2 + "%");
-
-                Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_finished));
-
                 timestamp_of_point = cursor2.getString(2).toString();
                 x = cursor2.getFloat(3);
                 y = cursor2.getFloat(4);
@@ -326,6 +315,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
 
+                Log.d("TIMESSTAMP", timestamp_of_point);
                 time_year = timestamp_of_point.split(" ")[0].split("-")[0];
                 time_month = timestamp_of_point.split(" ")[0].split("-")[1];
                 time_day = timestamp_of_point.split(" ")[0].split("-")[2];
@@ -388,7 +378,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 output_csv_strings.add(new_csv_line);
             }
 
-
             if (cursor2 != null)
             {
                 cursor2.close();
@@ -411,7 +400,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
             databaseHelper.close();
         }
 
-
         return output_string;
     }
 
@@ -422,28 +410,173 @@ public class StoreDataFileActivity extends AppCompatActivity {
         return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
     }
 
-    private Handler handler = new Handler()
+    private void storeDataFileWorker ()
     {
-        @Override
-        public void handleMessage (Message message)
+        Log.d("WORKER_STARTED", "WORKER_STARTED");
+        calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH) + 1;
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        hour = calendar.get(Calendar.HOUR_OF_DAY);
+        minute = calendar.get(Calendar.MINUTE);
+        second = calendar.get(Calendar.SECOND);
+        millisecond = calendar.get(Calendar.MILLISECOND);
+
+        if (String.valueOf(month).length() == 1)
         {
-            switch (message.what)
-            {
-                case 0: progressDialog = new ProgressDialog(StoreDataFileActivity.this);
-                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                    progressDialog.setCancelable(false);
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.setTitle("Generating file");
-                    progressDialog.setMax(100);
-                    progressDialog.setMessage("Generating files");
-                    progressDialog.show();
-                    break;
-                case 1:
-                    progressDialog.dismiss();
-                    break;
+            month_s = "0" + String.valueOf(month);
+        }
+        else
+        {
+            month_s = String.valueOf(month);
+        }
+        if (String.valueOf(day).length() == 1)
+        {
+            day_s = "0" + String.valueOf(day);
+        }
+        else
+        {
+            day_s = String.valueOf(day);
+        }
+        if (String.valueOf(hour).length() == 1)
+        {
+            hour_s = "0" + String.valueOf(hour);
+        }
+        else
+        {
+            hour_s = String.valueOf(hour);
+        }
+        if (String.valueOf(minute).length() == 1)
+        {
+            minute_s = "0" + String.valueOf(minute);
+        }
+        else
+        {
+            minute_s = String.valueOf(minute);
+        }
+        if (String.valueOf(second).length() == 1)
+        {
+            second_s = "0" + String.valueOf(second);
+        }
+        else
+        {
+            second_s = String.valueOf(second);
+        }
+        if (String.valueOf(millisecond).length() == 1)
+        {
+            millisecond_s = "00" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 2)
+        {
+            millisecond_s = "0" + String.valueOf(millisecond);
+        }
+        else if (String.valueOf(millisecond).length() == 3)
+        {
+            millisecond_s = String.valueOf(millisecond);
+        }
+
+        String file_time = String.valueOf(year) + month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
+
+        output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
+        output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
+
+        try {
+
+            File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+
+
+            File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
+            try {
+                FileWriter fileWriter = new FileWriter(output_file);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                String content = generate_string_from_database();
+                bufferedWriter.write(content);
+                Log.d("CONTENTTTTT", content);
+                bufferedWriter.close();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+            File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
+            FileWriter fileWriter1 = new FileWriter(output_csv_file);
+            try {
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
+                int i = 0;
+                for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
+                    bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                }
+                bufferedWriter.close();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-    };
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
+        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
+        Log.d("file_path1", file_path);
+        Sharing.file_path = file_path;
+        String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
+        String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
+
+        NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel channel = null;
+            if (channel == null)
+            {
+                channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
+                channel.setDescription("Neurograph_Notification");
+                channel.enableLights(true);
+                channel.setLightColor(Color.RED);
+                channel.enableVibration(true);
+                channel.setVibrationPattern(new long []{100, 200, 300, 400, 500, 400, 300, 200, 100});
+                manager.createNotificationChannel(channel);
+            }
+            Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                    .setSmallIcon(R.drawable.spiral1)
+                    .setContentTitle("File Saved")
+                    .setContentInfo("Neurograph Notification")
+                    .setContentText(Sharing.file_path)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setAutoCancel(false)
+                    .setOngoing(true)
+                    .setChannelId("my_channel_01")
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .build();
+            manager.notify(90, notification);
+        }
+        else
+        {
+            Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                    .setSmallIcon(R.drawable.spiral1)
+                    .setTicker("Neurograph Notification")
+                    .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setContentTitle("File Saved")
+                    .setContentInfo("Neurograph Notification")
+                    .setContentText(Sharing.file_path)
+                    .setAutoCancel(false)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .build();
+            manager.notify(0, notification);
+        }
+
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -489,12 +622,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
             builder.show();
         }
 
+        /*
         progressBar = (ProgressBar) findViewById(R.id.store_data_file_progressbar);
         numbers_textview = (TextView) findViewById(R.id.store_data_file_numbers);
         percent_number_textview = (TextView) findViewById(R.id.store_data_file_percent_number);
         progressBar.setProgress(0);
         numbers_textview.setText("0/0");
         percent_number_textview.setText("0.0%");
+        */
 
         button_generate = (Button) findViewById(R.id.store_data_file_generate_button);
         button_generate.setOnClickListener(new View.OnClickListener() {
@@ -503,198 +638,15 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
                 Sharing.number_of_item_finished = 0;
                 Sharing.number_of_item_in_total = 0;
-                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                //Sharing.number_of_item_in_total = getNumber_of_item_in_total();
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
-                //showProgressDialog();
-                /*
-                handler.sendEmptyMessage(0);
-                new Thread () {
-                    public void run ()
-                    {
-                        try
-                        {
-                            Thread.sleep(3000);
-                            progressDialog.setProgress(50);
-                            Thread.sleep(3000);
-                        }
-                        catch (Exception e)
-                        {
-                            e.printStackTrace();
-                        }
-                        handler.sendEmptyMessage (1);
-                    }
-                }.start();
-                */
+
+                //storeDataFileWorker();
 
 
+                //storeDataFileWorker();
 
-                calendar = Calendar.getInstance();
-                year = calendar.get(Calendar.YEAR);
-                month = calendar.get(Calendar.MONTH) + 1;
-                day = calendar.get(Calendar.DAY_OF_MONTH);
-                hour = calendar.get(Calendar.HOUR_OF_DAY);
-                minute = calendar.get(Calendar.MINUTE);
-                second = calendar.get(Calendar.SECOND);
-                millisecond = calendar.get(Calendar.MILLISECOND);
-
-                if (String.valueOf(month).length() == 1)
-                {
-                    month_s = "0" + String.valueOf(month);
-                }
-                else
-                {
-                    month_s = String.valueOf(month);
-                }
-                if (String.valueOf(day).length() == 1)
-                {
-                    day_s = "0" + String.valueOf(day);
-                }
-                else
-                {
-                    day_s = String.valueOf(day);
-                }
-                if (String.valueOf(hour).length() == 1)
-                {
-                    hour_s = "0" + String.valueOf(hour);
-                }
-                else
-                {
-                    hour_s = String.valueOf(hour);
-                }
-                if (String.valueOf(minute).length() == 1)
-                {
-                    minute_s = "0" + String.valueOf(minute);
-                }
-                else
-                {
-                    minute_s = String.valueOf(minute);
-                }
-                if (String.valueOf(second).length() == 1)
-                {
-                    second_s = "0" + String.valueOf(second);
-                }
-                else
-                {
-                    second_s = String.valueOf(second);
-                }
-                if (String.valueOf(millisecond).length() == 1)
-                {
-                    millisecond_s = "00" + String.valueOf(millisecond);
-                }
-                else if (String.valueOf(millisecond).length() == 2)
-                {
-                    millisecond_s = "0" + String.valueOf(millisecond);
-                }
-                else if (String.valueOf(millisecond).length() == 3)
-                {
-                    millisecond_s = String.valueOf(millisecond);
-                }
-
-                String file_time = String.valueOf(year) + month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
-
-                output_file_name = "NeurographOutputDataFile" + file_time + ".txt";
-                output_csv_file_name = "NeurographOutputDataFile" + file_time + ".csv";
-
-                try {
-
-                    File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
-                    if (!file.exists()) {
-                        file.mkdirs();
-                    }
-
-
-                    File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
-                    try {
-                        FileWriter fileWriter = new FileWriter(output_file);
-                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                        bufferedWriter.write(generate_string_from_database());
-                        bufferedWriter.close();
-                    } catch (IOException ioe) {
-                        ioe.printStackTrace();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-
-                    File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
-                    FileWriter fileWriter1 = new FileWriter(output_csv_file);
-                    try {
-                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
-                        int i = 0;
-                        for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
-                            bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
-                        }
-                        bufferedWriter.close();
-                    } catch (IOException ioe) {
-                        ioe.printStackTrace();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-
-
-
-
-
-
-
-
-
-                String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
-                file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
-                Log.d("file_path1", file_path);
-                Sharing.file_path = file_path;
-                String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
-                String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
-
-                NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                {
-                    int importance = NotificationManager.IMPORTANCE_LOW;
-                    NotificationChannel channel = null;
-                    if (channel == null)
-                    {
-                        channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
-                        channel.setDescription("Neurograph_Notification");
-                        channel.enableLights(true);
-                        channel.setLightColor(Color.RED);
-                        channel.enableVibration(true);
-                        channel.setVibrationPattern(new long []{100, 200, 300, 400, 500, 400, 300, 200, 100});
-                        manager.createNotificationChannel(channel);
-                    }
-                    Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                            .setSmallIcon(R.drawable.spiral1)
-                            .setContentTitle("Email sent and file saved")
-                            .setContentInfo("Neurograph Notification")
-                            .setContentText(Sharing.file_path)
-                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                            .setAutoCancel(false)
-                            .setOngoing(true)
-                            .setChannelId("my_channel_01")
-                            .setDefaults(Notification.DEFAULT_ALL)
-                            .build();
-                    manager.notify(90, notification);
-                }
-                else
-                {
-                    Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                            .setSmallIcon(R.drawable.spiral1)
-                            .setTicker("Neurograph Notification")
-                            .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
-                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                            .setContentTitle("Email sent and file saved")
-                            .setContentInfo("Neurograph Notification")
-                            .setContentText(Sharing.file_path)
-                            .setAutoCancel(false)
-                            .setDefaults(Notification.DEFAULT_ALL)
-                            .build();
-                    manager.notify(0, notification);
-                }
 
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
                 builder1.setTitle("Successfully Saved");
@@ -727,5 +679,46 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onRestart ()
+    {
+        Log.d("ON_STOP", "ON_RESTART");
+        super.onRestart();
+    }
+
+    @Override
+    public void onResume ()
+    {
+        Log.d("ON_STOP", "ON_RESUME");
+        super.onResume();
+    }
+
+    @Override
+    public void onPause ()
+    {
+        Log.d("ON_STOP", "ON_PAUSE");
+        super.onPause();
+    }
+
+    @Override
+    public void onStop ()
+    {
+        Log.d("ON_STOP", "ON_STOP");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                storeDataFileWorker();
+            }
+        }).start();
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroy ()
+    {
+        Log.d("ON_STOP", "ON_DESTROY");
+        super.onDestroy();
     }
 }
