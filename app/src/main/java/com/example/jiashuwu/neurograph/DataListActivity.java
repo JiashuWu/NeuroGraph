@@ -114,6 +114,9 @@ public class DataListActivity extends AppCompatActivity {
     {
         datalist.clear();
 
+        databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
+        databaseHelper.getReadableDatabase();
+
         database = databaseHelper.getReadableDatabase();
         String query = "SELECT * FROM Test";
         String query1 = "";
@@ -153,6 +156,19 @@ public class DataListActivity extends AppCompatActivity {
             {
                 cursor1.close();
             }
+        }
+
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
         }
 
         simpleAdapter = new SimpleAdapter(DataListActivity.this, datalist, R.layout.listview_item, new String [] {"test_id" , "name" , "test_starting_time" , "test_type" , "image_type"}, new int [] {R.id.list_item_test_number , R.id.list_item_tester_name , R.id.list_item_test_time , R.id.list_item_test_type , R.id.list_item_image_type});
@@ -216,9 +232,19 @@ public class DataListActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int item_to_be_deleted = (int)data_detail.get("test_id");
+                        databaseHelper = new MyDatabaseHelper (DataListActivity.this, databaseName, null, databaseVersion);
                         database = databaseHelper.getWritableDatabase();
                         database.delete("Data", "test_id = ? ", new String[] {String.valueOf(item_to_be_deleted)});
                         database.delete("Test", "test_id = ? ", new String[] {String.valueOf(item_to_be_deleted)});
+
+                        if (database != null)
+                        {
+                            database.close();
+                        }
+                        if (databaseHelper != null)
+                        {
+                            databaseHelper.close();
+                        }
 
                         build_data_list();
 
@@ -307,8 +333,17 @@ public class DataListActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     if (delete_option.equalsIgnoreCase("all"))
                     {
+                        databaseHelper = new MyDatabaseHelper (DataListActivity.this, databaseName, null, databaseVersion);
                         database = databaseHelper.getWritableDatabase();
                         MyDatabaseHelper.upgradeDatabase(database);
+                        if (database != null)
+                        {
+                            database.close();
+                        }
+                        if (databaseHelper != null)
+                        {
+                            databaseHelper.close();
+                        }
                         //build_data_list();
                         Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
                         startActivity(intent);
@@ -316,9 +351,18 @@ public class DataListActivity extends AppCompatActivity {
                     }
                     if (delete_option.equalsIgnoreCase("test"))
                     {
+                        databaseHelper = new MyDatabaseHelper (DataListActivity.this, databaseName, null, databaseVersion);
                         database = databaseHelper.getWritableDatabase();
                         database.delete("Data", "", new String[] {});
                         database.delete("Test", "", new String[] {});
+                        if (database != null)
+                        {
+                            database.close();
+                        }
+                        if (databaseHelper != null)
+                        {
+                            databaseHelper.close();
+                        }
                         build_data_list();
                     }
                     if (delete_option.equalsIgnoreCase("specific"))
@@ -372,10 +416,19 @@ public class DataListActivity extends AppCompatActivity {
 
                                 String delete_before_this_date = String.valueOf(delete_year) + "-" + delete_month_s + "-" + delete_day_s + " " + "00:00:00.000";
 
+                                databaseHelper = new MyDatabaseHelper (DataListActivity.this, databaseName, null, databaseVersion);
                                 database = databaseHelper.getWritableDatabase();
                                 //database.delete("Data", "", new String[] {});
                                 database.delete("Test", "test_ending_time < ?", new String[] {delete_before_this_date});
 
+                                if (database != null)
+                                {
+                                    database.close();
+                                }
+                                if (databaseHelper != null)
+                                {
+                                    databaseHelper.close();
+                                }
 
                                 build_data_list();
                             }
