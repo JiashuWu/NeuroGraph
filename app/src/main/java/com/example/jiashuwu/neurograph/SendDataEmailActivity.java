@@ -300,6 +300,15 @@ public class SendDataEmailActivity extends AppCompatActivity {
         }
         Sharing.csv_string_arraylist = output_csv_strings;
 
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
+        }
+
         return output_string;
     }
 

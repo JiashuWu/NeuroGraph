@@ -116,6 +116,19 @@ public class outputStringGenerator {
             }
 
         }
+
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
+        }
         return output_string;
     }
 

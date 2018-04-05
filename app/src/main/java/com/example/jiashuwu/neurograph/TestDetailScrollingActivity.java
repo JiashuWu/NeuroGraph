@@ -137,6 +137,15 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         }
         test_detail_textview.setText(test_detail);
 
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
+        }
+
 
 
 
