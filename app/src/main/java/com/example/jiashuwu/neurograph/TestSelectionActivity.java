@@ -453,6 +453,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             Sharing.current_user_id = user_id;
             // TODO FIX
             startActivity(intent);
+            TestSelectionActivity.this.finish();
         }
         else if (id == R.id.action_switch_user)
         {
