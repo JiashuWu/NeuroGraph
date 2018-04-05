@@ -86,6 +86,8 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
         y_list = new ArrayList<Float>();
         pressure_list = new ArrayList<Float>();
         touch_point_size_list = new ArrayList<Float>();
+
+        Sharing.number_of_item_in_total = 0;
     }
 
     @Override
@@ -119,7 +121,7 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
         Sharing.touch_point_size_list = touch_point_size_list;
-        Sharing.number_of_item_in_total = x_list.size();
+        //Sharing.number_of_item_in_total = x_list.size();
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
     }
@@ -237,6 +239,8 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
         touch_point_size_list.add(touch_point_size);
         Log.d("destroy", String.valueOf(x_list.size()));
 
+        Sharing.number_of_item_in_total = x_list.size();
+
         switch (event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
@@ -263,5 +267,8 @@ public class MySurfaceViewForDynamicBlankBackground extends SurfaceView implemen
         touch_point_size_list.clear();
         timestamp_list.clear();
         mPath.reset();
+
+        Sharing.number_of_item_in_total = 0;
+
     }
 }

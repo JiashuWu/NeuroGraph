@@ -108,6 +108,8 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         pressure_list = new ArrayList<Float>();
         touch_point_size_list = new ArrayList<Float>();
 
+        Sharing.number_of_item_in_total = 0;
+
         calendar = Calendar.getInstance();
         initial_second = calendar.get(Calendar.SECOND);
         changing_second = initial_second;
@@ -148,7 +150,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
         Sharing.touch_point_size_list = touch_point_size_list;
-        Sharing.number_of_item_in_total = x_list.size();
+        //Sharing.number_of_item_in_total = x_list.size();
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
     }
@@ -294,6 +296,8 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         touch_point_size_list.add(touch_point_size);
         Log.d("destroy", String.valueOf(x_list.size()));
 
+        Sharing.number_of_item_in_total = x_list.size();
+
         switch (event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
@@ -320,5 +324,8 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         touch_point_size_list.clear();
         timestamp_list.clear();
         mPath.reset();
+
+        Sharing.number_of_item_in_total = 0;
+
     }
 }

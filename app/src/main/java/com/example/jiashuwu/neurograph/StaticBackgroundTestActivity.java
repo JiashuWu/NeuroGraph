@@ -465,8 +465,6 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
                 //test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
-                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
-
                 Intent intent = new Intent(StaticBackgroundTestActivity.this, ThankYouActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 startActivity(intent);

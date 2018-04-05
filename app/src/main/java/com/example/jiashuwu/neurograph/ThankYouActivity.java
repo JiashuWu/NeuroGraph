@@ -1,5 +1,6 @@
 package com.example.jiashuwu.neurograph;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -29,7 +30,11 @@ public class ThankYouActivity extends AppCompatActivity {
     private TextView numbers_textview;
     private TextView percent_textview;
 
-    private int waiting_time = 0;
+
+
+    private ProgressDialog progressDialog;
+
+    private int frequency_per_second = 360;
 
 
     public void initLocaleLanguage ()
@@ -126,15 +131,63 @@ public class ThankYouActivity extends AppCompatActivity {
         }.start();
         */
 
-        if (Sharing.number_of_item_in_total > 3000)
-        {
-            waiting_time = 6000;
-        }
-        else
-        {
-            waiting_time = 3600;
-        }
+        Log.d("processing", String.valueOf(Sharing.number_of_item_in_total));
+        Log.d("destroy", "on_create");
 
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setTitle("Thank you");
+        progressDialog.setMax(Sharing.number_of_item_in_total);
+        progressDialog.setMessage("Thank you for your participation. Please waiting while processing");
+        progressDialog.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int i = 0;
+                while(i < 100)
+                {
+                    try
+                    {
+                        int waiting_time =  Sharing.number_of_item_in_total / frequency_per_second *1000 / 100;
+                        if (waiting_time == 0)
+                        {
+                            waiting_time = 19;
+                        }
+                        Log.d("processing", String.valueOf(Sharing.number_of_item_in_total));
+                        Log.d("processing", String.valueOf(waiting_time));
+                        Thread.sleep(waiting_time);
+                        if (Sharing.number_of_item_in_total / 100 == 0)
+                        {
+                            progressDialog.incrementProgressBy(1);
+                        }
+                        else {
+                            progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
+                        }
+                        i++;
+                        Log.d("destroy", String.valueOf(i));
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+                progressDialog.setProgress(100);
+                progressDialog.dismiss();
+                Intent intent = new Intent(ThankYouActivity.this , TestSelectionActivity.class);
+                intent.putExtra("user_id", String.valueOf(user_id));
+                Sharing.isScale = initial_isScale;
+                // Log.d("isScale", String.valueOf(Sharing.isScale));
+                ThankYouActivity.this.startActivity(intent);
+                ThankYouActivity.this.finish();
+            }
+        }).start();
+
+
+
+        /*
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -146,6 +199,7 @@ public class ThankYouActivity extends AppCompatActivity {
                 ThankYouActivity.this.finish();
             }
         }, waiting_time);
+        */
 
 
 
