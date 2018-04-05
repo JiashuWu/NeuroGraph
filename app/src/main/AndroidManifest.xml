@@ -118,7 +118,7 @@
             android:name=".ParallelLineTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-        <activity android:name=".TransferTestSelectionActivity"></activity>
+        <activity android:name=".TransferTestSelectionActivity" />
     </application>
 
 </manifest>

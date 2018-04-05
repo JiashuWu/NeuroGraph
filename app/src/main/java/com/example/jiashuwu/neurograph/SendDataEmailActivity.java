@@ -343,6 +343,68 @@ public class SendDataEmailActivity extends AppCompatActivity {
         return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
     }
 
+    private void sendEmailWorker ()
+    {
+        try
+        {
+            content = generate_string_from_database();
+            //output_csv_strings = generate_csv_string_from_database();
+            //Sharing.csv_string_arraylist = output_csv_strings;
+
+            emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
+            //emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
+            NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            {
+                int importance = NotificationManager.IMPORTANCE_LOW;
+                NotificationChannel channel = null;
+                if (channel == null)
+                {
+                    channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
+                    channel.setDescription(getString(R.string.neurograph_notification));
+                    channel.enableLights(true);
+                    channel.setLightColor(Color.RED);
+                    channel.enableVibration(true);
+                    channel.setVibrationPattern(new long []{100, 200, 300, 400, 500, 400, 300, 200, 100});
+                    manager.createNotificationChannel(channel);
+                }
+                Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                        .setSmallIcon(R.drawable.spiral1)
+                        .setContentTitle(getString(R.string.successful_message_email_file))
+                        .setContentInfo("Neurograph Notification")
+                        .setContentText(Sharing.file_path)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setAutoCancel(false)
+                        .setOngoing(true)
+                        .setChannelId("my_channel_01")
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .build();
+                manager.notify(90, notification);
+            }
+            else
+            {
+                Notification notification = new NotificationCompat.Builder(getApplicationContext())
+                        .setSmallIcon(R.drawable.spiral1)
+                        .setTicker("Neurograph Notification")
+                        .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setContentTitle(getResources().getString(R.string.successful_message_email_file))
+                        .setContentInfo("Neurograph Notification")
+                        .setContentText(Sharing.file_path)
+                        .setAutoCancel(false)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .build();
+                manager.notify(0, notification);
+            }
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
@@ -545,64 +607,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
                             if (readyToSend && confirm_to_send)
                             {
-                                try
-                                {
-                                    content = generate_string_from_database();
-                                    //output_csv_strings = generate_csv_string_from_database();
-                                    //Sharing.csv_string_arraylist = output_csv_strings;
-
-                                    emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
-                                    //emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
-                                    NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                                    {
-                                        int importance = NotificationManager.IMPORTANCE_LOW;
-                                        NotificationChannel channel = null;
-                                        if (channel == null)
-                                        {
-                                            channel = new NotificationChannel("my_channel_01", getString(R.string.channel_name), importance);
-                                            channel.setDescription(getString(R.string.neurograph_notification));
-                                            channel.enableLights(true);
-                                            channel.setLightColor(Color.RED);
-                                            channel.enableVibration(true);
-                                            channel.setVibrationPattern(new long []{100, 200, 300, 400, 500, 400, 300, 200, 100});
-                                            manager.createNotificationChannel(channel);
-                                        }
-                                        Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                                                .setSmallIcon(R.drawable.spiral1)
-                                                .setContentTitle(getString(R.string.successful_message_email_file))
-                                                .setContentInfo("Neurograph Notification")
-                                                .setContentText(Sharing.file_path)
-                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                                                .setAutoCancel(false)
-                                                .setOngoing(true)
-                                                .setChannelId("my_channel_01")
-                                                .setDefaults(Notification.DEFAULT_ALL)
-                                                .build();
-                                        manager.notify(90, notification);
-                                    }
-                                    else
-                                    {
-                                        Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                                                .setSmallIcon(R.drawable.spiral1)
-                                                .setTicker("Neurograph Notification")
-                                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
-                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                                                .setContentTitle(getResources().getString(R.string.successful_message_email_file))
-                                                .setContentInfo("Neurograph Notification")
-                                                .setContentText(Sharing.file_path)
-                                                .setAutoCancel(false)
-                                                .setDefaults(Notification.DEFAULT_ALL)
-                                                .build();
-                                        manager.notify(0, notification);
-                                    }
-
-
-                                }
-                                catch (Exception e)
-                                {
-                                    e.printStackTrace();
-                                }
+                                //sendEmailWorker();
 
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(SendDataEmailActivity.this);
                                 builder1.setTitle(R.string.successfully_sent);
@@ -623,11 +628,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                         ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
                                         clipboardManager.setPrimaryClip(clipData);
                                         Toast.makeText(SendDataEmailActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
-
                                         Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
                                         startActivity(intent);
                                         SendDataEmailActivity.this.finish();
-
                                     }
                                 });
                                 builder1.create();
@@ -672,5 +675,40 @@ public class SendDataEmailActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onPause ()
+    {
+        super.onPause();
+    }
+
+    @Override
+    public void onStop ()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sendEmailWorker();
+            }
+        }).start();
+        super.onStop();
+    }
+
+    @Override
+    public void onRestart ()
+    {
+        super.onRestart();
+    }
+
+    @Override
+    public void onResume ()
+    {
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy ()
+    {
+        super.onDestroy();
+    }
 
 }
