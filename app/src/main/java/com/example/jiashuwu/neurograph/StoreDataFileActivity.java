@@ -189,7 +189,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         return answer;
     }
 
-    public void showProgressBar()
+    public void showProgressDialog()
     {
         final ProgressDialog progressDialog = new ProgressDialog(StoreDataFileActivity.this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -203,12 +203,21 @@ public class StoreDataFileActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (Sharing.number_of_item_finished != Sharing.number_of_item_in_total)
+                int i = 0;
+                while (i < 100)
                 {
-                    int number = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
-                    progressDialog.setProgress(number);
+                    try
+                    {
+                        Thread.sleep(200);
+                        progressDialog.incrementProgressBy(1);
+                        i++;
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
                 }
-                progressDialog.dismiss();
+                // progressDialog.dismiss();
             }
         }).start();
     }
@@ -473,7 +482,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 Sharing.number_of_item_in_total = getNumber_of_item_in_total();
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
-                //showProgressBar();
+                //showProgressDialog();
 
 
 
