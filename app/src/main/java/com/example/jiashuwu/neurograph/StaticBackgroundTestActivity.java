@@ -85,6 +85,9 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
 
+    private MyDatabaseHelper databaseHelper1;
+    private SQLiteDatabase database1;
+
     private int databaseVersion = DatabaseInformation.databaseVersion;
     private String databaseName = DatabaseInformation.databaseName;
 
@@ -149,6 +152,125 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public int getNumber_of_item_in_total ()
+    {
+        databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
+        databaseHelper1.getReadableDatabase();
+
+        database1 = databaseHelper1.getReadableDatabase();
+
+        int answer = 0;
+
+        String query = "SELECT number_of_points FROM Test";
+        String [] parameter = new String [] {};
+        Cursor cursor = database1.rawQuery(query, parameter);
+        while (cursor.moveToNext())
+        {
+            answer = answer + cursor.getInt(0);
+        }
+
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database1 != null)
+        {
+            database1.close();
+        }
+        if (databaseHelper1 != null)
+        {
+            databaseHelper1.close();
+        }
+        return answer;
+    }
+
+    public void storeDataWorker ()
+    {
+        x_list = Sharing.x_list;
+        y_list = Sharing.y_list;
+        pressure_list = Sharing.pressure_list;
+        timestamp_list = Sharing.timestamp_list;
+        touch_point_size_list = Sharing.touch_point_size_list;
+
+        number_of_points = x_list.size();
+
+        Log.d("ORDER", "ON_STOP");
+
+        //Log.d("destroy", String.valueOf(x_list.size()));
+
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_id", user_id);
+        values.put("test_starting_time", test_starting_time);
+        values.put("test_ending_time", test_ending_time);
+        values.put("test_type", test_type);
+        values.put("image_type", image_type);
+        values.put("interval_duration", interval_duration);
+        values.put("number_of_points", number_of_points);
+        Log.d("TAG_TEST_INFO", String.valueOf(user_id));
+        Log.d("TAG_TEST_INFO", test_starting_time);
+        Log.d("TAG_TEST_INFO", test_ending_time);
+        Log.d("TAG_TEST_INFO", test_type);
+        Log.d("TAG_TEST_INFO", image_type);
+        Log.d("TAG_TEST_INFO", String.valueOf(interval_duration));
+        database.insert("Test", null, values);
+
+        // We now want to get this test's test_id
+
+        database = databaseHelper.getReadableDatabase();
+        String query = "SELECT test_id FROM Test WHERE user_id = ? AND test_starting_time = ? AND test_ending_time = ? AND test_type = ? AND image_type = ? AND interval_duration = ? AND number_of_points = ? ";
+        String [] parameters = new String [] {String.valueOf(user_id), test_starting_time, test_ending_time, test_type, image_type, String.valueOf(interval_duration), String.valueOf(number_of_points)};
+        Cursor cursor = database.rawQuery(query, parameters);
+        while (cursor.moveToNext())
+        {
+            test_id = Integer.parseInt(cursor.getString(0).toString());
+        }
+        Log.d("TAG_TEST_INFO", String.valueOf(user_id));
+
+        database = databaseHelper.getWritableDatabase();
+        int i = 0;
+        values = new ContentValues();
+        Sharing.number_of_item_in_total = x_list.size();
+        Sharing.number_of_item_finished = 0;
+        Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
+        for (i = 0 ; i < x_list.size() ; i++)
+        {
+            Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
+            Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_finished));
+            Log.d("PROGRESSES", String.valueOf((float) Sharing.progress / (float) Sharing.progress_total));
+            values.put("test_id", test_id);
+            values.put("timestamp_of_point", timestamp_list.get(i));
+            values.put("x", x_list.get(i));
+            values.put("y", y_list.get(i));
+            values.put("pressure", pressure_list.get(i));
+            values.put("touch_point_size", touch_point_size_list.get(i));
+            Log.d("TAG_DATA_INFO", String.valueOf(test_id));
+            Log.d("TAG_DATA_INFO", timestamp_list.get(i));
+            Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));
+            Log.d("TAG_DATA_INFO", String.valueOf(y_list.get(i)));
+            Log.d("TAG_DATA_INFO", String.valueOf(pressure_list.get(i)));
+            Log.d("TAG_DATA_INFO", String.valueOf(touch_point_size_list.get(i)));
+            database.insert("Data", null, values);
+        }
+
+
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (values != null)
+        {
+            values.clear();
+        }
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -343,6 +465,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
                 //test_ending_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
 
+                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
 
                 Intent intent = new Intent(StaticBackgroundTestActivity.this, ThankYouActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
@@ -382,90 +505,12 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
     @Override
     public void onStop ()
     {
-        x_list = Sharing.x_list;
-        y_list = Sharing.y_list;
-        pressure_list = Sharing.pressure_list;
-        timestamp_list = Sharing.timestamp_list;
-        touch_point_size_list = Sharing.touch_point_size_list;
-
-        number_of_points = x_list.size();
-
-        Log.d("ORDER", "ON_STOP");
-
-        //Log.d("destroy", String.valueOf(x_list.size()));
-
-        SQLiteDatabase database = databaseHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("user_id", user_id);
-        values.put("test_starting_time", test_starting_time);
-        values.put("test_ending_time", test_ending_time);
-        values.put("test_type", test_type);
-        values.put("image_type", image_type);
-        values.put("interval_duration", interval_duration);
-        values.put("number_of_points", number_of_points);
-        Log.d("TAG_TEST_INFO", String.valueOf(user_id));
-        Log.d("TAG_TEST_INFO", test_starting_time);
-        Log.d("TAG_TEST_INFO", test_ending_time);
-        Log.d("TAG_TEST_INFO", test_type);
-        Log.d("TAG_TEST_INFO", image_type);
-        Log.d("TAG_TEST_INFO", String.valueOf(interval_duration));
-        database.insert("Test", null, values);
-
-        // We now want to get this test's test_id
-
-        database = databaseHelper.getReadableDatabase();
-        String query = "SELECT test_id FROM Test WHERE user_id = ? AND test_starting_time = ? AND test_ending_time = ? AND test_type = ? AND image_type = ? AND interval_duration = ? AND number_of_points = ? ";
-        String [] parameters = new String [] {String.valueOf(user_id), test_starting_time, test_ending_time, test_type, image_type, String.valueOf(interval_duration), String.valueOf(number_of_points)};
-        Cursor cursor = database.rawQuery(query, parameters);
-        while (cursor.moveToNext())
-        {
-            test_id = Integer.parseInt(cursor.getString(0).toString());
-        }
-        Log.d("TAG_TEST_INFO", String.valueOf(user_id));
-
-        database = databaseHelper.getWritableDatabase();
-        int i = 0;
-        values = new ContentValues();
-        Sharing.number_of_item_in_total = x_list.size();
-        Sharing.number_of_item_finished = 0;
-        Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
-        for (i = 0 ; i < x_list.size() ; i++)
-        {
-            Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
-            Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_finished));
-            Log.d("PROGRESSES", String.valueOf((float) Sharing.progress / (float) Sharing.progress_total));
-            values.put("test_id", test_id);
-            values.put("timestamp_of_point", timestamp_list.get(i));
-            values.put("x", x_list.get(i));
-            values.put("y", y_list.get(i));
-            values.put("pressure", pressure_list.get(i));
-            values.put("touch_point_size", touch_point_size_list.get(i));
-            Log.d("TAG_DATA_INFO", String.valueOf(test_id));
-            Log.d("TAG_DATA_INFO", timestamp_list.get(i));
-            Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));
-            Log.d("TAG_DATA_INFO", String.valueOf(y_list.get(i)));
-            Log.d("TAG_DATA_INFO", String.valueOf(pressure_list.get(i)));
-            Log.d("TAG_DATA_INFO", String.valueOf(touch_point_size_list.get(i)));
-            database.insert("Data", null, values);
-        }
-
-
-        if (cursor != null)
-        {
-            cursor.close();
-        }
-        if (values != null)
-        {
-            values.clear();
-        }
-        if (database != null)
-        {
-            database.close();
-        }
-        if (databaseHelper != null)
-        {
-            databaseHelper.close();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                storeDataWorker();
+            }
+        }).start();
 
         super.onStop();
         Log.d("destroy", "activity_goes_away2");
