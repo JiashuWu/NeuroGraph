@@ -309,6 +309,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
             {
                 Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
 
+
                 int number1 = Sharing.number_of_item_finished * 100 / Sharing.number_of_item_in_total;
                 float number2 = (float) Sharing.number_of_item_finished * 100 / (float) Sharing.number_of_item_in_total;
                 progressBar.setProgress(number1);
