@@ -175,7 +175,7 @@ public class DataListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        source = getIntent().getStringExtra("source").toString();
+        //source = getIntent().getStringExtra("source").toString();
         Log.d("SOURCE", source);
 
         data_listview = (ListView) findViewById(R.id.data_listview);
@@ -409,13 +409,13 @@ public class DataListActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if (source.equalsIgnoreCase("setting"))
+            if (Sharing.redirect_source.equalsIgnoreCase("setting"))
             {
                 Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
                 startActivity(intent);
                 DataListActivity.this.finish();
             }
-            else if (source.equalsIgnoreCase("test_selection"))
+            else if (Sharing.redirect_source.equalsIgnoreCase("test_selection"))
             {
                 Intent intent = new Intent(DataListActivity.this, TestSelectionActivity.class);
                 intent.putExtra("user_id", String.valueOf(Sharing.current_user_id));

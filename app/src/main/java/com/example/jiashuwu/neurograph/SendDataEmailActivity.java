@@ -97,6 +97,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     private CheckBox content_checkbox;
 
+    public String content = "";
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -536,11 +538,12 @@ public class SendDataEmailActivity extends AppCompatActivity {
                             {
                                 try
                                 {
-                                    String content = generate_string_from_database();
+                                    content = generate_string_from_database();
                                     //output_csv_strings = generate_csv_string_from_database();
                                     //Sharing.csv_string_arraylist = output_csv_strings;
 
                                     emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
+                                    //emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
                                     NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
                                     {

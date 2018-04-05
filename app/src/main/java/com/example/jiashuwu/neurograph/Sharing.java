@@ -47,6 +47,8 @@ public class Sharing {
 
     public static int current_user_id;
 
+    public static String redirect_source;
+
     public Sharing()
     {
 

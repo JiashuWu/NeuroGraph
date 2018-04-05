@@ -450,6 +450,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             Intent intent = new Intent(TestSelectionActivity.this, DataListActivity.class);
             intent.putExtra("user_id", String.valueOf(user_id));
             intent.putExtra("source", "test_selection");
+            Sharing.redirect_source = "test_selection";
             Sharing.current_user_id = user_id;
             // TODO FIX
             startActivity(intent);

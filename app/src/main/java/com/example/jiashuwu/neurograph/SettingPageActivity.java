@@ -798,6 +798,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
                 // TODO FIX
                 intent.putExtra("source", "setting");
+                Sharing.redirect_source = "setting";
                 startActivity(intent);
 
                 // Setting page should finish at this point
