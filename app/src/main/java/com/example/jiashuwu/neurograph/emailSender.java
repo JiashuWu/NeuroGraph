@@ -80,10 +80,11 @@ public class emailSender{
         // Get a Properties object
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", "smtp.gmail.com");
-        properties.setProperty("mail.smtp.socketFactory.class", SSL_FACTORY);
         properties.setProperty("mail.smtp.socketFactory.fallback", "false");
         properties.setProperty("mail.smtp.port", "465");
         properties.setProperty("mail.smtp.socketFactory.port", "465");
+        properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.debug", "true");
         properties.put("mail.store.protocol", "pop3");
