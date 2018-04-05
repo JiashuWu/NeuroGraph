@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Message;
 import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,11 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private float progress;
     private int count = 0;
+    private TextView numbers_textview;
+    private TextView percent_textview;
+
+    private int waiting_time = 0;
+
 
     public void initLocaleLanguage ()
     {
@@ -72,8 +78,62 @@ public class ThankYouActivity extends AppCompatActivity {
 
         //progressBar = (ProgressBar) findViewById(R.id.thank_you_activity_progressbar);
 
+
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 
+        /*
+        final Handler handler = new Handler()
+        {
+            @Override
+            public void handleMessage (Message message)
+            {
+
+            }
+        };
+        */
+
+        /*
+        count = 0;
+        new Thread ()
+        {
+            public void run ()
+            {
+                while (count != Sharing.number_of_item_in_total)
+                {
+                    try
+                    {
+                        Thread.sleep(10);
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    count = count + 1;
+                    int number1 = (int) ((double) count * 100 / (double) Sharing.number_of_item_in_total);
+                    float number2 = (float) ((float) count * 100 / (float) Sharing.number_of_item_in_total);
+                    progressBar.setProgress(number1);
+                    //numbers_textview.setText(count + "/" + Sharing.number_of_item_in_total);
+                    //percent_textview.setText(number2 + "%");
+
+                }
+                Intent intent = new Intent(ThankYouActivity.this , TestSelectionActivity.class);
+                intent.putExtra("user_id", String.valueOf(user_id));
+                Sharing.isScale = initial_isScale;
+                // Log.d("isScale", String.valueOf(Sharing.isScale));
+                ThankYouActivity.this.startActivity(intent);
+                ThankYouActivity.this.finish();
+            }
+        }.start();
+        */
+
+        if (Sharing.number_of_item_in_total > 3000)
+        {
+            waiting_time = Sharing.number_of_item_in_total / 800;
+        }
+        else
+        {
+            waiting_time = 3600;
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -85,7 +145,8 @@ public class ThankYouActivity extends AppCompatActivity {
                 ThankYouActivity.this.startActivity(intent);
                 ThankYouActivity.this.finish();
             }
-        }, 3600);
+        }, waiting_time);
+
 
 
 
