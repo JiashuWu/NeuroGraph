@@ -80,6 +80,8 @@ public class DataListActivity extends AppCompatActivity {
 
     private long exitTime;
 
+    private String source = "";
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -172,6 +174,9 @@ public class DataListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        source = getIntent().getStringExtra("source").toString();
+        Log.d("SOURCE", source);
 
         data_listview = (ListView) findViewById(R.id.data_listview);
 
@@ -404,9 +409,19 @@ public class DataListActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            Intent intent = new Intent (DataListActivity.this, SettingPageActivity.class);
-            startActivity(intent);
-            DataListActivity.this.finish();
+            if (source.equalsIgnoreCase("setting"))
+            {
+                Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
+                startActivity(intent);
+                DataListActivity.this.finish();
+            }
+            else if (source.equalsIgnoreCase("test_selection"))
+            {
+                Intent intent = new Intent(DataListActivity.this, TestSelectionActivity.class);
+                intent.putExtra("user_id", String.valueOf(Sharing.current_user_id));
+                startActivity(intent);
+                DataListActivity.this.finish();
+            }
             return true;
         }
         return super.onKeyDown(keyCode, event);

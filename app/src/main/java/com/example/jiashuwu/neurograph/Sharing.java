@@ -45,6 +45,8 @@ public class Sharing {
     public static int number_of_item_finished;
     public static int number_of_item_in_total;
 
+    public static int current_user_id;
+
     public Sharing()
     {
 
