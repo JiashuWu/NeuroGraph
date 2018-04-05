@@ -229,6 +229,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
         database = databaseHelper.getReadableDatabase();
 
+        Sharing.number_of_item_finished = 0;
+
         String output_string = "";
 
         String time_year;
@@ -307,6 +309,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
             while (cursor2.moveToNext())
             {
+                Sharing.number_of_item_finished = Sharing.number_of_item_finished + 1;
                 timestamp_of_point = cursor2.getString(2).toString();
                 x = cursor2.getFloat(3);
                 y = cursor2.getFloat(4);
@@ -638,7 +641,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
                 Sharing.number_of_item_finished = 0;
                 Sharing.number_of_item_in_total = 0;
-                //Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
                 Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
 
@@ -649,30 +652,18 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
 
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
-                builder1.setTitle("Successfully Saved");
+                builder1.setTitle("Generate Data Files");
                 builder1.setCancelable(false);
-                builder1.setMessage("The file has been saved into the file system.");
+                builder1.setMessage("Generating data files may takes a few second. Please wait");
                 builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
+                        Intent intent = new Intent(StoreDataFileActivity.this, DisplayProgressActivity.class);
                         startActivity(intent);
                         StoreDataFileActivity.this.finish();
                     }
                 });
-                builder1.setNegativeButton("Copy File Path", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                        ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
-                        clipboardManager.setPrimaryClip(clipData);
-                        Toast.makeText(StoreDataFileActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
-                        startActivity(intent);
-                        StoreDataFileActivity.this.finish();
-                    }
-                });
                 builder1.create();
                 builder1.show();
 
