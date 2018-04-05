@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -397,25 +398,19 @@ public class DataListActivity extends AppCompatActivity {
     // TODO OPTIONAL 1/4
 
 
-    /*
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if ((System.currentTimeMillis() - exitTime) > 2000)
-            {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
-            }
-            else
-            {
-                System.exit(0);
-            }
+            Intent intent = new Intent (DataListActivity.this, SettingPageActivity.class);
+            startActivity(intent);
+            DataListActivity.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
-    */
+
 
 }

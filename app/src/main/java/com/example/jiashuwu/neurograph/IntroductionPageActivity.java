@@ -1,11 +1,13 @@
 package com.example.jiashuwu.neurograph;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
@@ -172,26 +174,19 @@ public class IntroductionPageActivity extends AppCompatActivity {
     }
 
 
-    /*
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if ((System.currentTimeMillis() - exitTime) > 2000)
-            {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
-            }
-            else
-            {
-                System.exit(0);
-            }
+            Intent intent = new Intent (IntroductionPageActivity.this, SettingPageActivity.class);
+            startActivity(intent);
+            IntroductionPageActivity.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
 
-     */
 }
