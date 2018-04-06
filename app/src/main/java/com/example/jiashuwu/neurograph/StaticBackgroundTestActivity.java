@@ -33,6 +33,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ExpandableListAdapter;
 import android.widget.Toast;
 
 import java.io.File;
@@ -279,6 +280,34 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
 
     }
 
+    public Bitmap takeScreenShot ()
+    {
+        View rootView = findViewById(android.R.id.content).getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        return rootView.getDrawingCache();
+    }
+
+    public void saveBitmap (Bitmap bitmap)
+    {
+        try
+        {
+            File file = new File(Environment.getExternalStorageDirectory(), "Neurograph");
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+            File imagePath = new File (Environment.getExternalStorageDirectory(), "/Neurograph/" + "screenshot6666666.png");
+            FileOutputStream fileOutputStream;
+            fileOutputStream = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -409,6 +438,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         });
 
 
+
         /*
         capture_button = (Button) findViewById(R.id.static_background_test_capture_button);
         capture_button.setOnClickListener(new View.OnClickListener() {
@@ -416,9 +446,12 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO IF YOU WANT A SCREENSHOT
                 //getScreenShot();
+                Bitmap bitmap = takeScreenShot ();
+                saveBitmap (bitmap);
             }
         });
         */
+
 
 
         finish_button = (Button) findViewById(R.id.static_background_test_finish_button);
