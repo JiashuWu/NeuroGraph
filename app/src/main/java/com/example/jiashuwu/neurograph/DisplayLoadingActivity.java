@@ -48,6 +48,9 @@ public class DisplayLoadingActivity extends AppCompatActivity {
             case "blue": setTheme(R.style.AppTheme); break;
             case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
             case "green": setTheme(R.style.AppThemeGreen); break;
+            case "purple": setTheme(R.style.AppThemePurple); break;
+            case "pink": setTheme(R.style.AppThemePink); break;
+            case "orange": setTheme(R.style.AppThemeOrange); break;
             default:setTheme(R.style.AppTheme); break;
         }
     }
