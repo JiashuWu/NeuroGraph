@@ -322,26 +322,31 @@ public class DurationSelectionActivity extends AppCompatActivity {
     }
 
     // TODO OPTIONAL 2/4
-    /*
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if ((System.currentTimeMillis() - exitTime) > 2000)
+            Intent intent;
+            if (Sharing.test_to_duration.equalsIgnoreCase("yes"))
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
+                Sharing.test_to_duration = "";
+                intent = new Intent (DurationSelectionActivity.this, TestSelectionActivity.class);
             }
             else
             {
-                System.exit(0);
+                intent = new Intent(DurationSelectionActivity.this, ImageSelectionActivity.class);
             }
+            intent.putExtra("user_id", String.valueOf(user_id));
+            intent.putExtra("test_type", test_type);
+            startActivity(intent);
+            DurationSelectionActivity.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
-    */
+
 
 }

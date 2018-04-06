@@ -161,6 +161,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             Sharing.painter_width = painter_width;
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
                         }
                     });
 
@@ -173,6 +174,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("test_type", test_type);
                             intent.putExtra("image_type", "parallel_line");
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
                         }
                     });
                     break;
@@ -189,6 +191,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "static_full_background";
                             intent.putExtra("test_type", test_type);
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
                         }
                     });
 
@@ -201,6 +204,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
 
                         }
                     });
@@ -220,6 +224,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
 
                         }
                     });
@@ -233,6 +238,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("test_type", test_type);
                             // TODO FIX
                             startActivity(intent);
+                            TestSelectionActivity.this.finish();
 
                         }
                     });
@@ -394,7 +400,9 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "parallel_line_test";
                 intent.putExtra("test_type", test_type);
                 intent.putExtra("image_type", "parallel_line");
+                Sharing.test_to_duration = "yes";
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
             }
         });
 
@@ -406,6 +414,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "static_full_background";
                 intent.putExtra("test_type", test_type);
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
 
             }
         });
@@ -419,6 +428,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
 
             }
         });
@@ -432,6 +442,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
 
             }
         });
@@ -445,6 +456,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("test_type", test_type);
                 // TODO FIX
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
             }
         });
 

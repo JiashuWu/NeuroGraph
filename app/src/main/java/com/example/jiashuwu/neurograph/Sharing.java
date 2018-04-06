@@ -57,6 +57,8 @@ public class Sharing {
 
     public static String colour = "";
 
+    public static String test_to_duration = "";
+
     public Sharing()
     {
 

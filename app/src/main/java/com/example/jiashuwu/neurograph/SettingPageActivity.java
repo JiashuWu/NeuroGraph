@@ -960,21 +960,21 @@ public class SettingPageActivity extends AppCompatActivity {
                     Sharing.colour = "green";
                 }
             });
-            purple_button = (ImageView) findViewById(R.id.change_colour_alertdialog_purple);
+            purple_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_purple);
             purple_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "purple";
                 }
             });
-            pink_button = (ImageView) findViewById(R.id.change_colour_alertdialog_pink);
+            pink_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_pink);
             pink_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "pink";
                 }
             });
-            orange_button = (ImageView) findViewById(R.id.change_colour_alertdialog_orange);
+            orange_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_orange);
             orange_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

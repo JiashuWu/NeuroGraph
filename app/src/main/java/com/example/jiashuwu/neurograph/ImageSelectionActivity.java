@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -305,6 +306,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("static_corner_background"))
                 {
@@ -314,6 +316,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                 {
@@ -323,6 +326,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                 {
@@ -332,6 +336,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "spiral";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
             }
         });
@@ -349,6 +354,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("static_corner_background"))
                 {
@@ -358,6 +364,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("dynamic_blank_background"))
                 {
@@ -367,6 +374,7 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
                 else if (test_type.equalsIgnoreCase("dynamic_seasonal_background"))
                 {
@@ -376,32 +384,28 @@ public class ImageSelectionActivity extends AppCompatActivity {
                     image_type = "pentagon";
                     intent.putExtra("image_type", image_type);
                     startActivity(intent);
+                    ImageSelectionActivity.this.finish();
                 }
             }
         });
     }
 
     // TODO OPTIONAL 3/4
-    /*
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if ((System.currentTimeMillis() - exitTime) > 2000)
-            {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
-            }
-            else
-            {
-                System.exit(0);
-            }
+            Intent intent = new Intent(ImageSelectionActivity.this, TestSelectionActivity.class);
+            intent.putExtra("user_id", String.valueOf(user_id));
+            startActivity(intent);
+            ImageSelectionActivity.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
-    */
+
 
 }
