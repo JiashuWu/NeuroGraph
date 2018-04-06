@@ -28,7 +28,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
     private Button finish_button;
     private Button copy_file_path_button;
 
-    private int frequency_per_second = 360;
+    private int frequency_per_second = 280;
 
     private final Handler handler = new Handler()
     {
@@ -96,10 +96,21 @@ public class DisplayProgressActivity extends AppCompatActivity {
                     try
                     {
                         int waiting_time =  Sharing.number_of_item_in_total / frequency_per_second *1000 / 100;
+                        if (waiting_time == 0)
+                        {
+                            waiting_time = 19;
+                        }
                         Log.d("processing", String.valueOf(Sharing.number_of_item_in_total));
                         Log.d("processing", String.valueOf(waiting_time));
                         Thread.sleep(waiting_time);
-                        progressDialog.incrementProgressBy(Sharing.number_of_item_in_total / 100);
+                        if (Sharing.number_of_item_in_total / 100 == 0)
+                        {
+                            progressDialog.incrementProgressBy(1);
+                        }
+                        else
+                        {
+                            progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
+                        }
                         i++;
                     }
                     catch (Exception e)

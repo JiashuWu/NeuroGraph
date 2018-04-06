@@ -34,7 +34,7 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private int frequency_per_second = 360;
+    private int frequency_per_second = 330;
 
 
     public void initLocaleLanguage ()
@@ -163,7 +163,8 @@ public class ThankYouActivity extends AppCompatActivity {
                         {
                             progressDialog.incrementProgressBy(1);
                         }
-                        else {
+                        else
+                        {
                             progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
                         }
                         i++;
