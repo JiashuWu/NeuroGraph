@@ -7,6 +7,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,9 @@ public class DisplayProgressActivity extends AppCompatActivity {
     private Button finish_button;
     private Button copy_file_path_button;
 
-    private int frequency_per_second = 280;
+    private int frequency_per_second = 330;
+
+    private MyReceiver myReceiver;
 
     private final Handler handler = new Handler()
     {
@@ -79,6 +82,13 @@ public class DisplayProgressActivity extends AppCompatActivity {
             }
         });
 
+        myReceiver = new MyReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        DisplayProgressActivity.this.registerReceiver(myReceiver, intentFilter);
+
+
+        Sharing.stop_showing_process = 0;
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
@@ -91,7 +101,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
             @Override
             public void run() {
                 int i = 0;
-                while(i < 100)
+                while(i < 100 && Sharing.stop_showing_process == 0)
                 {
                     try
                     {
@@ -111,7 +121,12 @@ public class DisplayProgressActivity extends AppCompatActivity {
                         {
                             progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
                         }
-                        i++;
+                        if (i != 99)
+                        {
+                            i++;
+                        }
+                        // i++;
+
                     }
                     catch (Exception e)
                     {

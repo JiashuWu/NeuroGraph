@@ -407,6 +407,12 @@ public class SendDataEmailActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
+
+        Sharing.stop_showing_process = 0;
+        Intent broadcastMessage = new Intent ();
+        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        broadcastMessage.putExtra("stop_showing_process", "1");
+        sendBroadcast(broadcastMessage);
     }
 
     public int getNumber_of_item_in_total ()

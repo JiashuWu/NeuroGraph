@@ -127,6 +127,11 @@
         <activity android:name=".DisplaySendingActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
+        <receiver android:name=".MyReceiver">
+            <intent-filter>
+                <action android:name="com.example.jiashuwu.neurograph.action.MyReceiver" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

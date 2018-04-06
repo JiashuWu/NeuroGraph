@@ -49,6 +49,8 @@ public class Sharing {
 
     public static String redirect_source;
 
+    public static int stop_showing_process;
+
     public Sharing()
     {
 
