@@ -31,6 +31,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -110,6 +111,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     public ProgressBar progressBar;
     public TextView percent_number_textview;
     public TextView numbers_textview;
+
+    private String store_data_file_button_clicked = "";
 
     public void initLocaleLanguage ()
     {
@@ -671,6 +674,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        store_data_file_button_clicked = "store";
                         Intent intent = new Intent(StoreDataFileActivity.this, DisplayProgressActivity.class);
                         startActivity(intent);
                         StoreDataFileActivity.this.finish();
@@ -683,6 +687,21 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+
+            Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
+            startActivity(intent);
+            StoreDataFileActivity.this.finish();
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -710,12 +729,15 @@ public class StoreDataFileActivity extends AppCompatActivity {
     public void onStop ()
     {
         Log.d("ON_STOP", "ON_STOP");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                storeDataFileWorker();
-            }
-        }).start();
+        if (store_data_file_button_clicked.equalsIgnoreCase("store"))
+        {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    storeDataFileWorker();
+                }
+            }).start();
+        }
         super.onStop();
     }
 

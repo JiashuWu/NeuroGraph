@@ -33,6 +33,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -103,6 +104,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private CheckBox content_checkbox;
 
     public String content = "";
+
+    private String send_button_clicked = "";
+
 
     public void initLocaleLanguage ()
     {
@@ -661,6 +665,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                                 //sendEmailWorker();
 
                                 Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                                send_button_clicked = "send";
                                 /*
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(SendDataEmailActivity.this);
                                 builder1.setTitle(R.string.successfully_sent);
@@ -735,6 +740,47 @@ public class SendDataEmailActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+
+            /*
+            Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
+            startActivity(intent);
+            SendDataEmailActivity.this.finish();
+            */
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+            builder.setTitle(R.string.cancel_sending);
+            builder.setCancelable(false);
+            builder.setMessage(R.string.quit_message);
+            builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here
+                    // null
+                }
+            });
+
+            builder.setPositiveButton(R.string.exit_without_sending, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(SendDataEmailActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    SendDataEmailActivity.this.finish();
+                }
+            });
+            builder.create();
+            builder.show();
+
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     public void onPause ()
     {
         super.onPause();
@@ -743,12 +789,15 @@ public class SendDataEmailActivity extends AppCompatActivity {
     @Override
     public void onStop ()
     {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                sendEmailWorker();
-            }
-        }).start();
+        if (send_button_clicked.equalsIgnoreCase("send"))
+        {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    sendEmailWorker();
+                }
+            }).start();
+        }
         super.onStop();
     }
 
