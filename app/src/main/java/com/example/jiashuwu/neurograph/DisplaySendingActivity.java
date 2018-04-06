@@ -29,7 +29,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
     private Button finish_button;
     private Button copy_file_path_button;
 
-    private int frequency_per_second = 330;
+    private int frequency_per_second = 290;
 
     private MyReceiver myReceiver;
 
