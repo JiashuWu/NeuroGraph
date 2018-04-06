@@ -3,7 +3,8 @@
     <color name="black">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#2388E5</color>
     <color name="colorGreen">#32CD99</color>
     <color name="orangeRed">#FF2400</color>
     <color name="orange">#FF7F00</color>
@@ -17,7 +18,7 @@
     <color name="buttonPink">#ff4182</color>
     <color name="buttonRed">#ff5353</color>
 
-    <!-- -->
+    <!-- GREEN -->
     <color name="colorPrimaryDarkGreen">#388E3C</color>
     <color name="colorPrimaryGreen">#4CAF50</color>
     <color name="colorAccentGreen">#66BB6A</color>
@@ -67,7 +68,7 @@
     <color name="colorPrimaryGrey">#9E9E9E</color>
     <color name="colorAccentGrey">#BDBDBD</color>
 
-    <!-- -->
+    <!-- LIGHT BLUE -->
     <color name="colorPrimaryDarkLightBlue">#0288D1</color>
     <color name="colorPrimaryLightBlue">#03A9F4</color>
     <color name="colorAccentLightBlue">#29B6F6</color>

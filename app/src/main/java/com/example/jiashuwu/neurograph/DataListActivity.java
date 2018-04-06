@@ -242,6 +242,17 @@ public class DataListActivity extends AppCompatActivity {
         data_listview.setAdapter(simpleAdapter);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
@@ -252,6 +263,7 @@ public class DataListActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(DataListActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_list);

@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.Image;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -22,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -59,6 +62,23 @@ public class SettingPageActivity extends AppCompatActivity {
 
     private ArrayList<String> title;
     private ArrayList<String> description;
+
+    private ImageView blue_button;
+    private ImageView light_blue_button;
+    private ImageView green_button;
+
+    private String initial_colour = "";
+
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
 
     public void initLocaleLanguage ()
     {
@@ -656,11 +676,14 @@ public class SettingPageActivity extends AppCompatActivity {
             TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
         }
         initLocaleLanguage();
+        init_theme();
         Log.d("is_scale", String.valueOf(Sharing.isScale));
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_setting_page);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED)
@@ -903,6 +926,56 @@ public class SettingPageActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_colour) {
+            LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+            View view = inflater.inflate(R.layout.change_colour_alertdialog , null);
+            initial_colour = Sharing.colour;
+            AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+            builder.setTitle("Change Colour");
+            builder.setCancelable(false);
+            builder.setView(view);
+            blue_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_blue);
+            blue_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "blue";
+                }
+            });
+            light_blue_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_lightblue);
+            light_blue_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "light_blue";
+                }
+            });
+            green_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_green);
+            green_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "green";
+                }
+            });
+            builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (!Sharing.colour.equalsIgnoreCase(initial_colour))
+                    {
+                        Intent intent = new Intent(SettingPageActivity.this, TransferActivity.class);
+                        startActivity(intent);
+                        SettingPageActivity.this.finish();
+                    }
+                }
+            });
+            builder.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here;
+                    // leave this as null
+                }
+            });
+            builder.create();
+            builder.show();
+
+
 
         }
         return super.onOptionsItemSelected(item);

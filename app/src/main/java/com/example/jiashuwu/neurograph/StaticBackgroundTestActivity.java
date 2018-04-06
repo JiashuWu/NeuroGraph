@@ -153,6 +153,17 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     public int getNumber_of_item_in_total ()
     {
         databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -319,6 +330,7 @@ public class StaticBackgroundTestActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(StaticBackgroundTestActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);

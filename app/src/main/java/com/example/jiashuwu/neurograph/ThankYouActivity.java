@@ -11,6 +11,7 @@ import android.os.Message;
 import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ProgressBar;
@@ -67,6 +68,17 @@ public class ThankYouActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
@@ -77,10 +89,13 @@ public class ThankYouActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(ThankYouActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;
         setContentView(R.layout.activity_thank_you);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Log.d("ORDER", "ON_START");
 

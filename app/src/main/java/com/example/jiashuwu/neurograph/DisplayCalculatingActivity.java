@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -22,6 +23,17 @@ public class DisplayCalculatingActivity extends AppCompatActivity {
     private MyReceiver myReceiver;
 
     private int frequency_per_second = Sharing.frequency_per_second;
+
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
 
     public void initLocaleLanguage ()
     {
@@ -61,9 +73,12 @@ public class DisplayCalculatingActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(DisplayCalculatingActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_calculating);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 

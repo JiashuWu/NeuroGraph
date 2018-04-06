@@ -105,6 +105,17 @@ public class TestSelectionActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -239,6 +250,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(TestSelectionActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_selection);

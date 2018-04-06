@@ -27,6 +27,8 @@ public class WelcomeActivity extends AppCompatActivity {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         setContentView(R.layout.activity_welcome);
 
+        Sharing.colour = "blue";
+
         // get the system language
         language = Locale.getDefault().toString();
         Log.d("language_code", language);

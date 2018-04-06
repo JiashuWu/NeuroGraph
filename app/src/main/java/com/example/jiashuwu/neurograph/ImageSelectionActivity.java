@@ -74,6 +74,17 @@ public class ImageSelectionActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -182,7 +193,6 @@ public class ImageSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        initLocaleLanguage();
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
         {
             TextScaleUtilsLower.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
@@ -191,6 +201,8 @@ public class ImageSelectionActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(ImageSelectionActivity.this, Sharing.isScale);
         }
+        init_theme();
+        initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
@@ -45,6 +46,17 @@ public class DurationSelectionActivity extends AppCompatActivity {
 
     private long exitTime;
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -83,9 +95,12 @@ public class DurationSelectionActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(DurationSelectionActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
         test_type = getIntent().getStringExtra("test_type").toString();

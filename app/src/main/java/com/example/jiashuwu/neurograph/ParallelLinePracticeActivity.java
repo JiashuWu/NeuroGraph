@@ -97,6 +97,17 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     public void storeDataWorker ()
     {
         x_list = Sharing.x_list;
@@ -196,6 +207,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(ParallelLinePracticeActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);

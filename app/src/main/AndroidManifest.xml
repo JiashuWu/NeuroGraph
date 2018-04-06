@@ -29,25 +29,23 @@
         <activity
             android:name=".SettingPageActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InformationCollectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_information_collection"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TestSelectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_test_selection"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ImageSelectionActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_image_selection"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DurationSelectionActivity"
             android:configChanges="locale|fontScale"
@@ -80,14 +78,12 @@
             android:name=".DataListActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_data_list"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_test_detail_scrolling"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TransferActivity"
             android:configChanges="locale|fontScale" />

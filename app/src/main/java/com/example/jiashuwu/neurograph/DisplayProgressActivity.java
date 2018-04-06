@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,17 @@ public class DisplayProgressActivity extends AppCompatActivity {
             }
         }
     };
+
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
 
     public void initLocaleLanguage ()
     {
@@ -93,9 +105,12 @@ public class DisplayProgressActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(DisplayProgressActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_progress);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Log.d("PROGRESSES", String.valueOf(Sharing.number_of_item_in_total));
 

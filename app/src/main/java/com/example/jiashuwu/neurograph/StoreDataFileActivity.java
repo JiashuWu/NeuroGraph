@@ -29,6 +29,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -139,6 +140,17 @@ public class StoreDataFileActivity extends AppCompatActivity {
         }
         resource.updateConfiguration(configuration, displayMetrics);
         getBaseContext().getResources().updateConfiguration(configuration, null);
+    }
+
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
     }
 
     private void goToSetting(){
@@ -608,10 +620,13 @@ public class StoreDataFileActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(StoreDataFileActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_data_file);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         ActivityCompat.requestPermissions(StoreDataFileActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
 

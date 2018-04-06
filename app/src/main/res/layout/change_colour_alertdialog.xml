@@ -9,31 +9,35 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp">
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
+                android:layout_marginRight="6dp"
+                android:src="@drawable/blue_button1"
+                android:id="@+id/change_colour_alertdialog_blue" />
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:id="@+id/change_colour_alertdialog_lightblue"
+                android:src="@drawable/light_blue_button1"/>
 
-            <ImageButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/green_button1"
+                android:id="@+id/change_colour_alertdialog_green" />
 
         </LinearLayout>
 

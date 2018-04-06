@@ -112,6 +112,16 @@ public class ParallelLineTestActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
 
     public void storeDataWorker ()
     {
@@ -212,6 +222,7 @@ public class ParallelLineTestActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(ParallelLineTestActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);

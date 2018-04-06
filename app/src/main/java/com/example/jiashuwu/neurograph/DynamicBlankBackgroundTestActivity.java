@@ -201,6 +201,16 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         sendBroadcast(broadcastMessage);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,6 +223,7 @@ public class DynamicBlankBackgroundTestActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(DynamicBlankBackgroundTestActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
 
         super.onCreate(savedInstanceState);

@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -45,6 +46,17 @@ public class ThankYouParallelActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
@@ -55,10 +67,13 @@ public class ThankYouParallelActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(ThankYouParallelActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         initial_isScale = Sharing.isScale;
         setContentView(R.layout.activity_thank_you_parallel);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
 

@@ -21,6 +21,17 @@ public class IntroductionPageActivity extends AppCompatActivity {
     private TextView introduction_textview;
     private TextView introduction_content_textview;
 
+    public void init_theme ()
+    {
+        switch (Sharing.colour)
+        {
+            case "blue": setTheme(R.style.AppTheme); break;
+            case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
+            case "green": setTheme(R.style.AppThemeGreen); break;
+            default:setTheme(R.style.AppTheme); break;
+        }
+    }
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -58,6 +69,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
         }
+        init_theme();
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_page);
