@@ -12,7 +12,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:id="@+id/change_colour_alertdialog_linearlayout1">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -38,6 +40,43 @@
                 android:layout_marginLeft="6dp"
                 android:src="@drawable/green_button1"
                 android:id="@+id/change_colour_alertdialog_green" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_colour_alertdialog_linearlayout2"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_below="@id/change_colour_alertdialog_linearlayout1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_colour_alertdialog_purple"
+                android:src="@drawable/purple_button1"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_colour_alertdialog_pink"
+                android:src="@drawable/pink_button1"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_colour_alertdialog_orange"
+                android:layout_weight="1"
+                android:src="@drawable/orange_button1"
+                android:layout_marginLeft="6dp"/>
 
         </LinearLayout>
 
