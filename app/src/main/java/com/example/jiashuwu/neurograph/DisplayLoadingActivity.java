@@ -64,7 +64,7 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         Cursor cursor = database3.rawQuery(query, parameters);
         while (cursor.moveToNext())
         {
-            Sharing.number_of_item_in_total = Integer.parseInt(cursor.getString(0).toString());
+            Sharing.number_of_item_in_total = Integer.parseInt(cursor.getString(7).toString());
         }
         if (cursor != null)
         {

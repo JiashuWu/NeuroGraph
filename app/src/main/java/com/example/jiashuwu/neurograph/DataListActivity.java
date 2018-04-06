@@ -91,6 +91,8 @@ public class DataListActivity extends AppCompatActivity {
 
     private float touch_point_size;
 
+    private int selected_test_id;
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -135,7 +137,7 @@ public class DataListActivity extends AppCompatActivity {
         databaseHelper2.getReadableDatabase();
 
         String query = "SELECT * FROM Data WHERE test_id = ?";
-        String [] paramaters = new String[] {String.valueOf(test_id)};
+        String [] paramaters = new String[] {String.valueOf(selected_test_id)};
 
         database2 = databaseHelper2.getReadableDatabase();
 
@@ -274,6 +276,7 @@ public class DataListActivity extends AppCompatActivity {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
                 Intent intent = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
                 intent.putExtra("test_id", data_detail.get("test_id").toString());
+                selected_test_id = Integer.parseInt(data_detail.get("test_id").toString());
                 intent.putExtra("name", data_detail.get("name").toString());
                 intent.putExtra("user_id", data_detail.get("user_id").toString());
                 intent.putExtra("test_starting_time", data_detail.get("test_starting_time").toString());

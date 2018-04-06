@@ -2,6 +2,7 @@ package com.example.jiashuwu.neurograph;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -35,6 +36,8 @@ public class ThankYouActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     private int frequency_per_second = 290;
+
+    private MyReceiver myReceiver;
 
 
     public void initLocaleLanguage ()
@@ -131,10 +134,18 @@ public class ThankYouActivity extends AppCompatActivity {
         }.start();
         */
 
+
+        myReceiver = new MyReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        ThankYouActivity.this.registerReceiver(myReceiver, intentFilter);
+
+
         Log.d("processing", String.valueOf(Sharing.number_of_item_in_total));
         Log.d("destroy", "on_create");
 
 
+        Sharing.stop_showing_process = 0;
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
@@ -147,7 +158,7 @@ public class ThankYouActivity extends AppCompatActivity {
             @Override
             public void run() {
                 int i = 0;
-                while(i < 100)
+                while(i < 100 && Sharing.stop_showing_process == 0)
                 {
                     try
                     {
@@ -167,7 +178,12 @@ public class ThankYouActivity extends AppCompatActivity {
                         {
                             progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
                         }
-                        i++;
+                        if (i != 99)
+                        {
+                            i++;
+                        }
+
+                        // i++;
                         Log.d("destroy", String.valueOf(i));
                     }
                     catch (Exception e)
@@ -205,5 +221,12 @@ public class ThankYouActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onStop ()
+    {
+        unregisterReceiver(myReceiver);
+        super.onStop();
     }
 }
