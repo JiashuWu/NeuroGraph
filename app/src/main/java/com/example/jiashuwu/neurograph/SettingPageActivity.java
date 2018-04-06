@@ -66,6 +66,9 @@ public class SettingPageActivity extends AppCompatActivity {
     private ImageView blue_button;
     private ImageView light_blue_button;
     private ImageView green_button;
+    private ImageView purple_button;
+    private ImageView pink_button;
+    private ImageView orange_button;
 
     private String initial_colour = "";
 
@@ -76,6 +79,9 @@ public class SettingPageActivity extends AppCompatActivity {
             case "blue": setTheme(R.style.AppTheme); break;
             case "light_blue": setTheme(R.style.AppThemeLightBlue); break;
             case "green": setTheme(R.style.AppThemeGreen); break;
+            case "purple": setTheme(R.style.AppThemePurple); break;
+            case "pink": setTheme(R.style.AppThemePink); break;
+            case "orange": setTheme(R.style.AppThemeOrange); break;
             default:setTheme(R.style.AppTheme); break;
         }
     }
@@ -952,6 +958,27 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "green";
+                }
+            });
+            purple_button = (ImageView) findViewById(R.id.change_colour_alertdialog_purple);
+            purple_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "purple";
+                }
+            });
+            pink_button = (ImageView) findViewById(R.id.change_colour_alertdialog_pink);
+            pink_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "pink";
+                }
+            });
+            orange_button = (ImageView) findViewById(R.id.change_colour_alertdialog_orange);
+            orange_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Sharing.colour = "orange";
                 }
             });
             builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
