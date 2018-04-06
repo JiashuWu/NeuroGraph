@@ -325,11 +325,11 @@ public class StaticCornerBackgroundTestActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.static_corner_background_imageview);
         if (Sharing.image_type.equalsIgnoreCase("spiral"))
         {
-            imageView.setImageResource(R.drawable.spiral_matlab_corrected_version_1);
+            imageView.setImageResource(R.drawable.spiral_full_screen_fixed);
         }
         if (Sharing.image_type.equalsIgnoreCase("pentagon"))
         {
-            imageView.setImageResource(R.drawable.pentagon_matlab_corrected_version_fixed_1);
+            imageView.setImageResource(R.drawable.pentagon_full_screen_fixed);
         }
 
         clear_button = (Button) findViewById(R.id.static_corner_background_test_clear_button);
