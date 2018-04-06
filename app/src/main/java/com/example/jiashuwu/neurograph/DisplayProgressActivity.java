@@ -35,7 +35,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
     private Button finish_button;
     private Button copy_file_path_button;
 
-    private int frequency_per_second = 290;
+    private int frequency_per_second = Sharing.frequency_per_second;
 
     private MyReceiver myReceiver;
 

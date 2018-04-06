@@ -21,7 +21,7 @@ public class DisplayCalculatingActivity extends AppCompatActivity {
 
     private MyReceiver myReceiver;
 
-    private int frequency_per_second = 290;
+    private int frequency_per_second = Sharing.frequency_per_second;
 
     public void initLocaleLanguage ()
     {

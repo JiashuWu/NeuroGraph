@@ -21,7 +21,7 @@ public class DisplayLoadingActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private int frequency_per_second = 290;
+    private int frequency_per_second = Sharing.frequency_per_second;
 
     private MyDatabaseHelper databaseHelper3;
     private SQLiteDatabase database3;
