@@ -118,20 +118,26 @@
             android:name=".ParallelLineTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape" />
-        <activity android:name=".TransferTestSelectionActivity"
-            android:configChanges="locale|fontScale"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DisplayProgressActivity"
+        <activity
+            android:name=".TransferTestSelectionActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
-        <activity android:name=".DisplaySendingActivity"
+        <activity
+            android:name=".DisplayProgressActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".DisplaySendingActivity"
+            android:configChanges="locale|fontScale"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".MyReceiver">
             <intent-filter>
                 <action android:name="com.example.jiashuwu.neurograph.action.MyReceiver" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".DisplayLoadingActivity"></activity>
     </application>
 
 </manifest>
