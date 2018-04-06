@@ -82,6 +82,15 @@ public class DataListActivity extends AppCompatActivity {
 
     private String source = "";
 
+    private String item_clicked = "";
+
+    private String test_detail = "";
+
+    private MyDatabaseHelper databaseHelper2;
+    private SQLiteDatabase database2;
+
+    private float touch_point_size;
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -109,6 +118,62 @@ public class DataListActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+
+    public String loadItemWorker ()
+    {
+        test_detail =
+                "test_id = " + String.valueOf(test_id) + "\n"
+                        + "name = " + name + "\n"
+                        + "user_id = " + String.valueOf(user_id) + "\n"
+                        + "test_starting_time = " + test_starting_time + "\n"
+                        + "test_ending_time = " + test_ending_time + "\n"
+                        + "test type = " + test_type + "\n"
+                        + "image type = " + image_type + "\n"
+                        + "interval duration = " + String.valueOf(interval_duration) + "\n";
+
+        databaseHelper2 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
+        databaseHelper2.getReadableDatabase();
+
+        String query = "SELECT * FROM Data WHERE test_id = ?";
+        String [] paramaters = new String[] {String.valueOf(test_id)};
+
+        database2 = databaseHelper2.getReadableDatabase();
+
+        Cursor cursor = database2.rawQuery(query, paramaters);
+        String new_line = "";
+        while (cursor.moveToNext())
+        {
+            timestamp_of_point = cursor.getString(2).toString();
+            x = cursor.getFloat(3);
+            y = cursor.getFloat(4);
+            pressure = cursor.getFloat(5);
+            touch_point_size = cursor.getFloat(6);
+            Log.d("TOUCH_SIZE", String.valueOf(touch_point_size));
+            new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
+            test_detail = test_detail + new_line;
+        }
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+
+        if (database2 != null)
+        {
+            database2.close();
+        }
+        if (databaseHelper2 != null)
+        {
+            databaseHelper2.close();
+        }
+
+        Sharing.stop_showing_process = 0;
+        Intent broadcastMessage = new Intent ();
+        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        broadcastMessage.putExtra("stop_showing_process", "1");
+        sendBroadcast(broadcastMessage);
+
+        return test_detail;
+    }
 
     public void build_data_list ()
     {
@@ -207,7 +272,7 @@ public class DataListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
-                Intent intent = new Intent(DataListActivity.this, TestDetailScrollingActivity.class);
+                Intent intent = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
                 intent.putExtra("test_id", data_detail.get("test_id").toString());
                 intent.putExtra("name", data_detail.get("name").toString());
                 intent.putExtra("user_id", data_detail.get("user_id").toString());
@@ -216,7 +281,9 @@ public class DataListActivity extends AppCompatActivity {
                 intent.putExtra("test_type", data_detail.get("test_type").toString());
                 intent.putExtra("image_type", data_detail.get("image_type").toString());
                 intent.putExtra("interval_duration", data_detail.get("interval_duration").toString());
+                item_clicked = "clicked";
                 startActivity(intent);
+                DataListActivity.this.finish();
             }
         });
 
@@ -478,6 +545,21 @@ public class DataListActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onStop ()
+    {
+        if (item_clicked.equalsIgnoreCase("clicked"))
+        {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Sharing.test_detail = loadItemWorker();
+                }
+            }).start();
+        }
+        super.onStop();
     }
 
 

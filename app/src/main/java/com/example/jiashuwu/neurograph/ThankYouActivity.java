@@ -34,7 +34,7 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private int frequency_per_second = 330;
+    private int frequency_per_second = 290;
 
 
     public void initLocaleLanguage ()

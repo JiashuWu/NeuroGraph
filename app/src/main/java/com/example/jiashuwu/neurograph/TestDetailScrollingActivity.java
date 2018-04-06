@@ -1,5 +1,6 @@
 package com.example.jiashuwu.neurograph;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -13,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -44,7 +46,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
     private float y;
     private float pressure;
     private String timestamp_of_point;
-    private Float touch_point_size;
+    private float touch_point_size;
 
     public void initLocaleLanguage ()
     {
@@ -91,6 +93,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
         test_detail_textview = (TextView) findViewById(R.id.test_detail_textview);
 
+        /*
         test_id = Integer.parseInt(getIntent().getStringExtra("test_id").toString());
         name = getIntent().getStringExtra("name").toString();
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
@@ -99,7 +102,12 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         test_type = getIntent().getStringExtra("test_type").toString();
         image_type = getIntent().getStringExtra("image_type").toString();
         interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
+        */
 
+
+        test_detail_textview.setText(Sharing.test_detail);
+
+        /*
         test_detail =
                 "test_id = " + String.valueOf(test_id) + "\n"
                 + "name = " + name + "\n"
@@ -145,9 +153,25 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         {
             databaseHelper.close();
         }
+        */
 
 
 
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+
+            Intent intent = new Intent(TestDetailScrollingActivity.this, DataListActivity.class);
+            startActivity(intent);
+            TestDetailScrollingActivity.this.finish();
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

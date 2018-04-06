@@ -51,6 +51,8 @@ public class Sharing {
 
     public static int stop_showing_process;
 
+    public static String test_detail;
+
     public Sharing()
     {
 
