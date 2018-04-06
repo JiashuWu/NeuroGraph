@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.interfaces.DSAKey;
 import java.util.Locale;
 
 public class DisplaySendingActivity extends AppCompatActivity {
@@ -84,6 +86,15 @@ public class DisplaySendingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(DisplaySendingActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(DisplaySendingActivity.this, Sharing.isScale);
+        }
+        initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_sending);
 
