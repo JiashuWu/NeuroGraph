@@ -681,8 +681,8 @@ public class SettingPageActivity extends AppCompatActivity {
         {
             TextScaleUtils.scaleTextSize(SettingPageActivity.this, Sharing.isScale);
         }
-        initLocaleLanguage();
         init_theme();
+        initLocaleLanguage();
         Log.d("is_scale", String.valueOf(Sharing.isScale));
 
         super.onCreate(savedInstanceState);

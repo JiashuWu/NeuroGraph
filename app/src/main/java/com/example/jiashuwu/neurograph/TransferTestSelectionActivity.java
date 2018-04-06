@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -59,6 +60,14 @@ public class TransferTestSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //TextScaleUtils.scaleTextSize(TransferActivity.this, Sharing.isScale);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+        {
+            TextScaleUtilsLower.scaleTextSize(TransferTestSelectionActivity.this, Sharing.isScale);
+        }
+        else
+        {
+            TextScaleUtils.scaleTextSize(TransferTestSelectionActivity.this, Sharing.isScale);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
         Log.d("transferring","transferring");
