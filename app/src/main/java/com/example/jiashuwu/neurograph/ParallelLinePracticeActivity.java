@@ -359,7 +359,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
 
                 test_ending_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
 
-                Intent intent = new Intent(ParallelLinePracticeActivity.this, ThankYouParallelActivity.class);
+                Intent intent = new Intent(ParallelLinePracticeActivity.this, DisplayCalculatingActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 startActivity(intent);
                 finish();

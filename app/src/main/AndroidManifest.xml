@@ -137,7 +137,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".DisplayLoadingActivity"></activity>
+        <activity android:name=".DisplayLoadingActivity" />
+        <activity android:name=".DisplayCalculatingActivity"></activity>
     </application>
 
 </manifest>
