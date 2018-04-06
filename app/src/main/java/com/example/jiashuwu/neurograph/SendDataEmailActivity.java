@@ -5,6 +5,7 @@ import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -357,6 +358,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
             emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
             //emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
+
+            Intent push = new Intent ();
+            PendingIntent contentIntent = PendingIntent.getActivity(this, 0, push, 0);
+
             NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
             {
@@ -379,7 +384,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
                         .setContentText(Sharing.file_path)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setAutoCancel(false)
-                        .setOngoing(true)
+                        .setFullScreenIntent(contentIntent, true)
+                        .setVisibility(Notification.VISIBILITY_PUBLIC)
+                        .setOngoing(false)
                         .setChannelId("my_channel_01")
                         .setDefaults(Notification.DEFAULT_ALL)
                         .build();
@@ -396,6 +403,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
                         .setContentInfo("Neurograph Notification")
                         .setContentText(Sharing.file_path)
                         .setAutoCancel(false)
+                        .setFullScreenIntent(contentIntent, true)
+                        .setVisibility(Notification.VISIBILITY_PUBLIC)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .build();
                 manager.notify(0, notification);
