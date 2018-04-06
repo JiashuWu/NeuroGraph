@@ -85,7 +85,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setTitle("Processing");
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Please waiting while processing");
+        progressDialog.setMessage("Please waiting while processing. Please DO NOT close the app while processing. ");
         progressDialog.show();
         new Thread(new Runnable() {
             @Override

@@ -141,7 +141,7 @@ public class ThankYouActivity extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setTitle("Thank you");
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Thank you for your participation. Please waiting while processing");
+        progressDialog.setMessage("Thank you for your participation. Please waiting while processing. Please DO NOT close the app while processing. ");
         progressDialog.show();
         new Thread(new Runnable() {
             @Override
