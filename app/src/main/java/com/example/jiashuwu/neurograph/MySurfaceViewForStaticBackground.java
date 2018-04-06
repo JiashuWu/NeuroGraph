@@ -273,6 +273,13 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         return true;
     }
 
+    public void saveScreenShot ()
+    {
+        Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+
+    }
+
     public void reset()
     {
         x_list.clear();
