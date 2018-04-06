@@ -3,6 +3,7 @@ package com.example.jiashuwu.neurograph;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -533,6 +534,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
         String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
         String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
 
+        Intent push = new Intent ();
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, push, 0);
         NotificationManager manager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
@@ -554,9 +557,11 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     .setContentInfo("Neurograph Notification")
                     .setContentText(Sharing.file_path)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    .setAutoCancel(false)
+                    .setAutoCancel(true)
                     .setOngoing(true)
                     .setChannelId("my_channel_01")
+                    .setFullScreenIntent(contentIntent, true)
+                    .setVisibility(Notification.VISIBILITY_PUBLIC)
                     .setDefaults(Notification.DEFAULT_ALL)
                     .build();
             manager.notify(90, notification);
@@ -571,7 +576,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     .setContentTitle("File Saved")
                     .setContentInfo("Neurograph Notification")
                     .setContentText(Sharing.file_path)
-                    .setAutoCancel(false)
+                    .setAutoCancel(true)
+                    .setFullScreenIntent(contentIntent, true)
+                    .setVisibility(Notification.VISIBILITY_PUBLIC)
                     .setDefaults(Notification.DEFAULT_ALL)
                     .build();
             manager.notify(0, notification);
