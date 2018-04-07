@@ -280,6 +280,7 @@
 
     <string name="welcome_to_neurograph">"Welcome to\n"
     "Neurograph"</string>
+    <string name="title_activity_info">InfoActivity</string>
 
 
 </resources>

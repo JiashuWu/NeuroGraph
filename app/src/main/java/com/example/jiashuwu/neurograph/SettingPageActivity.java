@@ -1005,6 +1005,12 @@ public class SettingPageActivity extends AppCompatActivity {
 
 
         }
+        else if (id == R.id.action_information)
+        {
+            Intent intent = new Intent (SettingPageActivity.this, InfoActivity.class);
+            startActivity(intent);
+            SettingPageActivity.this.finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -133,12 +133,18 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".DisplayLoadingActivity"
-            android:configChanges="locale|fontScale"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DisplayCalculatingActivity"
+        <activity
+            android:name=".DisplayLoadingActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".DisplayCalculatingActivity"
+            android:configChanges="locale|fontScale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoActivity"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
