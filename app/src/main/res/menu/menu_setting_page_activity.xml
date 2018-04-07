@@ -9,4 +9,11 @@
         android:icon="@drawable/ic_action_colour"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_information"
+        android:orderInCategory="200"
+        android:title="Infomation"
+        android:icon="@drawable/ic_action_info"
+        app:showAsAction="always" />
+
 </menu>
