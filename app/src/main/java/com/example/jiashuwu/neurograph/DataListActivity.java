@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
@@ -59,6 +60,7 @@ public class DataListActivity extends AppCompatActivity {
     private String test_type;
     private String image_type;
     private int interval_duration;
+    private int number_of_points;
     private float x;
     private float y;
     private float pressure;
@@ -131,7 +133,8 @@ public class DataListActivity extends AppCompatActivity {
                         + "test_ending_time = " + test_ending_time + "\n"
                         + "test type = " + test_type + "\n"
                         + "image type = " + image_type + "\n"
-                        + "interval duration = " + String.valueOf(interval_duration) + "\n";
+                        + "interval duration = " + String.valueOf(interval_duration) + "\n"
+                        + "number of points = " + String.valueOf(number_of_points) + "\n";
 
         databaseHelper2 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper2.getReadableDatabase();
@@ -202,6 +205,8 @@ public class DataListActivity extends AppCompatActivity {
             test_type = cursor.getString(4).toString();
             image_type = cursor.getString(5).toString();
             interval_duration = Integer.parseInt(cursor.getString(6).toString());
+            number_of_points = Integer.parseInt(cursor.getString(7).toString());
+
             query1 = "SELECT name FROM User WHERE user_id = ?";
             parameters1 = new String [] {String.valueOf(user_id)};
             cursor1 = database.rawQuery(query1, parameters1);
@@ -209,7 +214,9 @@ public class DataListActivity extends AppCompatActivity {
             {
                 name = cursor1.getString(0).toString();
             }
+
             Map<String, Object> map = new HashMap <> ();
+
             map.put("test_id", test_id);
             map.put("name", name);
             map.put("user_id", user_id);
@@ -218,7 +225,10 @@ public class DataListActivity extends AppCompatActivity {
             map.put("test_type", test_type);
             map.put("image_type", image_type);
             map.put("interval_duration", interval_duration);
+            map.put("number_of_points", number_of_points);
+
             datalist.add(map);
+
             if (cursor1 != null)
             {
                 cursor1.close();
@@ -290,14 +300,27 @@ public class DataListActivity extends AppCompatActivity {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
                 Intent intent = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
                 intent.putExtra("test_id", data_detail.get("test_id").toString());
+                test_id = Integer.parseInt(data_detail.get("test_id").toString());
                 selected_test_id = Integer.parseInt(data_detail.get("test_id").toString());
                 intent.putExtra("name", data_detail.get("name").toString());
+                name = data_detail.get("name").toString();
                 intent.putExtra("user_id", data_detail.get("user_id").toString());
+                user_id = Integer.parseInt(data_detail.get("user_id").toString());
                 intent.putExtra("test_starting_time", data_detail.get("test_starting_time").toString());
+                test_starting_time = data_detail.get("test_starting_time").toString();
                 intent.putExtra("test_ending_time", data_detail.get("test_ending_time").toString());
+                test_ending_time = data_detail.get("test_ending_time").toString();
                 intent.putExtra("test_type", data_detail.get("test_type").toString());
+                test_type = data_detail.get("test_type").toString();
                 intent.putExtra("image_type", data_detail.get("image_type").toString());
+                image_type = data_detail.get("image_type").toString();
                 intent.putExtra("interval_duration", data_detail.get("interval_duration").toString());
+                interval_duration = Integer.parseInt(data_detail.get("interval_duration").toString());
+                intent.putExtra("number_of_points", data_detail.get("number_of_points").toString());
+                number_of_points = Integer.parseInt(data_detail.get("number_of_points").toString());
+
+                Sharing.number_of_item_in_total = number_of_points;
+
                 item_clicked = "clicked";
                 startActivity(intent);
                 DataListActivity.this.finish();
@@ -569,6 +592,7 @@ public class DataListActivity extends AppCompatActivity {
     {
         if (item_clicked.equalsIgnoreCase("clicked"))
         {
+            item_clicked = "";
             new Thread(new Runnable() {
                 @Override
                 public void run() {

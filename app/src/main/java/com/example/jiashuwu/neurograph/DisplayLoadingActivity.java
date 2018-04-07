@@ -113,6 +113,7 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         image_type = getIntent().getStringExtra("image_type").toString();
         interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
 
+        /*
         databaseHelper3 = new MyDatabaseHelper (DisplayLoadingActivity.this, databaseName, null, databaseVersion);
         databaseHelper3.getReadableDatabase();
 
@@ -138,6 +139,7 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         {
             database3.close();
         }
+        */
 
         Sharing.stop_showing_process = 0;
         progressDialog = new ProgressDialog(this);
