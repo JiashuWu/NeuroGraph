@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.animation.AlphaAnimation;
@@ -76,6 +77,9 @@ public class IntroductionPageActivity extends AppCompatActivity {
         initLocaleLanguage();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_page);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         introduction_textview = (TextView) findViewById(R.id.introduction_page_centre_textview);
         introduction_content_textview = (TextView) findViewById(R.id.introduction_page_content_textview);
