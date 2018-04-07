@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
@@ -79,7 +80,8 @@ public class IntroductionPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_introduction_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         introduction_textview = (TextView) findViewById(R.id.introduction_page_centre_textview);
         introduction_content_textview = (TextView) findViewById(R.id.introduction_page_content_textview);
@@ -190,6 +192,21 @@ public class IntroductionPageActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem menuItem)
+    {
+        int id = menuItem.getItemId();
+        if (id == android.R.id.home)
+        {
+            Intent intent = new Intent (IntroductionPageActivity.this, SettingPageActivity.class);
+            startActivity(intent);
+            IntroductionPageActivity.this.finish();
+        }
+        return true;
     }
 
 
