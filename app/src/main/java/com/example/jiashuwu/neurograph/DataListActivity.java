@@ -273,8 +273,7 @@ public class DataListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //source = getIntent().getStringExtra("source").toString();
-        Log.d("SOURCE", source);
+
 
         data_listview = (ListView) findViewById(R.id.data_listview);
 

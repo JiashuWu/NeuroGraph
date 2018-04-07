@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -105,6 +106,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_detail_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         test_detail_textview = (TextView) findViewById(R.id.test_detail_textview);
 
@@ -174,6 +177,22 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem menuItem)
+    {
+        int id = menuItem.getItemId();
+        if (id == android.R.id.home)
+        {
+            Intent intent = new Intent (TestDetailScrollingActivity.this, DataListActivity.class);
+            startActivity(intent);
+            TestDetailScrollingActivity.this.finish();
+        }
+        return true;
+    }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
