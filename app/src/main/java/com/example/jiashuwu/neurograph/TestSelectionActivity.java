@@ -631,6 +631,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                     // Should do nothing here;
                     // null
                     // revert the initial values;
+                    Toast.makeText(TestSelectionActivity.this, "Setting discarded", Toast.LENGTH_LONG).show();
                     Sharing.language = initial_language;
                     Sharing.isScale = initial_isScale;
                 }
