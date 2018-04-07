@@ -144,7 +144,9 @@
         <activity
             android:name=".InfoActivity"
             android:label="@string/title_activity_info"
-            android:theme="@style/AppTheme"></activity>
+            android:configChanges="locale|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
