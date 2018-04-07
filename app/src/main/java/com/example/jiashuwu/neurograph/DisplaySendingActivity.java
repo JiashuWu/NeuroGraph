@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -256,6 +257,20 @@ public class DisplaySendingActivity extends AppCompatActivity {
         */
 
 
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            Intent intent = new Intent(DisplaySendingActivity.this, DataListActivity.class);
+            startActivity(intent);
+            DisplaySendingActivity.this.finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 
