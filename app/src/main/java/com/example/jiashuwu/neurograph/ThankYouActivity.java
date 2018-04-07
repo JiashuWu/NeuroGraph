@@ -36,7 +36,7 @@ public class ThankYouActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
-    private int frequency_per_second = Sharing.frequency_per_second;
+    private int frequency_per_second = Sharing.frequency_per_second_for_thank_you_page;
 
     private MyReceiver myReceiver;
 

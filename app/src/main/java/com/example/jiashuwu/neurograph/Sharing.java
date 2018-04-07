@@ -55,6 +55,8 @@ public class Sharing {
 
     public static int frequency_per_second = 290;
 
+    public static int frequency_per_second_for_thank_you_page = 320;
+
     public static String colour = "";
 
     public static String test_to_duration = "";
