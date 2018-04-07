@@ -196,7 +196,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                progressDialog.setProgress(100);
+                progressDialog.setProgress(Sharing.number_of_item_in_total);
                 progressDialog.dismiss();
             }
         }).start();

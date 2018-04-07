@@ -209,7 +209,7 @@ public class ThankYouActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                progressDialog.setProgress(100);
+                progressDialog.setProgress(Sharing.number_of_item_in_total);
                 progressDialog.dismiss();
                 Intent intent = new Intent(ThankYouActivity.this , TestSelectionActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
