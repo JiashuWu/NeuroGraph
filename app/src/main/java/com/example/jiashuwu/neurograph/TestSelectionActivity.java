@@ -387,7 +387,7 @@ public class TestSelectionActivity extends AppCompatActivity {
 
 
         // FIXED added a duration/width selection page for parallel line practice
-        // TODO change the test instruction for parallel line test
+        // FIXED change the test instruction for parallel line test
         // FIXED add a textview on test selection page for parallel line test
 
 

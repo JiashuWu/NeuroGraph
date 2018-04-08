@@ -147,11 +147,11 @@ public class DurationSelectionActivity extends AppCompatActivity {
             {
                 duration_test_instruction.setText("This is the static corner background. The image template will always stays at the top right corner of the screen. Remember to follow the background to draw the required shape.");
             }
-            else if (test_type.equalsIgnoreCase("parallel_practice"))
+            else if (test_type.equalsIgnoreCase("parallel_line_practice"))
             {
                 duration_test_instruction.setText("This is the parallel practice. You are required to draw exactly two lines on the screen, as parallel as possible. ");
             }
-            else if (test_type.equalsIgnoreCase("parallel_test"))
+            else if (test_type.equalsIgnoreCase("parallel_line_test"))
             {
                 duration_test_instruction.setText("This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines. ");
             }
