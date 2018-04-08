@@ -209,6 +209,23 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
                     }
+                    else if (test_type.equalsIgnoreCase("parallel_line_practice"))
+                    {
+                        Intent intent = new Intent (DurationSelectionActivity.this, ParallelLinePracticeActivity.class);
+                        intent.putExtra("user_id", String.valueOf(user_id));
+                        intent.putExtra("test_type", test_type);
+                        intent.putExtra("image_type", image_type);
+                        intent.putExtra("interval_duration", String.valueOf(0));
+                        intent.putExtra("painter_width", String.valueOf(painter_width));
+                        Sharing.user_id = user_id;
+                        Sharing.test_type = test_type;
+                        Sharing.image_type = image_type;
+                        Sharing.interval_duration = 0;
+                        Sharing.painter_width = painter_width;
+                        Sharing.sharing_image = "";
+                        startActivity(intent);
+                        DurationSelectionActivity.this.finish();
+                    }
                 }
             });
 

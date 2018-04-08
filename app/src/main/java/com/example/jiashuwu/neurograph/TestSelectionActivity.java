@@ -35,6 +35,8 @@ import junit.framework.Test;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import javax.xml.datatype.Duration;
+
 public class TestSelectionActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
@@ -56,7 +58,7 @@ public class TestSelectionActivity extends AppCompatActivity {
     private Button test3_button;
     private Button test4_button;
 
-    private Spinner parallel_line_practice_width_spinner;
+    // private Spinner parallel_line_practice_width_spinner;
 
     private int user_id;
 
@@ -129,11 +131,12 @@ public class TestSelectionActivity extends AppCompatActivity {
                     viewPager.setCurrentItem(0);
                     practice_button = (Button) findViewById(R.id.test_selection_page0_test0_button);
                     parallel_test_button = (Button) findViewById(R.id.test_selection_page0_parallel_line_test_button);
-                    parallel_line_practice_width_spinner = (Spinner) findViewById(R.id.test_selection_test0_width_spinner);
+                    // parallel_line_practice_width_spinner = (Spinner) findViewById(R.id.test_selection_test0_width_spinner);
                     String [] mList = getResources().getStringArray(R.array.painter_width);
                     adapter = new ArrayAdapter(TestSelectionActivity.this , android.R.layout.simple_spinner_dropdown_item, mList);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    parallel_line_practice_width_spinner.setAdapter(adapter);
+                    // parallel_line_practice_width_spinner.setAdapter(adapter);
+                    /*
                     parallel_line_practice_width_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -151,6 +154,7 @@ public class TestSelectionActivity extends AppCompatActivity {
 
                         }
                     });
+                    */
 
                     practice_button.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -359,6 +363,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         test2_button = (Button) view_static.findViewById(R.id.test_selection_page1_test2_button);
         test3_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test3_button);
         test4_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test4_button);
+        /*
         parallel_line_practice_width_spinner = (Spinner) view_practice.findViewById(R.id.test_selection_test0_width_spinner);
         parallel_line_practice_width_spinner.setAdapter(adapter);
         parallel_line_practice_width_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -378,21 +383,23 @@ public class TestSelectionActivity extends AppCompatActivity {
 
             }
         });
+        */
 
 
-        // TODO added a duration/width selection page for parallel line practice
+        // FIXED added a duration/width selection page for parallel line practice
         // TODO change the test instruction for parallel line test
-        // TODO add a textview on test selection page for parallel line test
+        // FIXED add a textview on test selection page for parallel line test
 
 
         practice_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
+                Intent intent = new Intent(TestSelectionActivity.this, DurationSelectionActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "parallel_line_practice";
                 Sharing.painter_width = painter_width;
                 intent.putExtra("test_type", test_type);
+                intent.putExtra("image_type", "parallel_practice");
                 startActivity(intent);
             }
         });
