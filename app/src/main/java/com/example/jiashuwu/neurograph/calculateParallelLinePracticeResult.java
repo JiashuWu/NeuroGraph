@@ -118,17 +118,17 @@ public class calculateParallelLinePracticeResult {
 
 
 
-        if (final_result <= 0.09)
+        if (final_result <= 0.15)
         {
             result = "Perfect";
             result_description = "The two lines you drew are perfectly parallel";
         }
-        else if (final_result <= 0.20)
+        else if (final_result <= 0.22)
         {
             result = "Good";
             result_description = "The two lines you drew are relatively parallel";
         }
-        else if (final_result <= 0.30)
+        else if (final_result <= 0.36)
         {
             result = "Acceptable";
             result_description = "The two lines you drew are parallel but not that good";
