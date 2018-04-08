@@ -159,11 +159,13 @@ public class TestSelectionActivity extends AppCompatActivity {
                     practice_button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(TestSelectionActivity.this, ParallelLinePracticeActivity.class);
+                            Intent intent = new Intent(TestSelectionActivity.this, DurationSelectionActivity.class);
                             intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "parallel_line_practice";
                             Sharing.painter_width = painter_width;
                             intent.putExtra("test_type", test_type);
+                            Sharing.test_to_duration = "yes";
+                            intent.putExtra("image_type", "parallel_practice");
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
                         }
@@ -177,6 +179,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             test_type = "parallel_line_test";
                             intent.putExtra("test_type", test_type);
                             intent.putExtra("image_type", "parallel_line");
+                            Sharing.test_to_duration = "yes";
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
                         }
@@ -269,6 +272,8 @@ public class TestSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_selection);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Sharing.test_to_duration = "";
 
         String [] mList = getResources().getStringArray(R.array.painter_width);
         adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_dropdown_item, mList);
@@ -399,8 +404,10 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "parallel_line_practice";
                 Sharing.painter_width = painter_width;
                 intent.putExtra("test_type", test_type);
+                Sharing.test_to_duration = "yes";
                 intent.putExtra("image_type", "parallel_practice");
                 startActivity(intent);
+                TestSelectionActivity.this.finish();
             }
         });
 
