@@ -722,6 +722,18 @@ public class SettingPageActivity extends AppCompatActivity {
         font_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         setting_page_fontsize_spinner.setAdapter(font_adapter);
 
+        /*
+        final Button trigger_button = (Button) findViewById(R.id.triggerrrrrrrrrrr);
+        trigger_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (SettingPageActivity.this, StaticBackgroundTestNewActivity.class);
+                startActivity(intent);
+                SettingPageActivity.this.finish();
+            }
+        });
+        */
+
         //setting_page_language_spinner.setSelection(0);
 
         switch (Sharing.language)
