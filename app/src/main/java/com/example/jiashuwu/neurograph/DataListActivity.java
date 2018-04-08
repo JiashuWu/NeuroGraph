@@ -123,7 +123,7 @@ public class DataListActivity extends AppCompatActivity {
     }
 
 
-    public String loadItemWorker ()
+    public void loadItemWorker ()
     {
         test_detail =
                 "test_id = " + String.valueOf(test_id) + "\n"
@@ -140,11 +140,11 @@ public class DataListActivity extends AppCompatActivity {
         databaseHelper2.getReadableDatabase();
 
         String query = "SELECT * FROM Data WHERE test_id = ?";
-        String [] paramaters = new String[] {String.valueOf(selected_test_id)};
+        String [] parameters = new String[] {String.valueOf(selected_test_id)};
 
         database2 = databaseHelper2.getReadableDatabase();
 
-        Cursor cursor = database2.rawQuery(query, paramaters);
+        Cursor cursor = database2.rawQuery(query, parameters);
         String new_line = "";
         while (cursor.moveToNext())
         {
@@ -157,6 +157,9 @@ public class DataListActivity extends AppCompatActivity {
             new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
             test_detail = test_detail + new_line;
         }
+
+        Sharing.test_detail = test_detail;
+
         if (cursor != null)
         {
             cursor.close();
@@ -176,8 +179,6 @@ public class DataListActivity extends AppCompatActivity {
         broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
         broadcastMessage.putExtra("stop_showing_process", "1");
         sendBroadcast(broadcastMessage);
-
-        return test_detail;
     }
 
     public void build_data_list ()
@@ -299,24 +300,24 @@ public class DataListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
                 Intent intent = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
-                intent.putExtra("test_id", data_detail.get("test_id").toString());
+                // intent.putExtra("test_id", data_detail.get("test_id").toString());
                 test_id = Integer.parseInt(data_detail.get("test_id").toString());
                 selected_test_id = Integer.parseInt(data_detail.get("test_id").toString());
-                intent.putExtra("name", data_detail.get("name").toString());
+                // intent.putExtra("name", data_detail.get("name").toString());
                 name = data_detail.get("name").toString();
-                intent.putExtra("user_id", data_detail.get("user_id").toString());
+                // intent.putExtra("user_id", data_detail.get("user_id").toString());
                 user_id = Integer.parseInt(data_detail.get("user_id").toString());
-                intent.putExtra("test_starting_time", data_detail.get("test_starting_time").toString());
+                // intent.putExtra("test_starting_time", data_detail.get("test_starting_time").toString());
                 test_starting_time = data_detail.get("test_starting_time").toString();
-                intent.putExtra("test_ending_time", data_detail.get("test_ending_time").toString());
+                // intent.putExtra("test_ending_time", data_detail.get("test_ending_time").toString());
                 test_ending_time = data_detail.get("test_ending_time").toString();
-                intent.putExtra("test_type", data_detail.get("test_type").toString());
+                // intent.putExtra("test_type", data_detail.get("test_type").toString());
                 test_type = data_detail.get("test_type").toString();
-                intent.putExtra("image_type", data_detail.get("image_type").toString());
+                // intent.putExtra("image_type", data_detail.get("image_type").toString());
                 image_type = data_detail.get("image_type").toString();
-                intent.putExtra("interval_duration", data_detail.get("interval_duration").toString());
+                // intent.putExtra("interval_duration", data_detail.get("interval_duration").toString());
                 interval_duration = Integer.parseInt(data_detail.get("interval_duration").toString());
-                intent.putExtra("number_of_points", data_detail.get("number_of_points").toString());
+                // intent.putExtra("number_of_points", data_detail.get("number_of_points").toString());
                 number_of_points = Integer.parseInt(data_detail.get("number_of_points").toString());
 
                 Sharing.number_of_item_in_total = number_of_points;
@@ -596,7 +597,7 @@ public class DataListActivity extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Sharing.test_detail = loadItemWorker();
+                    loadItemWorker();
                 }
             }).start();
         }

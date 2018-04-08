@@ -24,8 +24,8 @@ public class DisplayLoadingActivity extends AppCompatActivity {
 
     private int frequency_per_second = Sharing.frequency_per_second;
 
-    private MyDatabaseHelper databaseHelper3;
-    private SQLiteDatabase database3;
+    // private MyDatabaseHelper databaseHelper3;
+    // private SQLiteDatabase database3;
 
     private String databaseName = DatabaseInformation.databaseName;
 
@@ -104,6 +104,8 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         intentFilter.addAction("com.example.jiashuwu.neurograph.action.MyReceiver");
         DisplayLoadingActivity.this.registerReceiver(myReceiver, intentFilter);
 
+        /*
+
         test_id = Integer.parseInt(getIntent().getStringExtra("test_id").toString());
         name = getIntent().getStringExtra("name").toString();
         user_id = Integer.parseInt(getIntent().getStringExtra("user_id").toString());
@@ -112,6 +114,8 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         test_type = getIntent().getStringExtra("test_type").toString();
         image_type = getIntent().getStringExtra("image_type").toString();
         interval_duration = Integer.parseInt(getIntent().getStringExtra("interval_duration").toString());
+
+        */
 
         /*
         databaseHelper3 = new MyDatabaseHelper (DisplayLoadingActivity.this, databaseName, null, databaseVersion);
