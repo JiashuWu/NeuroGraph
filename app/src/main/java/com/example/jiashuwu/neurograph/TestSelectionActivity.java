@@ -380,6 +380,10 @@ public class TestSelectionActivity extends AppCompatActivity {
         });
 
 
+        // TODO added a duration/width selection page for parallel line practice
+        // TODO change the test instruction for parallel line test
+        // TODO add a textview on test selection page for parallel line test
+
         practice_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
