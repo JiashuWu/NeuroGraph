@@ -81,7 +81,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test0_page0_parallel_test_textview"
-                android:text="PLACEHOLDER" />
+                android:text="This is the parallel line test. In this test you need to draw three parallel lines following the background pattern. " />
 
             <Button
                 android:layout_width="wrap_content"
