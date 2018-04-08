@@ -830,10 +830,13 @@ public class SettingPageActivity extends AppCompatActivity {
                 // TODO FIX
                 intent.putExtra("source", "setting");
                 Sharing.redirect_source = "setting";
-                startActivity(intent);
 
+                // TODO FIXES
+                /*
+                startActivity(intent);
                 // Setting page should finish at this point
                 SettingPageActivity.this.finish();
+                */
             }
         });
 

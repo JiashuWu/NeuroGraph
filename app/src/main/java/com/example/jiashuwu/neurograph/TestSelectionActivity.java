@@ -473,9 +473,11 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "dynamic_seasonal_background";
                 intent.putExtra("test_type", test_type);
-                // TODO FIX
+                // TODO FIXES
+                /*
                 startActivity(intent);
                 TestSelectionActivity.this.finish();
+                */
             }
         });
 
@@ -499,8 +501,10 @@ public class TestSelectionActivity extends AppCompatActivity {
             Sharing.redirect_source = "test_selection";
             Sharing.current_user_id = user_id;
             // TODO FIX
+            /*
             startActivity(intent);
             TestSelectionActivity.this.finish();
+            */
         }
         else if (id == R.id.action_switch_user)
         {
