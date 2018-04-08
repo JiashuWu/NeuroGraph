@@ -53,13 +53,15 @@ public class Sharing {
 
     public static String test_detail;
 
-    public static int frequency_per_second = 280;
+    public static int frequency_per_second = 310;
 
-    public static int frequency_per_second_for_thank_you_page = 280;
+    public static int frequency_per_second_for_thank_you_page = 310;
 
     public static String colour = "";
 
     public static String test_to_duration = "";
+
+    public static int hundred_sleeping_time = 800;
 
     public Sharing()
     {

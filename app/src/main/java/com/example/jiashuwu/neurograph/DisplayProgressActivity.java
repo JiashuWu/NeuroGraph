@@ -176,11 +176,17 @@ public class DisplayProgressActivity extends AppCompatActivity {
                         Thread.sleep(waiting_time);
                         if (Sharing.number_of_item_in_total / 100 == 0)
                         {
-                            progressDialog.incrementProgressBy(1);
+                            if (progressDialog.getProgress() < 99)
+                            {
+                                progressDialog.incrementProgressBy(1);
+                            }
                         }
                         else
                         {
-                            progressDialog.incrementProgressBy((int)Math.ceil((double) Sharing.number_of_item_in_total / 100));
+                            if (progressDialog.getProgress() < Sharing.number_of_item_in_total * 0.99)
+                            {
+                                progressDialog.incrementProgressBy((int) Math.ceil((double) Sharing.number_of_item_in_total / 100));
+                            }
                         }
                         if (i != 99)
                         {
@@ -194,7 +200,22 @@ public class DisplayProgressActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                progressDialog.setProgress(Sharing.number_of_item_in_total);
+                if (Sharing.number_of_item_in_total != 0)
+                {
+                    progressDialog.setProgress(Sharing.number_of_item_in_total);
+                }
+                else
+                {
+                    progressDialog.setProgress(100);
+                }
+                try
+                {
+                    Thread.sleep(Sharing.hundred_sleeping_time);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
                 progressDialog.dismiss();
             }
         }).start();
