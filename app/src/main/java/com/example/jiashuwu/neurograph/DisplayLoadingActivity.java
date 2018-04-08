@@ -173,14 +173,14 @@ public class DisplayLoadingActivity extends AppCompatActivity {
                         Thread.sleep(waiting_time);
                         if (Sharing.number_of_item_in_total / 100 == 0)
                         {
-                            if (progressDialog.getProgress() < 99)
+                            if (progressDialog.getProgress() < 98.5)
                             {
                                 progressDialog.incrementProgressBy(1);
                             }
                         }
                         else
                         {
-                            if (progressDialog.getProgress() < Sharing.number_of_item_in_total * 0.99)
+                            if (progressDialog.getProgress() < Sharing.number_of_item_in_total * 0.985)
                             {
                                 progressDialog.incrementProgressBy((int) Math.ceil((double) Sharing.number_of_item_in_total / 100));
                             }
