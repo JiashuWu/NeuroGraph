@@ -844,11 +844,11 @@ public class SettingPageActivity extends AppCompatActivity {
                 Sharing.redirect_source = "setting";
 
                 // TODO FIXES
-                /*
+
                 startActivity(intent);
                 // Setting page should finish at this point
                 SettingPageActivity.this.finish();
-                */
+
             }
         });
 

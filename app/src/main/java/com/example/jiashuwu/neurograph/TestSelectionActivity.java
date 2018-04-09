@@ -503,10 +503,10 @@ public class TestSelectionActivity extends AppCompatActivity {
             // TODO FIX
             // TODO TEMPORARY TOOLBAR BUTTON RELEASE
 
-            /*
+
             startActivity(intent);
             TestSelectionActivity.this.finish();
-            */
+
 
         }
         else if (id == R.id.action_switch_user)
