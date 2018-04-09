@@ -2,6 +2,9 @@ package com.example.jiashuwu.neurograph;
 
 import java.io.File;
 import java.io.FileOutputStream;
+
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,6 +31,7 @@ public class StaticBackgroundTestNewActivity extends Activity {
     private Bitmap baseBitmap;
     private Canvas canvas;
     private Paint paint;
+    private Bitmap bmcopy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +43,15 @@ public class StaticBackgroundTestNewActivity extends Activity {
         paint.setStrokeWidth(5);
         paint.setColor(Color.RED);
 
+        baseBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_full_screen_fixed);
+        bmcopy = Bitmap.createBitmap(baseBitmap.getWidth(), baseBitmap.getHeight(), baseBitmap.getConfig());
+
+        canvas = new Canvas(bmcopy);
+        canvas.drawBitmap(baseBitmap, new Matrix(), paint);
         iv_canvas = (ImageView) findViewById(R.id.simulate_canvas);
         btn_save = (Button) findViewById(R.id.loooooooooooo) ;
         btn_resume = (Button) findViewById(R.id.miaooooooooooooooo);
+        iv_canvas.setImageBitmap(bmcopy);
 
         btn_save.setOnClickListener(click);
         btn_resume.setOnClickListener(click);
