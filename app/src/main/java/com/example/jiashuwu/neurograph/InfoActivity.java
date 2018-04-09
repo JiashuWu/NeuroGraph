@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,8 @@ import java.util.Locale;
 public class InfoActivity extends AppCompatActivity {
 
     private TextView info_activity_textview_1;
+    private int displayWidth;
+    private int displayHeight;
 
     public void init_theme ()
     {
@@ -83,6 +86,12 @@ public class InfoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         info_activity_textview_1 = (TextView) findViewById(R.id.info_page_textview1);
+
+        String device_resolution_title = "Your device resolution is : ";
+        Display display = getWindowManager().getDefaultDisplay();
+        displayWidth = display.getWidth();
+        displayHeight = display.getHeight();
+        info_activity_textview_1.setText(device_resolution_title + String.valueOf(displayWidth) + " X " + String.valueOf(displayHeight));
 
 
     }
