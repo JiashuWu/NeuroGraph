@@ -61,7 +61,7 @@ public class Sharing {
 
     public static String test_to_duration = "";
 
-    public static int hundred_sleeping_time = 800;
+    public static int hundred_sleeping_time = 1200;
 
     public Sharing()
     {
