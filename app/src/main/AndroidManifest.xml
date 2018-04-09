@@ -53,19 +53,23 @@
         <activity
             android:name=".StaticBackgroundTestActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".StaticCornerBackgroundTestActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".DynamicBlankBackgroundTestActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".DynamicShowBackgroundActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".ThankYouActivity"
             android:configChanges="locale|fontScale"
@@ -73,7 +77,8 @@
         <activity
             android:name=".DynamicSeasonalBackgroundTestActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme"/>
         <activity
             android:name=".DataListActivity"
             android:configChanges="locale|fontScale"
@@ -82,7 +87,7 @@
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_test_detail_scrolling"
+            android:label="Test Detailed Information"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransferActivity"
@@ -102,10 +107,12 @@
         <activity
             android:name=".ParallelLinePracticeActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".ParallelLinePracticeResultActivity"
-            android:configChanges="locale|fontScale" />
+            android:configChanges="locale|fontScale"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ThankYouParallelActivity"
             android:configChanges="locale|fontScale"
@@ -113,7 +120,8 @@
         <activity
             android:name=".ParallelLineTestActivity"
             android:configChanges="locale|fontScale"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".TransferTestSelectionActivity"
             android:configChanges="locale|fontScale"
