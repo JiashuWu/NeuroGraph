@@ -474,10 +474,10 @@ public class TestSelectionActivity extends AppCompatActivity {
                 test_type = "dynamic_seasonal_background";
                 intent.putExtra("test_type", test_type);
                 // TODO FIXES
-                /*
+
                 startActivity(intent);
                 TestSelectionActivity.this.finish();
-                */
+
             }
         });
 
