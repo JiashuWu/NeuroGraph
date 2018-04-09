@@ -199,6 +199,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (name.equalsIgnoreCase(""))
                 {
                     can_continue = false;
+                    name_edittext.setError("Name cannot be empty");
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -215,6 +216,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (can_continue && age.equalsIgnoreCase(""))
                 {
                     can_continue = false;
+                    age_edittext.setError("Age cannot be empty");
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -240,6 +242,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 {
                     count = 0;
                     can_continue = false;
+                    age_edittext.setError("Invalid age");
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
@@ -255,6 +258,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (can_continue && (Integer.parseInt(age) < 0 || Integer.parseInt(age) > 170))
                 {
                     can_continue = false;
+                    age_edittext.setError("Invalid age range");
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
