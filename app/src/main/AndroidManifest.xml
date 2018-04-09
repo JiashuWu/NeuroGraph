@@ -78,7 +78,7 @@
             android:name=".DynamicSeasonalBackgroundTestActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape"
-            android:theme="@style/activityTheme"/>
+            android:theme="@style/activityTheme" />
         <activity
             android:name=".DataListActivity"
             android:configChanges="locale|fontScale"
