@@ -723,6 +723,13 @@ public class StoreDataFileActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStart ()
+    {
+        super.onStart();
+    }
+
+
+    @Override
     public void onRestart ()
     {
         Log.d("ON_STOP", "ON_RESTART");

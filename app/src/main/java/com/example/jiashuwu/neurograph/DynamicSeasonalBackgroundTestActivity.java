@@ -422,6 +422,24 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStart ()
+    {
+        super.onStart();
+    }
+
+    @Override
+    public void onRestart ()
+    {
+        super.onRestart();
+    }
+
+    @Override
+    public void onResume ()
+    {
+        super.onResume();
+    }
+
+    @Override
     public void onPause()
     {
         super.onPause();

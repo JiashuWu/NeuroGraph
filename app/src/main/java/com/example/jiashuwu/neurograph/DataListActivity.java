@@ -14,6 +14,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -589,6 +590,30 @@ public class DataListActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStart ()
+    {
+        super.onStart();
+    }
+
+    @Override
+    public void onRestart ()
+    {
+        super.onRestart();
+    }
+
+    @Override
+    public void onResume ()
+    {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause ()
+    {
+        super.onPause();
+    }
+
+    @Override
     public void onStop ()
     {
         if (item_clicked.equalsIgnoreCase("clicked"))
@@ -604,5 +629,10 @@ public class DataListActivity extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onDestroy ()
+    {
+        super.onDestroy();
+    }
 
 }

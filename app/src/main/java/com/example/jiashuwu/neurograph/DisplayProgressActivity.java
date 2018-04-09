@@ -292,6 +292,12 @@ public class DisplayProgressActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStart ()
+    {
+        super.onStart();
+    }
+
+    @Override
     public void onRestart ()
     {
         super.onRestart();

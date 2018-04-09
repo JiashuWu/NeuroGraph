@@ -401,6 +401,24 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    public void onStart ()
+    {
+        super.onStart();
+    }
+
+    @Override
+    public void onRestart ()
+    {
+        super.onRestart();
+    }
+
+    @Override
+    public void onResume ()
+    {
+        super.onResume();
+    }
+
 
     @Override
     public void onPause()
