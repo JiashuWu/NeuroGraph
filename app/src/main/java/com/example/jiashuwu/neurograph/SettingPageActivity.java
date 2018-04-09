@@ -115,8 +115,12 @@ public class SettingPageActivity extends AppCompatActivity {
 
 
 
+
+
+
+
     // WARNING: UNDER TESTING
-    public void createTutorialAlertdialog ()
+    public void createTutorialAlertdialog () //// THIS IS UNDER TESTING
     {
         int counter = 0;
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
@@ -140,6 +144,12 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.show();
 
     }
+
+
+    // TODO TUTORIAL
+    // TODO ADD EXIT BUTTON FOR EACH TUTORIAL PAGE
+    // TODO ADD NEW TUTORIALS
+    // TODO CHANGE_COLOUR, CHANGE_SETTING_IN_TEST_SELECTION, INTRODUCTION_PAGE
 
     public void showAppTutorialDeleteData ()
     {
