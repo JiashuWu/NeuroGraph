@@ -145,7 +145,7 @@
             android:name=".InfoActivity"
             android:configChanges="locale|fontScale"
             android:label="@string/title_activity_info"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity android:name=".StaticBackgroundTestNewActivity"></activity>
     </application>
