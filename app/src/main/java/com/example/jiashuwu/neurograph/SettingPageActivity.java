@@ -1,6 +1,7 @@
 package com.example.jiashuwu.neurograph;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,6 +9,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.Image;
 import android.os.Build;
+import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -32,6 +34,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.io.File;
 
 import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
 
@@ -69,6 +72,8 @@ public class SettingPageActivity extends AppCompatActivity {
     private ImageView purple_button;
     private ImageView pink_button;
     private ImageView orange_button;
+
+    private Context context;
 
     private String initial_colour = "";
 
@@ -679,6 +684,37 @@ public class SettingPageActivity extends AppCompatActivity {
     }
 
 
+    public void deleteFileByDirectory (File directory)
+    {
+        if (directory != null && directory.exists() && directory.isDirectory())
+        {
+            String [] children = directory.list();
+            for (int i = 0 ; i < children.length ; i++)
+            {
+                deleteFileByDirectory(new File(directory, children[i]));
+            }
+            directory.delete();
+        }
+        else if (directory != null && directory.isFile())
+        {
+            directory.delete();
+        }
+    }
+
+    public void cleanExternalCache (Context context)
+    {
+        if (Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED))
+        {
+            deleteFileByDirectory(context.getExternalCacheDir());
+        }
+    }
+
+    public void cleanCache (Context context)
+    {
+        deleteFileByDirectory(context.getCacheDir());
+        cleanExternalCache(context);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -710,6 +746,8 @@ public class SettingPageActivity extends AppCompatActivity {
         {
             Log.d("GRANTED", "GRANTED");
         }
+
+        context = getApplicationContext();
 
         initial_isScale = Sharing.isScale;
         initial_language = Sharing.language;
@@ -1035,6 +1073,29 @@ public class SettingPageActivity extends AppCompatActivity {
             Intent intent = new Intent (SettingPageActivity.this, InfoActivity.class);
             startActivity(intent);
             SettingPageActivity.this.finish();
+        }
+        else if (id == R.id.action_cache)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+            builder.setTitle("Clean Cache");
+            builder.setCancelable(false);
+            builder.setMessage("Clean app cache ?");
+            builder.setPositiveButton("Clean", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    cleanCache(context);
+                    Toast.makeText(SettingPageActivity.this, "Cache cleaned", Toast.LENGTH_LONG).show();
+                }
+            });
+            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here
+                    // LEAVE this as empty block
+                }
+            });
+            builder.create();
+            builder.show();
         }
         return super.onOptionsItemSelected(item);
     }
