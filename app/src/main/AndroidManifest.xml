@@ -155,7 +155,8 @@
             android:label="@string/title_activity_info"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".StaticBackgroundTestNewActivity"></activity>
+        <activity android:name=".StaticBackgroundTestNewActivity" />
+        <activity android:name=".CircularMotionTestActivity"></activity>
     </application>
 
 </manifest>
