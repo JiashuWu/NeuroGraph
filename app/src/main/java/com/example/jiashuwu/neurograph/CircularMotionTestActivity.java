@@ -34,7 +34,7 @@ import java.util.Locale;
 public class CircularMotionTestActivity extends AppCompatActivity {
 
     private Context context;
-    private MySurfaceViewForStaticBackground viewForStaticBackground;
+    private MySurfaceViewForCircularMotionTest viewForCircularMotionTest;
     private Button clear_button;
     private Button finish_button;
     private Button capture_button;
@@ -419,16 +419,16 @@ public class CircularMotionTestActivity extends AppCompatActivity {
 
         context = this;
 
-        viewForStaticBackground = (MySurfaceViewForStaticBackground) findViewById(R.id.mySurfaceViewForStaticBackground);
+        viewForCircularMotionTest = (MySurfaceViewForCircularMotionTest) findViewById(R.id.mySurfaceViewForCircularMotionTest);
 
-        clear_button = (Button) findViewById(R.id.static_background_test_clear_button);
+        clear_button = (Button) findViewById(R.id.circular_motion_test_clear_button);
         clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 //清除
-                viewForStaticBackground.reset();
+                viewForCircularMotionTest.reset();
             }
         });
 
@@ -449,7 +449,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
 
 
 
-        finish_button = (Button) findViewById(R.id.static_background_test_finish_button);
+        finish_button = (Button) findViewById(R.id.circular_motion_test_finish_button);
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
