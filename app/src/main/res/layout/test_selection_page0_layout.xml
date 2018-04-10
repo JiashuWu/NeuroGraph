@@ -94,10 +94,42 @@
                 android:layout_marginRight="30dp" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="Circular Motion Test"
+                android:textSize="26dp"
+                android:layout_below="@id/test_selection_page0_parallel_line_test_button"
+                android:id="@+id/test_selection_page0_circular_motion_test_title_textview" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110dp"
-                android:layout_below="@id/test_selection_page0_parallel_line_test_button"/>
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/test_selection_page_circular_motion_test_introduction_textview"
+                android:text="This is the circular motion test. You need to draw a circle, using the red dot as the center. "
+                android:layout_below="@id/test_selection_page0_circular_motion_test_title_textview" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test_selection_page_circular_motion_test_button"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Start Test"
+                android:layout_below="@id/test_selection_page_circular_motion_test_introduction_textview" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:id="@+id/test_selection_page_buttom_big_textview"
+                android:layout_below="@id/test_selection_page_circular_motion_test_button" />
 
 
         </RelativeLayout>
