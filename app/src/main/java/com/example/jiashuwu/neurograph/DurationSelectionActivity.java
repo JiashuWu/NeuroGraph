@@ -109,7 +109,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
         test_type = getIntent().getStringExtra("test_type").toString();
         image_type = getIntent().getStringExtra("image_type").toString();
 
-        if (test_type.contains("static") || test_type.contains("parallel"))
+        if (test_type.contains("static") || test_type.contains("parallel") || test_type.contains("circular"))
         {
             setContentView(R.layout.activity_duration_selection_without_seekbar);
 
@@ -154,6 +154,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
             else if (test_type.equalsIgnoreCase("parallel_line_test"))
             {
                 duration_test_instruction.setText("This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines. ");
+            }
+            else if (test_type.equalsIgnoreCase("circular_motion_test"))
+            {
+                duration_test_instruction.setText("This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre. ");
             }
 
             start_test_button = (Button) findViewById(R.id.duration_selection_page_start_test_button);
@@ -223,6 +227,23 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         Sharing.interval_duration = 0;
                         Sharing.painter_width = painter_width;
                         Sharing.sharing_image = "";
+                        startActivity(intent);
+                        DurationSelectionActivity.this.finish();
+                    }
+                    else if (test_type.equalsIgnoreCase("circular_motion_test"))
+                    {
+                        Intent intent = new Intent(DurationSelectionActivity.this, CircularMotionTestActivity.class);
+                        intent.putExtra("user_id", String.valueOf(user_id));
+                        intent.putExtra("test_type", test_type);
+                        intent.putExtra("image_type", image_type);
+                        intent.putExtra("interval_duration", String.valueOf(0));
+                        intent.putExtra("painter_width", String.valueOf(painter_width));
+                        Sharing.user_id = user_id;
+                        Sharing.test_type = test_type;
+                        Sharing.image_type = image_type;
+                        Sharing.interval_duration = 0;
+                        Sharing.painter_width = painter_width;
+                        Sharing.sharing_image = "circular_motion";
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
                     }

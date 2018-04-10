@@ -322,7 +322,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
-        setContentView(R.layout.activity_static_background_test);
+        setContentView(R.layout.activity_circular_motion_test);
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();

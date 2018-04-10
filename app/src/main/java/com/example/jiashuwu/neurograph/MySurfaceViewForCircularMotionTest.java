@@ -135,7 +135,7 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
             mCanvas = mSurfaceHolder.lockCanvas();
             mCanvas.drawColor(Color.WHITE);
 
-            Display display = ((StaticBackgroundTestActivity)getContext()).getWindowManager().getDefaultDisplay();
+            Display display = ((CircularMotionTestActivity)getContext()).getWindowManager().getDefaultDisplay();
             int displayWidth = display.getWidth();
             int displayHeight = display.getHeight();
             /*
