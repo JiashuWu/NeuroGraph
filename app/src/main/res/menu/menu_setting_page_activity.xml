@@ -13,7 +13,14 @@
         android:id="@+id/action_information"
         android:orderInCategory="200"
         android:title="Infomation"
-        android:icon="@drawable/ic_action_info"
+        android:icon="@drawable/ic_action_new_release_info"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_cache"
+        android:orderInCategory="300"
+        android:title="Clean Cache"
+        android:icon="@drawable/ic_action_delete_sweep"
         app:showAsAction="always" />
 
 </menu>
