@@ -144,9 +144,9 @@ public class ImageSelectionForCircularMotionActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position)
                 {
-                    case 0: image_type = "Red Dot"; Sharing.sharing_image = "red_dot"; break;
-                    case 1: image_type = "Black Dot"; Sharing.sharing_image = "black_dot"; break;
-                    default: image_type = "Red Dot"; Sharing.sharing_image = "red_dot"; break;
+                    case 0: image_type = "red_dot"; Sharing.sharing_image = "red_dot"; break;
+                    case 1: image_type = "black_dot"; Sharing.sharing_image = "black_dot"; break;
+                    default: image_type = "red_dot"; Sharing.sharing_image = "red_dot"; break;
                 }
             }
 
