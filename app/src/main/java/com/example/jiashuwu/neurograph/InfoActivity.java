@@ -1,8 +1,11 @@
 package com.example.jiashuwu.neurograph;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,9 +17,13 @@ import android.view.Display;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.util.Locale;
+
+import javax.mail.Quota;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -88,9 +95,18 @@ public class InfoActivity extends AppCompatActivity {
         info_activity_textview_1 = (TextView) findViewById(R.id.info_page_textview1);
 
         String device_resolution_title = "Your device resolution is : ";
+
+        /*
         Display display = getWindowManager().getDefaultDisplay();
         displayWidth = display.getWidth();
         displayHeight = display.getHeight();
+        */
+
+        WindowManager windowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+        displayWidth = displayMetrics.widthPixels;
+        displayHeight = displayMetrics.heightPixels;
         info_activity_textview_1.setText(device_resolution_title + String.valueOf(displayWidth) + " X " + String.valueOf(displayHeight));
 
 
