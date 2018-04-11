@@ -151,15 +151,15 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
             }
             */
 
-            // TODO CHANGE IMAGE BACKGROUND
+            // CHANGED IMAGE BACKGROUND
 
             if (Sharing.sharing_image.equalsIgnoreCase("red_dot"))
             {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_full_screen_fixed), displayWidth, displayHeight, true), 0, 0, null);
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.red_dot_background), displayWidth, displayHeight, true), 0, 0, null);
             }
             else if (Sharing.sharing_image.equalsIgnoreCase("black_dot"))
             {
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_full_screen_fixed), displayWidth, displayHeight, true), 0, 0, null);
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.black_dot_background), displayWidth, displayHeight, true), 0, 0, null);
             }
 
             mpaint.setStyle(Paint.Style.STROKE);
