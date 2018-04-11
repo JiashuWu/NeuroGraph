@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_practice_tests"
-        android:icon="@drawable/ic_action_parallel_line"
+        android:icon="@drawable/ic_action_circle_point"
         android:title="Dot and Line" />
 
     <item

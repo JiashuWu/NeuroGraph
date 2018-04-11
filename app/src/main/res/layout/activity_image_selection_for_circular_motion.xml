@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiashuwu.neurograph.ImageSelectionForCircularMotionActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="Select Width and Image"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/instruction_of_test"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="90dp"
+            android:id="@+id/image_selection_for_circular_motion_test_instruction"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="45dp"
+            android:id="@+id/image_selection_for_circular_motion_image_sleection_textview"
+            android:text="Please select test image type"
+            android:layout_below="@id/image_selection_for_circular_motion_test_instruction" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_selection_for_circular_motion_image_type_spinner"
+            android:layout_below="@id/image_selection_for_circular_motion_image_sleection_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_selection_for_circular_motion_width_textview"
+            android:text="@string/select_painter_width"
+            android:layout_below="@id/image_selection_for_circular_motion_image_type_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_selection_for_circular_motion_width_spinner"
+            android:layout_below="@id/image_selection_for_circular_motion_width_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/image_selection_for_circular_motion_start_test_button"
+            android:text="@string/start_test"
+            android:layout_below="@id/image_selection_for_circular_motion_width_spinner" />
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -150,7 +150,11 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_full_screen_fixed), displayWidth, displayHeight, true),0,0,null);//top-right corner
             }
             */
-            if (Sharing.sharing_image.equalsIgnoreCase("circular_motion"))
+            if (Sharing.sharing_image.equalsIgnoreCase("red_dot"))
+            {
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_full_screen_fixed), displayWidth, displayHeight, true), 0, 0, null);
+            }
+            else if (Sharing.sharing_image.equalsIgnoreCase("black_dot"))
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_full_screen_fixed), displayWidth, displayHeight, true), 0, 0, null);
             }

@@ -155,10 +155,12 @@ public class DurationSelectionActivity extends AppCompatActivity {
             {
                 duration_test_instruction.setText("This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines. ");
             }
+            /*
             else if (test_type.equalsIgnoreCase("circular_motion_test"))
             {
                 duration_test_instruction.setText("This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre. ");
             }
+            */
 
             start_test_button = (Button) findViewById(R.id.duration_selection_page_start_test_button);
             start_test_button.setOnClickListener(new View.OnClickListener() {
@@ -230,6 +232,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
                     }
+                    /*
                     else if (test_type.equalsIgnoreCase("circular_motion_test"))
                     {
                         Intent intent = new Intent(DurationSelectionActivity.this, CircularMotionTestActivity.class);
@@ -247,6 +250,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                         startActivity(intent);
                         DurationSelectionActivity.this.finish();
                     }
+                    */
                 }
             });
 

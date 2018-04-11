@@ -190,11 +190,10 @@ public class TestSelectionActivity extends AppCompatActivity {
                     circular_motion_button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent (TestSelectionActivity.this, DurationSelectionActivity.class);
+                            Intent intent = new Intent (TestSelectionActivity.this, ImageSelectionForCircularMotionActivity.class);
                             intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "circular_motion_test";
                             intent.putExtra("test_type", test_type);
-                            intent.putExtra("image_type", "circular_motion");
                             Sharing.test_to_duration = "yes";
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
@@ -445,11 +444,10 @@ public class TestSelectionActivity extends AppCompatActivity {
         circular_motion_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (TestSelectionActivity.this, DurationSelectionActivity.class);
+                Intent intent = new Intent (TestSelectionActivity.this, ImageSelectionForCircularMotionActivity.class);
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "circular_motion_test";
                 intent.putExtra("test_type", test_type);
-                intent.putExtra("image_type", "circular_motion");
                 Sharing.test_to_duration = "yes";
                 startActivity(intent);
                 TestSelectionActivity.this.finish();

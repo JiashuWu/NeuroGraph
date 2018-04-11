@@ -282,5 +282,10 @@
     "Neurograph"</string>
     <string name="title_activity_info">InfoActivity</string>
 
+    <string-array name="circular_motion_image_type">
+        <item>Red Dot</item>
+        <item>Black Dot</item>
+    </string-array>
+
 
 </resources>
