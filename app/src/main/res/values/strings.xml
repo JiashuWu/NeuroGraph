@@ -284,6 +284,7 @@
 
     <string-array name="circular_motion_image_type">
         <item>Red Dot</item>
+        <item>Blue Dot</item>
         <item>Black Dot</item>
     </string-array>
 

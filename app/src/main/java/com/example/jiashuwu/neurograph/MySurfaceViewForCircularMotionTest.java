@@ -135,9 +135,11 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
             mCanvas = mSurfaceHolder.lockCanvas();
             mCanvas.drawColor(Color.WHITE);
 
+            /*
             Display display = ((CircularMotionTestActivity)getContext()).getWindowManager().getDefaultDisplay();
             int displayWidth = display.getWidth();
             int displayHeight = display.getHeight();
+            */
             /*
             if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
             {
@@ -151,8 +153,8 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
             }
             */
 
+            /*
             // CHANGED IMAGE BACKGROUND
-
             if (Sharing.sharing_image.equalsIgnoreCase("red_dot"))
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.red_dot_background), displayWidth, displayHeight, true), 0, 0, null);
@@ -161,6 +163,7 @@ public class MySurfaceViewForCircularMotionTest extends SurfaceView implements S
             {
                 mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.black_dot_background), displayWidth, displayHeight, true), 0, 0, null);
             }
+            */
 
             mpaint.setStyle(Paint.Style.STROKE);
 

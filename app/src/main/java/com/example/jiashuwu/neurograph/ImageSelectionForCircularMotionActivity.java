@@ -145,7 +145,8 @@ public class ImageSelectionForCircularMotionActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0: image_type = "red_dot"; Sharing.sharing_image = "red_dot"; break;
-                    case 1: image_type = "black_dot"; Sharing.sharing_image = "black_dot"; break;
+                    case 1: image_type = "blue_dot"; Sharing.sharing_image = "blue_dot"; break;
+                    case 2: image_type = "black_dot"; Sharing.sharing_image = "black_dot"; break;
                     default: image_type = "red_dot"; Sharing.sharing_image = "red_dot"; break;
                 }
             }

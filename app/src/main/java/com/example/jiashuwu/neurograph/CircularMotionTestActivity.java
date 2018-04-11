@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -101,6 +102,8 @@ public class CircularMotionTestActivity extends AppCompatActivity {
     public String user_name;
 
     private long exitTime;
+
+    private ImageView centre_dot_imageView;
 
 
 
@@ -323,6 +326,15 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.activity_circular_motion_test);
+
+        centre_dot_imageView = (ImageView) findViewById(R.id.circular_dot_centre_imageview);
+
+        switch (Sharing.sharing_image)
+        {
+            case "red_dot": centre_dot_imageView.setImageResource(R.drawable.red_dot_only); break;
+            case "blue_dot": centre_dot_imageView.setImageResource(R.drawable.blue_dot_only); break;
+            case "black_dot": centre_dot_imageView.setImageResource(R.drawable.black_dot_only); break;
+        }
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();

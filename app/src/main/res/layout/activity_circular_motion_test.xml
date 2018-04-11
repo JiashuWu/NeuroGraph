@@ -18,6 +18,14 @@
             android:id="@+id/mySurfaceViewForCircularMotionTest" />
 
 
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/circular_dot_centre_imageview"
+            android:src="@drawable/red_dot_only" />
+
+
         <!--
         <Button
             android:layout_width="wrap_content"
