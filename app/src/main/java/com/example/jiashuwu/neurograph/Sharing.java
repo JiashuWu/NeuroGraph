@@ -63,6 +63,17 @@ public class Sharing {
 
     public static int hundred_sleeping_time = 1200;
 
+    public static String device_system_version_code;
+
+    public static String device_brand;
+
+    public static String device_model;
+
+    public static int device_height_in_pixels;
+
+    public static int device_width_in_pixels;
+
+
     public Sharing()
     {
 
