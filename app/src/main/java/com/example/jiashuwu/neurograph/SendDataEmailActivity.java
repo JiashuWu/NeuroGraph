@@ -261,6 +261,19 @@ public class SendDataEmailActivity extends AppCompatActivity {
             output_string = output_string + "current receive treatment = " + current_receive_treatment + "\n";
             // output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
             output_string = output_string + "number of points = " + number_of_points + "\n";
+
+            output_string = output_string + "device brand = " + Sharing.device_brand + "\n";
+            output_string = output_string + "device model = " + Sharing.device_model + "\n";
+            output_string = output_string + "device product name = " + Sharing.device_product_name + "\n";
+            output_string = output_string + "device manufacturer = " + Sharing.device_product_name + "\n";
+            output_string = output_string + "device screen height in pixels = " + Sharing.device_height_in_pixels + "\n";
+            output_string = output_string + "device screen width in pixels = " + Sharing.device_width_in_pixels + "\n";
+            output_string = output_string + "device screen testing/drawing height in pixels = " + Sharing.device_testing_area_height + "\n";
+            output_string = output_string + "device screen testing/drawing width in pixels = " + Sharing.device_testing_area_width + "\n";
+            output_string = output_string + "device navigation bar height = " + Sharing.device_navigation_bar_height + "\n";
+            output_string = output_string + "device Android system version code = " + Sharing.device_system_version_code + "\n";
+
+
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
@@ -333,7 +346,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "\n";
+                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "\n";
                 output_csv_strings.add(new_csv_line);
             }
 
