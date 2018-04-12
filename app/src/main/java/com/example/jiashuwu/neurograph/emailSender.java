@@ -216,6 +216,24 @@ public class emailSender{
                 e.printStackTrace();
             }
 
+            File output_readme = new File (Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
+            FileWriter fileWriter2 = new FileWriter(output_readme);
+            try
+            {
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter2);
+                String content = SharingReadMe.readme;
+                bufferedWriter.write(content);
+                bufferedWriter.close();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
             File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
             FileWriter fileWriter1 = new FileWriter(output_csv_file);
             try
@@ -238,11 +256,15 @@ public class emailSender{
             }
 
             String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
-            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographDataFileReadme.txt" + "\n";
+
             Log.d("file_path1", file_path);
             Sharing.file_path = file_path;
             String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
             String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
+            String readme_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographDataFileReadme.txt";
+
 
             Multipart multipart = new MimeMultipart();
 
@@ -260,6 +282,11 @@ public class emailSender{
             attachmentBodyPart1.setDataHandler(new DataHandler(source1));
             attachmentBodyPart1.setFileName(output_csv_file_name);
 
+            MimeBodyPart attachmentBodyPart2 = new MimeBodyPart();
+            javax.activation.DataSource source2 = new FileDataSource(readme_file_path);
+            attachmentBodyPart2.setDataHandler(new DataHandler(source2));
+            attachmentBodyPart2.setFileName("NeurographDataFileReadme.txt");
+
             MimeBodyPart textBodyPart = new MimeBodyPart();
 
             // TODO THIS IS OPTIONAL
@@ -276,6 +303,7 @@ public class emailSender{
             multipart.addBodyPart(textBodyPart);
             multipart.addBodyPart(attachmentBodyPart);
             multipart.addBodyPart(attachmentBodyPart1);
+            multipart.addBodyPart(attachmentBodyPart2);
 
             message.setContent(multipart);
 

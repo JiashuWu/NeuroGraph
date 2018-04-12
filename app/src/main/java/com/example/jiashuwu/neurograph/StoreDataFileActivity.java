@@ -573,6 +573,25 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            File output_readme = new File (Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
+            try
+            {
+                FileWriter fileWriter = new FileWriter(output_readme);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                String content = SharingReadMe.readme;
+                bufferedWriter.write(content);
+                Log.d("CONTENTTTTT", content);
+                bufferedWriter.close();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
 
             File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
             FileWriter fileWriter1 = new FileWriter(output_csv_file);
@@ -595,7 +614,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
         }
 
         String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
-        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
+        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
+        file_path = file_path + Environment.getExternalStorageState() + "/Neurograph/" + "readme.txt" + "\n";
         Log.d("file_path1", file_path);
         Sharing.file_path = file_path;
         String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
