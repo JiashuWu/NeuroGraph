@@ -114,7 +114,6 @@
     <color name="colorAccentPurple2">#9575cd</color>
 
 
-
     <color name="colorPrimaryDarkPink2">#c94f7c</color>
     <color name="colorPrimaryPink2">#ff80ab</color>
     <color name="colorAccentPink2">#ffb2dd</color>
@@ -163,4 +162,6 @@
     <color name="colorPrimaryDarkOrange2">#c43e00</color>
     <color name="colorPrimaryOrange2">#ff6f00</color>
     <color name="colorAccentOrange2">#ff833a</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

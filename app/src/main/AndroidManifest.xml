@@ -165,9 +165,15 @@
             android:configChanges="locale|fontScale"
             android:screenOrientation="landscape"
             android:theme="@style/activityTheme" />
-        <activity android:name=".ImageSelectionForCircularMotionActivity"
+        <activity
+            android:name=".ImageSelectionForCircularMotionActivity"
             android:configChanges="locale|fontScale"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".FullHeightActivity"
+            android:configChanges="locale|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity_full_screen" />
     </application>
 
 </manifest>

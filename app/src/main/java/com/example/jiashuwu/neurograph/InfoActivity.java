@@ -94,7 +94,15 @@ public class InfoActivity extends AppCompatActivity {
 
         info_activity_textview_1 = (TextView) findViewById(R.id.info_page_textview1);
 
-        String device_resolution_title = "Your device resolution is : ";
+        String device_information_title = "Your device information : ";
+
+        int testing_area_height = Sharing.device_height_in_pixels - Sharing.device_navigation_bar_height;
+        String device_information = "Device Brand : " + Sharing.device_brand + "\n"
+                + "Device Model : " + Sharing.device_model + "\n"
+                + "Device System Version Code : " + Sharing.device_system_version_code + "\n"
+                + "Device Resolution : " + Sharing.device_height_in_pixels + " X " + Sharing.device_width_in_pixels + "\n"
+                + "Device Testing Area : " + testing_area_height + " X " + Sharing.device_width_in_pixels + "\n"
+                + "Device Navigation Bar Height : " + Sharing.device_navigation_bar_height + "\n";
 
         /*
         Display display = getWindowManager().getDefaultDisplay();
@@ -102,12 +110,15 @@ public class InfoActivity extends AppCompatActivity {
         displayHeight = display.getHeight();
         */
 
+        /*
         WindowManager windowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
         displayWidth = displayMetrics.widthPixels;
         displayHeight = displayMetrics.heightPixels;
-        info_activity_textview_1.setText(device_resolution_title + String.valueOf(displayWidth) + " X " + String.valueOf(displayHeight));
+        */
+
+        info_activity_textview_1.setText(device_information_title + device_information);
 
 
     }

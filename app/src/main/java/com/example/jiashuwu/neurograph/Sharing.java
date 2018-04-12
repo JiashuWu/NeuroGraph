@@ -73,6 +73,12 @@ public class Sharing {
 
     public static int device_width_in_pixels;
 
+    public static int device_navigation_bar_height;
+
+    public static String device_manufacturer;
+
+    public static String device_product_name;
+
 
     public Sharing()
     {
