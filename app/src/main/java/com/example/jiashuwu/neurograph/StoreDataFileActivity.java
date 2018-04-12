@@ -77,6 +77,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private String test_type;
     private String image_type;
     private int interval_duration;
+    private int number_of_points;
     private int age;
     private String gender;
     private String education;
@@ -271,6 +272,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         Cursor cursor = database.rawQuery(query, new String[] {});
         Cursor cursor1;
         Cursor cursor2;
+
         output_csv_strings = new ArrayList<>();
         while (cursor.moveToNext())
         {
@@ -281,6 +283,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
             test_type = cursor.getString(4).toString();
             image_type = cursor.getString(5).toString();
             interval_duration = Integer.parseInt(cursor.getString(6).toString());
+            number_of_points = cursor.getInt(7);
             query1 = "SELECT * FROM User WHERE user_id = ?";
             parameter1 = new String [] {String.valueOf(user_id)};
             cursor1 = database.rawQuery(query1, new String [] {String.valueOf(user_id)});
@@ -297,32 +300,35 @@ public class StoreDataFileActivity extends AppCompatActivity {
             {
                 cursor1.close();
             }
+
             output_string = output_string + "test_id = " + String.valueOf(test_id) + "\n";
-            output_csv_strings.add("test_id = " + String.valueOf(test_id) + "\n");
+            // output_csv_strings.add("test_id = " + String.valueOf(test_id) + "\n");
             output_string = output_string + "user_id = " + String.valueOf(user_id) + "\n";
-            output_csv_strings.add("user_id = " + String.valueOf(user_id) + "\n");
+            // output_csv_strings.add("user_id = " + String.valueOf(user_id) + "\n");
             output_string = output_string + "test_starting_time = " + test_starting_time + "\n";
-            output_csv_strings.add("test_starting_time = " + test_starting_time + "\n");
+            // output_csv_strings.add("test_starting_time = " + test_starting_time + "\n");
             output_string = output_string + "test_ending_time = " + test_ending_time + "\n";
-            output_csv_strings.add("test_ending_time = " + test_ending_time + "\n");
+            // output_csv_strings.add("test_ending_time = " + test_ending_time + "\n");
             output_string = output_string + "test_type = " + test_type + "\n";
-            output_csv_strings.add("test_type = " + test_type + "\n");
+            // output_csv_strings.add("test_type = " + test_type + "\n");
             output_string = output_string + "image_type = " + image_type + "\n";
-            output_csv_strings.add("image_type = " + image_type + "\n");
+            // output_csv_strings.add("image_type = " + image_type + "\n");
             output_string = output_string + "interval duration = " + String.valueOf(interval_duration) + "\n";
-            output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
+            // output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
+            output_string = output_string + "number of points = " + String.valueOf(number_of_points) + "\n";
+
             output_string = output_string + "user name = " + name + "\n";
-            output_csv_strings.add("user name = " + name + "\n");
+            // output_csv_strings.add("user name = " + name + "\n");
             output_string = output_string + "age = " + String.valueOf(age) + "\n";
-            output_csv_strings.add("age = " + String.valueOf(age) + "\n");
+            // output_csv_strings.add("age = " + String.valueOf(age) + "\n");
             output_string = output_string + "gender = " + gender + "\n";
-            output_csv_strings.add("gender = " + gender + "\n");
+            // output_csv_strings.add("gender = " + gender + "\n");
             output_string = output_string + "education = " + education + "\n";
-            output_csv_strings.add("education = " + education + "\n");
+            // output_csv_strings.add("education = " + education + "\n");
             output_string = output_string + "rating score = " + String.valueOf(rating_score) + "\n";
-            output_csv_strings.add("rating score = " + String.valueOf(rating_score) + "\n");
+            // output_csv_strings.add("rating score = " + String.valueOf(rating_score) + "\n");
             output_string = output_string + "current receive treatment = " + current_receive_treatment + "\n";
-            output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
+            // output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
             cursor2 = database.rawQuery(query2, new String [] {String.valueOf(test_id)});
@@ -396,9 +402,11 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "\n";
+                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "\n";
                 output_csv_strings.add(new_csv_line);
             }
+
+            output_string = output_string + "\n";
 
             if (cursor2 != null)
             {
@@ -411,6 +419,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         {
             cursor.close();
         }
+
         Sharing.csv_string_arraylist = output_csv_strings;
 
         if (database != null)
