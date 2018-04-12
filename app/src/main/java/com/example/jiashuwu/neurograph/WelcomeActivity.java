@@ -68,7 +68,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Sharing.device_width_in_pixels = displayWidth;
 
+        Sharing.device_testing_area_width = displayWidth;
+
         Sharing.device_height_in_pixels = displayHeight + Sharing.device_navigation_bar_height;
+
+        Sharing.device_testing_area_height = displayHeight;
 
         // get the system language
         language = Locale.getDefault().toString();

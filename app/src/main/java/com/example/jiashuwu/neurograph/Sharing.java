@@ -79,6 +79,10 @@ public class Sharing {
 
     public static String device_product_name;
 
+    public static int device_testing_area_width;
+
+    public static int device_testing_area_height;
+
 
     public Sharing()
     {
