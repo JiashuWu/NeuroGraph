@@ -88,6 +88,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private float y;
     private float pressure;
     private float touch_point_size;
+    private String test_starting_time_number_only;
+    private String test_ending_time_number_only;
+
 
     public static Calendar calendar;
     public static int year;
@@ -284,6 +287,26 @@ public class StoreDataFileActivity extends AppCompatActivity {
             image_type = cursor.getString(5).toString();
             interval_duration = Integer.parseInt(cursor.getString(6).toString());
             number_of_points = cursor.getInt(7);
+            int a = 0;
+            test_starting_time_number_only = "";
+            test_ending_time_number_only = "";
+            Log.d("STRINGTEST", test_starting_time);
+            for (a = 0 ; a < test_starting_time.length() ; a++)
+            {
+                if (Character.isDigit(test_starting_time.charAt(a)))
+                {
+                    test_starting_time_number_only = test_starting_time_number_only + test_starting_time.charAt(a);
+                }
+            }
+            Log.d("STRINGTEST", test_starting_time_number_only);
+            Log.d("STRINGTEST", test_ending_time);
+            for (a = 0 ; a < test_ending_time.length() ; a++)
+            {
+                if (Character.isDigit(test_ending_time.charAt(a)))
+                {
+                    test_ending_time_number_only = test_ending_time_number_only + test_ending_time.charAt(a);
+                }
+            }
             query1 = "SELECT * FROM User WHERE user_id = ?";
             parameter1 = new String [] {String.valueOf(user_id)};
             cursor1 = database.rawQuery(query1, new String [] {String.valueOf(user_id)});
@@ -402,7 +425,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "\n";
+                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "\n";
                 output_csv_strings.add(new_csv_line);
             }
 

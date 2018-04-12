@@ -473,6 +473,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // TODO IF YOU WANT A SCREENSHOT
                 // getScreenShot((View) getWindow().getDecorView());
+                calendar = Calendar.getInstance();
                 year = calendar.get(Calendar.YEAR);
                 month = calendar.get(Calendar.MONTH) + 1;
                 day = calendar.get(Calendar.DAY_OF_MONTH);
