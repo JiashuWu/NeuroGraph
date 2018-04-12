@@ -292,5 +292,10 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string-array name="send_file_option">
+        <item>Send email and store files</item>
+        <item>Store files</item>
+    </string-array>
+
 
 </resources>
