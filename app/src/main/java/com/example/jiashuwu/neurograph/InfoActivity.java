@@ -94,10 +94,12 @@ public class InfoActivity extends AppCompatActivity {
 
         info_activity_textview_1 = (TextView) findViewById(R.id.info_page_textview1);
 
-        String device_information_title = "Your device information : ";
+        String device_information_title = "Your device information : \n";
 
         int testing_area_height = Sharing.device_height_in_pixels - Sharing.device_navigation_bar_height;
         String device_information = "Device Brand : " + Sharing.device_brand + "\n"
+                + "Device Manufacturer : " + Sharing.device_manufacturer + "\n"
+                + "Device Product Information : " + Sharing.device_product_name + "\n"
                 + "Device Model : " + Sharing.device_model + "\n"
                 + "Device System Version Code : " + Sharing.device_system_version_code + "\n"
                 + "Device Resolution : " + Sharing.device_height_in_pixels + " X " + Sharing.device_width_in_pixels + "\n"

@@ -38,7 +38,6 @@ public class CircularMotionTestActivity extends AppCompatActivity {
     private MySurfaceViewForCircularMotionTest viewForCircularMotionTest;
     private Button clear_button;
     private Button finish_button;
-    private Button capture_button;
 
     public int user_id;
     public String test_type;
@@ -84,6 +83,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
     public String second_s;
     public String millisecond_s;
 
+    /*
     public static Calendar calendar11;
     public static int year11;
     public static int month11;
@@ -98,6 +98,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
     public static String minute_s11;
     public static String second_s11;
     public static String millisecond_s11;
+    */
 
     public String user_name;
 
@@ -277,13 +278,16 @@ public class CircularMotionTestActivity extends AppCompatActivity {
 
     }
 
+    /*
     public Bitmap takeScreenShot ()
     {
         View rootView = findViewById(android.R.id.content).getRootView();
         rootView.setDrawingCacheEnabled(true);
         return rootView.getDrawingCache();
     }
+    */
 
+    /*
     public void saveBitmap (Bitmap bitmap)
     {
         try
@@ -304,6 +308,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -334,6 +339,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             case "red_dot": centre_dot_imageView.setImageResource(R.drawable.red_dot_only); break;
             case "blue_dot": centre_dot_imageView.setImageResource(R.drawable.blue_dot_only); break;
             case "black_dot": centre_dot_imageView.setImageResource(R.drawable.black_dot_only); break;
+            default: centre_dot_imageView.setImageResource(R.drawable.red_dot_only); break;
         }
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);

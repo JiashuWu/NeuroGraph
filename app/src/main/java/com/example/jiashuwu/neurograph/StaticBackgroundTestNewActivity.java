@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 // https://www.cnblogs.com/plokmju/p/android_Canvas.html
 
+// ABANDONED
+
 public class StaticBackgroundTestNewActivity extends Activity {
     private Button btn_save, btn_resume;
     private ImageView iv_canvas;
