@@ -41,6 +41,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -73,6 +74,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
+
+    private MyDatabaseHelper databaseHelperD;
+    private SQLiteDatabase databaseD;
 
     private MyDatabaseHelper databaseHelper1;
     private SQLiteDatabase database1;
@@ -110,6 +114,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
     public String content = "";
 
     private String send_button_clicked = "";
+
+    private Switch delete_test_data_switch;
+    private boolean should_delete_test_data;
+
 
 
     public void initLocaleLanguage ()
@@ -482,6 +490,24 @@ public class SendDataEmailActivity extends AppCompatActivity {
         broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
         broadcastMessage.putExtra("stop_showing_process", "1");
         sendBroadcast(broadcastMessage);
+
+        if (should_delete_test_data)
+        {
+            databaseHelperD = new MyDatabaseHelper (SendDataEmailActivity.this, databaseName, null, databaseVersion);
+            databaseD = databaseHelperD.getWritableDatabase();
+            databaseD.delete("Data", "", new String[] {});
+            databaseD.delete("Test", "", new String[] {});
+            if (databaseD != null)
+            {
+                databaseD.close();
+            }
+            if (databaseHelperD != null)
+            {
+                databaseHelperD.close();
+            }
+        }
+
+
     }
 
     public int getNumber_of_item_in_total ()
@@ -538,6 +564,24 @@ public class SendDataEmailActivity extends AppCompatActivity {
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 200);
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{INTERNET, ACCESS_NETWORK_STATE}, 200);
 
+        delete_test_data_switch = (Switch) findViewById(R.id.send_email_delete_data_switch);
+        delete_test_data_switch.setChecked(true);
+
+        should_delete_test_data = true;
+
+        delete_test_data_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    should_delete_test_data = true;
+                }
+                else
+                {
+                    should_delete_test_data = false;
+                }
+            }
+        });
 
         send_button = (Button) findViewById(R.id.send_email_send_button);
         cancel_button = (Button) findViewById(R.id.send_email_cancel_button);
