@@ -79,7 +79,7 @@ Meaning of every column in the csv data file:
 	(c) Traditional Chinese
 	(d) Dutch
 	(e) French
-	(f) Greman
+	(f) German
 	(g) Italian
 	(h) Japanese
 	(i) Portuguese
