@@ -81,6 +81,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private MyDatabaseHelper databaseHelper1;
     private SQLiteDatabase database1;
 
+    private MyDatabaseHelper databaseHelper2;
+    private SQLiteDatabase database2;
+
+
     private String databaseName = DatabaseInformation.databaseName;
     private int databaseVersion = DatabaseInformation.databaseVersion;
 
@@ -510,6 +514,26 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     }
 
+    public int getNumber_of_test_in_total ()
+    {
+        int answer = 0;
+
+        databaseHelper2 = new MyDatabaseHelper(this, databaseName, null, databaseVersion);
+        databaseHelper2.getReadableDatabase();
+
+        database2 = databaseHelper2.getReadableDatabase();
+
+        String query = "SELECT COUNT () FROM Test";
+        String [] parameters = new String[]{};
+        Cursor cursor = database2.rawQuery(query, parameters);
+        while (cursor.moveToNext())
+        {
+            answer = cursor.getInt(0);
+        }
+
+        return answer;
+    }
+
     public int getNumber_of_item_in_total ()
     {
         databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -558,6 +582,24 @@ public class SendDataEmailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_data_email);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getNumber_of_test_in_total() == 0)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+            builder.setTitle("No Test Data");
+            builder.setCancelable(false);
+            builder.setMessage("There is no test data to send");
+            builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent (SendDataEmailActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    SendDataEmailActivity.this.finish();
+                }
+            });
+            builder.create();
+            builder.show();
+        }
 
         // REQUEST PERMISSION
         ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);

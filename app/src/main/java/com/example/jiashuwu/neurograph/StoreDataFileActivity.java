@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
@@ -67,6 +68,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper1;
     private SQLiteDatabase database1;
+
+    private MyDatabaseHelper databaseHelper2;
+    private SQLiteDatabase database2;
 
     public String output_file_name;
     public String output_csv_file_name;
@@ -186,6 +190,26 @@ public class StoreDataFileActivity extends AppCompatActivity {
             intent.setData(Uri.fromParts("package", StoreDataFileActivity.this.getApplicationContext().getPackageName(), null));
             startActivity(intent);
         }
+    }
+
+    public int getNumber_of_test_in_total ()
+    {
+        int answer = 0;
+
+        databaseHelper2 = new MyDatabaseHelper(this, databaseName, null, databaseVersion);
+        databaseHelper2.getReadableDatabase();
+
+        database2 = databaseHelper2.getReadableDatabase();
+
+        String query = "SELECT COUNT () FROM Test";
+        String [] parameters = new String[]{};
+        Cursor cursor = database2.rawQuery(query, parameters);
+        while (cursor.moveToNext())
+        {
+            answer = cursor.getInt(0);
+        }
+
+        return answer;
     }
 
     public int getNumber_of_item_in_total ()
@@ -723,6 +747,24 @@ public class StoreDataFileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_store_data_file);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getNumber_of_test_in_total() == 0)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
+            builder.setTitle("No Test Data");
+            builder.setCancelable(false);
+            builder.setMessage("There is no test data to store");
+            builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent (StoreDataFileActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    StoreDataFileActivity.this.finish();
+                }
+            });
+            builder.create();
+            builder.show();
+        }
 
         delete_test_data_switch = (Switch) findViewById(R.id.store_data_file_delete_data_switch);
         delete_test_data_switch.setChecked(true);
