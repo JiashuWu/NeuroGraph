@@ -623,7 +623,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
         String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
         file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
-        file_path = file_path + Environment.getExternalStorageState() + "/Neurograph/" + "readme.txt" + "\n";
+        file_path = file_path + Environment.getExternalStorageState() + "/Neurograph/" + "NeurographDataFileReadme.txt" + "\n";
         Log.d("file_path1", file_path);
         Sharing.file_path = file_path;
         String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
