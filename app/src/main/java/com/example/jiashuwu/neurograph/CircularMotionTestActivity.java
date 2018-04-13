@@ -206,6 +206,16 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         values.put("image_type", image_type);
         values.put("interval_duration", interval_duration);
         values.put("number_of_points", number_of_points);
+        values.put("painter_width", Sharing.painter_width);
+        values.put("language_during_test", Sharing.language);
+        if (Sharing.isScale)
+        {
+            values.put("is_scale_during_test", "large");
+        }
+        else
+        {
+            values.put("is_scale_during_test", "normal");
+        }
         Log.d("TAG_TEST_INFO", String.valueOf(user_id));
         Log.d("TAG_TEST_INFO", test_starting_time);
         Log.d("TAG_TEST_INFO", test_ending_time);
@@ -243,6 +253,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             values.put("y", y_list.get(i));
             values.put("pressure", pressure_list.get(i));
             values.put("touch_point_size", touch_point_size_list.get(i));
+            values.put("point_serial_number", i+1);
             Log.d("TAG_DATA_INFO", String.valueOf(test_id));
             Log.d("TAG_DATA_INFO", timestamp_list.get(i));
             Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));

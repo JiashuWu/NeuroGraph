@@ -131,6 +131,11 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private Switch delete_test_data_switch;
     private boolean should_delete_test_data = true;
 
+    private int painter_width;
+    private String language_during_test;
+    private String is_scale_during_test;
+    private int point_serial_number;
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -332,6 +337,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
             image_type = cursor.getString(5).toString();
             interval_duration = Integer.parseInt(cursor.getString(6).toString());
             number_of_points = cursor.getInt(7);
+            painter_width = cursor.getInt(8);
+            language_during_test = cursor.getString(9).toString();
+            is_scale_during_test = cursor.getString(10).toString();
             int a = 0;
             test_starting_time_number_only = "";
             test_ending_time_number_only = "";
@@ -369,6 +377,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 cursor1.close();
             }
 
+            output_string = output_string + "TEST INFORMATION" + "\n";
+
             output_string = output_string + "test_id = " + String.valueOf(test_id) + "\n";
             // output_csv_strings.add("test_id = " + String.valueOf(test_id) + "\n");
             output_string = output_string + "user_id = " + String.valueOf(user_id) + "\n";
@@ -385,6 +395,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
             // output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
             output_string = output_string + "number of points = " + String.valueOf(number_of_points) + "\n";
 
+            output_string = output_string + "painter_width = " + String.valueOf(painter_width) + "\n";
+
+            output_string = output_string + "language_during_test = " + language_during_test + "\n";
+
+            output_string = output_string + "is_scale_during_test = " + is_scale_during_test + "\n";
+
+            output_string = output_string + "TESTEE INFORMATION" + "\n";
+
             output_string = output_string + "user name = " + name + "\n";
             // output_csv_strings.add("user name = " + name + "\n");
             output_string = output_string + "age = " + String.valueOf(age) + "\n";
@@ -399,7 +417,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
             // output_csv_strings.add("current receive treatment = " + current_receive_treatment + "\n");
 
 
-            output_string = output_string + "number of points = " + number_of_points + "\n";
+            //output_string = output_string + "number of points = " + number_of_points + "\n";
+
+            output_string = output_string + "DEVICE INFORMATION" + "\n";
 
 
             output_string = output_string + "device brand = " + Sharing.device_brand + "\n";
@@ -413,6 +433,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
             output_string = output_string + "device navigation bar height = " + Sharing.device_navigation_bar_height + "\n";
             output_string = output_string + "device Android system version code = " + Sharing.device_system_version_code + "\n";
 
+            output_string = output_string + "NEUROGRAPH INFORMATION" + "\n";
+            output_string = output_string + "Neurograph version = " + BuildConfig.VERSION_NAME + "\n";
+
+            output_string = output_string + "TEST POINT DATA INFORMATION" + "\n";
 
             query2 = "SELECT * FROM Data WHERE test_id = ?";
             parameter2 = new String [] {String.valueOf(test_id)};
@@ -425,7 +449,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 y = cursor2.getFloat(4);
                 pressure = cursor2.getFloat(5);
                 touch_point_size = cursor2.getFloat(6);
-                String new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
+                point_serial_number = cursor2.getInt(7);
+                String new_line = String.valueOf(point_serial_number) + " " + timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
                 output_string = output_string + new_line;
 
                 Log.d("TIMESSTAMP", timestamp_of_point);
@@ -487,7 +512,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "\n";
+                String new_csv_line = point_serial_number + "," + time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(painter_width) + "," + language_during_test + "," + is_scale_during_test + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "," + BuildConfig.VERSION_NAME + "\n";
                 output_csv_strings.add(new_csv_line);
             }
 
