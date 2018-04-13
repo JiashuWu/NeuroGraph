@@ -489,11 +489,6 @@ public class SendDataEmailActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Sharing.stop_showing_process = 0;
-        Intent broadcastMessage = new Intent ();
-        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
-        broadcastMessage.putExtra("stop_showing_process", "1");
-        sendBroadcast(broadcastMessage);
 
         if (should_delete_test_data)
         {
@@ -510,6 +505,16 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 databaseHelperD.close();
             }
         }
+
+
+
+        Sharing.stop_showing_process = 0;
+        Intent broadcastMessage = new Intent ();
+        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        broadcastMessage.putExtra("stop_showing_process", "1");
+        sendBroadcast(broadcastMessage);
+
+
 
 
     }

@@ -716,11 +716,6 @@ public class StoreDataFileActivity extends AppCompatActivity {
             manager.notify(0, notification);
         }
 
-        Sharing.stop_showing_process = 0;
-        Intent broadcastMessage = new Intent ();
-        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
-        broadcastMessage.putExtra("stop_showing_process", "1");
-        sendBroadcast(broadcastMessage);
 
         if (should_delete_test_data)
         {
@@ -737,6 +732,15 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 databaseHelperD.close();
             }
         }
+
+
+        Sharing.stop_showing_process = 0;
+        Intent broadcastMessage = new Intent ();
+        broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
+        broadcastMessage.putExtra("stop_showing_process", "1");
+        sendBroadcast(broadcastMessage);
+
+
 
     }
 
