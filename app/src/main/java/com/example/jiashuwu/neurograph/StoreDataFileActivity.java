@@ -884,9 +884,27 @@ public class StoreDataFileActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
 
-            Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
-            startActivity(intent);
-            StoreDataFileActivity.this.finish();
+            AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
+            builder.setTitle("Discard storing files");
+            builder.setCancelable(false);
+            builder.setMessage("Discard storing data files ? ");
+            builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    StoreDataFileActivity.this.finish();
+                }
+            });
+            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Should do nothing here
+                    // Leave this as empty
+                }
+            });
+            builder.create();
+            builder.show();
 
             return true;
         }
