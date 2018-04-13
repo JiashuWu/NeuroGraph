@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
@@ -80,6 +82,17 @@ public class TestSelectionActivity extends AppCompatActivity {
     private String initial_language;
     private boolean initial_isScale;
 
+    private String databaseName = DatabaseInformation.databaseName;
+    private int databaseVersion = DatabaseInformation.databaseVersion;
+
+    private MyDatabaseHelper databaseHelper2;
+    private SQLiteDatabase database2;
+
+    private Spinner store_file_option_spinner;
+    private int selected_store_file_option = 0;
+
+    private ArrayAdapter store_file_option_adapter;
+
 
     public void initLocaleLanguage ()
     {
@@ -120,6 +133,38 @@ public class TestSelectionActivity extends AppCompatActivity {
             case "orange": setTheme(R.style.AppThemeOrange); break;
             default:setTheme(R.style.AppTheme); break;
         }
+    }
+
+    public int getNumber_of_test_in_total ()
+    {
+        int answer = 0;
+
+        databaseHelper2 = new MyDatabaseHelper(this, databaseName, null, databaseVersion);
+        databaseHelper2.getReadableDatabase();
+
+        database2 = databaseHelper2.getReadableDatabase();
+
+        String query = "SELECT COUNT () FROM Test";
+        String [] parameters = new String[]{};
+        Cursor cursor = database2.rawQuery(query, parameters);
+        while (cursor.moveToNext())
+        {
+            answer = cursor.getInt(0);
+        }
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database2 != null)
+        {
+            database2.close();
+        }
+        if (databaseHelper2 != null)
+        {
+            databaseHelper2.close();
+        }
+
+        return answer;
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -547,9 +592,81 @@ public class TestSelectionActivity extends AppCompatActivity {
             builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
-                    startActivity(intent);
-                    TestSelectionActivity.this.finish();
+                    if (getNumber_of_test_in_total() == 0)
+                    {
+                        Sharing.test_selection_has_already_asked_file_issue = false;
+                        Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
+                        startActivity(intent);
+                        TestSelectionActivity.this.finish();
+                    }
+                    else
+                    {
+                        Sharing.test_selection_has_already_asked_file_issue = true;
+                        LayoutInflater inflater = LayoutInflater.from(TestSelectionActivity.this);
+                        View view = inflater.inflate(R.layout.store_file_option_alertdialog, null);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
+                        builder.setTitle("Store data files before switching user");
+                        builder.setCancelable(false);
+                        builder.setView(view);
+
+                        store_file_option_spinner = (Spinner) view.findViewById(R.id.store_data_file_alertdialog_spinner);
+
+                        final String [] store_file_option_list = getResources().getStringArray(R.array.store_file_option);
+                        store_file_option_adapter = new ArrayAdapter(TestSelectionActivity.this , android.R.layout.simple_spinner_dropdown_item, store_file_option_list);
+                        store_file_option_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        store_file_option_spinner.setAdapter(store_file_option_adapter);
+
+                        store_file_option_spinner.setSelection(0);
+                        selected_store_file_option = 0;
+                        store_file_option_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                switch (position)
+                                {
+                                    case 0: selected_store_file_option = 0; break;
+                                    case 1: selected_store_file_option = 1; break;
+                                    case 2: selected_store_file_option = 2; break;
+                                    default: selected_store_file_option = 0; break;
+                                }
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+
+                            }
+                        });
+
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (selected_store_file_option == 0)
+                                {
+                                    Sharing.redirect_source = "switch_setting";
+                                    Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
+                                    startActivity(intent);
+                                    TestSelectionActivity.this.finish();
+                                }
+                                else if (selected_store_file_option == 1)
+                                {
+                                    Sharing.redirect_source = "switch_setting";
+                                    Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
+                                    startActivity(intent);
+                                    TestSelectionActivity.this.finish();
+                                }
+                                else if (selected_store_file_option == 2)
+                                {
+                                    Intent intent = new Intent (TestSelectionActivity.this, SettingPageActivity.class);
+                                    startActivity(intent);
+                                    TestSelectionActivity.this.finish();
+                                }
+                            }
+                        });
+                        builder.create();
+                        builder.show();
+
+
+
+                    }
                 }
             });
             builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
@@ -721,9 +838,81 @@ public class TestSelectionActivity extends AppCompatActivity {
                 builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
-                        startActivity(intent);
-                        TestSelectionActivity.this.finish();
+                        if (getNumber_of_test_in_total() == 0)
+                        {
+                            Sharing.test_selection_has_already_asked_file_issue = false;
+                            Intent intent = new Intent(TestSelectionActivity.this, SettingPageActivity.class);
+                            startActivity(intent);
+                            TestSelectionActivity.this.finish();
+                        }
+                        else
+                        {
+                            Sharing.test_selection_has_already_asked_file_issue = true;
+                            LayoutInflater inflater = LayoutInflater.from(TestSelectionActivity.this);
+                            View view = inflater.inflate(R.layout.store_file_option_alertdialog, null);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
+                            builder.setTitle("Store data files before switching user");
+                            builder.setCancelable(false);
+                            builder.setView(view);
+
+                            store_file_option_spinner = (Spinner) view.findViewById(R.id.store_data_file_alertdialog_spinner);
+
+                            final String [] store_file_option_list = getResources().getStringArray(R.array.store_file_option);
+                            store_file_option_adapter = new ArrayAdapter(TestSelectionActivity.this , android.R.layout.simple_spinner_dropdown_item, store_file_option_list);
+                            store_file_option_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            store_file_option_spinner.setAdapter(store_file_option_adapter);
+
+                            store_file_option_spinner.setSelection(0);
+                            selected_store_file_option = 0;
+                            store_file_option_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    switch (position)
+                                    {
+                                        case 0: selected_store_file_option = 0; break;
+                                        case 1: selected_store_file_option = 1; break;
+                                        case 2: selected_store_file_option = 2; break;
+                                        default: selected_store_file_option = 0; break;
+                                    }
+                                }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                }
+                            });
+
+                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if (selected_store_file_option == 0)
+                                    {
+                                        Sharing.redirect_source = "switch_setting";
+                                        Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
+                                        startActivity(intent);
+                                        TestSelectionActivity.this.finish();
+                                    }
+                                    else if (selected_store_file_option == 1)
+                                    {
+                                        Sharing.redirect_source = "switch_setting";
+                                        Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
+                                        startActivity(intent);
+                                        TestSelectionActivity.this.finish();
+                                    }
+                                    else if (selected_store_file_option == 2)
+                                    {
+                                        Intent intent = new Intent (TestSelectionActivity.this, SettingPageActivity.class);
+                                        startActivity(intent);
+                                        TestSelectionActivity.this.finish();
+                                    }
+                                }
+                            });
+                            builder.create();
+                            builder.show();
+
+
+
+                        }
                     }
                 });
                 builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {

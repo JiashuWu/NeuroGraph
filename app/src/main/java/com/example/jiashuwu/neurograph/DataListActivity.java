@@ -571,7 +571,7 @@ public class DataListActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            if (Sharing.redirect_source.equalsIgnoreCase("setting"))
+            if (Sharing.redirect_source.equalsIgnoreCase("setting") || Sharing.redirect_source.equalsIgnoreCase("switch_setting"))
             {
                 Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
                 startActivity(intent);

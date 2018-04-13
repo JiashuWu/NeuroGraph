@@ -47,7 +47,7 @@ public class Sharing {
 
     public static int current_user_id;
 
-    public static String redirect_source;
+    public static String redirect_source = "";
 
     public static int stop_showing_process;
 
@@ -82,6 +82,8 @@ public class Sharing {
     public static int device_testing_area_width;
 
     public static int device_testing_area_height;
+
+    public static boolean test_selection_has_already_asked_file_issue;
 
 
     public Sharing()

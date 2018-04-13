@@ -139,9 +139,17 @@ public class DisplaySendingActivity extends AppCompatActivity {
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DisplaySendingActivity.this, DataListActivity.class);
-                startActivity(intent);
-                DisplaySendingActivity.this.finish();
+                if (Sharing.redirect_source.equalsIgnoreCase("switch_setting"))
+                {
+                    Intent intent = new Intent (DisplaySendingActivity.this, SettingPageActivity.class);
+                    startActivity(intent);
+                    DisplaySendingActivity.this.finish();
+                }
+                else {
+                    Intent intent = new Intent(DisplaySendingActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    DisplaySendingActivity.this.finish();
+                }
             }
         });
 
@@ -289,9 +297,18 @@ public class DisplaySendingActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            Intent intent = new Intent(DisplaySendingActivity.this, DataListActivity.class);
-            startActivity(intent);
-            DisplaySendingActivity.this.finish();
+            if (Sharing.redirect_source.equalsIgnoreCase("switch_setting"))
+            {
+                Intent intent = new Intent (DisplaySendingActivity.this, SettingPageActivity.class);
+                startActivity(intent);
+                DisplaySendingActivity.this.finish();
+            }
+            else
+            {
+                Intent intent = new Intent(DisplaySendingActivity.this, DataListActivity.class);
+                startActivity(intent);
+                DisplaySendingActivity.this.finish();
+            }
             return true;
         }
         return super.onKeyDown(keyCode, event);

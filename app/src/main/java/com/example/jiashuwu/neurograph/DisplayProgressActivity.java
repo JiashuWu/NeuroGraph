@@ -137,9 +137,17 @@ public class DisplayProgressActivity extends AppCompatActivity {
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DisplayProgressActivity.this, DataListActivity.class);
-                startActivity(intent);
-                DisplayProgressActivity.this.finish();
+                if (Sharing.redirect_source.equalsIgnoreCase("switch_setting"))
+                {
+                    Intent intent = new Intent (DisplayProgressActivity.this, SettingPageActivity.class);
+                    startActivity(intent);
+                    DisplayProgressActivity.this.finish();
+                }
+                else {
+                    Intent intent = new Intent(DisplayProgressActivity.this, DataListActivity.class);
+                    startActivity(intent);
+                    DisplayProgressActivity.this.finish();
+                }
             }
         });
 
@@ -283,9 +291,19 @@ public class DisplayProgressActivity extends AppCompatActivity {
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
-            Intent intent = new Intent(DisplayProgressActivity.this, DataListActivity.class);
-            startActivity(intent);
-            DisplayProgressActivity.this.finish();
+            Log.d("redirection", Sharing.redirect_source);
+            if (Sharing.redirect_source.equalsIgnoreCase("switch_setting"))
+            {
+                Intent intent = new Intent(DisplayProgressActivity.this, SettingPageActivity.class);
+                startActivity(intent);
+                DisplayProgressActivity.this.finish();
+            }
+            else
+            {
+                Intent intent = new Intent(DisplayProgressActivity.this, DataListActivity.class);
+                startActivity(intent);
+                DisplayProgressActivity.this.finish();
+            }
             return true;
         }
         return super.onKeyDown(keyCode, event);
