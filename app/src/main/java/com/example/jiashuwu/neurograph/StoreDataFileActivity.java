@@ -35,7 +35,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +61,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
+
+    private MyDatabaseHelper databaseHelperD;
+    private SQLiteDatabase databaseD;
 
     private MyDatabaseHelper databaseHelper1;
     private SQLiteDatabase database1;
@@ -118,6 +123,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
     public TextView numbers_textview;
 
     private String store_data_file_button_clicked = "";
+
+    private Switch delete_test_data_switch;
+    private boolean should_delete_test_data = true;
 
     public void initLocaleLanguage ()
     {
@@ -677,6 +685,22 @@ public class StoreDataFileActivity extends AppCompatActivity {
         broadcastMessage.putExtra("stop_showing_process", "1");
         sendBroadcast(broadcastMessage);
 
+        if (should_delete_test_data)
+        {
+            databaseHelperD = new MyDatabaseHelper (StoreDataFileActivity.this, databaseName, null, databaseVersion);
+            databaseD = databaseHelperD.getWritableDatabase();
+            databaseD.delete("Data", "", new String[] {});
+            databaseD.delete("Test", "", new String[] {});
+            if (databaseD != null)
+            {
+                databaseD.close();
+            }
+            if (databaseHelperD != null)
+            {
+                databaseHelperD.close();
+            }
+        }
+
     }
 
 
@@ -699,6 +723,25 @@ public class StoreDataFileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_store_data_file);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        delete_test_data_switch = (Switch) findViewById(R.id.store_data_file_delete_data_switch);
+        delete_test_data_switch.setChecked(true);
+
+        should_delete_test_data = true;
+
+        delete_test_data_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    should_delete_test_data = true;
+                }
+                else
+                {
+                    should_delete_test_data = false;
+                }
+            }
+        });
 
         ActivityCompat.requestPermissions(StoreDataFileActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
 

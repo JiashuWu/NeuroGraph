@@ -54,8 +54,7 @@
             android:text="Clean data after storing data files"
             android:layout_below="@id/store_data_file_introduction_textview"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp" />
+            android:layout_marginLeft="30dp" />
 
         <Switch
             android:layout_width="wrap_content"
