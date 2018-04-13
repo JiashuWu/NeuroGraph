@@ -47,6 +47,26 @@
             android:layout_below="@id/store_data_file_title_textview"
             android:id="@+id/store_data_file_introduction_textview"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/store_data_file_delete_title_textview"
+            android:text="Clean data after storing data files"
+            android:layout_below="@id/store_data_file_introduction_textview"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/store_data_file_delete_title_textview"
+            android:layout_below="@id/store_data_file_introduction_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/store_data_file_delete_data_switch" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,7 +75,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@id/store_data_file_introduction_textview" />
+            android:layout_below="@id/store_data_file_delete_data_switch" />
 
         <!--
         <TextView
