@@ -41,6 +41,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -132,6 +133,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private int point_serial_number;
 
     public String db_file_path = "";
+
+    public ImageView help_imageview;
 
 
 
@@ -663,6 +666,26 @@ public class SendDataEmailActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 200);
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 200);
         //ActivityCompat.requestPermissions(SendDataEmailActivity.this, new String[]{INTERNET, ACCESS_NETWORK_STATE}, 200);
+
+        help_imageview = (ImageView) findViewById(R.id.send_data_email_help_imageview);
+        help_imageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+                builder.setTitle("Help");
+                builder.setCancelable(false);
+                builder.setMessage(".txt = text file" + "\n" + ".csv = comma separated value file" + "\n" + ".db = database file" + "\n" + "Readme = Instructions and Explanations");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Should do nothing here
+                        // Blank
+                    }
+                });
+                builder.create();
+                builder.show();
+            }
+        });
 
         delete_test_data_switch = (Switch) findViewById(R.id.send_email_delete_data_switch);
         delete_test_data_switch.setChecked(true);

@@ -103,6 +103,15 @@
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/send_email_checkbox" />
 
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:id="@+id/send_data_email_help_imageview"
+                android:layout_alignEnd="@+id/send_data_email_readme_checkbox"
+                android:layout_alignRight="@+id/send_data_email_readme_checkbox"
+                android:layout_alignTop="@+id/send_data_email_file_type_textview"
+                android:src="@drawable/ic_action_help_empty" />
+
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
