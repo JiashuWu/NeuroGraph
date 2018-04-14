@@ -14,9 +14,24 @@ PLEASE READ THE FOLLOWING DESCRIPTIONS TO HELP YOU UNDERSTAND THE DATA FILES;
 This is the readme.txt file. This file contains some explanation of the data file.
 
 
-	PART A: Explanation for NeurographOutputDataFile.csv -> .csv format data file
-	PART B: Explanation for NeurographOutputDataFile.txt -> .txt format data file
-	PART C: Explanation for NeurographOutputDatabase.db  -> .db  format data file (db stands for "database")
+	PART A: Introduction of files
+	PART B: Explanation for NeurographOutputDataFile.csv -> .csv format data file
+	PART C: Explanation for NeurographOutputDataFile.txt -> .txt format data file
+	PART D: Explanation for NeurographOutputDatabase.db  -> .db  format data file (db stands for "database")
+
+
+
+
+============================
+| NeurographOutputDataFile |
+============================
+
+
+The  .txt  format file was named as NeurographOutputDataFile + file generation timestamp + .txt
+The  .csv  format file was named as NeurographOutputDataFile + file generation timestamp + .csv
+The  .db   format file was named as NeurographOutputDataFile + file generation timestamp + .db
+The readme format file was named as NeurographOutputDataFileReadme.txt
+
 
 
 ================================
