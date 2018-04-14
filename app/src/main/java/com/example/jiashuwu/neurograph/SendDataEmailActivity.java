@@ -680,6 +680,11 @@ public class SendDataEmailActivity extends AppCompatActivity {
         recipient_edittext = (EditText) findViewById(R.id.send_email_recipient_edittext);
         subject_edittext = (EditText) findViewById(R.id.send_email_subject_editview);
 
+        if (!Sharing.previous_email_address.equalsIgnoreCase(""))
+        {
+            recipient_edittext.setText(Sharing.previous_email_address);
+        }
+
         content_checkbox = (CheckBox) findViewById(R.id.send_email_checkbox);
         Sharing.show_as_content = true;
 
@@ -780,7 +785,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     builder.create();
                     builder.show();
                 }
-                else if (!recipient.contains("@") || !recipient.contains("."))
+                else if (!recipient.contains("@") || !recipient.contains(".") || recipient.contains(" "))
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
@@ -857,6 +862,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
                             if (readyToSend && confirm_to_send)
                             {
                                 //sendEmailWorker();
+
+                                Sharing.previous_email_address = recipient;
 
                                 Sharing.number_of_item_in_total = getNumber_of_item_in_total();
                                 send_button_clicked = "send";

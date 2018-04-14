@@ -85,6 +85,8 @@ public class Sharing {
 
     public static boolean test_selection_has_already_asked_file_issue;
 
+    public static String previous_email_address = "";
+
 
     public Sharing()
     {
