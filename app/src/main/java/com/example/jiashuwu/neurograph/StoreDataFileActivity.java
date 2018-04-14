@@ -38,6 +38,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -149,6 +150,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private CheckBox readme_checkbox;
 
     private String content;
+
+    private ImageView help_imageview;
 
     public void initLocaleLanguage ()
     {
@@ -872,6 +875,26 @@ public class StoreDataFileActivity extends AppCompatActivity {
             builder.create();
             builder.show();
         }
+
+        help_imageview = (ImageView) findViewById(R.id.store_data_file_help_imageview);
+        help_imageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
+                builder.setTitle("Help");
+                builder.setCancelable(false);
+                builder.setMessage(".txt = text file" + "\n" + ".csv = comma separated value file" + "\n" + ".db = database file" + "\n" + "Readme = Instructions and Explanations");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Should do nothing here
+                        // Blank
+                    }
+                });
+                builder.create();
+                builder.show();
+            }
+        });
 
         csv_checkbox = (CheckBox) findViewById(R.id.store_data_file_csv_checkbox);
         txt_checkbox = (CheckBox) findViewById(R.id.store_data_file_txt_checkbox);

@@ -57,6 +57,15 @@
             android:layout_below="@id/store_data_file_introduction_textview"
             android:text="Data File Format (multiple choice allowed)" />
 
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:id="@+id/store_data_file_help_imageview"
+            android:layout_alignEnd="@+id/store_data_file_readme_checkbox"
+            android:layout_alignRight="@+id/store_data_file_readme_checkbox"
+            android:layout_alignTop="@+id/store_data_file_file_type_title_textview"
+            android:src="@drawable/ic_action_help_empty" />
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
