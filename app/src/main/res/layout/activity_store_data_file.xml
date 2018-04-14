@@ -64,6 +64,7 @@
             android:text=".csv"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:checked="true"
             android:layout_below="@id/store_data_file_file_type_title_textview" />
 
         <CheckBox
@@ -73,6 +74,7 @@
             android:text=".txt"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
+            android:checked="true"
             android:layout_below="@id/store_data_file_file_type_title_textview"
             android:layout_toRightOf="@id/store_data_file_csv_checkbox" />
 
@@ -83,6 +85,7 @@
             android:text=".db"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
+            android:checked="true"
             android:layout_below="@id/store_data_file_file_type_title_textview"
             android:layout_toRightOf="@id/store_data_file_txt_checkbox" />
 
@@ -93,6 +96,7 @@
             android:text="readme"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
+            android:checked="true"
             android:layout_below="@id/store_data_file_file_type_title_textview"
             android:layout_toRightOf="@id/store_data_file_db_checkbox" />
 

@@ -97,6 +97,13 @@ public class Sharing {
 
     public static boolean email_readme = true;
 
+    public static boolean store_csv = true;
+
+    public static boolean store_txt = true;
+
+    public static boolean store_db = true;
+
+    public static boolean store_readme = true;
 
 
     public Sharing()

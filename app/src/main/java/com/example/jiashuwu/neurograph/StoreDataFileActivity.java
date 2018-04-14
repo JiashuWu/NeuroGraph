@@ -36,6 +36,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.Switch;
@@ -141,6 +142,11 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private int point_serial_number;
 
     public String db_file_path;
+
+    private CheckBox csv_checkbox;
+    private CheckBox txt_checkbox;
+    private CheckBox db_checkbox;
+    private CheckBox readme_checkbox;
 
     public void initLocaleLanguage ()
     {
@@ -635,85 +641,88 @@ public class StoreDataFileActivity extends AppCompatActivity {
             }
 
 
-            File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
-            try {
-                FileWriter fileWriter = new FileWriter(output_file);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                String content = generate_string_from_database();
-                bufferedWriter.write(content);
-                Log.d("CONTENTTTTT", content);
-                bufferedWriter.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            File output_readme = new File (Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
-            try
+            if (Sharing.store_txt)
             {
-                FileWriter fileWriter = new FileWriter(output_readme);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                String content = SharingReadMe.readme;
-                bufferedWriter.write(content);
-                Log.d("CONTENTTTTT", content);
-                bufferedWriter.close();
-            }
-            catch (IOException ioe)
-            {
-                ioe.printStackTrace();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-
-            File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
-            FileWriter fileWriter1 = new FileWriter(output_csv_file);
-            try {
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
-                int i = 0;
-                for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
-                    bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
+                try {
+                    FileWriter fileWriter = new FileWriter(output_file);
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                    String content = generate_string_from_database();
+                    bufferedWriter.write(content);
+                    Log.d("CONTENTTTTT", content);
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                bufferedWriter.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
             }
 
-            // TODO TESTING OUTPUTTING DATABASE FILE
-
-            db_file_path = getApplication().getDatabasePath("information") + ".db";
-            Sharing.db_file_path = db_file_path;
-            File output_db_file_src = new File(db_file_path);
-            //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
-            //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
-            Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
-            File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDatabase" + file_time + ".db");
-            Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
-            if (!output_db_file_dest.exists())
+            if (Sharing.store_readme)
             {
-                output_db_file_dest.createNewFile();
+                File output_readme = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
+                try {
+                    FileWriter fileWriter = new FileWriter(output_readme);
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                    String content = SharingReadMe.readme;
+                    bufferedWriter.write(content);
+                    Log.d("CONTENTTTTT", content);
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
-            FileChannel source = null;
-            FileChannel destination = null;
-            source = new FileInputStream(output_db_file_src).getChannel();
-            destination = new FileOutputStream(output_db_file_dest).getChannel();
-            if (destination != null && source != null)
+
+            if (Sharing.store_csv)
             {
-                source.transferTo(0, source.size(), destination);
+                File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
+                FileWriter fileWriter1 = new FileWriter(output_csv_file);
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
+                    int i = 0;
+                    for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
+                        bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                    }
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            if (destination != null)
+
+            // FINISHED TESTING OUTPUTTING DATABASE FILE
+
+            if (Sharing.store_db)
             {
-                destination.close();
-            }
-            if (source != null)
-            {
-                source.close();
+                db_file_path = getApplication().getDatabasePath("information") + ".db";
+                Sharing.db_file_path = db_file_path;
+                File output_db_file_src = new File(db_file_path);
+                //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
+                //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
+                Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
+                File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDatabase" + file_time + ".db");
+                Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
+                if (!output_db_file_dest.exists()) {
+                    output_db_file_dest.createNewFile();
+                }
+
+                FileChannel source = null;
+                FileChannel destination = null;
+                source = new FileInputStream(output_db_file_src).getChannel();
+                destination = new FileOutputStream(output_db_file_dest).getChannel();
+                if (destination != null && source != null) {
+                    source.transferTo(0, source.size(), destination);
+                }
+                if (destination != null) {
+                    destination.close();
+                }
+                if (source != null) {
+                    source.close();
+                }
             }
 
         }
@@ -722,10 +731,23 @@ public class StoreDataFileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
-        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
-        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDataFileReadme.txt" + "\n";
-        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db" + "\n";
+        String file_path = "";
+        if (Sharing.store_txt)
+        {
+            file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
+        }
+        if (Sharing.store_csv)
+        {
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
+        }
+        if (Sharing.store_readme)
+        {
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDataFileReadme.txt" + "\n";
+        }
+        if (Sharing.store_db)
+        {
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db" + "\n";
+        }
         Log.d("file_path1", file_path);
         Sharing.file_path = file_path;
         String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
@@ -847,6 +869,77 @@ public class StoreDataFileActivity extends AppCompatActivity {
             builder.create();
             builder.show();
         }
+
+        csv_checkbox = (CheckBox) findViewById(R.id.store_data_file_csv_checkbox);
+        txt_checkbox = (CheckBox) findViewById(R.id.store_data_file_txt_checkbox);
+        db_checkbox = (CheckBox) findViewById(R.id.store_data_file_db_checkbox);
+        readme_checkbox = (CheckBox) findViewById(R.id.store_data_file_readme_checkbox);
+
+        Sharing.store_csv = true;
+        Sharing.store_txt = true;
+        Sharing.store_db = true;
+        Sharing.store_readme = true;
+
+        csv_checkbox.setChecked(true);
+        txt_checkbox.setChecked(true);
+        db_checkbox.setChecked(true);
+        readme_checkbox.setChecked(true);
+
+        csv_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.store_csv = true;
+                }
+                else
+                {
+                    Sharing.store_csv = false;
+                }
+            }
+        });
+
+        txt_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.store_txt = true;
+                }
+                else
+                {
+                    Sharing.store_txt = false;
+                }
+            }
+        });
+
+        db_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.store_db = true;
+                }
+                else
+                {
+                    Sharing.store_db = false;
+                }
+            }
+        });
+
+        readme_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.store_readme = true;
+                }
+                else
+                {
+                    Sharing.store_readme = false;
+                }
+            }
+        });
 
         delete_test_data_switch = (Switch) findViewById(R.id.store_data_file_delete_data_switch);
         delete_test_data_switch.setChecked(true);
