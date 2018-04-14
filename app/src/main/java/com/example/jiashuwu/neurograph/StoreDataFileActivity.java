@@ -1002,35 +1002,55 @@ public class StoreDataFileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Sharing.number_of_item_finished = 0;
-                Sharing.number_of_item_in_total = 0;
-                Sharing.number_of_item_in_total = getNumber_of_item_in_total();
-                Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
+
+                if (!Sharing.store_txt && !Sharing.store_csv && !Sharing.store_readme && !Sharing.store_db)
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
+                    builder.setTitle("Please choose file type");
+                    builder.setCancelable(false);
+                    builder.setMessage("Please choose at least one file type to store");
+                    builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Should do nothing here;
+                            // blank
+                        }
+                    });
+                    builder.create();
+                    builder.show();
+                }
+                else
+                {
+                    Sharing.number_of_item_finished = 0;
+                    Sharing.number_of_item_in_total = 0;
+                    Sharing.number_of_item_in_total = getNumber_of_item_in_total();
+                    Log.d("STATISTICS", String.valueOf(Sharing.number_of_item_in_total));
 
 
-                //storeDataFileWorker();
+                    //storeDataFileWorker();
 
 
-                //storeDataFileWorker();
+                    //storeDataFileWorker();
 
 
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
-                builder1.setTitle("Generate Data Files");
-                builder1.setCancelable(false);
-                builder1.setMessage("Generating data files may takes a few second. Please wait");
-                builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        store_data_file_button_clicked = "store";
-                        Intent intent = new Intent(StoreDataFileActivity.this, DisplayProgressActivity.class);
-                        startActivity(intent);
-                        StoreDataFileActivity.this.finish();
-                    }
-                });
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
+                    builder1.setTitle("Generate Data Files");
+                    builder1.setCancelable(false);
+                    builder1.setMessage("Generating data files may takes a few second. Please wait");
+                    builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            store_data_file_button_clicked = "store";
+                            Intent intent = new Intent(StoreDataFileActivity.this, DisplayProgressActivity.class);
+                            startActivity(intent);
+                            StoreDataFileActivity.this.finish();
+                        }
+                    });
 
-                builder1.create();
-                builder1.show();
+                    builder1.create();
+                    builder1.show();
 
+                }
 
             }
         });
