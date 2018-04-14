@@ -917,6 +917,23 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     builder.create();
                     builder.show();
                 }
+                else if (!Sharing.email_csv && !Sharing.email_txt && !Sharing.email_readme && !Sharing.email_db)
+                {
+                    readyToSend = false;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
+                    builder.setTitle("Please choose file type");
+                    builder.setCancelable(false);
+                    builder.setMessage("Please choose at least one file type to send");
+                    builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Should do nothing here
+                            // blank
+                        }
+                    });
+                    builder.create();
+                    builder.show();
+                }
 
                 confirm_to_send = false;
 
