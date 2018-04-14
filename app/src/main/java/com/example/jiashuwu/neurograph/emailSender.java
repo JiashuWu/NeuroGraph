@@ -23,6 +23,7 @@ import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Properties;
+import java.util.logging.SocketHandler;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -42,6 +43,7 @@ import javax.mail.internet.MimeMultipart;
 import javax.sql.DataSource;
 
 import static android.content.Context.MODE_PRIVATE;
+import static android.content.Context.SHORTCUT_SERVICE;
 
 /**
  * Created by Jiashu Wu on 21/03/2018.
@@ -201,91 +203,86 @@ public class emailSender{
             }
 
 
-            File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
-            FileWriter fileWriter = new FileWriter(output_file);
-            try
+            if (Sharing.email_txt)
             {
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                bufferedWriter.write(messageContent);
-                bufferedWriter.close();
-            }
-            catch (IOException ioe)
-            {
-                ioe.printStackTrace();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-            File output_readme = new File (Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
-            FileWriter fileWriter2 = new FileWriter(output_readme);
-            try
-            {
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter2);
-                String content = SharingReadMe.readme;
-                bufferedWriter.write(content);
-                bufferedWriter.close();
-            }
-            catch (IOException ioe)
-            {
-                ioe.printStackTrace();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-            File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
-            FileWriter fileWriter1 = new FileWriter(output_csv_file);
-            try
-            {
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
-                int i = 0;
-                for (i = 0 ; i < Sharing.csv_string_arraylist.size() ; i++)
-                {
-                    bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
+                FileWriter fileWriter = new FileWriter(output_file);
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                    bufferedWriter.write(messageContent);
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                bufferedWriter.close();
-            }
-            catch (IOException ioe)
-            {
-                ioe.printStackTrace();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
             }
 
-            File output_db_file_src = new File(Sharing.db_file_path);
-            //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
-            //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
-            Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
-            File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db");
-            Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
-            if (!output_db_file_dest.exists())
+            if (Sharing.email_readme)
             {
-                output_db_file_dest.createNewFile();
+                File output_readme = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDataFileReadme.txt");
+                FileWriter fileWriter2 = new FileWriter(output_readme);
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter2);
+                    String content = SharingReadMe.readme;
+                    bufferedWriter.write(content);
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
-            FileChannel source_db = null;
-            FileChannel destination = null;
-            source_db = new FileInputStream(output_db_file_src).getChannel();
-            destination = new FileOutputStream(output_db_file_dest).getChannel();
-            if (destination != null && source_db != null)
+
+            if (Sharing.email_csv)
             {
-                source_db.transferTo(0, source_db.size(), destination);
-            }
-            if (destination != null)
-            {
-                destination.close();
-            }
-            if (source_db != null)
-            {
-                source_db.close();
+                File output_csv_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_csv_file_name);
+                FileWriter fileWriter1 = new FileWriter(output_csv_file);
+                try {
+                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter1);
+                    int i = 0;
+                    for (i = 0; i < Sharing.csv_string_arraylist.size(); i++) {
+                        bufferedWriter.write(Sharing.csv_string_arraylist.get(i));
+                    }
+                    bufferedWriter.close();
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
-            String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
+
+            if (Sharing.email_db)
+            {
+                File output_db_file_src = new File(Sharing.db_file_path);
+                //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
+                //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
+                Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
+                File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db");
+                Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
+                if (!output_db_file_dest.exists()) {
+                    output_db_file_dest.createNewFile();
+                }
+
+                FileChannel source_db = null;
+                FileChannel destination = null;
+                source_db = new FileInputStream(output_db_file_src).getChannel();
+                destination = new FileOutputStream(output_db_file_dest).getChannel();
+                if (destination != null && source_db != null) {
+                    source_db.transferTo(0, source_db.size(), destination);
+                }
+                if (destination != null) {
+                    destination.close();
+                }
+                if (source_db != null) {
+                    source_db.close();
+                }
+            }
+
+            String file_path = "";
+            file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
             file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
             file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDataFileReadme.txt" + "\n";
             file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db" + "\n";
@@ -306,24 +303,36 @@ public class emailSender{
 
 
             MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-            javax.activation.DataSource source = new FileDataSource(txt_file_path);
-            attachmentBodyPart.setDataHandler(new DataHandler(source));
-            attachmentBodyPart.setFileName(output_file_name);
+            if (Sharing.email_txt)
+            {
+                javax.activation.DataSource source = new FileDataSource(txt_file_path);
+                attachmentBodyPart.setDataHandler(new DataHandler(source));
+                attachmentBodyPart.setFileName(output_file_name);
+            }
 
             MimeBodyPart attachmentBodyPart1 = new MimeBodyPart();
-            javax.activation.DataSource source1 = new FileDataSource(csv_file_path);
-            attachmentBodyPart1.setDataHandler(new DataHandler(source1));
-            attachmentBodyPart1.setFileName(output_csv_file_name);
+            if (Sharing.email_csv)
+            {
+                javax.activation.DataSource source1 = new FileDataSource(csv_file_path);
+                attachmentBodyPart1.setDataHandler(new DataHandler(source1));
+                attachmentBodyPart1.setFileName(output_csv_file_name);
+            }
 
             MimeBodyPart attachmentBodyPart2 = new MimeBodyPart();
-            javax.activation.DataSource source2 = new FileDataSource(readme_file_path);
-            attachmentBodyPart2.setDataHandler(new DataHandler(source2));
-            attachmentBodyPart2.setFileName("NeurographOutputDataFileReadme.txt");
+            if (Sharing.email_readme)
+            {
+                javax.activation.DataSource source2 = new FileDataSource(readme_file_path);
+                attachmentBodyPart2.setDataHandler(new DataHandler(source2));
+                attachmentBodyPart2.setFileName("NeurographOutputDataFileReadme.txt");
+            }
 
             MimeBodyPart attachmentBodyPart3 = new MimeBodyPart();
-            javax.activation.DataSource source3 = new FileDataSource(database_file_path);
-            attachmentBodyPart3.setDataHandler(new DataHandler(source3));
-            attachmentBodyPart3.setFileName("NeurographOutputDatabase" + file_time + ".db");
+            if (Sharing.email_db)
+            {
+                javax.activation.DataSource source3 = new FileDataSource(database_file_path);
+                attachmentBodyPart3.setDataHandler(new DataHandler(source3));
+                attachmentBodyPart3.setFileName("NeurographOutputDatabase" + file_time + ".db");
+            }
 
             MimeBodyPart textBodyPart = new MimeBodyPart();
 
