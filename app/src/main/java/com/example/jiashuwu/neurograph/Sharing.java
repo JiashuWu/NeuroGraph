@@ -87,6 +87,8 @@ public class Sharing {
 
     public static String previous_email_address = "";
 
+    public static String db_file_path = "";
+
 
     public Sharing()
     {

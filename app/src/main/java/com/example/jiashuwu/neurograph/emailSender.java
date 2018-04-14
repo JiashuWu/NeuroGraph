@@ -7,10 +7,12 @@ import android.util.Log;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Properties;
@@ -255,15 +257,46 @@ public class emailSender{
                 e.printStackTrace();
             }
 
+            File output_db_file_src = new File(Sharing.db_file_path);
+            //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
+            //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
+            Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
+            File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db");
+            Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
+            if (!output_db_file_dest.exists())
+            {
+                output_db_file_dest.createNewFile();
+            }
+
+            FileChannel source_db = null;
+            FileChannel destination = null;
+            source_db = new FileInputStream(output_db_file_src).getChannel();
+            destination = new FileOutputStream(output_db_file_dest).getChannel();
+            if (destination != null && source_db != null)
+            {
+                source_db.transferTo(0, source_db.size(), destination);
+            }
+            if (destination != null)
+            {
+                destination.close();
+            }
+            if (source_db != null)
+            {
+                source_db.close();
+            }
+
             String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
             file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
-            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographDataFileReadme.txt" + "\n";
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDataFileReadme.txt" + "\n";
+            file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db" + "\n";
+
 
             Log.d("file_path1", file_path);
             Sharing.file_path = file_path;
             String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
             String csv_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name;
             String readme_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographDataFileReadme.txt";
+            String database_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db";
 
 
             Multipart multipart = new MimeMultipart();
@@ -285,7 +318,12 @@ public class emailSender{
             MimeBodyPart attachmentBodyPart2 = new MimeBodyPart();
             javax.activation.DataSource source2 = new FileDataSource(readme_file_path);
             attachmentBodyPart2.setDataHandler(new DataHandler(source2));
-            attachmentBodyPart2.setFileName("NeurographDataFileReadme.txt");
+            attachmentBodyPart2.setFileName("NeurographOutputDataFileReadme.txt");
+
+            MimeBodyPart attachmentBodyPart3 = new MimeBodyPart();
+            javax.activation.DataSource source3 = new FileDataSource(database_file_path);
+            attachmentBodyPart3.setDataHandler(new DataHandler(source3));
+            attachmentBodyPart3.setFileName("NeurographOutputDatabase" + file_time + ".db");
 
             MimeBodyPart textBodyPart = new MimeBodyPart();
 
@@ -304,6 +342,8 @@ public class emailSender{
             multipart.addBodyPart(attachmentBodyPart);
             multipart.addBodyPart(attachmentBodyPart1);
             multipart.addBodyPart(attachmentBodyPart2);
+            multipart.addBodyPart(attachmentBodyPart3);
+
 
             message.setContent(multipart);
 

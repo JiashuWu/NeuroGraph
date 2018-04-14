@@ -127,6 +127,8 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private String is_scale_during_test;
     private int point_serial_number;
 
+    public String db_file_path = "";
+
 
 
     public void initLocaleLanguage ()
@@ -458,6 +460,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
             content = generate_string_from_database();
             //output_csv_strings = generate_csv_string_from_database();
             //Sharing.csv_string_arraylist = output_csv_strings;
+
+            db_file_path = getApplication().getDatabasePath("information") + ".db";
+            Sharing.db_file_path = db_file_path;
 
             emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);
             //emailSender.sendMessage("smtp.gmail.com", "neurographdataservice@gmail.com", "gudjhxgh54376912@*:", recipient, subject, content);

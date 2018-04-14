@@ -44,9 +44,13 @@ import android.widget.Toast;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -135,6 +139,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private String language_during_test;
     private String is_scale_during_test;
     private int point_serial_number;
+
+    public String db_file_path;
 
     public void initLocaleLanguage ()
     {
@@ -677,6 +683,39 @@ public class StoreDataFileActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+            // TODO TESTING OUTPUTTING DATABASE FILE
+
+            db_file_path = getApplication().getDatabasePath("information") + ".db";
+            Sharing.db_file_path = db_file_path;
+            File output_db_file_src = new File(db_file_path);
+            //String db_file_from = "/data/data" + getApplicationContext().getPackageName() + "/databases/" + DatabaseInformation.databaseName;
+            //String db_file_to = Environment.getExternalStorageDirectory() + "/Neurograph/";
+            Log.d("NULLTESTING", String.valueOf(output_db_file_src == null));
+            File output_db_file_dest = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + "NeurographDatabase" + file_time + ".db");
+            Log.d("NULLTESTING", String.valueOf(output_db_file_dest == null));
+            if (!output_db_file_dest.exists())
+            {
+                output_db_file_dest.createNewFile();
+            }
+
+            FileChannel source = null;
+            FileChannel destination = null;
+            source = new FileInputStream(output_db_file_src).getChannel();
+            destination = new FileOutputStream(output_db_file_dest).getChannel();
+            if (destination != null && source != null)
+            {
+                source.transferTo(0, source.size(), destination);
+            }
+            if (destination != null)
+            {
+                destination.close();
+            }
+            if (source != null)
+            {
+                source.close();
+            }
+
         }
         catch (Exception e)
         {
@@ -685,7 +724,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
         String file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name + "\n";
         file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + output_csv_file_name + "\n";
-        file_path = file_path + Environment.getExternalStorageState() + "/Neurograph/" + "NeurographDataFileReadme.txt" + "\n";
+        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDataFileReadme.txt" + "\n";
+        file_path = file_path + Environment.getExternalStorageDirectory() + "/Neurograph/" + "NeurographOutputDatabase" + file_time + ".db" + "\n";
         Log.d("file_path1", file_path);
         Sharing.file_path = file_path;
         String txt_file_path = Environment.getExternalStorageDirectory() + "/Neurograph/" + output_file_name;
