@@ -148,6 +148,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private CheckBox db_checkbox;
     private CheckBox readme_checkbox;
 
+    private String content;
+
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -641,13 +643,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
             }
 
 
+            content = generate_string_from_database();
+
             if (Sharing.store_txt)
             {
                 File output_file = new File(Environment.getExternalStorageDirectory(), "/Neurograph/" + output_file_name);
                 try {
                     FileWriter fileWriter = new FileWriter(output_file);
                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                    String content = generate_string_from_database();
                     bufferedWriter.write(content);
                     Log.d("CONTENTTTTT", content);
                     bufferedWriter.close();
@@ -664,9 +667,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 try {
                     FileWriter fileWriter = new FileWriter(output_readme);
                     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                    String content = SharingReadMe.readme;
-                    bufferedWriter.write(content);
-                    Log.d("CONTENTTTTT", content);
+                    String content_readme = SharingReadMe.readme;
+                    bufferedWriter.write(content_readme);
+                    Log.d("CONTENTTTTT", content_readme);
                     bufferedWriter.close();
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
