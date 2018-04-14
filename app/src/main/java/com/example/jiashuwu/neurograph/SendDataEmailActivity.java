@@ -114,6 +114,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
     private ArrayList<String> output_string;
 
     private CheckBox content_checkbox;
+    private CheckBox csv_checkbox;
+    private CheckBox txt_checkbox;
+    private CheckBox db_checkbox;
+    private CheckBox readme_checkbox;
 
     public String content = "";
 
@@ -735,6 +739,78 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 }
             }
         });
+
+        csv_checkbox = (CheckBox) findViewById(R.id.send_data_email_csv_checkbox);
+        txt_checkbox = (CheckBox) findViewById(R.id.send_data_email_txt_checkbox);
+        db_checkbox = (CheckBox) findViewById(R.id.send_data_email_db_checkbox);
+        readme_checkbox = (CheckBox) findViewById(R.id.send_data_email_readme_checkbox);
+
+        csv_checkbox.setChecked(true);
+        Sharing.email_csv = true;
+        txt_checkbox.setChecked(true);
+        Sharing.email_txt = true;
+        db_checkbox.setChecked(true);
+        Sharing.email_db = true;
+        readme_checkbox.setChecked(true);
+        Sharing.email_readme = true;
+
+        csv_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.email_csv = true;
+                }
+                else
+                {
+                    Sharing.email_csv = false;
+                }
+            }
+        });
+
+        txt_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.email_txt = true;
+                }
+                else
+                {
+                    Sharing.email_txt = false;
+                }
+            }
+        });
+
+        db_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.email_db = true;
+                }
+                else
+                {
+                    Sharing.email_db = false;
+                }
+            }
+        });
+
+        readme_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Sharing.email_readme = true;
+                }
+                else
+                {
+                    Sharing.email_readme = false;
+                }
+            }
+        });
+
+
 
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override

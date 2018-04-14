@@ -339,10 +339,22 @@ public class emailSender{
 
 
             multipart.addBodyPart(textBodyPart);
-            multipart.addBodyPart(attachmentBodyPart);
-            multipart.addBodyPart(attachmentBodyPart1);
-            multipart.addBodyPart(attachmentBodyPart2);
-            multipart.addBodyPart(attachmentBodyPart3);
+            if (Sharing.email_txt)
+            {
+                multipart.addBodyPart(attachmentBodyPart);
+            }
+            if (Sharing.email_csv)
+            {
+                multipart.addBodyPart(attachmentBodyPart1);
+            }
+            if (Sharing.email_readme)
+            {
+                multipart.addBodyPart(attachmentBodyPart2);
+            }
+            if (Sharing.email_db)
+            {
+                multipart.addBodyPart(attachmentBodyPart3);
+            }
 
 
             message.setContent(multipart);

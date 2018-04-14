@@ -89,6 +89,15 @@ public class Sharing {
 
     public static String db_file_path = "";
 
+    public static boolean email_csv = true;
+
+    public static boolean email_txt = true;
+
+    public static boolean email_db = true;
+
+    public static boolean email_readme = true;
+
+
 
     public Sharing()
     {
