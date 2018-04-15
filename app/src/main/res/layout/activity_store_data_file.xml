@@ -129,15 +129,31 @@
             android:layout_marginTop="30dp"
             android:id="@+id/store_data_file_delete_data_switch" />
 
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/store_data_file_generate_button"
-            android:text="@string/button_generate"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@id/store_data_file_delete_data_switch" />
+            android:layout_below="@id/store_data_file_delete_data_switch"
+            android:layout_marginTop="30dp" >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/store_data_file_generate_button"
+                android:text="@string/button_generate"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/cancel"
+                android:id="@+id/store_data_file_cancel_button" />
+
+        </LinearLayout>
 
         <!--
         <TextView
