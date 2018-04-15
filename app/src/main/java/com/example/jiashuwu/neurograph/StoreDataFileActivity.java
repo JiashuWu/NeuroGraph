@@ -65,6 +65,8 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class StoreDataFileActivity extends AppCompatActivity {
 
     private Button button_generate;
+    private Button button_cancel;
+
 
     private MyDatabaseHelper databaseHelper;
     private SQLiteDatabase database;
@@ -1022,6 +1024,34 @@ public class StoreDataFileActivity extends AppCompatActivity {
         numbers_textview.setText("0/0");
         percent_number_textview.setText("0.0%");
         */
+
+        button_cancel = (Button) findViewById(R.id.store_data_file_cancel_button);
+        button_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
+                builder.setTitle("Discard storing files");
+                builder.setCancelable(false);
+                builder.setMessage("Discard storing data files ? ");
+                builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
+                        startActivity(intent);
+                        StoreDataFileActivity.this.finish();
+                    }
+                });
+                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Should do nothing here
+                        // Leave this as empty
+                    }
+                });
+                builder.create();
+                builder.show();
+            }
+        });
 
         button_generate = (Button) findViewById(R.id.store_data_file_generate_button);
         button_generate.setOnClickListener(new View.OnClickListener() {
