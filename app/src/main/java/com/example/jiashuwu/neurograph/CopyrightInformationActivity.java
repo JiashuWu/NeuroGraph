@@ -85,7 +85,7 @@ public class CopyrightInformationActivity extends AppCompatActivity {
 
         content_textview = (TextView) findViewById(R.id.copyright_information_activity_content_textview);
 
-        content_textview.setText("TEXT PLACEHOLDER");
+        content_textview.setText(SharingCopyright.copyright);
 
 
 
