@@ -66,6 +66,8 @@ public class emailSender{
     public static String second_s;
     public static String millisecond_s;
 
+    public static String generate_time_bottom_text = "";
+
     public static void sendMessage(String smtpHost, String from, String fromUserPassword, String to, String subject, String messageContent) throws MessagingException
     {
         Log.d("email", "sending");
@@ -189,6 +191,8 @@ public class emailSender{
             }
 
             String file_time = String.valueOf(year) +  month_s + day_s + hour_s + minute_s + second_s + millisecond_s;
+
+            generate_time_bottom_text = "NeurographDataEmail\n" + "Generated at " + String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s + "\n";
 
 
             // TRYING TO CREATE A TXT FILE AND A CSV FILE;
@@ -339,12 +343,13 @@ public class emailSender{
             // TODO THIS IS OPTIONAL
             if (!Sharing.show_as_content)
             {
-                textBodyPart.setText(SharingReadMe.email_content_title + signature);
+                textBodyPart.setText(SharingReadMe.email_content_title + signature + "\n\n\n" + generate_time_bottom_text);
             }
             else
             {
-                textBodyPart.setText(SharingReadMe.email_content_title + "\n\n\n" + messageContent);
+                textBodyPart.setText(SharingReadMe.email_content_title + "\n\n\n" + messageContent  + "\n\n\n" + generate_time_bottom_text);
             }
+
 
 
             multipart.addBodyPart(textBodyPart);
