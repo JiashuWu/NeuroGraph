@@ -893,9 +893,12 @@ public class SettingPageActivity extends AppCompatActivity {
 
                 // TODO FIXES
 
+                // TODO FIXES 1 ;;;;;;;
+                /*
                 startActivity(intent);
                 // Setting page should finish at this point
                 SettingPageActivity.this.finish();
+                */
 
             }
         });

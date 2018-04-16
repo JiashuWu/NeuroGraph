@@ -578,8 +578,11 @@ public class TestSelectionActivity extends AppCompatActivity {
             // TODO TEMPORARY TOOLBAR BUTTON RELEASE
 
 
+            // TODO FIXES 2 ;;;;;;;
+            /*
             startActivity(intent);
             TestSelectionActivity.this.finish();
+            */
 
 
         }
@@ -643,15 +646,23 @@ public class TestSelectionActivity extends AppCompatActivity {
                                 {
                                     Sharing.redirect_source = "switch_setting";
                                     Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
+
+                                    // TODO FIXES 3 ;;;;;;
+                                    /*
                                     startActivity(intent);
                                     TestSelectionActivity.this.finish();
+                                    */
                                 }
                                 else if (selected_store_file_option == 1)
                                 {
                                     Sharing.redirect_source = "switch_setting";
                                     Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
+
+                                    // TODO FIXES 4 ;;;;;;;
+                                    /*
                                     startActivity(intent);
                                     TestSelectionActivity.this.finish();
+                                    */
                                 }
                                 else if (selected_store_file_option == 2)
                                 {
@@ -889,15 +900,23 @@ public class TestSelectionActivity extends AppCompatActivity {
                                     {
                                         Sharing.redirect_source = "switch_setting";
                                         Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
+
+                                        // TODO FIXES 5 ;;;;;;;
+                                        /*
                                         startActivity(intent);
                                         TestSelectionActivity.this.finish();
+                                        */
                                     }
                                     else if (selected_store_file_option == 1)
                                     {
                                         Sharing.redirect_source = "switch_setting";
                                         Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
+
+                                        // TODO FIXES 6 ;;;;;;;
+                                        /*
                                         startActivity(intent);
                                         TestSelectionActivity.this.finish();
+                                        */
                                     }
                                     else if (selected_store_file_option == 2)
                                     {
