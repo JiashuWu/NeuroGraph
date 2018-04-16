@@ -19,6 +19,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -284,6 +286,38 @@ public class DisplayProgressActivity extends AppCompatActivity {
         */
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_display_progress_page, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.action_display_progress_sd_card)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DisplayProgressActivity.this);
+            builder.setTitle("Copy File Path");
+            builder.setCancelable(false);
+            builder.setMessage("File path : " + "\n" + Sharing.file_path);
+            builder.setPositiveButton("Copy", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
+                    clipboardManager.setPrimaryClip(clipData);
+                    Toast.makeText(DisplayProgressActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
+                }
+            });
+            builder.create();
+            builder.show();
+        }
+        return true;
     }
 
     @Override
