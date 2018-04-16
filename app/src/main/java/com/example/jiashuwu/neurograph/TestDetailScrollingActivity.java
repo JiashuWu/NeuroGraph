@@ -28,6 +28,10 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
     private TextView test_detail_textview;
     private TextView test_detail_title_textview;
+    private TextView test_detail_info_textview;
+    private TextView test_detail_buttom_textview;
+
+
 
     private int test_id;
     private String name;
@@ -123,6 +127,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
         test_detail_textview = (TextView) findViewById(R.id.test_detail_textview);
         test_detail_title_textview = (TextView) findViewById(R.id.test_detail_title_textview);
+        test_detail_info_textview = (TextView) findViewById(R.id.test_detail_info_title);
+        test_detail_buttom_textview = (TextView) findViewById(R.id.test_detail_title_buttom_textview);
 
         /*
         test_id = Integer.parseInt(getIntent().getStringExtra("test_id").toString());
@@ -137,11 +143,14 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
 
 
         textview_content = "";
+        test_detail_info_textview.setText(Sharing.test_detail_title);
+
         if (Sharing.test_detail_arraylist.size() <= 1000)
         {
             entry_begin = 0;
             entry_end = Sharing.test_detail_arraylist.size();
             test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
             for (i = entry_begin ; i < entry_end ; i++)
             {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
@@ -152,6 +161,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             entry_begin = 0;
             entry_end = 1000;
             test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
             for (i = entry_begin ; i < entry_end ; i++)
             {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
@@ -233,9 +243,10 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             else
             {
                 entry_begin = entry_begin - 1000;
-                entry_end = entry_end - 1000;
+                entry_end = entry_begin + 1000;
                 textview_content = "";
                 test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
                 for (i = entry_begin ; i < entry_end ; i++)
                 {
                     textview_content = textview_content + Sharing.test_detail_arraylist.get(i);
@@ -259,6 +270,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                     entry_end = Sharing.test_detail_arraylist.size();
                 }
                 test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
                 textview_content = "";
                 for (i = entry_begin ; i < entry_end ; i++)
                 {

@@ -139,15 +139,17 @@ public class DataListActivity extends AppCompatActivity {
                         + "interval duration = " + String.valueOf(interval_duration) + "\n"
                         + "number of points = " + String.valueOf(number_of_points) + "\n";
 
-        Sharing.test_detail_arraylist.add("Test ID = " + String.valueOf(test_id));
-        Sharing.test_detail_arraylist.add("Name = " + name);
-        Sharing.test_detail_arraylist.add("User ID = " + String.valueOf(user_id));
-        Sharing.test_detail_arraylist.add("Test Starting Time = " + test_starting_time);
-        Sharing.test_detail_arraylist.add("Test Ending Time = " + test_ending_time);
-        Sharing.test_detail_arraylist.add("Test Type = " + test_type);
-        Sharing.test_detail_arraylist.add("Image Type = " + image_type);
-        Sharing.test_detail_arraylist.add("Interval Duration" + String.valueOf(interval_duration));
-        Sharing.test_detail_arraylist.add("Number of Point = " + String.valueOf(number_of_points));
+        Sharing.test_detail_title = "";
+        Sharing.test_detail_title = Sharing.test_detail_title +
+                "Test ID = " + String.valueOf(test_id) + "\n" +
+                "Name = " + name + "\n" +
+                "User ID = " + String.valueOf(user_id) + "\n" +
+                "Test Starting Time = " + test_starting_time + "\n" +
+                "Test Ending Time = " + test_ending_time + "\n" +
+                "Test Type = " + test_type + "\n" +
+                "Image Type = " + image_type + "\n" +
+                "Interval Duration = " + String.valueOf(interval_duration) + "\n" +
+                "Number of Points = " + String.valueOf(number_of_points) + "\n";
 
         databaseHelper2 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper2.getReadableDatabase();

@@ -107,6 +107,8 @@ public class Sharing {
 
     public static ArrayList<String> test_detail_arraylist = new ArrayList<>();
 
+    public static String test_detail_title = "";
+
 
     public Sharing()
     {
