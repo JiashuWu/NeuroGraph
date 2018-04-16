@@ -167,6 +167,13 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
             }
         }
+        if (Sharing.test_detail_arraylist.size() == 0)
+        {
+            entry_begin = 0;
+            entry_end = 0;
+            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+        }
         test_detail_textview.setText(textview_content);
 
         /*
@@ -253,6 +260,13 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                 }
                 test_detail_textview.setText(textview_content);
             }
+            if (Sharing.test_detail_arraylist.size() == 0)
+            {
+                entry_begin = 0;
+                entry_end = 0;
+                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            }
         }
         else if (id == R.id.action_test_detail_next)
         {
@@ -277,6 +291,13 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                     textview_content = textview_content + Sharing.test_detail_arraylist.get(i);
                 }
                 test_detail_textview.setText(textview_content);
+            }
+            if (Sharing.test_detail_arraylist.size() == 0)
+            {
+                entry_begin = 0;
+                entry_end = 0;
+                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
             }
         }
         return true;
