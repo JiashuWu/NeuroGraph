@@ -10,6 +10,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -101,6 +102,18 @@ public class CopyrightInformationActivity extends AppCompatActivity {
             CopyrightInformationActivity.this.finish();
         }
         return true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            Intent intent = new Intent (CopyrightInformationActivity.this, InfoActivity.class);
+            startActivity(intent);
+            CopyrightInformationActivity.this.finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
