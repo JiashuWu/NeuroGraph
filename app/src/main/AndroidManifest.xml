@@ -87,7 +87,7 @@
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale|fontScale"
-            android:label="Test Detailed Information"
+            android:label="Test Information"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransferActivity"

@@ -15,15 +15,19 @@ import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
+import java.util.logging.SocketHandler;
 
 public class TestDetailScrollingActivity extends AppCompatActivity {
 
     private TextView test_detail_textview;
+    private TextView test_detail_title_textview;
 
     private int test_id;
     private String name;
@@ -48,6 +52,14 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
     private float pressure;
     private String timestamp_of_point;
     private float touch_point_size;
+
+    private String textview_content = "";
+
+    private int entry_begin = 0;
+    private int entry_end = 0;
+
+    private int i = 0;
+    private int j = 0;
 
     public void initLocaleLanguage ()
     {
@@ -110,6 +122,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         test_detail_textview = (TextView) findViewById(R.id.test_detail_textview);
+        test_detail_title_textview = (TextView) findViewById(R.id.test_detail_title_textview);
 
         /*
         test_id = Integer.parseInt(getIntent().getStringExtra("test_id").toString());
@@ -123,7 +136,28 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         */
 
 
-        test_detail_textview.setText(Sharing.test_detail);
+        textview_content = "";
+        if (Sharing.test_detail_arraylist.size() <= 1000)
+        {
+            entry_begin = 0;
+            entry_end = Sharing.test_detail_arraylist.size();
+            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            for (i = entry_begin ; i < entry_end ; i++)
+            {
+                textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
+            }
+        }
+        else if (Sharing.test_detail_arraylist.size() > 1000)
+        {
+            entry_begin = 0;
+            entry_end = 1000;
+            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            for (i = entry_begin ; i < entry_end ; i++)
+            {
+                textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
+            }
+        }
+        test_detail_textview.setText(textview_content);
 
         /*
         test_detail =
@@ -189,7 +223,59 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             startActivity(intent);
             TestDetailScrollingActivity.this.finish();
         }
+        else if (id == R.id.action_test_detail_previous)
+        {
+            // TODO SHOW THE PREVIOUS 1000 ENTRIES IF AVAILABLE
+            if (entry_begin - 1000 < 0)
+            {
+                Toast.makeText(TestDetailScrollingActivity.this, "No previous entries", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                entry_begin = entry_begin - 1000;
+                entry_end = entry_end - 1000;
+                textview_content = "";
+                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                for (i = entry_begin ; i < entry_end ; i++)
+                {
+                    textview_content = textview_content + Sharing.test_detail_arraylist.get(i);
+                }
+                test_detail_textview.setText(textview_content);
+            }
+        }
+        else if (id == R.id.action_test_detail_next)
+        {
+            // TODO SHOW THE NEXT 1000 ENTRIES IF AVAILABLE
+            if (entry_begin + 1000 > Sharing.test_detail_arraylist.size())
+            {
+                Toast.makeText(TestDetailScrollingActivity.this, "No next entries", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                entry_begin = entry_begin + 1000;
+                entry_end = entry_end + 1000;
+                if (entry_end > Sharing.test_detail_arraylist.size())
+                {
+                    entry_end = Sharing.test_detail_arraylist.size();
+                }
+                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                textview_content = "";
+                for (i = entry_begin ; i < entry_end ; i++)
+                {
+                    textview_content = textview_content + Sharing.test_detail_arraylist.get(i);
+                }
+                test_detail_textview.setText(textview_content);
+            }
+        }
         return true;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_test_detail_scrolling_activity, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 

@@ -36,6 +36,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.SocketHandler;
 
 public class DataListActivity extends AppCompatActivity {
 
@@ -126,6 +127,7 @@ public class DataListActivity extends AppCompatActivity {
 
     public void loadItemWorker ()
     {
+        Sharing.test_detail_arraylist.clear();
         test_detail =
                 "test_id = " + String.valueOf(test_id) + "\n"
                         + "name = " + name + "\n"
@@ -136,6 +138,16 @@ public class DataListActivity extends AppCompatActivity {
                         + "image type = " + image_type + "\n"
                         + "interval duration = " + String.valueOf(interval_duration) + "\n"
                         + "number of points = " + String.valueOf(number_of_points) + "\n";
+
+        Sharing.test_detail_arraylist.add("Test ID = " + String.valueOf(test_id));
+        Sharing.test_detail_arraylist.add("Name = " + name);
+        Sharing.test_detail_arraylist.add("User ID = " + String.valueOf(user_id));
+        Sharing.test_detail_arraylist.add("Test Starting Time = " + test_starting_time);
+        Sharing.test_detail_arraylist.add("Test Ending Time = " + test_ending_time);
+        Sharing.test_detail_arraylist.add("Test Type = " + test_type);
+        Sharing.test_detail_arraylist.add("Image Type = " + image_type);
+        Sharing.test_detail_arraylist.add("Interval Duration" + String.valueOf(interval_duration));
+        Sharing.test_detail_arraylist.add("Number of Point = " + String.valueOf(number_of_points));
 
         databaseHelper2 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper2.getReadableDatabase();
@@ -157,6 +169,7 @@ public class DataListActivity extends AppCompatActivity {
             Log.d("TOUCH_SIZE", String.valueOf(touch_point_size));
             new_line = timestamp_of_point + " " + String.valueOf(x) + " " + String.valueOf(y) + " " + String.valueOf(pressure) + " " + String.valueOf(touch_point_size) + "\n";
             test_detail = test_detail + new_line;
+            Sharing.test_detail_arraylist.add(new_line);
         }
 
         Sharing.test_detail = test_detail;

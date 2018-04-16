@@ -105,6 +105,8 @@ public class Sharing {
 
     public static boolean store_readme = true;
 
+    public static ArrayList<String> test_detail_arraylist = new ArrayList<>();
+
 
     public Sharing()
     {
