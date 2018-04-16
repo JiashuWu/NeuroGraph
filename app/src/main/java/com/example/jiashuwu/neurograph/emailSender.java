@@ -339,11 +339,11 @@ public class emailSender{
             // TODO THIS IS OPTIONAL
             if (!Sharing.show_as_content)
             {
-                textBodyPart.setText("NeurographDataOutputFile");
+                textBodyPart.setText(SharingReadMe.email_content_title);
             }
             else
             {
-                textBodyPart.setText(messageContent);
+                textBodyPart.setText(SharingReadMe.email_content_title + "\n\n\n" + messageContent);
             }
 
 
