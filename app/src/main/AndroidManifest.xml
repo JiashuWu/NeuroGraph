@@ -182,7 +182,8 @@
         <activity
             android:name=".CopyrightInformationActivity"
             android:label="@string/title_activity_copyright_information"
-            android:theme="@style/AppTheme"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="locale|fontScale" />
     </application>
 
 </manifest>
