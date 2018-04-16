@@ -297,6 +297,7 @@
         <item>Store files</item>
         <item>Do not store</item>
     </string-array>
+    <string name="title_activity_device_infomation">DeviceInfomationActivity</string>
 
 
 </resources>
