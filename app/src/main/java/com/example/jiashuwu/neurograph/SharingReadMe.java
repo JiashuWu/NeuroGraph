@@ -294,6 +294,14 @@ public class SharingReadMe {
                     "\n" +
                     "\n";
 
+    public static String email_content_title = "Dear user,\n" +
+            "\n" +
+            "Thank you for using Neurograph. This is your data file email.\n" +
+            "\n" +
+            "Kind regards,\n" +
+            "Neurograph team";
+
+
 
 
 
