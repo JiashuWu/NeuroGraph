@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -108,6 +109,18 @@ public class DeviceInformationActivity extends AppCompatActivity {
             DeviceInformationActivity.this.finish();
         }
         return true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            Intent intent = new Intent (DeviceInformationActivity.this, InfoActivity.class);
+            startActivity(intent);
+            DeviceInformationActivity.this.finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
