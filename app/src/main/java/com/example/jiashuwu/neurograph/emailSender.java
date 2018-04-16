@@ -122,7 +122,7 @@ public class emailSender{
 
             //message.setContent(multipart);
 
-            String signature = "\n\n\n\n\n\n" + "======================" + "\n" + "Neurograph Data Transfer Service" + "\n" + "======================";
+            String signature = "\n\n\n\n\n\n" + "================================" + "\n" + "Neurograph Data Transfer Service" + "\n" + "================================";
             messageContent = messageContent + signature;
             message.setText(messageContent);
 
@@ -339,7 +339,7 @@ public class emailSender{
             // TODO THIS IS OPTIONAL
             if (!Sharing.show_as_content)
             {
-                textBodyPart.setText(SharingReadMe.email_content_title);
+                textBodyPart.setText(SharingReadMe.email_content_title + signature);
             }
             else
             {
