@@ -134,11 +134,13 @@ public class InfoActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_info_copyright)
         {
-
+            Intent intent = new Intent(InfoActivity.this, CopyrightInformationActivity.class);
+            startActivity(intent);
+            InfoActivity.this.finish();
         }
         else if (id == R.id.action_info_feedback)
         {
-
+            // TODO TO BE CONSIDERED;
         }
         return true;
     }

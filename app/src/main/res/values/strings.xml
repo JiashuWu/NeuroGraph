@@ -298,6 +298,7 @@
         <item>Do not store</item>
     </string-array>
     <string name="title_activity_device_infomation">DeviceInfomationActivity</string>
+    <string name="title_activity_copyright_information">CopyrightInformationActivity</string>
 
 
 </resources>

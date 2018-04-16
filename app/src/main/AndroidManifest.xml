@@ -176,9 +176,13 @@
             android:theme="@style/activity_full_screen" />
         <activity
             android:name=".DeviceInformationActivity"
+            android:configChanges="locale|fontScale"
             android:label="Device Information"
-            android:screenOrientation="portrait"
-            android:configChanges="locale|fontScale" />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CopyrightInformationActivity"
+            android:label="@string/title_activity_copyright_information"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
