@@ -303,6 +303,7 @@
         PersonalInformationEditPageActivity
     </string>
     <string name="title_activity_account_centre">AccountCentreActivity</string>
+    <string name="title_activity_user_information_page">UserInformationPageActivity</string>
 
 
 </resources>
