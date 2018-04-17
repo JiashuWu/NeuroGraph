@@ -302,6 +302,7 @@
     <string name="title_activity_personal_information_edit_page">
         PersonalInformationEditPageActivity
     </string>
+    <string name="title_activity_account_centre">AccountCentreActivity</string>
 
 
 </resources>
