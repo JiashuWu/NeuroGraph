@@ -11,15 +11,22 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_switch_user"
+        android:id="@+id/action_user_info_edit"
         android:orderInCategory="200"
+        android:title="Edit user information"
+        android:icon="@drawable/ic_action_edit"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_switch_user"
+        android:orderInCategory="300"
         android:title="Switch User"
         android:icon="@drawable/ic_action_user"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_trigger_setting"
-        android:orderInCategory="300"
+        android:orderInCategory="400"
         android:title="Setting"
         android:icon="@drawable/ic_action_setting"
         app:showAsAction="always" />
