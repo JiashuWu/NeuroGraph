@@ -299,6 +299,9 @@
     </string-array>
     <string name="title_activity_device_infomation">DeviceInfomationActivity</string>
     <string name="title_activity_copyright_information">CopyrightInformationActivity</string>
+    <string name="title_activity_personal_information_edit_page">
+        PersonalInformationEditPageActivity
+    </string>
 
 
 </resources>
