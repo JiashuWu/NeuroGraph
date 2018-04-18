@@ -169,15 +169,33 @@
                 android:id="@+id/personal_information_edit_radio_no"/>
         </RadioGroup>
 
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/personal_information_edit_next_button"
             android:layout_below="@id/personal_information_edit_radiogroup"
-            android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/next" />
+            android:layout_marginBottom="50dp" >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/personal_information_edit_discard_button"
+                android:text="Discard"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/personal_information_edit_next_button"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="Apply" />
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>
