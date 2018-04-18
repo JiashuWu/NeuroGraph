@@ -184,7 +184,7 @@
     <string name="rating_score_empty">Rating score cannot be empty</string>
     <string name="rating_score_invalid">Invalid rating score</string>
 
-    <string name="treatment_empty">Please select treatment infomation</string>
+    <string name="treatment_empty">Please select treatment information</string>
 
     <string name="dismiss">Dismiss</string>
     <string name="title_activity_data_list">Data List</string>
@@ -359,7 +359,6 @@
     <string name="make_changes">Make Changes</string>
     <string name="want_to_delete">Want to delete?</string>
     <string name="button_delete">Delete</string>
-    <string name="delete_data">Delete data</string>
     <string name="detele_data_before_this_date">Delete data before this date</string>
     <string name="your_device_information">Your device information :</string>
     <string name="device_brand">Device Brand :</string>
@@ -376,9 +375,11 @@
     <string name="do_not_close">Please DO NOT close the app while processing.</string>
     <string name="file_location_text">You can choose to copy the file location to Clipboard by simply clicking Copy File Path button.</string>
     <string name="file_path_copied">File Path copied to clipboard.</string>
-    <string name="copy_file_path">Copy File Path</string>
     <string name="button_copy">Copy</string>
     <string name="sending">Sending</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_next">Next</string>
+    <string name="button_all_done">All Done</string>
 
 
 </resources>

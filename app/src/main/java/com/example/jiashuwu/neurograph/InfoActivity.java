@@ -138,10 +138,7 @@ public class InfoActivity extends AppCompatActivity {
             startActivity(intent);
             InfoActivity.this.finish();
         }
-        else if (id == R.id.action_info_feedback)
-        {
-            // TODO TO BE CONSIDERED;
-        }
+
         return true;
     }
 
