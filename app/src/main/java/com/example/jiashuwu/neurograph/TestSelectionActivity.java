@@ -824,6 +824,12 @@ public class TestSelectionActivity extends AppCompatActivity {
 
 
         }
+        else if (id == R.id.action_user_info)
+        {
+            Intent intent = new Intent (TestSelectionActivity.this, PersonalInformationActivity.class);
+            startActivity(intent);
+            TestSelectionActivity.this.finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -195,6 +195,10 @@
         <activity
             android:name=".UserInformationPageActivity"
             android:label="@string/title_activity_user_information_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PersonalInformationActivity"
+            android:label="@string/title_activity_personal_information"
             android:theme="@style/AppTheme"></activity>
     </application>
 
