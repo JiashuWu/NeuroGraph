@@ -12,7 +12,173 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_preface"
+            android:text="Edit your personal information. "
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_registration_code_textview"
+            android:text="Registration Code"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_preface" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/personal_information_edit_registration_code_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:hint="Please enter a registration code"
+            android:id="@+id/personal_information_edit_registration_code_edittext" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_name_textview"
+            android:text="@string/full_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_registration_code_edittext" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_name_edittext"
+            android:hint="@string/enter_full_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_name_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_age_textview"
+            android:text="@string/age"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_name_edittext" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_age_edittext"
+            android:hint="@string/enter_age"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_age_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_gender_textview"
+            android:text="@string/gender"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_age_edittext" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_gender_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/personal_information_edit_gender_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_education_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/select_education"
+            android:layout_below="@id/personal_information_edit_gender_spinner" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_education_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/personal_information_edit_education_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_ratingscore_textview"
+            android:text="@string/rating_score"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_education_spinner" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_rating_score"
+            android:id="@+id/personal_information_edit_ratingscore_edittext"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_ratingscore_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_treatment_textview"
+            android:text="@string/current_receiving_treatment"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/personal_information_edit_ratingscore_edittext" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_radiogroup"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/personal_information_edit_treatment_textview" >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:checked="false"
+                android:id="@+id/personal_information_edit_radio_yes"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:checked="false"
+                android:id="@+id/personal_information_edit_radio_no"/>
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personal_information_edit_next_button"
+            android:layout_below="@id/personal_information_edit_radiogroup"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/next" />
+
 
     </RelativeLayout>
 
