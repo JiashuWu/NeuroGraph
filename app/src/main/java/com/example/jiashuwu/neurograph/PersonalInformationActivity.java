@@ -9,6 +9,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,6 +42,9 @@ public class PersonalInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personal_information);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         content_textview = (TextView) findViewById(R.id.personal_information_content_textview);
         button_edit = (Button) findViewById(R.id.personal_information_button_edit);
@@ -90,6 +95,32 @@ public class PersonalInformationActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_personal_information, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home)
+        {
+            Intent intent = new Intent(PersonalInformationActivity.this, TestSelectionActivity.class);
+            intent.putExtra("user_id", String.valueOf(Sharing.current_user_id));
+            startActivity(intent);
+            PersonalInformationActivity.this.finish();
+        }
+        else if (id == R.id.action_user_edit)
+        {
+            Intent intent = new Intent (PersonalInformationActivity.this, PersonalInformationEditPageActivity.class);
+            startActivity(intent);
+            PersonalInformationActivity.this.finish();
+        }
+        return true;
     }
 
 
