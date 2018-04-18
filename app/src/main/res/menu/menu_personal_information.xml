@@ -10,5 +10,4 @@
         android:icon="@drawable/ic_action_edit"
         app:showAsAction="always" />
 
-
 </menu>
