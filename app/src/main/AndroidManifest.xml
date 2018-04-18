@@ -39,7 +39,7 @@
         <activity
             android:name=".TestSelectionActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_test_selection"
+            android:label="@string/tests"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ImageSelectionActivity"
@@ -152,7 +152,7 @@
         <activity
             android:name=".InfoActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_info"
+            android:label="@string/information"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
@@ -182,12 +182,12 @@
         <activity
             android:name=".CopyrightInformationActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_copyright_information"
+            android:label="@string/copyright"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PersonalInformationEditPageActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_personal_information_edit_page"
+            android:label="@string/edit_information1"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AccountCentreActivity"
@@ -197,7 +197,7 @@
         <activity
             android:name=".PersonalInformationActivity"
             android:configChanges="locale|fontScale"
-            android:label="@string/title_activity_personal_information"
+            android:label="@string/personal_information"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FeedbackActivity"

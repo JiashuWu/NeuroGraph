@@ -280,7 +280,7 @@
 
     <string name="welcome_to_neurograph">" Welcome to\n"
     "Neurograph"</string>
-    <string name="title_activity_info">InfoActivity</string>
+    <string name="title_activity_info">Information</string>
 
     <string-array name="circular_motion_image_type">
         <item>Red Dot</item>
@@ -297,15 +297,13 @@
         <item>Store files</item>
         <item>Do not store</item>
     </string-array>
-    <string name="title_activity_device_infomation">DeviceInfomationActivity</string>
-    <string name="title_activity_copyright_information">CopyrightInformationActivity</string>
-    <string name="title_activity_personal_information_edit_page">
-        PersonalInformationEditPageActivity
-    </string>
-    <string name="title_activity_account_centre">AccountCentreActivity</string>
-    <string name="title_activity_user_information_page">UserInformationPageActivity</string>
-    <string name="title_activity_personal_information">PersonalInformationActivity</string>
-    <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="title_activity_device_infomation">Device Information</string>
+    <string name="title_activity_copyright_information">Copyright</string>
+    <string name="title_activity_personal_information_edit_page">Edit Information</string>
+    <string name="title_activity_account_centre">Account Centre</string>
+    <string name="title_activity_user_information_page">Personal Information</string>
+    <string name="title_activity_personal_information">Personal Information</string>
+    <string name="title_activity_feedback">Feedback</string>
     <string name="delete_data">Delete data</string>
     <string name="Calculating">Calculating</string>
     <string name="Loading">Loading</string>
@@ -350,6 +348,10 @@
     <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
     <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
     <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
+    <string name="tests">Tests</string>
+    <string name="information">Information</string>
+    <string name="copyright">Copyright</string>
+    <string name="edit_information1">Edit Information</string>
 
 
 </resources>
