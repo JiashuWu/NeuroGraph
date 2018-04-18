@@ -78,6 +78,19 @@ public class PersonalInformationActivity extends AppCompatActivity {
 
         content_textview.setText(content);
 
+        if (cursor != null)
+        {
+            cursor.close();
+        }
+        if (database != null)
+        {
+            database.close();
+        }
+        if (databaseHelper != null)
+        {
+            databaseHelper.close();
+        }
+
         button_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
