@@ -18,7 +18,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:text="Device Information"
+            android:text="@string/device_information"
             android:textSize="28dp"
             android:id="@+id/device_information_activity_title_textview"
             android:layout_centerHorizontal="true"/>
@@ -30,7 +30,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_below="@id/device_information_activity_title_textview"
-            android:text="PLACEHOLDER"
+            android:text="@string/placeholder"
             android:id="@+id/device_information_activity_content_textview" />
 
 

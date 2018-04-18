@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/information_collection_registration_code_textview"
-            android:text="Registration Code"
+            android:text="@string/registeration_code"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -39,7 +39,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:hint="Please enter a registration code"
+            android:hint="@string/please_enter_a_registration_code"
             android:id="@+id/information_collection_registration_code_edittext" />
 
         <TextView

@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is a practice exercise. Please draw two line as parallel as possible !"
+                android:text="@string/parallel_line_test_description"
                 android:id="@+id/test_selection_test0_introduction"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
@@ -59,7 +59,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test0_introduction"
-                android:text="Start Practice"
+                android:text="@string/start_practice"
                 android:id="@+id/test_selection_page0_test0_button" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="Parallel Line Test"
+                android:text="@string/parallel_line_test"
                 android:textSize="26dp" />
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/test_selection_test0_page0_parallel_test_textview"
-                android:text="This is the parallel line test. In this test you need to draw three parallel lines following the background pattern. " />
+                android:text="@string/parallel_line_test_description1" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="Circular Motion Test"
+                android:text="@string/circular_motion_test"
                 android:textSize="26dp"
                 android:layout_below="@id/test_selection_page0_parallel_line_test_button"
                 android:id="@+id/test_selection_page0_circular_motion_test_title_textview" />
@@ -111,7 +111,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:id="@+id/test_selection_page_circular_motion_test_introduction_textview"
-                android:text="This is the circular motion test. You need to draw a circle, using the red dot as the center. "
+                android:text="@string/circular_motion_test_description"
                 android:layout_below="@id/test_selection_page0_circular_motion_test_title_textview" />
 
             <Button
@@ -121,7 +121,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Start Test"
+                android:text="@string/start_test"
                 android:layout_below="@id/test_selection_page_circular_motion_test_introduction_textview" />
 
             <TextView

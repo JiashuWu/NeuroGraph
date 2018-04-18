@@ -19,7 +19,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:text="TITLE"
+            android:text="@string/title"
             android:textSize="26dp" />
 
         <TextView
@@ -30,12 +30,12 @@
             android:layout_marginRight="30dp"
             android:id="@+id/test_detail_info_title"
             android:layout_below="@id/test_detail_title_textview"
-            android:text="PLACEHOLDER" />
+            android:text="@string/placeholder" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PLACEHOLDER"
+            android:text="@string/placeholder"
             android:id="@+id/test_detail_textview"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -49,7 +49,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
             android:id="@+id/test_detail_title_buttom_textview"
-            android:text="PLACEHOLDER"
+            android:text="@string/placeholder"
             android:textSize="26dp"
             android:layout_below="@id/test_detail_textview"
             android:layout_marginBottom="50dp" />

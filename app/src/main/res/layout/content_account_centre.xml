@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Account Centre"
+                android:text="@string/account_centre"
                 android:id="@+id/account_centre_title_textview"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
@@ -36,13 +36,13 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/account_centre_title_textview"
-                android:text="New User"
+                android:text="@string/new_user"
                 android:textSize="26dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="As a new user, you need to register first."
+                android:text="@string/new_user_description"
                 android:layout_below="@id/account_centre_new_user_textview"
                 android:id="@+id/account_centre_new_user_info_textview"
                 android:layout_marginLeft="30dp"
@@ -57,7 +57,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:id="@+id/account_centre_register_button"
-                android:text="Register" />
+                android:text="@string/button_register" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Old User"
+                android:text="@string/old_user"
                 android:textSize="26dp" />
 
             <TextView
@@ -78,7 +78,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_below="@id/account_centre_old_user_textview"
                 android:id="@+id/account_centre_old_user_information_textview"
-                android:text="Please enter your registration code" />
+                android:text="@string/enter_registration_code_title" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -88,7 +88,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_below="@id/account_centre_old_user_information_textview"
                 android:id="@+id/account_centre_edittext"
-                android:hint="Please enter your registration code" />
+                android:hint="@string/enter_registration_code_title" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:id="@+id/account_centre_continue_button"
-                android:text="Continue" />
+                android:text="@string/button_continue" />
 
             <TextView
                 android:layout_width="wrap_content"

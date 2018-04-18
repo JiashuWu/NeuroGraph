@@ -11,7 +11,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:id="@+id/store_data_file_alertdialog_textview"
-        android:text="Store data files and clean the data ? " />
+        android:text="@string/store_data_files_and_clean_data_question_title" />
 
     <Spinner
         android:layout_width="wrap_content"

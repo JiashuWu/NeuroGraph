@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/copyright_information_title_textview"
-                android:text="Copyright"
+                android:text="@string/copyright_title"
                 android:textSize="28dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
@@ -36,7 +36,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
-                android:text="PLACEHOLDER" />
+                android:text="@string/placeholder" />
 
             <TextView
                 android:layout_width="match_parent"

@@ -322,6 +322,34 @@
     <string name="clean_data_after_storing_files">Clean data after storing files</string>
     <string name="clean_data_after_storing_data_files">Clean data after storing data files</string>
     <string name="calculating_test_result">We are calculating your test result</string>
+    <string name="account_centre">Account Centre</string>
+    <string name="new_user">New User</string>
+    <string name="new_user_description">As a new user, you need to register first.</string>
+    <string name="button_register">Register</string>
+    <string name="old_user">Old User</string>
+    <string name="enter_registration_code_title">Please enter your registration code</string>
+    <string name="button_continue">Continue</string>
+    <string name="copyright_title">Copyright</string>
+    <string name="device_information">Device Information</string>
+    <string name="registeration_code">Registration Code</string>
+    <string name="please_enter_a_registration_code">Please enter a registration code</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="edit_information">Edit information</string>
+    <string name="edit_your_personal_information">Edit your personal information.</string>
+    <string name="button_discard">Discard</string>
+    <string name="button_apply">Apply</string>
+    <string name="title">TITLE</string>
+    <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
+    <string name="start_practice">Start Practice</string>
+    <string name="parallel_line_test_description">This is a practice exercise. Please draw two line as parallel as possible !</string>
+    <string name="parallel_line_test">Parallel Line Test</string>
+    <string name="parallel_line_test_description1">This is the parallel line test. In this test you need to draw three parallel lines following the background pattern.</string>
+    <string name="circular_motion_test">Circular Motion Test</string>
+    <string name="circular_motion_test_description">This is the circular motion test. You need to draw a circle, using the red dot as the center.</string>
+    <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
+    <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
+    <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
+    <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
 
 
 </resources>
