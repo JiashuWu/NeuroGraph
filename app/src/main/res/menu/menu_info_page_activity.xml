@@ -17,12 +17,14 @@
         android:icon="@drawable/ic_action_copyright"
         app:showAsAction="always" />
 
+    <!--
     <item
         android:id="@+id/action_info_feedback"
         android:orderInCategory="300"
         android:title="Feedback"
         android:icon="@drawable/ic_action_feedback"
         app:showAsAction="always" />
+        -->
 
 
 </menu>
