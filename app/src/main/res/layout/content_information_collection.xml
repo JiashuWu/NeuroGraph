@@ -25,12 +25,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/information_collection_registration_code_textview"
+            android:text="Registration Code"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/information_collection_preface" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/information_collection_registration_code_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:hint="Please enter a registration code"
+            android:id="@+id/information_collection_registration_code_edittext" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/information_collection_name_textview"
             android:text="@string/full_name"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="36dp"
             android:layout_marginRight="30dp"
-            android:layout_below="@id/information_collection_preface" />
+            android:layout_below="@id/information_collection_registration_code_edittext" />
 
         <EditText
             android:layout_width="match_parent"
