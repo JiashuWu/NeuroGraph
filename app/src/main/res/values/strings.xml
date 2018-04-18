@@ -305,6 +305,7 @@
     <string name="title_activity_account_centre">AccountCentreActivity</string>
     <string name="title_activity_user_information_page">UserInformationPageActivity</string>
     <string name="title_activity_personal_information">PersonalInformationActivity</string>
+    <string name="title_activity_feedback">FeedbackActivity</string>
 
 
 </resources>

@@ -186,19 +186,23 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PersonalInformationEditPageActivity"
-            android:label="@string/title_activity_personal_information_edit_page"
             android:configChanges="locale|fontScale"
+            android:label="@string/title_activity_personal_information_edit_page"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AccountCentreActivity"
-            android:label="Account"
             android:configChanges="locale|fontScale"
+            android:label="Account"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PersonalInformationActivity"
-            android:label="@string/title_activity_personal_information"
             android:configChanges="locale|fontScale"
+            android:label="@string/title_activity_personal_information"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="@string/title_activity_feedback"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
