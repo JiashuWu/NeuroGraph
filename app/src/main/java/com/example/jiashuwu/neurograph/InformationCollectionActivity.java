@@ -33,6 +33,7 @@ import java.util.Locale;
 
 public class InformationCollectionActivity extends AppCompatActivity {
 
+    private EditText registration_code_edittext;
     private EditText name_edittext;
     private EditText age_edittext;
     private Spinner gender_spinner;
@@ -47,11 +48,15 @@ public class InformationCollectionActivity extends AppCompatActivity {
     private String education = "";
     private String ratingscore = "";
     private String current_receiving_treatment = "";
+    private String registration_code = "";
 
     private ArrayAdapter gender_adapter;
     private ArrayAdapter education_adapter;
 
     private MyDatabaseHelper databaseHelper;
+
+    private MyDatabaseHelper databaseHelperR;
+    private SQLiteDatabase databaseR;
 
     private int user_id;
 
@@ -127,6 +132,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
         databaseHelper.getWritableDatabase();
 
+        registration_code_edittext = (EditText) findViewById(R.id.information_collection_registration_code_edittext);
         name_edittext = (EditText) findViewById(R.id.information_collection_name_edittext);
         age_edittext = (EditText) findViewById(R.id.information_collection_age_edittext);
         gender_spinner = (Spinner) findViewById(R.id.information_collection_gender_spinner);
@@ -195,6 +201,101 @@ public class InformationCollectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean can_continue = true;
+                registration_code = registration_code_edittext.getText().toString();
+                if (registration_code.equalsIgnoreCase(""))
+                {
+                    can_continue = false;
+                    registration_code_edittext.setError("Registration code cannot be empty");
+                    AlertDialog.Builder builder = new AlertDialog.Builder(InformationCollectionActivity.this);
+                    builder.setTitle("Registration Code Empty");
+                    builder.setCancelable(false);
+                    builder.setMessage("Registration Code is empty");
+                    builder.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Should do nothing here
+                            // Blank
+                        }
+                    });
+                    builder.create();
+                    builder.show();
+                }
+                int i = 0;
+                int count = 0;
+                for (i = 0 ; i < registration_code.length() ; i++)
+                {
+                    if (!Character.isLetter(registration_code.charAt(i)) && !Character.isDigit(registration_code.charAt(i)))
+                    {
+                        count = count + 1;
+                        break;
+                    }
+                }
+                if (can_continue && count != 0)
+                {
+                    count = 0;
+                    can_continue = false;
+                    registration_code_edittext.setError("Registration code invalid, should contains only alphabet and numbers");
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
+                    dialog.setTitle(getString(R.string.information_invalid));
+                    dialog.setCancelable(false);
+                    dialog.setMessage("Registration code invalid. It should only contain alphabets or numbers. ");
+                    dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // Should do nothing here;
+                            // Blank
+                        }
+                    });
+                    dialog.show();
+                }
+                count = 0;
+                if (can_continue)
+                {
+                    count = 0;
+                    databaseHelperR = new MyDatabaseHelper (InformationCollectionActivity.this, databaseName, null, databaseVersion);
+                    databaseHelperR.getReadableDatabase();
+                    databaseR = databaseHelperR.getReadableDatabase();
+                    String query = "SELECT registration_code FROM User";
+                    String parameters [] = new String[] {};
+                    Cursor cursor = databaseR.rawQuery(query, parameters);
+                    while (cursor.moveToNext())
+                    {
+                        if (registration_code.equalsIgnoreCase(cursor.getString(0).toString()))
+                        {
+                            count = count + 1;
+                        }
+                    }
+                    if (cursor != null)
+                    {
+                        cursor.close();
+                    }
+                    if (databaseR != null)
+                    {
+                        databaseR.close();
+                    }
+                    if (databaseHelperR != null)
+                    {
+                        databaseHelperR.close();
+                    }
+
+                }
+                if (can_continue && count != 0)
+                {
+                    count = 0;
+                    can_continue = false;
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
+                    dialog.setTitle("Duplicate registration code");
+                    dialog.setCancelable(false);
+                    dialog.setMessage("This registration code has been registered, please try another one");
+                    dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            // Should do nothing here;
+                        }
+                    });
+                    dialog.create();
+                    dialog.show();
+                }
                 name = name_edittext.getText().toString();
                 if (name.equalsIgnoreCase(""))
                 {
@@ -229,8 +330,8 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     });
                     dialog.show();
                 }
-                int i = 0;
-                int count = 0;
+                i = 0;
+                count = 0;
                 for (i = 0 ; i < age.length() ; i++)
                 {
                     if (!Character.isDigit(age.charAt(i)) || age.contains("."))
@@ -361,17 +462,19 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     values.put("education", education);
                     values.put("rating_score", Double.parseDouble(ratingscore));
                     values.put("current_receiving_treatment", current_receiving_treatment);
+                    values.put("registration_code", registration_code);
                     Log.d("TAG_USER_INFO", name);
                     Log.d("TAG_USER_INFO", age);
                     Log.d("TAG_USER_INFO", gender);
                     Log.d("TAG_USER_INFO", education);
                     Log.d("TAG_USER_INFO", ratingscore);
                     Log.d("TAG_USER_INFO", current_receiving_treatment);
+                    Log.d("TAG_USER_INFO", registration_code);
                     database.insert("User", null, values);
                     // We now want to get this user's user_id
                     database = databaseHelper.getReadableDatabase();
-                    String query = "SELECT user_id FROM User WHERE name = ? AND age = ? AND gender = ? AND education = ? AND rating_score = ? AND current_receiving_treatment = ?";
-                    String [] parameters = new String [] {name, age, gender, education, ratingscore, current_receiving_treatment};
+                    String query = "SELECT user_id FROM User WHERE name = ? AND age = ? AND gender = ? AND education = ? AND rating_score = ? AND current_receiving_treatment = ? AND registration_code = ?";
+                    String [] parameters = new String [] {name, age, gender, education, ratingscore, current_receiving_treatment, registration_code};
                     Cursor cursor = database.rawQuery(query, parameters);
                     while (cursor.moveToNext())
                     {

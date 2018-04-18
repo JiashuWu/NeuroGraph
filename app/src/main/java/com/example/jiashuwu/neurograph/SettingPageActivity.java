@@ -873,7 +873,7 @@ public class SettingPageActivity extends AppCompatActivity {
         setting_page_start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (SettingPageActivity.this, InformationCollectionActivity.class);
+                Intent intent = new Intent (SettingPageActivity.this, AccountCentreActivity.class);
                 intent.putExtra("language", language);
                 intent.putExtra("fontsize", fontsize);
                 startActivity(intent);

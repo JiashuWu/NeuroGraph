@@ -29,7 +29,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + "gender VARCHAR(10) NOT NULL, "
             + "education VARCHAR(100) NOT NULL, "
             + "rating_score REAL, "
-            + "current_receiving_treatment VARCHAR(100)"
+            + "current_receiving_treatment VARCHAR(100), "
+            + "registration_code VARCHAR(100) "
             + " ) ";
 
     //Test Table
