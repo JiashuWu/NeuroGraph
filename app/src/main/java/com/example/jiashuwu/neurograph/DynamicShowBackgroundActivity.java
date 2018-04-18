@@ -101,11 +101,11 @@ public class DynamicShowBackgroundActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.dynamic_show_background_imageview);
         if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
         {
-            imageView.setImageResource(R.drawable.spiral_full_screen_fixed);
+            imageView.setImageResource(R.drawable.spiral_matlab_corrected_version_1);
         }
         if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
         {
-            imageView.setImageResource(R.drawable.pentagon_full_screen_fixed);
+            imageView.setImageResource(R.drawable.pentagon_matlab_corrected_version_fixed_1);
         }
 
         new Handler().postDelayed(new Runnable() {
