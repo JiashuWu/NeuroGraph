@@ -38,6 +38,16 @@
                 android:layout_below="@id/personal_information_page_title_textview"
                 android:text="PLACEHOLDER" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/personal_information_button_edit"
+                android:text="Edit information"
+                android:layout_below="@id/personal_information_content_textview"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
+
 
         </RelativeLayout>
 
