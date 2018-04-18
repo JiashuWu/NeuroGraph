@@ -349,10 +349,10 @@ public class DataListActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
-                builder.setTitle("Make Changes");
+                builder.setTitle(R.string.make_changes);
                 builder.setCancelable(false);
-                builder.setMessage("Want to delete?");
-                builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.want_to_delete);
+                builder.setNegativeButton(R.string.button_delete, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int item_to_be_deleted = (int)data_detail.get("test_id");
@@ -421,7 +421,7 @@ public class DataListActivity extends AppCompatActivity {
             View view = inflater.inflate(R.layout.activity_data_list_delete_option_alertdialog, null);
 
             AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
-            builder.setTitle("Delete data");
+            builder.setTitle(R.string.delete_data);
             builder.setCancelable(false);
             builder.setView(view);
 
@@ -499,7 +499,7 @@ public class DataListActivity extends AppCompatActivity {
                         View view = inflater.inflate(R.layout.activity_data_list_delete_date_alertdialog, null);
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
-                        builder.setTitle("Delete data before this date");
+                        builder.setTitle(R.string.detele_data_before_this_date);
                         builder.setCancelable(false);
                         builder.setView(view);
                         delete_date_datepicker = (DatePicker) view.findViewById(R.id.delete_time_datepicker);

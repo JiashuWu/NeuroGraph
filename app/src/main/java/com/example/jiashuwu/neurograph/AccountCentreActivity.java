@@ -160,10 +160,10 @@ public class AccountCentreActivity extends AppCompatActivity {
                 else
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(AccountCentreActivity.this);
-                    builder.setTitle("Registration Code Invalid");
+                    builder.setTitle(R.string.registration_code_invalid);
                     builder.setCancelable(false);
-                    builder.setMessage("Registration code in invalid. You need to register first.");
-                    builder.setPositiveButton("Got It", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.regist_first);
+                    builder.setPositiveButton(R.string.got_it, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here;

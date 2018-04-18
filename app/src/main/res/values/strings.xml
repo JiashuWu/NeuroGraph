@@ -352,6 +352,15 @@
     <string name="information">Information</string>
     <string name="copyright">Copyright</string>
     <string name="edit_information1">Edit Information</string>
+    <string name="registration_code_invalid">Registration Code Invalid</string>
+    <string name="regist_first">Registration code in invalid. You need to register first.</string>
+    <string name="got_it">Got It</string>
+    <string name="perfect">Perfect</string>
+    <string name="make_changes">Make Changes</string>
+    <string name="want_to_delete">Want to delete?</string>
+    <string name="button_delete">Delete</string>
+    <string name="delete_data">Delete data</string>
+    <string name="detele_data_before_this_date">Delete data before this date</string>
 
 
 </resources>
