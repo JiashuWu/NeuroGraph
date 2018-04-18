@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/send_data_email_file_type_textview"
-                android:text="Data File Format (multiple choice allowed) "
+                android:text="@string/data_file_format_title"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
@@ -118,7 +118,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:id="@+id/send_data_email_csv_checkbox"
-                android:text=".csv"
+                android:text="@string/csv"
                 android:checked="true"
                 android:layout_below="@id/send_data_email_file_type_textview" />
 
@@ -129,7 +129,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_toRightOf="@id/send_data_email_csv_checkbox"
                 android:id="@+id/send_data_email_txt_checkbox"
-                android:text=".txt"
+                android:text="@string/txt"
                 android:checked="true"
                 android:layout_below="@id/send_data_email_file_type_textview" />
 
@@ -140,7 +140,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_toRightOf="@id/send_data_email_txt_checkbox"
                 android:id="@+id/send_data_email_db_checkbox"
-                android:text=".db"
+                android:text="@string/db"
                 android:checked="true"
                 android:layout_below="@id/send_data_email_file_type_textview" />
 
@@ -151,7 +151,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_toRightOf="@id/send_data_email_db_checkbox"
                 android:id="@+id/send_data_email_readme_checkbox"
-                android:text="readme"
+                android:text="@string/readme"
                 android:checked="true"
                 android:layout_below="@id/send_data_email_file_type_textview" />
 
@@ -159,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/send_email_delete_title_textview"
-                android:text="Clean data after storing files"
+                android:text="@string/clean_data_after_storing_files"
                 android:layout_below="@id/send_data_email_csv_checkbox"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp" />

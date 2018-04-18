@@ -41,7 +41,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="45dp"
             android:id="@+id/image_selection_for_circular_motion_image_sleection_textview"
-            android:text="Please select test image type"
+            android:text="@string/select_image_type"
             android:layout_below="@id/image_selection_for_circular_motion_test_instruction" />
 
         <Spinner

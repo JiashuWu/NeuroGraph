@@ -20,7 +20,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
         android:id="@+id/tutorial_alertdialog_text"
-        android:text="PLACEHOLDER"
+        android:text="@string/placeholder"
         android:layout_below="@id/tutorial_alertdialog_image" />
 
 </RelativeLayout>

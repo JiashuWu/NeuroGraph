@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/parallel_line_result_result"
             android:layout_centerHorizontal="true"
-            android:text="RESULT"
+            android:text="@string/result"
             android:textSize="36dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -42,7 +42,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="Result Description"
+            android:text="@string/result_description"
             android:id="@+id/parallel_line_result_description"
             android:layout_below="@id/parallel_line_result_result" />
 

@@ -54,7 +54,7 @@
             android:id="@+id/duration_progress_textview"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
-            android:text="PLACEHOLDER"
+            android:text="@string/placeholder"
             android:layout_below="@id/duration_selection_seekbar"/>
 
         <TextView

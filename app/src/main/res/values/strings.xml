@@ -306,6 +306,22 @@
     <string name="title_activity_user_information_page">UserInformationPageActivity</string>
     <string name="title_activity_personal_information">PersonalInformationActivity</string>
     <string name="title_activity_feedback">FeedbackActivity</string>
+    <string name="delete_data">Delete data</string>
+    <string name="Calculating">Calculating</string>
+    <string name="Loading">Loading</string>
+    <string name="generating_progress">Generating Progress</string>
+    <string name="sending_progress">Sending Progress</string>
+    <string name="select_image_type">Please select test image type</string>
+    <string name="result">RESULT</string>
+    <string name="result_description">Result Description</string>
+    <string name="data_file_format_title">Data File Format (multiple choice allowed)</string>
+    <string name="csv">.csv</string>
+    <string name="txt">.txt</string>
+    <string name="db">.db</string>
+    <string name="readme">readme</string>
+    <string name="clean_data_after_storing_files">Clean data after storing files</string>
+    <string name="clean_data_after_storing_data_files">Clean data after storing data files</string>
+    <string name="calculating_test_result">We are calculating your test result</string>
 
 
 </resources>

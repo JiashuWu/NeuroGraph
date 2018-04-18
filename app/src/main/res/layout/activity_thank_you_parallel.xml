@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="We are calculating your test result"
+                android:text="@string/calculating_test_result"
                 android:textSize="26dp"
                 android:id="@+id/thank_you_activity_parallel_word1"
                 android:layout_marginTop="20dp"

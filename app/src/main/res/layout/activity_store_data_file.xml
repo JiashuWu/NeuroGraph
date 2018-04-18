@@ -55,7 +55,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/store_data_file_introduction_textview"
-            android:text="Data File Format (multiple choice allowed)" />
+            android:text="@string/data_file_format_title" />
 
         <ImageView
             android:layout_width="23dp"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/store_data_file_csv_checkbox"
-            android:text=".csv"
+            android:text="@string/csv"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:checked="true"
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/store_data_file_txt_checkbox"
-            android:text=".txt"
+            android:text="@string/txt"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:checked="true"
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/store_data_file_db_checkbox"
-            android:text=".db"
+            android:text="@string/db"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:checked="true"
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/store_data_file_readme_checkbox"
-            android:text="readme"
+            android:text="@string/readme"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:checked="true"
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/store_data_file_delete_title_textview"
-            android:text="Clean data after storing data files"
+            android:text="@string/clean_data_after_storing_data_files"
             android:layout_below="@id/store_data_file_csv_checkbox"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp" />

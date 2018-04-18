@@ -11,7 +11,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:id="@+id/alertdialog_delete_option_textview"
-        android:text="Delete data" />
+        android:text="@string/delete_data" />
 
     <Spinner
         android:layout_width="wrap_content"
