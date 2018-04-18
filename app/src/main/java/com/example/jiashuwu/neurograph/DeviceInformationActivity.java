@@ -82,17 +82,17 @@ public class DeviceInformationActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        String device_information_title = "Your device information : \n";
+        String device_information_title = getString(R.string.your_device_information);
 
         int testing_area_height = Sharing.device_height_in_pixels - Sharing.device_navigation_bar_height;
-        String device_information = "Device Brand : " + Sharing.device_brand + "\n"
-                + "Device Manufacturer : " + Sharing.device_manufacturer + "\n"
-                + "Device Product Information : " + Sharing.device_product_name + "\n"
-                + "Device Model : " + Sharing.device_model + "\n"
-                + "Device System Version Code : " + Sharing.device_system_version_code + "\n"
-                + "Device Resolution : " + Sharing.device_height_in_pixels + " X " + Sharing.device_width_in_pixels + "\n"
-                + "Device Testing Area : " + testing_area_height + " X " + Sharing.device_width_in_pixels + "\n"
-                + "Device Navigation Bar Height : " + Sharing.device_navigation_bar_height + "\n";
+        String device_information = getString(R.string.device_brand) + Sharing.device_brand + "\n"
+                + getString(R.string.device_manufacturer) + Sharing.device_manufacturer + "\n"
+                + getString(R.string.device_product_information) + Sharing.device_product_name + "\n"
+                + getString(R.string.device_model) + Sharing.device_model + "\n"
+                + getString(R.string.device_system_version_code) + Sharing.device_system_version_code + "\n"
+                + getString(R.string.device_resolution) + Sharing.device_height_in_pixels + " X " + Sharing.device_width_in_pixels + "\n"
+                + getString(R.string.device_testing_area) + testing_area_height + " X " + Sharing.device_width_in_pixels + "\n"
+                + getString(R.string.device_navigation_bar_height) + Sharing.device_navigation_bar_height + "\n";
 
         content_textview = (TextView) findViewById(R.id.device_information_activity_content_textview);
         content_textview.setText(device_information_title + "\n" + device_information);

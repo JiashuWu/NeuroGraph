@@ -361,6 +361,24 @@
     <string name="button_delete">Delete</string>
     <string name="delete_data">Delete data</string>
     <string name="detele_data_before_this_date">Delete data before this date</string>
+    <string name="your_device_information">Your device information :</string>
+    <string name="device_brand">Device Brand :</string>
+    <string name="device_manufacturer">Device Manufacturer :</string>
+    <string name="device_product_information">Device Product Information :</string>
+    <string name="device_model">Device Model :</string>
+    <string name="device_system_version_code">Device System Version Code :</string>
+    <string name="device_resolution">Device Resolution :</string>
+    <string name="device_testing_area">Device Testing Area :</string>
+    <string name="device_navigation_bar_height">Device Navigation Bar Height :</string>
+    <string name="Processing">Processing</string>
+    <string name="calculating_test_result_do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="loading">Loading</string>
+    <string name="do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="file_location_text">You can choose to copy the file location to Clipboard by simply clicking Copy File Path button.</string>
+    <string name="file_path_copied">File Path copied to clipboard.</string>
+    <string name="copy_file_path">Copy File Path</string>
+    <string name="button_copy">Copy</string>
+    <string name="sending">Sending</string>
 
 
 </resources>

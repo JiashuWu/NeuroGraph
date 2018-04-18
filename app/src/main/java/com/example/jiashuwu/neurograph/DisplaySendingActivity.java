@@ -134,7 +134,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(DisplaySendingActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
+                Toast.makeText(DisplaySendingActivity.this, getString(R.string.file_path_copied), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -167,9 +167,9 @@ public class DisplaySendingActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Processing");
+        progressDialog.setTitle(getString(R.string.sending));
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Please waiting while processing. Please DO NOT close the app while processing. ");
+        progressDialog.setMessage(getString(R.string.do_not_close));
         progressDialog.show();
         new Thread(new Runnable() {
             @Override
@@ -309,10 +309,10 @@ public class DisplaySendingActivity extends AppCompatActivity {
         if (id == R.id.action_display_sending_sd_card)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(DisplaySendingActivity.this);
-            builder.setTitle("Copy File Path");
+            builder.setTitle(getString(R.string.copy_file_path));
             builder.setCancelable(false);
             builder.setMessage("File path : " + "\n" + Sharing.file_path);
-            builder.setPositiveButton("Copy", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getString(R.string.button_copy), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);

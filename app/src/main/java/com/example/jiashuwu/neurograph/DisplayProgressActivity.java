@@ -124,7 +124,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
         finish_button = (Button) findViewById(R.id.display_progress_finish_button);
         copy_file_path_button = (Button) findViewById(R.id.display_progress_copy_file_path_button);
 
-        file_location_textview.setText("You can choose to copy the file location to Clipboard by simply clicking Copy File Path button. ");
+        file_location_textview.setText(R.string.file_location_text);
 
         copy_file_path_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +132,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(DisplayProgressActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
+                Toast.makeText(DisplayProgressActivity.this, R.string.file_path_copied, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -302,16 +302,16 @@ public class DisplayProgressActivity extends AppCompatActivity {
         if (id == R.id.action_display_progress_sd_card)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(DisplayProgressActivity.this);
-            builder.setTitle("Copy File Path");
+            builder.setTitle(R.string.copy_file_path);
             builder.setCancelable(false);
             builder.setMessage("File path : " + "\n" + Sharing.file_path);
-            builder.setPositiveButton("Copy", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.button_copy, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clipData = ClipData.newPlainText("file_path",Sharing.file_path);
                     clipboardManager.setPrimaryClip(clipData);
-                    Toast.makeText(DisplayProgressActivity.this, "File Path copied to clipboard.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DisplayProgressActivity.this, getString(R.string.file_path_copied), Toast.LENGTH_LONG).show();
                 }
             });
             builder.create();

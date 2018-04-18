@@ -151,9 +151,9 @@ public class DisplayLoadingActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Processing");
+        progressDialog.setTitle(getString(R.string.loading));
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Please waiting while processing. Please DO NOT close the app while processing. ");
+        progressDialog.setMessage(getString(R.string.do_not_close));
         progressDialog.show();
 
         new Thread(new Runnable() {
