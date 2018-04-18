@@ -72,7 +72,7 @@ public class AccountCentreActivity extends AppCompatActivity {
                 cursor = database.rawQuery(query, parameters);
                 while (cursor.moveToNext())
                 {
-                    if (registration_code.equalsIgnoreCase(cursor.getString(0).toString()))
+                    if (registration_code.equals(cursor.getString(0).toString()))
                     {
                         count = count + 1;
                     }

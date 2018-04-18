@@ -498,6 +498,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                         databaseHelper.close();
                     }
 
+                    Sharing.current_user_id = user_id;
                     Intent intent = new Intent(InformationCollectionActivity.this, TestSelectionActivity.class);
                     intent.putExtra("user_id", String.valueOf(user_id));
                     startActivity(intent);
