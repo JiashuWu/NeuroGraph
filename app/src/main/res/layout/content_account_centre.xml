@@ -36,7 +36,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/account_centre_title_textview"
-                android:text="New user"
+                android:text="New User"
                 android:textSize="26dp"/>
 
             <TextView
