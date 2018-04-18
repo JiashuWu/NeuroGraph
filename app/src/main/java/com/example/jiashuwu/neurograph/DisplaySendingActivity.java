@@ -306,7 +306,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected (MenuItem item)
     {
         int id = item.getItemId();
-        if (id == R.id.action_display_progress_sd_card)
+        if (id == R.id.action_display_sending_sd_card)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(DisplaySendingActivity.this);
             builder.setTitle("Copy File Path");

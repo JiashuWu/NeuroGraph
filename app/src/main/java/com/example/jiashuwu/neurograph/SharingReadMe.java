@@ -130,40 +130,41 @@ public class SharingReadMe {
                     "\t(b) Large\n" +
                     "\tNOTE: Normal is the normal font size of Android system. Large is also a Android System defined font size, which is 1.5 times larger than Normal font size.\n" +
                     "25: testee ID\n" +
-                    "26: testee's name\n" +
-                    "27: testee's age\n" +
-                    "28: testee's gender\n" +
+                    "26: testee's registration code\n" +
+                    "27: testee's name\n" +
+                    "28: testee's age\n" +
+                    "29: testee's gender\n" +
                     "\tThis can be:\n" +
                     "\t(a) Male\n" +
                     "\t(b) Female\n" +
                     "\t(c) Others\n" +
-                    "29: testee's education background\n" +
+                    "30: testee's education background\n" +
                     "\tThis can be:\n" +
                     "\t(a) primary school or below\n" +
                     "\t(b) high school\n" +
                     "\t(c) undergraduate\n" +
                     "\t(d) postgraduate\n" +
                     "\t(e) doctor or higher\n" +
-                    "30: testee's previous Alzheimer rating score\n" +
+                    "31: testee's previous Alzheimer rating score\n" +
                     "\tNOTE: This is not a compulsory field.\n" +
                     "\tNOTE: If testee left it as blank, it means the previous Alzheimer rating score was not applicable for this testee. If this is the case, default value 0 will be used as placeholder.\n" +
-                    "31: testee's treatment information\n" +
+                    "32: testee's treatment information\n" +
                     "\tNOTE: This means whether this testee was receiving treatment when they took this test.\n" +
                     "\tNOTE: The possible answer will be\n" +
                     "\t(1) Yes\n" +
                     "\t(2) No\n" +
-                    "32: testing device's brand\n" +
-                    "33: testing device's model\n" +
-                    "34: testing device's product name\n" +
-                    "35: testing device's manufacturer\n" +
-                    "36: testing device's screen height in pixel\n" +
-                    "37: testing device's screen width in pixel\n" +
-                    "38: testing device's screen testing/drawing height in pixel\n" +
+                    "33: testing device's brand\n" +
+                    "34: testing device's model\n" +
+                    "35: testing device's product name\n" +
+                    "36: testing device's manufacturer\n" +
+                    "37: testing device's screen height in pixel\n" +
+                    "38: testing device's screen width in pixel\n" +
+                    "39: testing device's screen testing/drawing height in pixel\n" +
                     "\tNOTE: This is the height of the testing/drawing area of the screen. It may be different from the device screen height since there is a navigation bar which is not touchable.\n" +
-                    "39: testing device's screen testing/drawing width in pixel\n" +
-                    "40: testing device's navigation bar height\n" +
-                    "41: testing device's Android system version code\n" +
-                    "42: Neurograph version name\n" +
+                    "40: testing device's screen testing/drawing width in pixel\n" +
+                    "41: testing device's navigation bar height\n" +
+                    "42: testing device's Android system version code\n" +
+                    "43: Neurograph version name\n" +
                     "\n" +
                     "\n" +
                     "\n" +
@@ -237,6 +238,8 @@ public class SharingReadMe {
                     "\tNOTE: Normal is the normal font size of Android system. Large is also a Android System defined font size, which is 1.5 times larger than Normal font size.\n" +
                     "\n" +
                     "TESTEE INFORMATION\n" +
+                    "user ID\n" +
+                    "registration code\n" +
                     "user name\n" +
                     "age\n" +
                     "gender\n" +
@@ -299,7 +302,7 @@ public class SharingReadMe {
             "Thank you for using Neurograph. This is your data file email.\n" +
             "\n" +
             "Kind regards,\n" +
-            "Neurograph team";
+            "Neurograph team\n\n";
 
 
 

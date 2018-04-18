@@ -98,7 +98,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private int age;
     private String gender;
     private String education;
-    private int rating_score;
+    private double rating_score;
     private String current_receive_treatment;
     private String timestamp_of_point;
     private float x;
@@ -107,6 +107,8 @@ public class StoreDataFileActivity extends AppCompatActivity {
     private float touch_point_size;
     private String test_starting_time_number_only;
     private String test_ending_time_number_only;
+
+    private String registration_code = "";
 
 
     public static Calendar calendar;
@@ -388,8 +390,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 age = Integer.parseInt(cursor1.getString(2).toString());
                 gender = cursor1.getString(3).toString();
                 education = cursor1.getString(4).toString();
-                rating_score = Integer.parseInt(cursor1.getString(5).toString());
+                rating_score = Double.parseDouble(cursor1.getString(5).toString());
                 current_receive_treatment = cursor1.getString(6).toString();
+                registration_code = cursor1.getString(7).toString();
             }
             if (cursor1 != null)
             {
@@ -421,6 +424,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
             output_string = output_string + "is_scale_during_test = " + is_scale_during_test + "\n";
 
             output_string = output_string + "TESTEE INFORMATION" + "\n";
+
+            output_string = output_string + "user id = " + user_id + "\n";
+
+            output_string = output_string + "registration code = " + registration_code + "\n";
 
             output_string = output_string + "user name = " + name + "\n";
             // output_csv_strings.add("user name = " + name + "\n");
@@ -531,7 +538,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = point_serial_number + "," + time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(painter_width) + "," + language_during_test + "," + is_scale_during_test + "," + String.valueOf(user_id) + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "," + BuildConfig.VERSION_NAME + "\n";
+                String new_csv_line = point_serial_number + "," + time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(painter_width) + "," + language_during_test + "," + is_scale_during_test + "," + String.valueOf(user_id) + "," + registration_code + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "," + BuildConfig.VERSION_NAME + "\n";
                 output_csv_strings.add(new_csv_line);
             }
 

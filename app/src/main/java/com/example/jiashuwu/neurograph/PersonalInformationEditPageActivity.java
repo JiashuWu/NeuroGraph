@@ -672,7 +672,6 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
 
 
 
-    // TODO FINALLY WE NEED TO ADD THE REGISTRATION CODE INTO FILES AND README INFORMATION;
 
 
 
