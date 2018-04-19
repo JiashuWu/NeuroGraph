@@ -1,0 +1,32 @@
+Welcome to Neurograph.
+
+This is an mobile phone application which can be used to assist the diagnostics of Alzheimer's Disease. By doing some tests like drawing a spiral or tracing some parallel lines, we will analyse your drawing pattern and using Artificial Intelligence to detect the level of the disease.
+
+Version 1.0 (2018.06)
+
+This version contains:
+
+User can practice drawing parallel lines before they start the tests
+User can do parallel line test, circular motion test, static background test, static corner background test, dynamic blank background test and dynamic seasonal background test.
+User can choose the test background images
+User can choose their preferred painter width
+The interval duration can be chosen for each dynamic test
+Detailed test instruction before each test
+User can register as new user or login as old user using a registration code
+User can switch user after finishing the tests
+User can choose to store data files and clean data before they switch user
+User can view and edit their personal information
+Data list page which contains all the test informations, you can view and delete your test data
+User can send data email
+User can store data file in several different formats
+User can copy the file path after storing the data files
+Notification will notify the user that the storing has been completed
+User can choose 6 different colour themes
+User can choose 11 different languages
+User can choose 2 kinds of font size
+Well designed tutorial which can assist you to use this app
+Introduction page which contains the release information of this app
+Information page and Copyright page which contains some copyright information
+Device page which can show you some basic properties of your device
+User can change the app setting before or after they login
+User can clean the cache of the app
