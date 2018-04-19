@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.media.Image;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -26,7 +25,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,8 +33,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.io.File;
-
-import static android.Manifest.permission.ACCESS_NOTIFICATION_POLICY;
 
 public class SettingPageActivity extends AppCompatActivity {
 
@@ -129,7 +125,7 @@ public class SettingPageActivity extends AppCompatActivity {
     {
         int counter = 0;
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        final View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        final View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         final AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle(title.get(counter));
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
@@ -152,10 +148,12 @@ public class SettingPageActivity extends AppCompatActivity {
 
 
 
+    /*
+
     public void showAppTutorialChangeSetting ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Change Setting");
         builder.setCancelable(false);
@@ -191,7 +189,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSwitchUser ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Switch User");
         builder.setCancelable(false);
@@ -226,7 +224,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialPersonal ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("View and edit information");
         builder.setCancelable(false);
@@ -261,7 +259,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialDeleteData ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Delete Data");
         builder.setCancelable(false);
@@ -296,7 +294,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialChooseFileType ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose File Type");
         builder.setCancelable(false);
@@ -331,7 +329,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialStoreDataFile ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Store data file");
         builder.setCancelable(false);
@@ -366,7 +364,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSendEmail ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Send data email");
         builder.setCancelable(false);
@@ -401,7 +399,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialLongClickDelete ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Long click to delete");
         builder.setCancelable(false);
@@ -436,7 +434,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialDataList ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Data list");
         builder.setCancelable(false);
@@ -471,7 +469,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialProcessing ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Processing");
         builder.setCancelable(false);
@@ -506,7 +504,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialTestCanvas ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Draw it");
         builder.setCancelable(false);
@@ -541,7 +539,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialWidth ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose painter width");
         builder.setCancelable(false);
@@ -576,7 +574,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialDuration ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose interval duration");
         builder.setCancelable(false);
@@ -611,7 +609,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialTestInstruction ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Test instructions");
         builder.setCancelable(false);
@@ -646,7 +644,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialImageSelection ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Select test image");
         builder.setCancelable(false);
@@ -682,7 +680,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialDynamicTestSelection ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Select dynamic tests");
         builder.setCancelable(false);
@@ -717,7 +715,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialStaticTestSelection ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Select static tests");
         builder.setCancelable(false);
@@ -745,7 +743,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialCircularMotionBackground ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose Background");
         builder.setCancelable(false);
@@ -780,7 +778,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialCircularMotion ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Circular Motion Test");
         builder.setCancelable(false);
@@ -815,7 +813,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialParallelTest ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Static Parallel Test");
         builder.setCancelable(false);
@@ -849,7 +847,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialParallelPracticeResult ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Practice Results");
         builder.setCancelable(false);
@@ -883,7 +881,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialParallelPractice ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Practice makes perfect");
         builder.setCancelable(false);
@@ -918,7 +916,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialInformationCollectionPage ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("InformationCollection");
         builder.setCancelable(false);
@@ -953,7 +951,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialAccountCentre ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Account Centre");
         builder.setCancelable(false);
@@ -988,7 +986,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialIntroduction ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Introduction page");
         builder.setCancelable(false);
@@ -1023,7 +1021,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSettingPageCache ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Clean Cache");
         builder.setCancelable(false);
@@ -1058,7 +1056,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialCopyright ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("View Copyright");
         builder.setCancelable(false);
@@ -1093,7 +1091,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialDevicePage ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("About your device");
         builder.setCancelable(false);
@@ -1128,7 +1126,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialInfoActivity ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Information");
         builder.setCancelable(false);
@@ -1163,7 +1161,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSettingPageTheme ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose your theme");
         builder.setCancelable(false);
@@ -1198,7 +1196,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSettingPageFont ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Customise font size");
         builder.setCancelable(false);
@@ -1233,7 +1231,7 @@ public class SettingPageActivity extends AppCompatActivity {
     public void showAppTutorialSettingPageLanguage ()
     {
         LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
         builder.setTitle("Choose your language");
         builder.setCancelable(false);
@@ -1270,7 +1268,7 @@ public class SettingPageActivity extends AppCompatActivity {
     {
         Log.d("tutorial", "Starting_tutorials");
         LayoutInflater inflater = LayoutInflater.from(this);
-        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Setting Page");
         builder.setCancelable(false);
@@ -1295,6 +1293,7 @@ public class SettingPageActivity extends AppCompatActivity {
         builder.create();
         builder.show();
     }
+    */
 
 
     public void deleteFileByDirectory (File directory)
@@ -1591,7 +1590,12 @@ public class SettingPageActivity extends AppCompatActivity {
                 title.add("Delete data");
                 description.add("Here you can delete all test data, delete test data prior to a specific data, or delete all data (This will restart the app) ");
 
-                showAppTutorialSettingPage();
+                //showAppTutorialSettingPage();
+
+                Intent intent = new Intent (SettingPageActivity.this, TutorialActivity.class);
+                startActivity(intent);
+                SettingPageActivity.this.finish();
+
             }
         });
 

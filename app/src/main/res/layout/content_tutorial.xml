@@ -24,28 +24,18 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:textSize="28dp"
-                android:text="@string/placeholder" />
-
-            <ImageView
-                android:layout_width="240dp"
-                android:layout_height="360dp"
-                android:id="@+id/tutorial_imageview"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/screen_choose_font_size"
-                android:layout_below="@id/tutorial_title" />
+                android:textSize="30dp"
+                android:text="Tutorials"
+                android:layout_centerHorizontal="true"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_below="@id/tutorial_imageview"
-                android:id="@+id/tutorial_content"
-                android:text="@string/placeholder" />
+                android:layout_below="@id/tutorial_title"
+                android:text="You can choose tutorials from the navigation bar on the left." />
 
         </RelativeLayout>
 
