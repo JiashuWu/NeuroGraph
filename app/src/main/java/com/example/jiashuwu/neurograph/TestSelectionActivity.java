@@ -189,18 +189,20 @@ public class TestSelectionActivity extends AppCompatActivity {
                     practice_button = (Button) findViewById(R.id.test_selection_page0_test0_button);
                     parallel_test_button = (Button) findViewById(R.id.test_selection_page0_parallel_line_test_button);
                     circular_motion_button = (Button) findViewById(R.id.test_selection_page_circular_motion_test_button);
+                    /*
                     imageview01 = (ImageView) findViewById(R.id.test_selection_page0_imageview1);
                     imageview02 = (ImageView) findViewById(R.id.test_selection_page0_imageview2);
                     imageview03 = (ImageView) findViewById(R.id.test_selection_page0_imageview3);
                     layoutParams = imageview01.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
                     layoutParams = imageview02.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
                     layoutParams = imageview03.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
+                    */
 
                     // parallel_line_practice_width_spinner = (Spinner) findViewById(R.id.test_selection_test0_width_spinner);
                     String [] mList = getResources().getStringArray(R.array.painter_width);
@@ -273,14 +275,16 @@ public class TestSelectionActivity extends AppCompatActivity {
                     viewPager.setCurrentItem(1);
                     test1_button = (Button) findViewById(R.id.test_selection_page1_test1_button);
                     test2_button = (Button) findViewById(R.id.test_selection_page1_test2_button);
+                    /*
                     imageview11 = (ImageView) findViewById(R.id.test_selection_page1_imageview1);
                     imageview12 = (ImageView) findViewById(R.id.test_selection_page1_imageview2);
                     layoutParams = imageview11.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
                     layoutParams = imageview12.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
+                    */
 
                     test1_button.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -313,15 +317,17 @@ public class TestSelectionActivity extends AppCompatActivity {
                     viewPager.setCurrentItem(2);
                     test3_button = (Button) findViewById(R.id.test_selection_page2_test3_button);
                     test4_button = (Button) findViewById(R.id.test_selection_page2_test4_button);
+                    /*
                     imageview21 = (ImageView) findViewById(R.id.test_selection_page2_imageview1);
                     imageview21 = (ImageView) findViewById(R.id.test_selection_page2_imageview2);
 
                     layoutParams = imageview21.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
                     layoutParams = imageview22.getLayoutParams();
-                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+                    layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
                     layoutParams.height = (int)(layoutParams.width / 3 * 2);
+                    */
 
                     test3_button.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -471,6 +477,7 @@ public class TestSelectionActivity extends AppCompatActivity {
         test3_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test3_button);
         test4_button = (Button) view_dynamic.findViewById(R.id.test_selection_page2_test4_button);
 
+        /*
         imageview01 = (ImageView) view_practice.findViewById(R.id.test_selection_page0_imageview1);
         imageview02 = (ImageView) view_practice.findViewById(R.id.test_selection_page0_imageview2);
         imageview03 = (ImageView) view_practice.findViewById(R.id.test_selection_page0_imageview3);
@@ -481,26 +488,28 @@ public class TestSelectionActivity extends AppCompatActivity {
 
 
         layoutParams = imageview01.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview02.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview03.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview11.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview12.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview21.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
         layoutParams = imageview22.getLayoutParams();
-        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.5) - 60;
+        layoutParams.width = (int)(Sharing.device_width_in_pixels / 1.2) - 60;
         layoutParams.height = (int)(layoutParams.width / 3 * 2);
+
+        */
 
 
         /*
