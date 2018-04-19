@@ -67,6 +67,41 @@ public class TutorialActivity extends AppCompatActivity
         builder.show();
     }
 
+    public void showAppTutorialStoreWhileSwitch ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
+        builder.setTitle("Store Data After Switching");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_image.setImageResource(R.drawable.screen_language);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can choose to store data before switching user");
+        builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialChangeSetting();
+            }
+        });
+        builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSwitchUser();
+            }
+        });
+        builder.setNeutralButton(getString(R.string.button_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+                // Blank
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
     public void showAppTutorialSwitchUser ()
     {
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
@@ -82,7 +117,42 @@ public class TutorialActivity extends AppCompatActivity
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                showAppTutorialChangeSetting();
+                showAppTutorialStoreWhileSwitch();
+            }
+        });
+        builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialPersonal();
+            }
+        });
+        builder.setNeutralButton(getString(R.string.button_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+                // Blank
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialEditPersonal ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
+        builder.setTitle("Edit information");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_image.setImageResource(R.drawable.screen_language);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can view or edit your personal information here. ");
+        builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSwitchUser();
             }
         });
         builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
@@ -107,7 +177,7 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("View and edit information");
+        builder.setTitle("View information");
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
@@ -117,7 +187,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                showAppTutorialSwitchUser();
+                showAppTutorialEditPersonal();
             }
         });
         builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
@@ -598,7 +668,7 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Select static tests");
+        builder.setTitle("Select Static Tests");
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
@@ -615,6 +685,13 @@ public class TutorialActivity extends AppCompatActivity
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 showAppTutorialParallelTest();
+            }
+        });
+        builder.setNeutralButton(getString(R.string.button_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+                // Blank
             }
         });
         builder.create();
