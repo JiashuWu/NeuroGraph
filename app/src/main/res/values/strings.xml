@@ -381,5 +381,8 @@
     <string name="button_next">Next</string>
     <string name="button_all_done">All Done</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>
