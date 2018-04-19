@@ -6,14 +6,14 @@
     <item
         android:id="@+id/action_info_device"
         android:orderInCategory="100"
-        android:title="Device"
+        android:title="@string/device_information"
         android:icon="@drawable/ic_action_phone_1"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_info_copyright"
         android:orderInCategory="200"
-        android:title="Copyright"
+        android:title="@string/copyright"
         android:icon="@drawable/ic_action_copyright"
         app:showAsAction="always" />
 

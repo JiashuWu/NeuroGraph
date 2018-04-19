@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_user_edit"
         android:orderInCategory="100"
-        android:title="Edit user information"
+        android:title="@string/edit_user_information"
         android:icon="@drawable/ic_action_edit"
         app:showAsAction="always" />
 

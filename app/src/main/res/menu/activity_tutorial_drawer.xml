@@ -3,183 +3,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Home Page">
+    <item android:title="@string/home_page">
         <menu>
             <item
                 android:id="@+id/nav_setting_page"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Home Page" />
+                android:title="@string/home_page" />
         </menu>
     </item>
 
-    <item android:title="Customization">
+    <item android:title="@string/customization">
         <menu>
             <item
                 android:id="@+id/nav_choose_language"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Choose language" />
+                android:title="@string/choose_language" />
             <item
                 android:id="@+id/nav_choose_font_size"
                 android:icon="@drawable/ic_menu_slideshow"
-                android:title="Choose Font Size" />
+                android:title="@string/choose_font_fize" />
             <item
                 android:id="@+id/nav_choose_theme"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Choose Colour Theme" />
+                android:title="@string/choose_colour_theme" />
             <item
                 android:id="@+id/nav_change_setting"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Change Setting" />
+                android:title="@string/change_setting" />
         </menu>
     </item>
 
-    <item android:title="Information">
+    <item android:title="@string/information">
         <menu>
             <item
                 android:id="@+id/nav_information"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Information" />
+                android:title="@string/information" />
             <item
                 android:id="@+id/nav_about_your_device"
                 android:icon="@drawable/ic_action_device_2"
-                android:title="About your device" />
+                android:title="@string/about_your_device" />
             <item
                 android:id="@+id/nav_view_copyright"
                 android:icon="@drawable/ic_action_copyright"
-                android:title="View Copyright" />
+                android:title="@string/view_copyright" />
             <item
                 android:id="@+id/nav_clean_cache"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Clean Cache" />
+                android:title="@string/clean_cache" />
             <item
                 android:id="@+id/nav_introduction_page"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Introduction Page" />
+                android:title="@string/introduction_page" />
         </menu>
     </item>
 
-    <item android:title="Account">
+    <item android:title="@string/account">
         <menu>
             <item
                 android:id="@+id/nav_account_centre"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Account Centre" />
+                android:title="@string/account_centre" />
             <item
                 android:id="@+id/nav_information_collection"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Information Collection" />
+                android:title="@string/information_collection" />
         </menu>
     </item>
 
-    <item android:title="Tests">
+    <item android:title="@string/tests">
         <menu>
             <item
                 android:id="@+id/nav_parallel_line_practice"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Parallel Line Practice" />
+                android:title="@string/parallel_line_practice" />
             <item
                 android:id="@+id/nav_practice_result"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Practice Result" />
+                android:title="@string/practice_result" />
             <item
                 android:id="@+id/nav_static_parallel_test"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Parallel Line Test" />
+                android:title="@string/parallel_line_test" />
             <item
                 android:id="@+id/nav_circular_motion"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Circular Motion Test" />
+                android:title="@string/circular_motion_test" />
             <item
                 android:id="@+id/nav_select_static_tests"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Select Static Tests" />
+                android:title="@string/select_static_tests" />
             <item
                 android:id="@+id/nav_select_dynamic_tests"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Select Dynamic Tests" />
+                android:title="@string/select_dynamic_tests" />
             <item
                 android:id="@+id/nav_select_test_image"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Select Test Image" />
+                android:title="@string/select_test_image" />
             <item
                 android:id="@+id/nav_test_instruction"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Test Instruction" />
+                android:title="@string/test_instruction" />
             <item
                 android:id="@+id/nav_choose_interval_duration"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Choose Interval Duration" />
+                android:title="@string/choose_interval_duration" />
             <item
                 android:id="@+id/nav_choose_painter_width"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Choose Painter Width" />
+                android:title="@string/choose_painter_width" />
             <item
                 android:id="@+id/nav_draw_it"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Draw It" />
+                android:title="@string/draw_it" />
         </menu>
     </item>
 
-    <item android:title="Manage Data">
+    <item android:title="@string/manage_data">
         <menu>
             <item
                 android:id="@+id/nav_processing"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Processing" />
+                android:title="@string/processing" />
             <item
                 android:id="@+id/nav_data_list"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Data List" />
+                android:title="@string/data_list" />
             <item
                 android:id="@+id/nav_view_data"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="View Data" />
+                android:title="@string/view_data" />
             <item
                 android:id="@+id/nav_long_click_delete"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Long Click to Delete" />
+                android:title="@string/long_click_to_delete" />
             <item
                 android:id="@+id/nav_send_data_email"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Send Data Email" />
+                android:title="@string/send_data_email" />
             <item
                 android:id="@+id/nav_store_data_file"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Store Data Files" />
+                android:title="@string/store_data_files" />
             <item
                 android:id="@+id/nav_choose_file_types"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Choose Files Types" />
+                android:title="@string/choose_files_types" />
             <item
                 android:id="@+id/nav_delete_data"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Delete Data" />
+                android:title="@string/delete_data" />
         </menu>
     </item>
 
-    <item android:title="Manage Personal Information">
+    <item android:title="@string/manage_personal_information">
         <menu>
             <item
                 android:id="@+id/nav_view_information"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="View Personal Information" />
+                android:title="@string/view_personal_information" />
             <item
                 android:id="@+id/nav_edit_information"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Edit Personal Information" />
+                android:title="@string/edit_personal_information" />
         </menu>
     </item>
 
-    <item android:title="Switch User">
+    <item android:title="@string/switch_user">
         <menu>
             <item
                 android:id="@+id/nav_switch_user"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Switch User" />
+                android:title="@string/switch_user" />
             <item
                 android:id="@+id/nav_store_while_switch"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Store Data Before Switching" />
+                android:title="@string/store_data_before_switching" />
         </menu>
     </item>
 

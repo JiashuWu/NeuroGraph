@@ -6,14 +6,14 @@
     <item
         android:id="@+id/action_test_detail_previous"
         android:icon="@drawable/ic_action_previous1000"
-        android:title="Previous 1000 entries"
+        android:title="@string/previous_1000_entries"
         android:orderInCategory="100"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_test_detail_next"
         android:icon="@drawable/ic_action_next1000"
-        android:title="Next 1000 entries"
+        android:title="@string/next_1000_entries"
         android:orderInCategory="200"
         app:showAsAction="always" />
 

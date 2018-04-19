@@ -6,28 +6,28 @@
     <item
         android:id="@+id/action_data_list"
         android:orderInCategory="100"
-        android:title="Data List"
+        android:title="@string/data_list"
         android:icon="@drawable/ic_action_data_list"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_user_info"
         android:orderInCategory="200"
-        android:title="View user information"
+        android:title="@string/view_user_information"
         android:icon="@drawable/ic_action_user_info"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_switch_user"
         android:orderInCategory="300"
-        android:title="Switch User"
+        android:title="@string/switch_user"
         android:icon="@drawable/ic_action_user"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_trigger_setting"
         android:orderInCategory="400"
-        android:title="Setting"
+        android:title="@string/setting"
         android:icon="@drawable/ic_action_setting"
         app:showAsAction="always" />
 

@@ -4,7 +4,7 @@
     <item
         android:id="@+id/navigation_practice_tests"
         android:icon="@drawable/ic_action_circle_point"
-        android:title="Dot and Line" />
+        android:title="@string/dot_and_line" />
 
     <item
         android:id="@+id/navigation_static_tests"

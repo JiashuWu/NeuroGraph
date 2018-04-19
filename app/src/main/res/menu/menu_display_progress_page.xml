@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_display_progress_sd_card"
         android:orderInCategory="100"
-        android:title="File Path"
+        android:title="@string/file_path"
         android:icon="@drawable/ic_action_sd_card"
         app:showAsAction="always" />
 
