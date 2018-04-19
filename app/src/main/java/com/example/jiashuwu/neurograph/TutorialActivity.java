@@ -368,6 +368,41 @@ public class TutorialActivity extends AppCompatActivity
         builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialViewDataDetail();
+            }
+        });
+        builder.setNeutralButton(getString(R.string.button_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+                // Blank
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialViewDataDetail ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
+        builder.setTitle("Test Details");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_image.setImageResource(R.drawable.screen_data_list);
+        tutorial_text.setText("Here you can find the test details. ");
+        builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialLongClickDelete();
+            }
+        });
+        builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
                 showAppTutorialDataList();
             }
         });
@@ -1422,7 +1457,7 @@ public class TutorialActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_view_data)
         {
-            // TODO
+            showAppTutorialViewDataDetail();
         }
         else if (id == R.id.nav_choose_file_types)
         {
@@ -1438,11 +1473,15 @@ public class TutorialActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_edit_information)
         {
-            // TODO
+            showAppTutorialEditPersonal();
         }
         else if (id == R.id.nav_switch_user)
         {
             showAppTutorialSwitchUser();
+        }
+        else if (id == R.id.nav_store_while_switch)
+        {
+            showAppTutorialStoreWhileSwitch();
         }
 
         /*

@@ -176,6 +176,10 @@
                 android:id="@+id/nav_switch_user"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="Switch User" />
+            <item
+                android:id="@+id/nav_store_while_switch"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Store Data Before Switching" />
         </menu>
     </item>
 
