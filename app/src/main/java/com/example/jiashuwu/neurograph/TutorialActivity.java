@@ -16,6 +16,10 @@ import android.view.MenuItem;
 public class TutorialActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    // UNDER CONSIDERATION!!!
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
