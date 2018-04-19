@@ -16,7 +16,7 @@
             android:singleLine="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:text="test 1"
+            android:text="@string/test_1"
             android:textSize="15sp"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="12dp" />
@@ -31,7 +31,7 @@
             android:layout_marginRight="10dp"
             android:minLines="1"
             android:maxLines="2"
-            android:text="zhangsan"
+            android:text="@string/zhangsan"
             android:textSize="24sp" />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/list_item_test_time"
             android:layout_below="@+id/list_item_tester_name"
-            android:text="test date"
+            android:text="@string/test_date"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="12dp"
@@ -56,7 +56,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginLeft="10dp"
-            android:text="test type"
+            android:text="@string/test_type"
             android:textSize="15sp"
             android:layout_alignParentRight="true" />
 
@@ -69,7 +69,7 @@
             android:layout_alignBottom="@+id/list_item_test_time"
             android:layout_alignRight="@+id/list_item_test_type"
             android:layout_alignEnd="@+id/list_item_test_type"
-            android:text="image type"
+            android:text="@string/image_type"
             android:textSize="15sp" />
 
 

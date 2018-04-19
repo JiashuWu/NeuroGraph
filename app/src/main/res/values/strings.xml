@@ -425,6 +425,12 @@
     <string name="output_data">Output Data</string>
     <string name="store_date_file">Store Date File</string>
     <string name="file_path">File Path</string>
+    <string name="neurograph">Neurograph</string>
+    <string name="test_1">test 1</string>
+    <string name="zhangsan">zhangsan</string>
+    <string name="test_date">test date</string>
+    <string name="test_type">test type</string>
+    <string name="image_type">image type</string>
 
 
 </resources>
