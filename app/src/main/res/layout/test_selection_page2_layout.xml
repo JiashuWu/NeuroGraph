@@ -24,6 +24,16 @@
                 android:layout_marginTop="30dp"
                 android:textSize="26dp" />
 
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="240dp"
+                android:id="@+id/test_selection_page2_imageview1"
+                android:src="@drawable/spiral_static_test_image"
+                android:layout_below="@id/test_selection_test3_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +42,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/test_selection_test3_title" />
+                android:layout_below="@id/test_selection_page2_imageview1" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -53,6 +63,16 @@
                 android:layout_below="@id/test_selection_page2_test3_button"
                 android:textSize="26dp" />
 
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="240dp"
+                android:id="@+id/test_selection_page2_imageview2"
+                android:src="@drawable/spiral_static_test_image"
+                android:layout_below="@id/test_selection_test4_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,7 +80,7 @@
                 android:id="@+id/test_selection_test4_introduction"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/test_selection_test4_title" />
+                android:layout_below="@id/test_selection_page2_imageview2" />
 
             <Button
                 android:layout_width="wrap_content"

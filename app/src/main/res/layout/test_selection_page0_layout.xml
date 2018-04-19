@@ -25,12 +25,13 @@
                 android:textSize="26dp" />
 
             <ImageView
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:id="@+id/imageview"
+                android:layout_width="360dp"
+                android:layout_height="240dp"
+                android:id="@+id/test_selection_page0_imageview1"
                 android:src="@drawable/spiral_static_test_image"
                 android:layout_below="@id/test_selection_test0_title"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp" />
 
             <TextView
@@ -41,7 +42,9 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_below="@id/imageview" />
+                android:layout_below="@id/test_selection_page0_imageview1" />
+
+
 
             <!--
             <TextView
@@ -77,11 +80,21 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/test_selection_test0_page0_parallel_test_textview"
                 android:layout_below="@id/test_selection_page0_test0_button"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:text="@string/parallel_line_test"
                 android:textSize="26dp" />
+
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="240dp"
+                android:id="@+id/test_selection_page0_imageview2"
+                android:src="@drawable/parallel_line_showcase"
+                android:layout_below="@id/test_selection_test0_page0_parallel_test_textview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,7 +103,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/test_selection_test0_page0_parallel_test_textview"
+                android:layout_below="@id/test_selection_page0_imageview2"
                 android:text="@string/parallel_line_test_description1" />
 
             <Button
@@ -106,13 +119,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:text="@string/circular_motion_test"
                 android:textSize="26dp"
                 android:layout_below="@id/test_selection_page0_parallel_line_test_button"
                 android:id="@+id/test_selection_page0_circular_motion_test_title_textview" />
+
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="240dp"
+                android:id="@+id/test_selection_page0_imageview3"
+                android:src="@drawable/circular_motion_showcase"
+                android:layout_below="@id/test_selection_page0_circular_motion_test_title_textview"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -122,7 +145,7 @@
                 android:layout_marginTop="30dp"
                 android:id="@+id/test_selection_page_circular_motion_test_introduction_textview"
                 android:text="@string/circular_motion_test_description"
-                android:layout_below="@id/test_selection_page0_circular_motion_test_title_textview" />
+                android:layout_below="@id/test_selection_page0_imageview3" />
 
             <Button
                 android:layout_width="wrap_content"

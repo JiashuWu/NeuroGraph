@@ -28,13 +28,13 @@
                 android:text="@string/placeholder" />
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="300dp"
+                android:layout_width="240dp"
+                android:layout_height="360dp"
                 android:id="@+id/tutorial_imageview"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_centerHorizontal="true"
+                android:src="@drawable/screen_choose_font_size"
                 android:layout_below="@id/tutorial_title" />
 
             <TextView

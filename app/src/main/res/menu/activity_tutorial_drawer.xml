@@ -33,11 +33,11 @@
             android:icon="@drawable/ic_action_copyright"
             android:title="View Copyright" />
         <item
-            android:id="nav_clean_cache"
+            android:id="@+id/nav_clean_cache"
             android:icon="@drawable/ic_menu_camera"
             android:title="Clean Cache" />
         <item
-            android:id="nav_introduction_page"
+            android:id="@+id/nav_introduction_page"
             android:icon="@drawable/ic_menu_camera"
             android:title="Introduction Page" />
         <item
@@ -49,7 +49,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Information Collection" />
         <item
-            android:id="nav_paeallel_line_practice"
+            android:id="@+id/nav_parallel_line_practice"
             android:icon="@drawable/ic_menu_camera"
             android:title="Parallel Line Practice" />
         <item
@@ -93,7 +93,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Draw It" />
         <item
-            android:id="nav_processing"
+            android:id="@+id/nav_processing"
             android:icon="@drawable/ic_menu_camera"
             android:title="Processing" />
         <item
