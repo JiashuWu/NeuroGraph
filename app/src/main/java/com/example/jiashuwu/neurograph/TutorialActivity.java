@@ -36,13 +36,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Change Setting");
+        builder.setTitle(R.string.change_setting);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can change the language and font size setting here. ");
+        tutorial_text.setText(R.string.change_setting_text);
         builder.setPositiveButton(R.string.button_all_done, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -72,13 +72,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Store Data After Switching");
+        builder.setTitle(R.string.store_data_after_switching);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can choose to store data before switching user");
+        tutorial_text.setText(R.string.store_data_switching_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -107,13 +107,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Switch User");
+        builder.setTitle(R.string.switch_user);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can switch user here. ");
+        tutorial_text.setText(R.string.switch_user_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -142,13 +142,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Edit information");
+        builder.setTitle(R.string.edit_information1);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can view or edit your personal information here. ");
+        tutorial_text.setText(R.string.edit_information_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -177,13 +177,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("View information");
+        builder.setTitle(R.string.view_information);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can view or edit your personal information here. ");
+        tutorial_text.setText(R.string.view_information_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -212,17 +212,52 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Delete Data");
+        builder.setTitle(getResources().getString(R.string.delete_data));
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_delete_1);
-        tutorial_text.setText("Here you can delete all test data, delete test data prior to a specific data, or delete all data (This will restart the app) ");
+        tutorial_text.setText(R.string.delete_data_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 showAppTutorialPersonal();
+            }
+        });
+        builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialCopyFilePath();
+            }
+        });
+        builder.setNeutralButton(getString(R.string.button_exit), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+                // Blank
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialCopyFilePath ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
+        View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
+        builder.setTitle(R.string.copy_file_path);
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_image.setImageResource(R.drawable.screen_language);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText(R.string.choose_file_type_tutorial_text);
+        builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDeleteData();
             }
         });
         builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
@@ -247,17 +282,17 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose File Type");
+        builder.setTitle(R.string.choose_file_type);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can choose which type of file you want to store, you can choose all of them. ");
+        tutorial_text.setText(R.string.copy_file_path_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                showAppTutorialDeleteData();
+                showAppTutorialCopyFilePath();
             }
         });
         builder.setNegativeButton(R.string.button_previous, new DialogInterface.OnClickListener() {
@@ -282,13 +317,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Store data file");
+        builder.setTitle(R.string.store_data_file);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_file_output_page);
-        tutorial_text.setText("You can also store data file into Android file system, and send it to your PC by connecting your phone via a cable. You can copy the file path to clipboard. Easy to use! ");
+        tutorial_text.setText(R.string.store_data_file_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -317,13 +352,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Send data email");
+        builder.setTitle(R.string.send_data_email);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_send_email_page);
-        tutorial_text.setText("Want to outputting all test data? Send it via email. ");
+        tutorial_text.setText(R.string.send_data_email_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -352,13 +387,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Long click to delete");
+        builder.setTitle(R.string.long_click_to_delete1);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_long_click_delete);
-        tutorial_text.setText("Delete a piece of data by long clicking it. ");
+        tutorial_text.setText(R.string.long_click_to_delete_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -387,13 +422,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Test Details");
+        builder.setTitle(R.string.test_details);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_data_list);
-        tutorial_text.setText("Here you can find the test details. ");
+        tutorial_text.setText(R.string.test_details_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -422,13 +457,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Data list");
+        builder.setTitle(R.string.data_list);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_data_list);
-        tutorial_text.setText("Here you can all the test data, including test ID, test type, image type, detailed coordinates and more! ");
+        tutorial_text.setText(R.string.data_list_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -457,13 +492,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Processing");
+        builder.setTitle(R.string.procesing);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("After each test, it takes some time to process, please do not close the app during processing. ");
+        tutorial_text.setText(R.string.processing_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -492,13 +527,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Draw it");
+        builder.setTitle(getResources().getString(R.string.draw_it));
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_drawing);
-        tutorial_text.setText("Draw the required shape here. You can click \"Clear\" to clear the canvas, and click \"Finish\" to finish the test");
+        tutorial_text.setText(R.string.draw_it_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -527,13 +562,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose painter width");
+        builder.setTitle(R.string.choose_painter_width);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_width_selection);
-        tutorial_text.setText("You can choose the painter width you preferred. We have thin, normal and thick width available. ");
+        tutorial_text.setText(R.string.choose_painter_width_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -562,13 +597,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose interval duration");
+        builder.setTitle(R.string.choose_interval_duration);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_duration_selection);
-        tutorial_text.setText("You can choose the interval duration of the test. The interval duration only applies to dynamic tests. ");
+        tutorial_text.setText(R.string.choose_interval_duration_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -597,13 +632,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Test instructions");
+        builder.setTitle(R.string.test_instructions);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_test_instruction);
-        tutorial_text.setText("This page contains some important test instructions. Remember to read them carefully.");
+        tutorial_text.setText(R.string.test_instruction_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -632,13 +667,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Select test image");
+        builder.setTitle(R.string.select_test_image);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_image_selection);
-        tutorial_text.setText("Here you can choose the background image of the test. We have spiral and pentagon.");
+        tutorial_text.setText(R.string.select_test_image_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -668,13 +703,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Select dynamic tests");
+        builder.setTitle(R.string.select_dynamic_tests);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_dynamic_test_selection);
-        tutorial_text.setText("You can choose a dynamic test here.");
+        tutorial_text.setText(R.string.select_dynamic_tests_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -703,13 +738,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Select Static Tests");
+        builder.setTitle(R.string.select_static_tests);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_image.setImageResource(R.drawable.screen_static_test_selection);
-        tutorial_text.setText("You can select a static test here. ");
+        tutorial_text.setText(R.string.select_static_tests_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -738,13 +773,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose Background");
+        builder.setTitle(R.string.choose_background);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can choose red, blue or black dot as the background. ");
+        tutorial_text.setText(R.string.choose_background_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -773,13 +808,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Circular Motion Test");
+        builder.setTitle(R.string.circular_motion_test);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You need to draw a circle around a dot in this test.");
+        tutorial_text.setText(R.string.circular_motion_test_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -808,12 +843,12 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Static Parallel Test");
+        builder.setTitle(R.string.parallel_line_test);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("This is the static parallel test, you need to draw three horizontal parallel lines. ");
+        tutorial_text.setText(R.string.parallel_line_test_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -842,12 +877,12 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Practice Results");
+        builder.setTitle(R.string.practice_results);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can see whether the two parallel lines you draw are indeed paralle. These grading level will be used: Perfect, Good, Acceptable and Bad. ");
+        tutorial_text.setText(R.string.practice_result_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -876,13 +911,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Practice makes perfect");
+        builder.setTitle(R.string.practice_makes_perfect);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_parallel);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("This is a playground where you can practice drawing two parallel lines. Our specially designed algorithm will judge whether these two lines are indeed parallel. Have fun! ");
+        tutorial_text.setText(R.string.practice_makes_perfect_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -911,13 +946,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("InformationCollection");
+        builder.setTitle(R.string.information_collection);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_information_collection);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("We need to collect some information to mage the diagnostic more precise. The information include your name, gender, education, previous rating score etc. ");
+        tutorial_text.setText(R.string.information_collection_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -946,13 +981,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Account Centre");
+        builder.setTitle(R.string.account_centre);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("For new user, you need to register before using, for old user, you can simply type in your registration code and start the tests. ");
+        tutorial_text.setText(R.string.account_centre_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -981,13 +1016,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Introduction page");
+        builder.setTitle(R.string.introduction_page);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can find an introduction of this app, including what is new in this version of release. ");
+        tutorial_text.setText(R.string.introduction_page_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1016,13 +1051,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Clean Cache");
+        builder.setTitle(R.string.clean_cache);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can the cache of the app. This won't affect internal storage or database.");
+        tutorial_text.setText(R.string.clean_cache_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1051,13 +1086,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("View Copyright");
+        builder.setTitle(R.string.view_copyright);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can find the copyright information here.");
+        tutorial_text.setText(R.string.view_copyright_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1086,13 +1121,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("About your device");
+        builder.setTitle(R.string.about_your_device);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("You can easily find all the information you need about your device in this page. This can help you figure out the useful information of your device including the size of testing area etc. ");
+        tutorial_text.setText(R.string.about_your_device_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1121,13 +1156,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Information");
+        builder.setTitle(R.string.information);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can find the information about this app.");
+        tutorial_text.setText(R.string.information_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1156,13 +1191,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose your theme");
+        builder.setTitle(R.string.choose_your_theme);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can choose your favourite theme colour. We have blue, light blue, green, purple, pink and orange theme.");
+        tutorial_text.setText(R.string.choose_your_theme_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1191,13 +1226,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Customise font size");
+        builder.setTitle(R.string.customise_font_size);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_choose_font_size);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can customise the font size, normal or large. The change will take effect immediately. ");
+        tutorial_text.setText(R.string.customise_font_size_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1226,13 +1261,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(TutorialActivity.this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(TutorialActivity.this);
-        builder.setTitle("Choose your language");
+        builder.setTitle(R.string.choose_your_language);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_language);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("Here you can choose your preferred language, our app support English, Simplified Chinese, Traditional Chinese, French, Dutch, German, Italian, Japanese, Russian, Spanish and Portuguese. The change will take effect immediately. ");
+        tutorial_text.setText(R.string.choose_your_language_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1263,13 +1298,13 @@ public class TutorialActivity extends AppCompatActivity
         LayoutInflater inflater = LayoutInflater.from(this);
         View view = inflater.inflate(R.layout.activity_tutorial_activity_tutorial_alertdialog, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Setting Page");
+        builder.setTitle(R.string.setting_page);
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_image.setImageResource(R.drawable.screen_setting_page);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_text.setText("This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button. ");
+        tutorial_text.setText(R.string.setting_page_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -1462,6 +1497,10 @@ public class TutorialActivity extends AppCompatActivity
         else if (id == R.id.nav_choose_file_types)
         {
             showAppTutorialChooseFileType();
+        }
+        else if (id == R.id.nav_copy_file_path)
+        {
+            showAppTutorialCopyFilePath();
         }
         else if (id == R.id.nav_delete_data)
         {

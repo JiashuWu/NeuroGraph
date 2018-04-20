@@ -118,7 +118,7 @@ public class WelcomeActivity extends AppCompatActivity {
         {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.press_again_to_exit, Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else
