@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/navigation_static_tests"
-        android:icon="@drawable/ic_action_static"
+        android:icon="@drawable/ic_action_static_light1"
         android:title="@string/static_tests" />
 
     <item
         android:id="@+id/navigation_dynamic_tests"
-        android:icon="@drawable/ic_action_dynamic"
+        android:icon="@drawable/ic_action_dynamic_light"
         android:title="@string/dynamic_tests" />
 
 

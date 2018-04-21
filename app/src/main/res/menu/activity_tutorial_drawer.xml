@@ -79,11 +79,11 @@
                 android:title="@string/parallel_line_practice" />
             <item
                 android:id="@+id/nav_practice_result"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_result"
                 android:title="@string/practice_result" />
             <item
                 android:id="@+id/nav_static_parallel_test"
-                android:icon="@drawable/ic_action_parallel_line"
+                android:icon="@drawable/ic_action_parallel"
                 android:title="@string/parallel_line_test" />
             <item
                 android:id="@+id/nav_circular_motion"
@@ -91,15 +91,15 @@
                 android:title="@string/circular_motion_test" />
             <item
                 android:id="@+id/nav_select_static_tests"
-                android:icon="@drawable/ic_action_static"
+                android:icon="@drawable/ic_action_static_light1"
                 android:title="@string/select_static_tests" />
             <item
                 android:id="@+id/nav_select_dynamic_tests"
-                android:icon="@drawable/ic_action_dynamic"
+                android:icon="@drawable/ic_action_dynamic_light"
                 android:title="@string/select_dynamic_tests" />
             <item
                 android:id="@+id/nav_select_test_image"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_image"
                 android:title="@string/select_test_image" />
             <item
                 android:id="@+id/nav_test_instruction"
@@ -107,7 +107,7 @@
                 android:title="@string/test_instruction" />
             <item
                 android:id="@+id/nav_choose_interval_duration"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_duration"
                 android:title="@string/choose_interval_duration" />
             <item
                 android:id="@+id/nav_choose_painter_width"
@@ -115,7 +115,7 @@
                 android:title="@string/choose_painter_width" />
             <item
                 android:id="@+id/nav_draw_it"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_draw"
                 android:title="@string/draw_it" />
         </menu>
     </item>
@@ -136,19 +136,19 @@
                 android:title="@string/view_data" />
             <item
                 android:id="@+id/nav_long_click_delete"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_lcdelete"
                 android:title="@string/long_click_to_delete" />
             <item
                 android:id="@+id/nav_send_data_email"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_email"
                 android:title="@string/send_data_email" />
             <item
                 android:id="@+id/nav_store_data_file"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_save_file"
                 android:title="@string/store_data_files" />
             <item
                 android:id="@+id/nav_choose_file_types"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_file_type"
                 android:title="@string/choose_files_types" />
             <item
                 android:id="@+id/nav_copy_file_path"
@@ -165,11 +165,11 @@
         <menu>
             <item
                 android:id="@+id/nav_view_information"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_user_info"
                 android:title="@string/view_personal_information" />
             <item
                 android:id="@+id/nav_edit_information"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_edit"
                 android:title="@string/edit_personal_information" />
         </menu>
     </item>
@@ -178,11 +178,11 @@
         <menu>
             <item
                 android:id="@+id/nav_switch_user"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_user_account"
                 android:title="@string/switch_user" />
             <item
                 android:id="@+id/nav_store_while_switch"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_store_switch"
                 android:title="@string/store_data_before_switching" />
         </menu>
     </item>
