@@ -490,6 +490,8 @@
     <string name="choose_your_language_tutorial_text">Here you can choose your preferred language, our app support English, Simplified Chinese, Traditional Chinese, French, Dutch, German, Italian, Japanese, Russian, Spanish and Portuguese. The change will take effect immediately.</string>
     <string name="setting_page">Setting Page</string>
     <string name="setting_page_tutorial_text">This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button.</string>
+    <string name="number_of_entries_per_page">Number of entries per page</string>
+    <string name="proceed">Proceed</string>
 
 
 </resources>

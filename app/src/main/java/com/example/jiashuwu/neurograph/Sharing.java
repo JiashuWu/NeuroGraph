@@ -109,6 +109,8 @@ public class Sharing {
 
     public static String test_detail_title = "";
 
+    public static int entries_per_page = 200;
+
 
     public Sharing()
     {

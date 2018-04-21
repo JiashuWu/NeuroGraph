@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -96,6 +99,16 @@ public class DataListActivity extends AppCompatActivity {
     private float touch_point_size;
 
     private int selected_test_id;
+
+    private RadioButton radioButton100;
+    private RadioButton radioButton200;
+    private RadioButton radioButton500;
+    private RadioButton radioButton800;
+    private RadioButton radioButton1000;
+
+    private RadioGroup radioGroup;
+
+    public Intent intent_det;
 
     public void initLocaleLanguage ()
     {
@@ -315,7 +328,7 @@ public class DataListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final HashMap<String, Object> data_detail = (HashMap<String, Object>) data_listview.getItemAtPosition(position);
-                Intent intent = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
+                intent_det = new Intent(DataListActivity.this, DisplayLoadingActivity.class);
                 // intent.putExtra("test_id", data_detail.get("test_id").toString());
                 test_id = Integer.parseInt(data_detail.get("test_id").toString());
                 selected_test_id = Integer.parseInt(data_detail.get("test_id").toString());
@@ -339,8 +352,49 @@ public class DataListActivity extends AppCompatActivity {
                 Sharing.number_of_item_in_total = number_of_points;
 
                 item_clicked = "clicked";
-                startActivity(intent);
-                DataListActivity.this.finish();
+                LayoutInflater inflater = LayoutInflater.from(DataListActivity.this);
+                final View view1 = inflater.inflate(R.layout.choose_data_detail_number_alertdialog, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(DataListActivity.this);
+                builder.setTitle(R.string.number_of_entries_per_page);
+                builder.setCancelable(false);
+                builder.setView(view1);
+
+                radioGroup = (RadioGroup) view1.findViewById(R.id.choose_entries_radio_group);
+
+                builder.setPositiveButton(getString(R.string.proceed), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int selectedId = radioGroup.getCheckedRadioButtonId();
+                        if (view1.findViewById(selectedId) != null)
+                        {
+                            if (selectedId == R.id.radiobutton_choose_entries_100)
+                            {
+                                Sharing.entries_per_page = 100;
+                            }
+                            else if (selectedId == R.id.radiobutton_choose_entries_200)
+                            {
+                                Sharing.entries_per_page = 200;
+                            }
+                            else if (selectedId == R.id.radiobutton_choose_entries_500)
+                            {
+                                Sharing.entries_per_page = 500;
+                            }
+                            else if (selectedId == R.id.radiobutton_choose_entries_800)
+                            {
+                                Sharing.entries_per_page = 800;
+                            }
+                            else if (selectedId == R.id.radiobutton_choose_entries_1000)
+                            {
+                                Sharing.entries_per_page = 1000;
+                            }
+                        }
+                        startActivity(intent_det);
+                        DataListActivity.this.finish();
+                    }
+                });
+                builder.create();
+                builder.show();
+
             }
         });
 

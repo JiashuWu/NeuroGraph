@@ -31,6 +31,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
     private TextView test_detail_info_textview;
     private TextView test_detail_buttom_textview;
 
+    private int entries_per_page = 100;
 
 
     private int test_id;
@@ -125,6 +126,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        entries_per_page = Sharing.entries_per_page;
+
         test_detail_textview = (TextView) findViewById(R.id.test_detail_textview);
         test_detail_title_textview = (TextView) findViewById(R.id.test_detail_title_textview);
         test_detail_info_textview = (TextView) findViewById(R.id.test_detail_info_title);
@@ -145,7 +148,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         textview_content = "";
         test_detail_info_textview.setText(Sharing.test_detail_title);
 
-        if (Sharing.test_detail_arraylist.size() <= 1000)
+        if (Sharing.test_detail_arraylist.size() <= entries_per_page)
         {
             entry_begin = 0;
             entry_end = Sharing.test_detail_arraylist.size();
@@ -156,10 +159,10 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
             }
         }
-        else if (Sharing.test_detail_arraylist.size() > 1000)
+        else if (Sharing.test_detail_arraylist.size() > entries_per_page)
         {
             entry_begin = 0;
-            entry_end = 1000;
+            entry_end = entries_per_page;
             test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
             test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
             for (i = entry_begin ; i < entry_end ; i++)
@@ -242,15 +245,15 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_test_detail_previous)
         {
-            // TODO SHOW THE PREVIOUS 1000 ENTRIES IF AVAILABLE
-            if (entry_begin - 1000 < 0)
+            // TODO SHOW THE PREVIOUS entries_per_page ENTRIES IF AVAILABLE
+            if (entry_begin - entries_per_page < 0)
             {
                 Toast.makeText(TestDetailScrollingActivity.this, "No previous entries", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                entry_begin = entry_begin - 1000;
-                entry_end = entry_begin + 1000;
+                entry_begin = entry_begin - entries_per_page;
+                entry_end = entry_begin + entries_per_page;
                 textview_content = "";
                 test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
                 test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
@@ -270,15 +273,15 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_test_detail_next)
         {
-            // TODO SHOW THE NEXT 1000 ENTRIES IF AVAILABLE
-            if (entry_begin + 1000 > Sharing.test_detail_arraylist.size())
+            // TODO SHOW THE NEXT entries_per_page ENTRIES IF AVAILABLE
+            if (entry_begin + entries_per_page > Sharing.test_detail_arraylist.size())
             {
                 Toast.makeText(TestDetailScrollingActivity.this, "No next entries", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                entry_begin = entry_begin + 1000;
-                entry_end = entry_end + 1000;
+                entry_begin = entry_begin + entries_per_page;
+                entry_end = entry_end + entries_per_page;
                 if (entry_end > Sharing.test_detail_arraylist.size())
                 {
                     entry_end = Sharing.test_detail_arraylist.size();
