@@ -7,7 +7,7 @@
         <menu>
             <item
                 android:id="@+id/nav_setting_page"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_home_dark"
                 android:title="@string/home_page" />
         </menu>
     </item>
@@ -16,19 +16,19 @@
         <menu>
             <item
                 android:id="@+id/nav_choose_language"
-                android:icon="@drawable/ic_menu_gallery"
+                android:icon="@drawable/ic_action_translate"
                 android:title="@string/choose_language" />
             <item
                 android:id="@+id/nav_choose_font_size"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/ic_menu_camera"
                 android:title="@string/choose_font_fize" />
             <item
                 android:id="@+id/nav_choose_theme"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/ic_action_colour"
                 android:title="@string/choose_colour_theme" />
             <item
                 android:id="@+id/nav_change_setting"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_setting"
                 android:title="@string/change_setting" />
         </menu>
     </item>
@@ -37,7 +37,7 @@
         <menu>
             <item
                 android:id="@+id/nav_information"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_info_dark"
                 android:title="@string/information" />
             <item
                 android:id="@+id/nav_about_your_device"
@@ -49,7 +49,7 @@
                 android:title="@string/view_copyright" />
             <item
                 android:id="@+id/nav_clean_cache"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_delete_sweep"
                 android:title="@string/clean_cache" />
             <item
                 android:id="@+id/nav_introduction_page"
@@ -62,11 +62,11 @@
         <menu>
             <item
                 android:id="@+id/nav_account_centre"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_account"
                 android:title="@string/account_centre" />
             <item
                 android:id="@+id/nav_information_collection"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_assignment"
                 android:title="@string/information_collection" />
         </menu>
     </item>
@@ -83,19 +83,19 @@
                 android:title="@string/practice_result" />
             <item
                 android:id="@+id/nav_static_parallel_test"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_parallel_line"
                 android:title="@string/parallel_line_test" />
             <item
                 android:id="@+id/nav_circular_motion"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_circle_point"
                 android:title="@string/circular_motion_test" />
             <item
                 android:id="@+id/nav_select_static_tests"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_static"
                 android:title="@string/select_static_tests" />
             <item
                 android:id="@+id/nav_select_dynamic_tests"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_dynamic"
                 android:title="@string/select_dynamic_tests" />
             <item
                 android:id="@+id/nav_select_test_image"
