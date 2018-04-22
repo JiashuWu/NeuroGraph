@@ -98,7 +98,7 @@ public class DisplayCalculatingActivity extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setTitle(getString(R.string.Processing));
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Calculating the test results." + "\n" + getString(R.string.calculating_test_result_do_not_close));
+        progressDialog.setMessage(getString(R.string.calculating_the_test_result) + "\n" + getString(R.string.calculating_test_result_do_not_close));
         progressDialog.show();
         new Thread(new Runnable() {
             @Override
