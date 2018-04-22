@@ -536,6 +536,21 @@
     <string name="cache_cleaned">Cache Cleaned</string>
     <string name="no_test_data_to_send">There is no test data to send</string>
     <string name="please_choose_at_least_one_file_type_to_send">Please choose at least one file type to send</string>
+    <string name="registration_code_cannot_be_empty">Registration code cannot be empty</string>
+    <string name="registration_code_empty">Registration Code Empty</string>
+    <string name="registration_code_is_empty">Registration Code is empty</string>
+    <string name="registration_code_invalid1">Registration code invalid, should contains only alphabet and numbers</string>
+    <string name="Registration_code_invalid2">Registration code invalid. It should only contain alphabets or numbers.</string>
+    <string name="duplicate_registration_code">Duplicate Registration Code</string>
+    <string name="registration_code_duplicate_please_try_another_one">This registration code has been registered, please try another one</string>
+    <string name="name_cannot_be_empty">Name cannot be empty</string>
+    <string name="age_cannot_be_empty">Age cannot be empty</string>
+    <string name="invalid_age">Invalid age</string>
+    <string name="invalid_age_range">Invalid age range</string>
+    <string name="confirm_changes">Confirm Changes</string>
+    <string name="edit">Edit</string>
+    <string name="discard_changes1">Discard Changes</string>
+    <string name="discard_information_changes">Discard information changes ?</string>
 
 
 </resources>

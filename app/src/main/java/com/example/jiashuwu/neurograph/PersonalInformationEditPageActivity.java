@@ -310,12 +310,12 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 registration_code = registration_code_edittext.getText().toString();
                 if (registration_code.equalsIgnoreCase("")) {
                     can_continue = false;
-                    registration_code_edittext.setError("Registration code cannot be empty");
+                    registration_code_edittext.setError(getString(R.string.registration_code_cannot_be_empty));
                     AlertDialog.Builder builder = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
-                    builder.setTitle("Registration Code Empty");
+                    builder.setTitle(R.string.registration_code_empty);
                     builder.setCancelable(false);
-                    builder.setMessage("Registration Code is empty");
-                    builder.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.registration_code_is_empty);
+                    builder.setPositiveButton(getResources().getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here
@@ -336,11 +336,11 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 if (can_continue && count != 0) {
                     count = 0;
                     can_continue = false;
-                    registration_code_edittext.setError("Registration code invalid, should contains only alphabet and numbers");
+                    registration_code_edittext.setError(getString(R.string.registration_code_invalid1));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
-                    dialog.setMessage("Registration code invalid. It should only contain alphabets or numbers. ");
+                    dialog.setMessage(R.string.Registration_code_invalid2);
                     dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -381,9 +381,9 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                     {
                         can_continue = false;
                         AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
-                        dialog.setTitle("Duplicate registration code");
+                        dialog.setTitle(R.string.duplicate_registration_code);
                         dialog.setCancelable(false);
-                        dialog.setMessage("This registration code has been registered, please try another one");
+                        dialog.setMessage(R.string.registration_code_duplicate_please_try_another_one);
                         dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -397,7 +397,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 name = name_edittext.getText().toString();
                 if (name.equalsIgnoreCase("")) {
                     can_continue = false;
-                    name_edittext.setError("Name cannot be empty");
+                    name_edittext.setError(getString(R.string.name_cannot_be_empty));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -413,7 +413,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 age = age_edittext.getText().toString();
                 if (can_continue && age.equalsIgnoreCase("")) {
                     can_continue = false;
-                    age_edittext.setError("Age cannot be empty");
+                    age_edittext.setError(getString(R.string.age_cannot_be_empty));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -436,7 +436,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 if (can_continue && count != 0) {
                     count = 0;
                     can_continue = false;
-                    age_edittext.setError("Invalid age");
+                    age_edittext.setError(getString(R.string.invalid_age));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
@@ -451,7 +451,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                 }
                 if (can_continue && (Integer.parseInt(age) < 0 || Integer.parseInt(age) > 170)) {
                     can_continue = false;
-                    age_edittext.setError("Invalid age range");
+                    age_edittext.setError(getString(R.string.invalid_age_range));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
@@ -538,7 +538,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                     }
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
-                    builder.setTitle("Confirm Changes");
+                    builder.setTitle(R.string.confirm_changes);
                     builder.setCancelable(false);
                     String changes_summary = "Changes Summary: \n" +
                             "Registration Code = " + registration_code + "\n" +
@@ -550,7 +550,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                             "Current Receiving Treatment = " + current_receiving_treatment + "\n";
 
                     builder.setMessage(changes_summary);
-                    builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // If can_continue is true, then we need to store the user's information into the database.
@@ -617,7 +617,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
 
                         }
                     });
-                    builder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton(R.string.edit, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here;
@@ -636,10 +636,10 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
-                builder.setTitle("Discard Changes");
+                builder.setTitle(R.string.discard_changes1);
                 builder.setCancelable(false);
-                builder.setMessage("Discard information changes ?");
-                builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.discard_information_changes);
+                builder.setPositiveButton(R.string.discard, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent (PersonalInformationEditPageActivity.this, PersonalInformationActivity.class);
@@ -647,7 +647,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                         PersonalInformationEditPageActivity.this.finish();
                     }
                 });
-                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.go_back, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here
@@ -683,10 +683,10 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
-            builder.setTitle("Discard Changes");
+            builder.setTitle(getResources().getString(R.string.discard_changes1));
             builder.setCancelable(false);
-            builder.setMessage("Discard information changes ?");
-            builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+            builder.setMessage(getResources().getString(R.string.discard_information_changes));
+            builder.setPositiveButton(getResources().getString(R.string.discard), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Intent intent = new Intent (PersonalInformationEditPageActivity.this, PersonalInformationActivity.class);
@@ -694,7 +694,7 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                     PersonalInformationEditPageActivity.this.finish();
                 }
             });
-            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here
