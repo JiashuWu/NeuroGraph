@@ -552,6 +552,10 @@
     <string name="discard_changes1">Discard Changes</string>
     <string name="discard_information_changes">Discard information changes ?</string>
     <string name="hello">Hello</string>
+    <string name="registration_code_invalid_message">Registration code invalid. It should only contain alphabets or numbers.</string>
+    <string name="duplicate_registration_code_message">This registration code has been registered, please try another one</string>
+    <string name="invalid_age1">Invalid Age</string>
+    <string name="invalid_age_range1">Invalid Age Range</string>
 
 
 </resources>

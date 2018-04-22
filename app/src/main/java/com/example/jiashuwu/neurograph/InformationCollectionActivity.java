@@ -205,12 +205,12 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (registration_code.equalsIgnoreCase(""))
                 {
                     can_continue = false;
-                    registration_code_edittext.setError("Registration code cannot be empty");
+                    registration_code_edittext.setError(getString(R.string.registration_code_cannot_be_empty));
                     AlertDialog.Builder builder = new AlertDialog.Builder(InformationCollectionActivity.this);
-                    builder.setTitle("Registration Code Empty");
+                    builder.setTitle(R.string.registration_code_empty);
                     builder.setCancelable(false);
-                    builder.setMessage("Registration Code is empty");
-                    builder.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.registration_code_is_empty);
+                    builder.setPositiveButton(getResources().getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here
@@ -238,7 +238,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
-                    dialog.setMessage("Registration code invalid. It should only contain alphabets or numbers. ");
+                    dialog.setMessage(R.string.registration_code_invalid_message);
                     dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -284,9 +284,9 @@ public class InformationCollectionActivity extends AppCompatActivity {
                     count = 0;
                     can_continue = false;
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
-                    dialog.setTitle("Duplicate registration code");
+                    dialog.setTitle(R.string.duplicate_registration_code);
                     dialog.setCancelable(false);
-                    dialog.setMessage("This registration code has been registered, please try another one");
+                    dialog.setMessage(R.string.duplicate_registration_code_message);
                     dialog.setPositiveButton(getString(R.string.dismiss), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -300,7 +300,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (name.equalsIgnoreCase(""))
                 {
                     can_continue = false;
-                    name_edittext.setError("Name cannot be empty");
+                    name_edittext.setError(getString(R.string.name_cannot_be_empty));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -317,7 +317,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (can_continue && age.equalsIgnoreCase(""))
                 {
                     can_continue = false;
-                    age_edittext.setError("Age cannot be empty");
+                    age_edittext.setError(getString(R.string.age_cannot_be_empty));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_empty));
                     dialog.setCancelable(false);
@@ -343,7 +343,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 {
                     count = 0;
                     can_continue = false;
-                    age_edittext.setError("Invalid age");
+                    age_edittext.setError(getString(R.string.invalid_age1));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
@@ -359,7 +359,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
                 if (can_continue && (Integer.parseInt(age) < 0 || Integer.parseInt(age) > 170))
                 {
                     can_continue = false;
-                    age_edittext.setError("Invalid age range");
+                    age_edittext.setError(getString(R.string.invalid_age_range1));
                     AlertDialog.Builder dialog = new AlertDialog.Builder(InformationCollectionActivity.this);
                     dialog.setTitle(getString(R.string.information_invalid));
                     dialog.setCancelable(false);
@@ -524,7 +524,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
         {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.press_again_to_exit), Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else
