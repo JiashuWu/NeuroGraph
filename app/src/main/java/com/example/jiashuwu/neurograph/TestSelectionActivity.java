@@ -672,10 +672,10 @@ public class TestSelectionActivity extends AppCompatActivity {
         else if (id == R.id.action_switch_user)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
-            builder.setTitle("Switch User");
+            builder.setTitle(R.string.switch_user);
             builder.setCancelable(false);
-            builder.setMessage("Want to switch user ? ");
-            builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.want_to_switch_user);
+            builder.setPositiveButton(R.string.switch_user_upper, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (getNumber_of_test_in_total() == 0)
@@ -691,7 +691,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         LayoutInflater inflater = LayoutInflater.from(TestSelectionActivity.this);
                         View view = inflater.inflate(R.layout.store_file_option_alertdialog, null);
                         AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
-                        builder.setTitle("Store data files before switching user");
+                        builder.setTitle(R.string.store_data_file_before_switching_user);
                         builder.setCancelable(false);
                         builder.setView(view);
 
@@ -722,7 +722,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             }
                         });
 
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if (selected_store_file_option == 0)
@@ -763,7 +763,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                     }
                 }
             });
-            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.go_back, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here;
@@ -780,7 +780,7 @@ public class TestSelectionActivity extends AppCompatActivity {
             initial_isScale = Sharing.isScale;
 
             AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
-            builder.setTitle("Change Settings");
+            builder.setTitle(R.string.change_settings);
             builder.setCancelable(false);
             builder.setView(view);
             alertdialog_language_spinner = (Spinner) view.findViewById(R.id.setting_alertdialog_language_spinner);
@@ -868,7 +868,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                 }
             });
 
-            builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.apply, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (!Sharing.language.equalsIgnoreCase(initial_language))
@@ -887,17 +887,17 @@ public class TestSelectionActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(TestSelectionActivity.this, "No setting changes", Toast.LENGTH_LONG).show();
+                        Toast.makeText(TestSelectionActivity.this, R.string.no_setting_changes, Toast.LENGTH_LONG).show();
                     }
                 }
             });
-            builder.setNegativeButton("Discard changes", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.discard_changes, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here;
                     // null
                     // revert the initial values;
-                    Toast.makeText(TestSelectionActivity.this, "Setting discarded", Toast.LENGTH_LONG).show();
+                    Toast.makeText(TestSelectionActivity.this, R.string.setting_discarded, Toast.LENGTH_LONG).show();
                     Sharing.language = initial_language;
                     Sharing.isScale = initial_isScale;
                 }
@@ -925,17 +925,17 @@ public class TestSelectionActivity extends AppCompatActivity {
 
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to switch user", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.press_again_to_switch_user, Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else
             {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
-                builder.setTitle("Switch User");
+                builder.setTitle(R.string.switch_user);
                 builder.setCancelable(false);
-                builder.setMessage("Want to switch user ? ");
-                builder.setPositiveButton("SWITCH USER", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.want_to_switch_user);
+                builder.setPositiveButton(R.string.switch_user_upper, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         if (getNumber_of_test_in_total() == 0)
@@ -951,7 +951,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                             LayoutInflater inflater = LayoutInflater.from(TestSelectionActivity.this);
                             View view = inflater.inflate(R.layout.store_file_option_alertdialog, null);
                             AlertDialog.Builder builder = new AlertDialog.Builder(TestSelectionActivity.this);
-                            builder.setTitle("Store data files before switching user");
+                            builder.setTitle(R.string.store_data_file_before_switching_user);
                             builder.setCancelable(false);
                             builder.setView(view);
 
@@ -982,7 +982,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                                 }
                             });
 
-                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            builder.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (selected_store_file_option == 0)
@@ -1023,7 +1023,7 @@ public class TestSelectionActivity extends AppCompatActivity {
                         }
                     }
                 });
-                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here;

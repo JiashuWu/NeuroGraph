@@ -495,6 +495,15 @@
     <string name="title_activity_introduction_content">Neurograph</string>
     <string name="thank_you_please_do_not_close">Please DO NOT close the app while processing.</string>
     <string name="thank_you_for_participation">Thank you for your participation.</string>
+    <string name="want_to_switch_user">Want to switch user ?</string>
+    <string name="change_settings">Change Settings</string>
+    <string name="apply">Apply</string>
+    <string name="no_setting_changes">No setting changes</string>
+    <string name="setting_discarded">Setting discarded</string>
+    <string name="discard_changes">Discard changes</string>
+    <string name="press_again_to_switch_user">Press again to switch user</string>
+    <string name="switch_user_upper">SWITCH USER</string>
+    <string name="store_data_file_before_switching_user">Store data files before switching user</string>
 
 
 </resources>
