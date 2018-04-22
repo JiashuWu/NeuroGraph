@@ -508,6 +508,22 @@
     <string name="total">Total</string>
     <string name="no_previous_entries">No previous entries</string>
     <string name="no_next_entries">No next entries</string>
+    <string name="generating_files_upper">Generating Files</string>
+    <string name="generating_files">Generating files</string>
+    <string name="file_saved">File Saved</string>
+    <string name="neurograph_notification1">Neurograph Notification</string>
+    <string name="no_test_data">No Test Data</string>
+    <string name="no_test_data_to_store">There is no test data to store</string>
+    <string name="help">Help</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="go_to_setting">Go To Setting</string>
+    <string name="discard_storing_files">Discard Storing Files</string>
+    <string name="discard_storing_data_files">Discard storing data files ?</string>
+    <string name="discard">Discard</string>
+    <string name="please_choose_file_type">Please Choose File Type</string>
+    <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
+    <string name="generating_data_files">Generating Data Files</string>
+    <string name="generating_data_files_please_wait">Generating data files may takes a few second. Please wait</string>
 
 
 </resources>

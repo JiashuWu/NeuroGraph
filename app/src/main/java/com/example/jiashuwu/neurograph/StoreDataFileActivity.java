@@ -289,9 +289,9 @@ public class StoreDataFileActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Generating file");
+        progressDialog.setTitle(getString(R.string.generating_files_upper));
         progressDialog.setMax(100);
-        progressDialog.setMessage("Generating files");
+        progressDialog.setMessage(getString(R.string.generating_files));
         progressDialog.show();
         Log.d("showing", "showing");
         new Thread(new Runnable() {
@@ -787,7 +787,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
             }
             Notification notification = new NotificationCompat.Builder(getApplicationContext())
                     .setSmallIcon(R.drawable.spiral1)
-                    .setContentTitle("File Saved")
+                    .setContentTitle(getString(R.string.file_saved))
                     .setContentInfo("Neurograph Notification")
                     .setContentText(Sharing.file_path)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
@@ -807,7 +807,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     .setTicker("Neurograph Notification")
                     .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    .setContentTitle("File Saved")
+                    .setContentTitle(getResources().getString(R.string.file_saved))
                     .setContentInfo("Neurograph Notification")
                     .setContentText(Sharing.file_path)
                     .setAutoCancel(false)
@@ -870,10 +870,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
         if (getNumber_of_test_in_total() == 0)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-            builder.setTitle("No Test Data");
+            builder.setTitle(R.string.no_test_data);
             builder.setCancelable(false);
-            builder.setMessage("There is no test data to store");
-            builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.no_test_data_to_store);
+            builder.setPositiveButton(getResources().getString(R.string.got_it), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Intent intent = new Intent (StoreDataFileActivity.this, DataListActivity.class);
@@ -890,10 +890,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-                builder.setTitle("Help");
+                builder.setTitle(R.string.help);
                 builder.setCancelable(false);
                 builder.setMessage(".txt = text file" + "\n" + ".csv = comma separated value file" + "\n" + ".db = database file" + "\n" + "Readme = Instructions and Explanations");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here
@@ -1001,10 +1001,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
         {
             Log.d("NOTIFICATIONHHH", "NOTIFICATION");
             AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-            builder.setTitle("Notification permission");
+            builder.setTitle(R.string.notification_permission);
             builder.setCancelable(false);
-            builder.setMessage("Turn on notification");
-            builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.turn_on_notification);
+            builder.setNegativeButton(R.string.dismiss, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here
@@ -1012,7 +1012,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     // LEAVE THIS AS EMPRT BLOCK !!!
                 }
             });
-            builder.setPositiveButton("Go To Setting", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(R.string.go_to_setting, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     goToSetting();
@@ -1037,10 +1037,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-                builder.setTitle("Discard storing files");
+                builder.setTitle(R.string.discard_storing_files);
                 builder.setCancelable(false);
-                builder.setMessage("Discard storing data files ? ");
-                builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.discard_storing_data_files);
+                builder.setPositiveButton(R.string.discard, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
@@ -1048,7 +1048,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                         StoreDataFileActivity.this.finish();
                     }
                 });
-                builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.go_back, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here
@@ -1069,10 +1069,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 if (!Sharing.store_txt && !Sharing.store_csv && !Sharing.store_readme && !Sharing.store_db)
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-                    builder.setTitle("Please choose file type");
+                    builder.setTitle(R.string.please_choose_file_type);
                     builder.setCancelable(false);
-                    builder.setMessage("Please choose at least one file type to store");
-                    builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.choose_at_least_one_file_type);
+                    builder.setPositiveButton(getResources().getString(R.string.got_it), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here;
@@ -1097,10 +1097,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
 
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(StoreDataFileActivity.this);
-                    builder1.setTitle("Generate Data Files");
+                    builder1.setTitle(R.string.generating_data_files);
                     builder1.setCancelable(false);
-                    builder1.setMessage("Generating data files may takes a few second. Please wait");
-                    builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    builder1.setMessage(R.string.generating_data_files_please_wait);
+                    builder1.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             store_data_file_button_clicked = "store";
@@ -1126,10 +1126,10 @@ public class StoreDataFileActivity extends AppCompatActivity {
         {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(StoreDataFileActivity.this);
-            builder.setTitle("Discard storing files");
+            builder.setTitle(getResources().getString(R.string.discard_storing_files));
             builder.setCancelable(false);
-            builder.setMessage("Discard storing data files ? ");
-            builder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
+            builder.setMessage(getResources().getString(R.string.discard_storing_data_files));
+            builder.setPositiveButton(getResources().getString(R.string.discard), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Intent intent = new Intent(StoreDataFileActivity.this, DataListActivity.class);
@@ -1137,7 +1137,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                     StoreDataFileActivity.this.finish();
                 }
             });
-            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here
