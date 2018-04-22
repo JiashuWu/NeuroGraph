@@ -164,9 +164,9 @@ public class DisplayProgressActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Processing");
+        progressDialog.setTitle(getString(R.string.processing));
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Please waiting while processing. Please DO NOT close the app while processing. ");
+        progressDialog.setMessage(getString(R.string.processing_message));
         progressDialog.show();
         new Thread(new Runnable() {
             @Override
@@ -304,7 +304,7 @@ public class DisplayProgressActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(DisplayProgressActivity.this);
             builder.setTitle(R.string.copy_file_path);
             builder.setCancelable(false);
-            builder.setMessage("File path : " + "\n" + Sharing.file_path);
+            builder.setMessage(getResources().getString(R.string.file_path_) + "\n" + Sharing.file_path);
             builder.setPositiveButton(R.string.button_copy, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
