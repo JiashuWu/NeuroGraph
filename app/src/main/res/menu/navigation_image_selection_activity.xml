@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/navigation_spiral"
-        android:icon="@drawable/ic_action_spiral"
+        android:icon="@drawable/ic_action_spiral1"
         android:title="@string/spiral_image" />
 
     <item
         android:id="@+id/navigation_pentagon"
-        android:icon="@drawable/ic_action_pentagon"
+        android:icon="@drawable/ic_action_pentagon1"
         android:title="@string/pentagon_image" />
 
 

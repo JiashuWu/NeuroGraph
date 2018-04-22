@@ -128,11 +128,11 @@
                 android:title="@string/processing" />
             <item
                 android:id="@+id/nav_data_list"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_data_list1"
                 android:title="@string/data_list" />
             <item
                 android:id="@+id/nav_view_data"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_view_data"
                 android:title="@string/view_data" />
             <item
                 android:id="@+id/nav_long_click_delete"
@@ -152,11 +152,11 @@
                 android:title="@string/choose_files_types" />
             <item
                 android:id="@+id/nav_copy_file_path"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_file_path1"
                 android:title="@string/copy_file_path" />
             <item
                 android:id="@+id/nav_delete_data"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_delete_data"
                 android:title="@string/delete_data" />
         </menu>
     </item>
