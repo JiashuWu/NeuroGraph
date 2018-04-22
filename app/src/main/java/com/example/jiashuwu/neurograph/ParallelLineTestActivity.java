@@ -421,7 +421,7 @@ public class ParallelLineTestActivity extends AppCompatActivity {
         {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.press_again_to_exit), Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else
@@ -464,7 +464,8 @@ public class ParallelLineTestActivity extends AppCompatActivity {
     {
         new Thread(new Runnable() {
             @Override
-            public void run() {
+            public void run()
+            {
                 storeDataWorker();
             }
         }).start();
