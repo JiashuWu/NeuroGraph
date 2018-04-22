@@ -20,7 +20,7 @@
                 android:title="@string/choose_language" />
             <item
                 android:id="@+id/nav_choose_font_size"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_font_size"
                 android:title="@string/choose_font_fize" />
             <item
                 android:id="@+id/nav_choose_theme"
@@ -75,7 +75,7 @@
         <menu>
             <item
                 android:id="@+id/nav_parallel_line_practice"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_practice"
                 android:title="@string/parallel_line_practice" />
             <item
                 android:id="@+id/nav_practice_result"
@@ -103,7 +103,7 @@
                 android:title="@string/select_test_image" />
             <item
                 android:id="@+id/nav_test_instruction"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_instruction"
                 android:title="@string/test_instruction" />
             <item
                 android:id="@+id/nav_choose_interval_duration"
@@ -111,7 +111,7 @@
                 android:title="@string/choose_interval_duration" />
             <item
                 android:id="@+id/nav_choose_painter_width"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_painter_width"
                 android:title="@string/choose_painter_width" />
             <item
                 android:id="@+id/nav_draw_it"
@@ -124,7 +124,7 @@
         <menu>
             <item
                 android:id="@+id/nav_processing"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ic_action_processing"
                 android:title="@string/processing" />
             <item
                 android:id="@+id/nav_data_list"
