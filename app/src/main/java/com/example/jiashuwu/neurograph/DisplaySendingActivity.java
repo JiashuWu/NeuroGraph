@@ -126,7 +126,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
         finish_button = (Button) findViewById(R.id.display_sending_finish_button);
         copy_file_path_button = (Button) findViewById(R.id.display_sending_copy_file_path_button);
 
-        file_location_textview.setText("You can choose to copy the file location to Clipboard by simply clicking Copy File Path button. ");
+        file_location_textview.setText(R.string.copy_file_path_message);
 
         copy_file_path_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -311,7 +311,7 @@ public class DisplaySendingActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(DisplaySendingActivity.this);
             builder.setTitle(getString(R.string.copy_file_path));
             builder.setCancelable(false);
-            builder.setMessage("File path : " + "\n" + Sharing.file_path);
+            builder.setMessage(getString(R.string.file_path_) + "\n" + Sharing.file_path);
             builder.setPositiveButton(getString(R.string.button_copy), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
