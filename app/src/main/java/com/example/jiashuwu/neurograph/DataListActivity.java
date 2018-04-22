@@ -525,7 +525,7 @@ public class DataListActivity extends AppCompatActivity {
                         //build_data_list();
 
                         // Make a Toast
-                        Toast.makeText(DataListActivity.this, "Deletion Completed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(DataListActivity.this, getResources().getString(R.string.deletion_completed), Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(DataListActivity.this, SettingPageActivity.class);
                         startActivity(intent);
                         DataListActivity.this.finish();
@@ -544,7 +544,7 @@ public class DataListActivity extends AppCompatActivity {
                         {
                             databaseHelper.close();
                         }
-                        Toast.makeText(DataListActivity.this, "Deletion Completed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(DataListActivity.this, getResources().getString(R.string.deletion_completed), Toast.LENGTH_LONG).show();
                         build_data_list();
                     }
                     if (delete_option.equalsIgnoreCase("specific"))
@@ -564,14 +564,14 @@ public class DataListActivity extends AppCompatActivity {
                         delete_month = calendar.get(Calendar.MONTH) + 1;
                         delete_day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                        builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+                        builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 // Should do nothing here;
                             }
                         });
 
-                        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 delete_year = delete_date_datepicker.getYear();
@@ -612,7 +612,7 @@ public class DataListActivity extends AppCompatActivity {
                                     databaseHelper.close();
                                 }
 
-                                Toast.makeText(DataListActivity.this, "Deletion Completed", Toast.LENGTH_LONG).show();
+                                Toast.makeText(DataListActivity.this, R.string.deletion_completed, Toast.LENGTH_LONG).show();
 
 
                                 build_data_list();
@@ -626,7 +626,7 @@ public class DataListActivity extends AppCompatActivity {
                     }
                 }
             });
-            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here;

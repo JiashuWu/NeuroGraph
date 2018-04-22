@@ -568,6 +568,8 @@
     <string name="file_path_">File path :</string>
     <string name="processing_message">Please waiting while processing. Please DO NOT close the app while processing.</string>
     <string name="calculating_the_test_result">Calculating the test results.</string>
+    <string name="deletion_completed">Deletion Completed</string>
+    <string name="delete">Delete</string>
 
 
 </resources>
