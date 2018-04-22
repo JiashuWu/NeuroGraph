@@ -493,6 +493,8 @@
     <string name="number_of_entries_per_page">Number of entries per page</string>
     <string name="proceed">Proceed</string>
     <string name="title_activity_introduction_content">Neurograph</string>
+    <string name="thank_you_please_do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="thank_you_for_participation">Thank you for your participation.</string>
 
 
 </resources>

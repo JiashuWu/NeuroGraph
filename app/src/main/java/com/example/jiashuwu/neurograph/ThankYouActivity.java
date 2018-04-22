@@ -169,9 +169,9 @@ public class ThankYouActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setTitle("Thank you");
+        progressDialog.setTitle(getResources().getString(R.string.thank_you));
         progressDialog.setMax(Sharing.number_of_item_in_total);
-        progressDialog.setMessage("Thank you for your participation." + "\n" + "Please DO NOT close the app while processing.");
+        progressDialog.setMessage(getString(R.string.thank_you_for_participation) + "\n" + getString(R.string.thank_you_please_do_not_close));
         progressDialog.show();
         new Thread(new Runnable() {
             @Override
