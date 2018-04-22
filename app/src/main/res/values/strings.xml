@@ -534,6 +534,8 @@
     <string name="clean_app_cache">Clean app cache ?</string>
     <string name="clean">Clean</string>
     <string name="cache_cleaned">Cache Cleaned</string>
+    <string name="no_test_data_to_send">There is no test data to send</string>
+    <string name="please_choose_at_least_one_file_type_to_send">Please choose at least one file type to send</string>
 
 
 </resources>

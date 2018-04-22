@@ -652,10 +652,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
         if (getNumber_of_test_in_total() == 0)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-            builder.setTitle("No Test Data");
+            builder.setTitle(R.string.no_test_data);
             builder.setCancelable(false);
-            builder.setMessage("There is no test data to send");
-            builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.no_test_data_to_send);
+            builder.setPositiveButton(getResources().getString(R.string.got_it), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Intent intent = new Intent (SendDataEmailActivity.this, DataListActivity.class);
@@ -677,10 +677,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                builder.setTitle("Help");
+                builder.setTitle(getResources().getString(R.string.help));
                 builder.setCancelable(false);
                 builder.setMessage(".txt = text file" + "\n" + ".csv = comma separated value file" + "\n" + ".db = database file" + "\n" + "Readme = Instructions and Explanations");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here
@@ -949,10 +949,10 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 {
                     readyToSend = false;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SendDataEmailActivity.this);
-                    builder.setTitle("Please choose file type");
+                    builder.setTitle(R.string.please_choose_file_type);
                     builder.setCancelable(false);
-                    builder.setMessage("Please choose at least one file type to send");
-                    builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                    builder.setMessage(R.string.please_choose_at_least_one_file_type_to_send);
+                    builder.setPositiveButton(getResources().getString(R.string.got_it), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // Should do nothing here
