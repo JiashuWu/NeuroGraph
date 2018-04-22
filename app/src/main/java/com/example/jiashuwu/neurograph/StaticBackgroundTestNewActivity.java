@@ -40,7 +40,7 @@ public class StaticBackgroundTestNewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_static_background_test_new);
 
-        // 初始化一个画笔，笔触宽度为5，颜色为红色
+        // Initialise a painter, with width 5 and colour set to RED
         paint = new Paint();
         paint.setStrokeWidth(5);
         paint.setColor(Color.RED);
