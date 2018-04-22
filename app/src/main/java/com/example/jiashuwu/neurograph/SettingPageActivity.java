@@ -134,7 +134,7 @@ public class SettingPageActivity extends AppCompatActivity {
         tutorial_text.setText(description.get(counter));
         builder.setView(view);
         if (counter != 0)
-        builder.setPositiveButton("next", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.next, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 tutorial_text.setText("222222 222222");
@@ -1619,7 +1619,7 @@ public class SettingPageActivity extends AppCompatActivity {
             View view = inflater.inflate(R.layout.change_colour_alertdialog , null);
             initial_colour = Sharing.colour;
             AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
-            builder.setTitle("Change Colour");
+            builder.setTitle(R.string.change_colour);
             builder.setCancelable(false);
             builder.setView(view);
             blue_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_blue);
@@ -1627,6 +1627,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "blue";
+                    Toast.makeText(SettingPageActivity.this, R.string.blue, Toast.LENGTH_SHORT).show();
                 }
             });
             light_blue_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_lightblue);
@@ -1634,6 +1635,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "light_blue";
+                    Toast.makeText(SettingPageActivity.this, R.string.light_blue, Toast.LENGTH_SHORT).show();
                 }
             });
             green_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_green);
@@ -1641,6 +1643,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "green";
+                    Toast.makeText(SettingPageActivity.this, R.string.green, Toast.LENGTH_SHORT).show();
                 }
             });
             purple_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_purple);
@@ -1648,6 +1651,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "purple";
+                    Toast.makeText(SettingPageActivity.this, R.string.purple, Toast.LENGTH_SHORT).show();
                 }
             });
             pink_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_pink);
@@ -1655,6 +1659,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "pink";
+                    Toast.makeText(SettingPageActivity.this, R.string.pink, Toast.LENGTH_SHORT).show();
                 }
             });
             orange_button = (ImageView) view.findViewById(R.id.change_colour_alertdialog_orange);
@@ -1662,6 +1667,7 @@ public class SettingPageActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Sharing.colour = "orange";
+                    Toast.makeText(SettingPageActivity.this, R.string.orange, Toast.LENGTH_SHORT).show();
                 }
             });
             builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() {
@@ -1697,17 +1703,17 @@ public class SettingPageActivity extends AppCompatActivity {
         else if (id == R.id.action_cache)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
-            builder.setTitle("Clean Cache");
+            builder.setTitle(R.string.clean_cache);
             builder.setCancelable(false);
-            builder.setMessage("Clean app cache ?");
-            builder.setPositiveButton("Clean", new DialogInterface.OnClickListener() {
+            builder.setMessage(R.string.clean_app_cache);
+            builder.setPositiveButton(R.string.clean, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     cleanCache(context);
-                    Toast.makeText(SettingPageActivity.this, "Cache cleaned", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SettingPageActivity.this, R.string.cache_cleaned, Toast.LENGTH_LONG).show();
                 }
             });
-            builder.setNegativeButton("Go Back", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Should do nothing here
@@ -1727,7 +1733,7 @@ public class SettingPageActivity extends AppCompatActivity {
         {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.press_again_to_exit), Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             }
             else

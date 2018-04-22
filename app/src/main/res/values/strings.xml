@@ -524,6 +524,16 @@
     <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
     <string name="generating_data_files">Generating Data Files</string>
     <string name="generating_data_files_please_wait">Generating data files may takes a few second. Please wait</string>
+    <string name="change_colour">Change Colour</string>
+    <string name="light_blue">Light Blue</string>
+    <string name="green">Green</string>
+    <string name="purple">Purple</string>
+    <string name="orange">Orange</string>
+    <string name="pink">Pink</string>
+    <string name="blue">Blue</string>
+    <string name="clean_app_cache">Clean app cache ?</string>
+    <string name="clean">Clean</string>
+    <string name="cache_cleaned">Cache Cleaned</string>
 
 
 </resources>
