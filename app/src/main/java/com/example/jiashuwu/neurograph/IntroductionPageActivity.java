@@ -66,6 +66,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
         {
             TextScaleUtilsLower.scaleTextSize(IntroductionPageActivity.this, Sharing.isScale);
@@ -76,6 +77,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
         }
         init_theme();
         initLocaleLanguage();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -140,27 +142,9 @@ public class IntroductionPageActivity extends AppCompatActivity {
                                     @Override
                                     public void onAnimationEnd(Animation animation) {
                                         introduction_textview.setText("");
-                                        // ANIMATION NUMBER 5
-                                        introduction_content_textview.setText(SharingIntroduction.introduction_content);
-                                        AlphaAnimation alphaAnimation4 = new AlphaAnimation(0.0f, 6.0f);
-                                        alphaAnimation4.setDuration(2000);
-                                        introduction_content_textview.setAnimation(alphaAnimation4);
-                                        alphaAnimation4.setAnimationListener(new Animation.AnimationListener() {
-                                            @Override
-                                            public void onAnimationStart(Animation animation) {
-
-                                            }
-
-                                            @Override
-                                            public void onAnimationEnd(Animation animation) {
-
-                                            }
-
-                                            @Override
-                                            public void onAnimationRepeat(Animation animation) {
-
-                                            }
-                                        });
+                                        Intent intent = new Intent (IntroductionPageActivity.this, IntroductionContentActivity.class);
+                                        startActivity(intent);
+                                        IntroductionPageActivity.this.finish();
                                     }
 
                                     @Override
