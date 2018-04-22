@@ -492,7 +492,7 @@
     <string name="setting_page_tutorial_text">This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button.</string>
     <string name="number_of_entries_per_page">Number of entries per page</string>
     <string name="proceed">Proceed</string>
-    <string name="title_activity_introduction_content">IntroductionContentActivity</string>
+    <string name="title_activity_introduction_content">Neurograph</string>
 
 
 </resources>
