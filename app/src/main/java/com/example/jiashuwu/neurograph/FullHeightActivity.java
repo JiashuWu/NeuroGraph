@@ -13,6 +13,7 @@ public class FullHeightActivity extends AppCompatActivity {
 
     private int displayHeight;
 
+
     private int getStatusHeight() {
         int statusHeight = 0;
         Rect localRect = new Rect();
