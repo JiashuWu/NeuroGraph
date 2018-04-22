@@ -263,10 +263,10 @@
     <string name="instruction_of_test">测试指示</string>
     <string name="start_test">开始测试</string>
     <string name="spiral_introduction">A spiral template will be used during the test.</string>
-    <string name="pentagon_image_title">Pentagon Image</string>
-    <string name="spiral_image_title">Spiral Image</string>
+    <string name="pentagon_image_title">五边形背景</string>
+    <string name="spiral_image_title">螺旋线背景</string>
     <string name="pentagon_introduction">A pentagon template will be used during the test.</string>
-    <string name="generate_data_file_title">Generate Data File</string>
+    <string name="generate_data_file_title">生成数据文件</string>
     <string name="practice">练习</string>
     <string name="button_done">完成</string>
     <string name="parallel_thank_you">
@@ -291,9 +291,9 @@
     <string name="title_activity_info">信息</string>
 
     <string-array name="circular_motion_image_type">
-        <item>Red Dot</item>
-        <item>Blue Dot</item>
-        <item>Black Dot</item>
+        <item>红点</item>
+        <item>蓝点</item>
+        <item>黑点</item>
     </string-array>
 
     <!-- DO NOT TRANSLATE -->
@@ -318,7 +318,7 @@
     <string name="Loading">加载中</string>
     <string name="generating_progress">正在生成</string>
     <string name="sending_progress">正在发送</string>
-    <string name="select_image_type">Please select test image type</string>
+    <string name="select_image_type">请选择测试图片</string>
     <string name="result">RESULT</string>
     <string name="result_description">Result Description</string>
     <string name="data_file_format_title">数据文件格式 （可多选）</string>
@@ -357,11 +357,11 @@
     <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
     <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
     <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
-    <string name="tests">Tests</string>
-    <string name="information">Information</string>
-    <string name="copyright">Copyright</string>
-    <string name="edit_information1">Edit Information</string>
-    <string name="registration_code_invalid">Registration Code Invalid</string>
+    <string name="tests">测试</string>
+    <string name="information">信息</string>
+    <string name="copyright">版权信息</string>
+    <string name="edit_information1">修改信息</string>
+    <string name="registration_code_invalid">注册码无效</string>
     <string name="regist_first">Registration code in invalid. You need to register first.</string>
     <string name="got_it">知道了</string>
     <string name="perfect">Perfect</string>
@@ -416,12 +416,12 @@
     <string name="select_static_tests">选择静态测试</string>
     <string name="select_dynamic_tests">选择动态测试</string>
     <string name="select_test_image">选择测试图片</string>
-    <string name="test_instruction">Test Instruction</string>
-    <string name="choose_interval_duration">Choose Interval Duration</string>
-    <string name="choose_painter_width">Choose Painter Width</string>
+    <string name="test_instruction">测试指示</string>
+    <string name="choose_interval_duration">选择时间间隔</string>
+    <string name="choose_painter_width">选择画笔线条宽度</string>
     <string name="draw_it">Draw It</string>
     <string name="manage_data">管理数据</string>
-    <string name="processing">处理</string>
+    <string name="processing">处理中</string>
     <string name="view_data">查看数据</string>
     <string name="long_click_to_delete">长按删除</string>
     <string name="send_data_email">发送数据邮件</string>
@@ -480,7 +480,7 @@
     <string name="choose_background_tutorial_text">You can choose red, blue or black dot as the background.</string>
     <string name="circular_motion_test_tutorial_text">You need to draw a circle around a dot in this test.</string>
     <string name="parallel_line_test_tutorial_text">This is the static parallel test, you need to draw three horizontal parallel lines.</string>
-    <string name="practice_results">Practice Results</string>
+    <string name="practice_results">练习测试结果</string>
     <string name="practice_result_tutorial_text">Here you can see whether the two parallel lines you draw are indeed paralle. These grading level will be used: Perfect, Good, Acceptable and Bad.</string>
     <string name="practice_makes_perfect">Practice Makes Perfect</string>
     <string name="practice_makes_perfect_tutorial_text">This is a playground where you can practice drawing two parallel lines. Our specially designed algorithm will judge whether these two lines are indeed parallel. Have fun!</string>
@@ -491,47 +491,47 @@
     <string name="view_copyright_tutorial_text">You can find the copyright information here.</string>
     <string name="about_your_device_tutorial_text">You can easily find all the information you need about your device in this page. This can help you figure out the useful information of your device including the size of testing area etc.</string>
     <string name="information_tutorial_text">Here you can find the information about this app.</string>
-    <string name="choose_your_theme">Choose your theme</string>
+    <string name="choose_your_theme">选择颜色主题</string>
     <string name="choose_your_theme_tutorial_text">Here you can choose your favourite theme colour. We have blue, light blue, green, purple, pink and orange theme.</string>
-    <string name="customise_font_size">Customise font size</string>
+    <string name="customise_font_size">选择字体大小</string>
     <string name="customise_font_size_tutorial_text">Here you can customise the font size, normal or large. The change will take effect immediately.</string>
-    <string name="choose_your_language">Choose your language</string>
+    <string name="choose_your_language">选择语言</string>
     <string name="choose_your_language_tutorial_text">Here you can choose your preferred language, our app support English, Simplified Chinese, Traditional Chinese, French, Dutch, German, Italian, Japanese, Russian, Spanish and Portuguese. The change will take effect immediately.</string>
-    <string name="setting_page">Setting Page</string>
+    <string name="setting_page">设置页</string>
     <string name="setting_page_tutorial_text">This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button.</string>
-    <string name="number_of_entries_per_page">Number of entries per page</string>
-    <string name="proceed">Proceed</string>
+    <string name="number_of_entries_per_page">单页显示条目数量</string>
+    <string name="proceed">开始处理</string>
     <string name="title_activity_introduction_content">Neurograph</string>
-    <string name="thank_you_please_do_not_close">Please DO NOT close the app while processing.</string>
-    <string name="thank_you_for_participation">Thank you for your participation.</string>
-    <string name="want_to_switch_user">Want to switch user ?</string>
+    <string name="thank_you_please_do_not_close">处理过程中请不要关闭应用</string>
+    <string name="thank_you_for_participation">谢谢您的参与</string>
+    <string name="want_to_switch_user">切换用户？</string>
     <string name="change_settings">更改设置</string>
     <string name="apply">应用</string>
     <string name="no_setting_changes">No setting changes</string>
     <string name="setting_discarded">Setting discarded</string>
-    <string name="discard_changes">Discard changes</string>
-    <string name="press_again_to_switch_user">Press again to switch user</string>
-    <string name="switch_user_upper">SWITCH USER</string>
+    <string name="discard_changes">放弃更改</string>
+    <string name="press_again_to_switch_user">再次点击以切换用户</string>
+    <string name="switch_user_upper">切换用户</string>
     <string name="store_data_file_before_switching_user">Store data files before switching user</string>
     <string name="display">显示</string>
     <string name="total">共计</string>
     <string name="no_previous_entries">No previous entries</string>
     <string name="no_next_entries">No next entries</string>
-    <string name="generating_files_upper">Generating Files</string>
-    <string name="generating_files">Generating files</string>
+    <string name="generating_files_upper">正在生成文件</string>
+    <string name="generating_files">正在生成文件</string>
     <string name="file_saved">文件已保存</string>
-    <string name="neurograph_notification1">Neurograph Notification</string>
+    <string name="neurograph_notification1">Neurograph 通知</string>
     <string name="no_test_data">无测试数据</string>
     <string name="no_test_data_to_store">There is no test data to store</string>
     <string name="help">帮助</string>
-    <string name="notification_permission">Notification Permission</string>
+    <string name="notification_permission">通知权限</string>
     <string name="go_to_setting">前往设置</string>
-    <string name="discard_storing_files">Discard Storing Files</string>
-    <string name="discard_storing_data_files">Discard storing data files ?</string>
+    <string name="discard_storing_files">放弃保存文件</string>
+    <string name="discard_storing_data_files">确认放弃保存文件？</string>
     <string name="discard">放弃</string>
     <string name="please_choose_file_type">请选择文件类型</string>
-    <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
-    <string name="generating_data_files">Generating Data Files</string>
+    <string name="choose_at_least_one_file_type">请至少选择一个需要保存的文件类型</string>
+    <string name="generating_data_files">正在生成数据文件s</string>
     <string name="generating_data_files_please_wait">Generating data files may takes a few second. Please wait</string>
     <string name="change_colour">更改颜色</string>
     <string name="light_blue">浅蓝色</string>
@@ -563,8 +563,8 @@
     <string name="hello">你好</string>
     <string name="registration_code_invalid_message">Registration code invalid. It should only contain alphabets or numbers.</string>
     <string name="duplicate_registration_code_message">This registration code has been registered, please try another one</string>
-    <string name="invalid_age1">Invalid Age</string>
-    <string name="invalid_age_range1">Invalid Age Range</string>
+    <string name="invalid_age1">年龄无效</string>
+    <string name="invalid_age_range1">年龄范围无效</string>
     <string name="static_full_background_test_instruction">This is the static full background test. During the test the background will always be here. Remember to follow the background image to draw the required shape.</string>
     <string name="static_corner_background_test_instruction">This is the static corner background. The image template will always stays at the top right corner of the screen. Remember to follow the background to draw the required shape.</string>
     <string name="parallel_line_practice_instruction">This is the parallel practice. You are required to draw exactly two lines on the screen, as parallel as possible.</string>
