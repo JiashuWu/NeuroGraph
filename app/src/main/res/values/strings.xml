@@ -551,6 +551,7 @@
     <string name="edit">Edit</string>
     <string name="discard_changes1">Discard Changes</string>
     <string name="discard_information_changes">Discard information changes ?</string>
+    <string name="hello">Hello</string>
 
 
 </resources>

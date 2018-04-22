@@ -89,7 +89,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
         introduction_content_textview = (TextView) findViewById(R.id.introduction_page_content_textview);
 
         // ANIMATION NUMBER 1
-        introduction_textview.setText("Hello");
+        introduction_textview.setText(R.string.hello);
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 3.0f);
         alphaAnimation.setDuration(3000);
         introduction_textview.setAnimation(alphaAnimation);
@@ -102,7 +102,7 @@ public class IntroductionPageActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 // ANIMATION NUMBER 2
-                introduction_textview.setText("Hello");
+                introduction_textview.setText(getResources().getString(R.string.hello));
                 AlphaAnimation alphaAnimation1 = new AlphaAnimation(3.0f, 0.0f);
                 alphaAnimation1.setDuration(2000);
                 introduction_textview.setAnimation(alphaAnimation1);
