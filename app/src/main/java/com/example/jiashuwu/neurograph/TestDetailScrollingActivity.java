@@ -152,8 +152,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         {
             entry_begin = 0;
             entry_end = Sharing.test_detail_arraylist.size();
-            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_title_textview.setText(getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
             for (i = entry_begin ; i < entry_end ; i++)
             {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
@@ -163,8 +163,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         {
             entry_begin = 0;
             entry_end = entries_per_page;
-            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
             for (i = entry_begin ; i < entry_end ; i++)
             {
                 textview_content = textview_content + Sharing.test_detail_arraylist.get(i) + "\n";
@@ -174,8 +174,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
         {
             entry_begin = 0;
             entry_end = 0;
-            test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-            test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+            test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
         }
         test_detail_textview.setText(textview_content);
 
@@ -248,15 +248,15 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             // TODO SHOW THE PREVIOUS entries_per_page ENTRIES IF AVAILABLE
             if (entry_begin - entries_per_page < 0)
             {
-                Toast.makeText(TestDetailScrollingActivity.this, "No previous entries", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TestDetailScrollingActivity.this, R.string.no_previous_entries, Toast.LENGTH_SHORT).show();
             }
             else
             {
                 entry_begin = entry_begin - entries_per_page;
                 entry_end = entry_begin + entries_per_page;
                 textview_content = "";
-                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
                 for (i = entry_begin ; i < entry_end ; i++)
                 {
                     textview_content = textview_content + Sharing.test_detail_arraylist.get(i);
@@ -267,8 +267,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             {
                 entry_begin = 0;
                 entry_end = 0;
-                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
             }
         }
         else if (id == R.id.action_test_detail_next)
@@ -276,7 +276,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             // TODO SHOW THE NEXT entries_per_page ENTRIES IF AVAILABLE
             if (entry_begin + entries_per_page > Sharing.test_detail_arraylist.size())
             {
-                Toast.makeText(TestDetailScrollingActivity.this, "No next entries", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TestDetailScrollingActivity.this, R.string.no_next_entries, Toast.LENGTH_SHORT).show();
             }
             else
             {
@@ -286,8 +286,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
                 {
                     entry_end = Sharing.test_detail_arraylist.size();
                 }
-                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin+1) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
                 textview_content = "";
                 for (i = entry_begin ; i < entry_end ; i++)
                 {
@@ -299,8 +299,8 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
             {
                 entry_begin = 0;
                 entry_end = 0;
-                test_detail_title_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
-                test_detail_buttom_textview.setText("Display " + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + "Total " + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_title_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
+                test_detail_buttom_textview.setText(getResources().getString(R.string.display) + String.valueOf(entry_begin) + " - " + String.valueOf(entry_end) + " " + getResources().getString(R.string.total) + String.valueOf(Sharing.test_detail_arraylist.size()));
             }
         }
         return true;
