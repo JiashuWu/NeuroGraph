@@ -61,6 +61,13 @@ Meaning of each column in the csv data file:
 10: y coordinate of the dtaa point
 11: pressure of this touch point
 12: touch size of this touch point
+13: tool type
+	It contains the following possible tool types:
+	(1) 0  ->  UNKNOWN
+	(2) 1  ->  FINGER
+	(3) 2  ->  STYLUS (PEN etc.)
+	(4) 3  ->  MOUSE (MOUSE OR TRACKPAD) 
+	(5) -1 ->  Special placeholder for ParallelLinePractice ONLY
 13: test ID
 14: test type
 	It contains the following possible test types:
@@ -268,8 +275,23 @@ NEUROGRAPH INFORMATION
 Neurograph version
 
 TEST POINT DATA INFORMATION
-point serial number | timestamp of the point | x coordinate | y coordinate | pressure | touch point size
+point serial number | timestamp of the point | x coordinate | y coordinate | pressure | touch point size | tool type
 
+
+NOTE:
+	point serial number    -> the serial number / order of this point in this test
+	timestamp of the point -> the timestamp this point was collected
+	x Coordinate           -> x coordinate of this point
+	y coordinate           -> y coordinate of this point
+	pressure               -> the pressure value of this touch, some of the devices may not be able to get this value, it depends on the hardware
+	touch point size       -> the touch point size of this point, some of the devices may not be able to get this value, it depends on the hardware
+	tool type              -> the tool which was used to produce this touch point
+	POSSIBLE TOOL TYPES:
+		(1)  0  -> UNKNOWN TOOL TYPE
+		(2)  1  -> FINGER
+		(3)  2  -> STYLUS (PEN etc.)
+		(4)  3  -> MOUSE (MOUSE OR TRACKPAD)
+		(5)  -1 -> Special placeholder for ParallalLinePractice ONLY
 
 
 ===============================
