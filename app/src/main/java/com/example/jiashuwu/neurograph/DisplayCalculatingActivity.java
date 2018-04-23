@@ -198,7 +198,9 @@ public class DisplayCalculatingActivity extends AppCompatActivity {
     @Override
     public void onStop ()
     {
-        unregisterReceiver(myReceiver);
+        if (myReceiver != null) {
+            unregisterReceiver(myReceiver);
+        }
         super.onStop();
 
     }
