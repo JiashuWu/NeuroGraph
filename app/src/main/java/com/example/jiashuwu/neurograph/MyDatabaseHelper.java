@@ -51,7 +51,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
 
     // Date Table
-    // data_id, test_id, timestamp_of_point, x, y, pressure, touch_point_size, point_serial_number
+    // data_id, test_id, timestamp_of_point, x, y, pressure, touch_point_size, point_serial_number, tool_type
     public static final String CREATE_DATA_TABLE = "CREATE TABLE Data ("
             + "data_id INTEGER PRIMARY KEY AUTOINCREMENT, "
             + "test_id INTEGER REFERENCES Test (test_id) ON UPDATE CASCADE ON DELETE CASCADE, "
@@ -60,7 +60,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + "y REAL NOT NULL, "
             + "pressure REAL, "
             + "touch_point_size REAL, "
-            + "point_serial_number INTEGER "
+            + "point_serial_number INTEGER, "
+            + "tool_type INTEGER "
             + " ) ";
 
 
