@@ -52,11 +52,13 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
     public float y;
     public float pressure;
     public float touch_point_size;
+    public int tool_type;
 
     public ArrayList<Float> x_list;
     public ArrayList<Float> y_list;
     public ArrayList<Float> pressure_list;
     public ArrayList<Float> touch_point_size_list;
+    public ArrayList<Integer> tool_type_list;
     public ArrayList year_list;
     public ArrayList month_list;
     public ArrayList day_list;
@@ -107,6 +109,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         y_list = new ArrayList<Float>();
         pressure_list = new ArrayList<Float>();
         touch_point_size_list = new ArrayList<Float>();
+        tool_type_list = new ArrayList<>();
 
         Sharing.number_of_item_in_total = 0;
 
@@ -150,6 +153,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         Sharing.pressure_list = pressure_list;
         Sharing.timestamp_list = timestamp_list;
         Sharing.touch_point_size_list = touch_point_size_list;
+        Sharing.tool_type_list = tool_type_list;
         //Sharing.number_of_item_in_total = x_list.size();
         startDraw = false;
         //Log.d("destroy", "surface_destroy");
@@ -223,6 +227,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         y = (float) event.getY();
         pressure = (float) event.getPressure(event.getPointerCount() - 1);
         touch_point_size = (float) event.getSize(event.getPointerCount() - 1);
+        tool_type = (int) event.getToolType(event.getPointerCount() - 1);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH) + 1;
@@ -294,6 +299,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         y_list.add(y);
         pressure_list.add(pressure);
         touch_point_size_list.add(touch_point_size);
+        tool_type_list.add(tool_type);
         Log.d("destroy", String.valueOf(x_list.size()));
 
         Sharing.number_of_item_in_total = x_list.size();
@@ -322,6 +328,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
         y_list.clear();
         pressure_list.clear();
         touch_point_size_list.clear();
+        tool_type_list.clear();
         timestamp_list.clear();
         mPath.reset();
 
