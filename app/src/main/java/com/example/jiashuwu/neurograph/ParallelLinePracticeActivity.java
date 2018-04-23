@@ -60,6 +60,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
     public static ArrayList<Float> pressure_list;
     public static ArrayList<String> timestamp_list;
     public static ArrayList<Float> touch_point_size_list;
+    public static ArrayList<Integer> tool_type_list;
 
     private MyDatabaseHelper databaseHelper;
 
@@ -118,6 +119,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         pressure_list = Sharing.pressure_list;
         timestamp_list = Sharing.timestamp_list;
         touch_point_size_list = Sharing.touch_point_size_list;
+        tool_type_list = Sharing.tool_type_list;
         number_of_points = x_list.size();
 
         Log.d("NULL_DETECTOR", String.valueOf(x_list == null));
@@ -176,6 +178,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
             values.put("pressure", pressure_list.get(i));
             values.put("touch_point_size", touch_point_size_list.get(i));
             values.put("point_serial_number", i+1);
+            values.put("tool_type", tool_type_list.get(i));
             Log.d("TAG_DATA_INFO", String.valueOf(test_id));
             Log.d("TAG_DATA_INFO", timestamp_list.get(i));
             Log.d("TAG_DATA_INFO", String.valueOf(x_list.get(i)));
