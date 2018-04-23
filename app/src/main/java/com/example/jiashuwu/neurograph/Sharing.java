@@ -20,6 +20,7 @@ public class Sharing {
     public static ArrayList<Float> pressure_list;
     public static ArrayList<String> timestamp_list;
     public static ArrayList<Float> touch_point_size_list;
+    public static ArrayList<Integer> tool_type_list;
 
     public static String sharing_image;
 
