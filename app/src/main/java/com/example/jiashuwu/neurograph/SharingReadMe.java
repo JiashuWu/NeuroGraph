@@ -76,7 +76,8 @@ public class SharingReadMe {
                     "\t(2) 1  ->  FINGER\n" +
                     "\t(3) 2  ->  STYLUS (PEN etc.)\n" +
                     "\t(4) 3  ->  MOUSE (MOUSE OR TRACKPAD) \n" +
-                    "\t(5) -1 ->  Special placeholder for ParallelLinePractice ONLY\n" +
+                    "\t(5) 4  ->  ERASER\n" +
+                    "\t(6) -1 ->  Special placeholder for ParallelLinePractice ONLY\n" +
                     "13: test ID\n" +
                     "14: test type\n" +
                     "\tIt contains the following possible test types:\n" +
@@ -300,7 +301,8 @@ public class SharingReadMe {
                     "\t\t(2)  1  -> FINGER\n" +
                     "\t\t(3)  2  -> STYLUS (PEN etc.)\n" +
                     "\t\t(4)  3  -> MOUSE (MOUSE OR TRACKPAD)\n" +
-                    "\t\t(5)  -1 -> Special placeholder for ParallalLinePractice ONLY\n" +
+                    "\t\t(5)  4  -> ERASER\n" +
+                    "\t\t(6)  -1 -> Special placeholder for ParallalLinePractice ONLY\n" +
                     "\n" +
                     "\n" +
                     "===============================\n" +

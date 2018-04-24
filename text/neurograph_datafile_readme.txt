@@ -67,7 +67,8 @@ Meaning of each column in the csv data file:
 	(2) 1  ->  FINGER
 	(3) 2  ->  STYLUS (PEN etc.)
 	(4) 3  ->  MOUSE (MOUSE OR TRACKPAD) 
-	(5) -1 ->  Special placeholder for ParallelLinePractice ONLY
+	(5) 4  ->  ERASER
+	(6) -1 ->  Special placeholder for ParallelLinePractice ONLY
 13: test ID
 14: test type
 	It contains the following possible test types:
@@ -291,7 +292,8 @@ NOTE:
 		(2)  1  -> FINGER
 		(3)  2  -> STYLUS (PEN etc.)
 		(4)  3  -> MOUSE (MOUSE OR TRACKPAD)
-		(5)  -1 -> Special placeholder for ParallalLinePractice ONLY
+		(5)  4  -> ERASER
+		(6)  -1 -> Special placeholder for ParallalLinePractice ONLY
 
 
 ===============================
