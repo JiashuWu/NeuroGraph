@@ -484,7 +484,7 @@
     <string name="practice_result_tutorial_text">Here you can see whether the two parallel lines you draw are indeed paralle. These grading level will be used: Perfect, Good, Acceptable and Bad.</string>
     <string name="practice_makes_perfect">Practice Makes Perfect</string>
     <string name="practice_makes_perfect_tutorial_text">This is a playground where you can practice drawing two parallel lines. Our specially designed algorithm will judge whether these two lines are indeed parallel. Have fun!</string>
-    <string name="information_collection_tutorial_text">We need to collect some information to mage the diagnostic more precise. The information include your name, gender, education, previous rating score etc.</string>
+    <string name="information_collection_tutorial_text">We need to collect some information to make the diagnostic more precise. The information include your name, gender, education, previous rating score etc.</string>
     <string name="account_centre_tutorial_text">For new user, you need to register before using, for old user, you can simply type in your registration code and start the tests.</string>
     <string name="introduction_page_tutorial_text">Here you can find an introduction of this app, including what is new in this version of release.</string>
     <string name="clean_cache_tutorial_text">Here you can the cache of the app. This won\'t affect internal storage or database.</string>
