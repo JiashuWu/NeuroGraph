@@ -595,6 +595,7 @@
     <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
     <string name="generate_datafiles_label">Generate Data Files</string>
     <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
+    <string name="information_label">Information</string>
 
 
 </resources>

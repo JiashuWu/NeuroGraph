@@ -595,6 +595,7 @@
     <string name="welcon_to_neurograph_label">欢迎使用Neurograph</string>
     <string name="generate_datafiles_label">生成数据文件</string>
     <string name="neurograph_thank_you_label">Neurograph: 谢谢</string>
+    <string name="information_label">关于应用</string>
 
 
 </resources>
