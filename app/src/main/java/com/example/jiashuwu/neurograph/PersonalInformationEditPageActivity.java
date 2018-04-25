@@ -540,14 +540,14 @@ public class PersonalInformationEditPageActivity extends AppCompatActivity {
                     AlertDialog.Builder builder = new AlertDialog.Builder(PersonalInformationEditPageActivity.this);
                     builder.setTitle(R.string.confirm_changes);
                     builder.setCancelable(false);
-                    String changes_summary = "Changes Summary: \n" +
-                            "Registration Code = " + registration_code + "\n" +
-                            "Name = " + name + "\n" +
-                            "Age = " + String.valueOf(age) + "\n" +
-                            "Gender = " + gender + "\n" +
-                            "Education Level = " + education + "\n" +
-                            "Rating Score = " + ratingscore + "\n" +
-                            "Current Receiving Treatment = " + current_receiving_treatment + "\n";
+                    String changes_summary = getString(R.string.changes_summary) + "\n" +
+                            getResources().getString(R.string.registration_code_equal) + registration_code + "\n" +
+                            getResources().getString(R.string.name_equal) + name + "\n" +
+                            getResources().getString(R.string.age_equal) + String.valueOf(age) + "\n" +
+                            getResources().getString(R.string.gender_equal) + gender + "\n" +
+                            getResources().getString(R.string.education_level_equal) + education + "\n" +
+                            getResources().getString(R.string.rating_score_equal) + ratingscore + "\n" +
+                            getResources().getString(R.string.current_receiving_treatment_equal) + current_receiving_treatment + "\n";
 
                     builder.setMessage(changes_summary);
                     builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {

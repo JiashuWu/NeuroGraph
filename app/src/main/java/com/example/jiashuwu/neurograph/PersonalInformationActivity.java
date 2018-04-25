@@ -130,14 +130,14 @@ public class PersonalInformationActivity extends AppCompatActivity {
             registration_code = cursor.getString(7).toString();
         }
 
-        content = content + "User ID = " + String.valueOf(user_id) + "\n";
-        content = content + "Registration Code = " + registration_code + "\n";
-        content = content + "Name = " + name + "\n";
-        content = content + "Age = " + String.valueOf(age) + "\n";
-        content = content + "Gender = " + String.valueOf(gender) + "\n";
-        content = content + "Education Level = " + education + "\n";
-        content = content + "Rating Score = " + String.valueOf(rating_score) + "\n";
-        content = content + "Current Receiving Treatment = " + current_receiving_treatment + "\n";
+        content = content + getString(R.string.user_id_equal) + String.valueOf(user_id) + "\n";
+        content = content + getString(R.string.registration_code_equal) + registration_code + "\n";
+        content = content + getString(R.string.name_equal) + name + "\n";
+        content = content + getString(R.string.age_equal) + String.valueOf(age) + "\n";
+        content = content + getString(R.string.gender_equal) + String.valueOf(gender) + "\n";
+        content = content + getString(R.string.education_level_equal) + education + "\n";
+        content = content + getString(R.string.rating_score_equal) + String.valueOf(rating_score) + "\n";
+        content = content + getString(R.string.current_receiving_treatment_equal) + current_receiving_treatment + "\n";
 
         content_textview.setText(content);
 

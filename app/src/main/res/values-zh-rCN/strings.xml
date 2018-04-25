@@ -596,6 +596,15 @@
     <string name="generate_datafiles_label">生成数据文件</string>
     <string name="neurograph_thank_you_label">Neurograph: 谢谢</string>
     <string name="information_label">关于应用</string>
+    <string name="user_id_equal">用户 ID =</string>
+    <string name="registration_code_equal">注册码 =</string>
+    <string name="name_equal">姓名 =</string>
+    <string name="age_equal">年龄 =</string>
+    <string name="gender_equal">性别 =</string>
+    <string name="education_level_equal">教育程度 =</string>
+    <string name="rating_score_equal">测试评分 =</string>
+    <string name="current_receiving_treatment_equal">正在接受治疗 =</string>
+    <string name="changes_summary">信息更新汇总：</string>
 
 
 </resources>
