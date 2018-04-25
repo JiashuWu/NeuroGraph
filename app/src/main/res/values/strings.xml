@@ -596,15 +596,15 @@
     <string name="generate_datafiles_label">Generate Data Files</string>
     <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
     <string name="information_label">Information</string>
-    <string name="user_id_equal">User ID =</string>
-    <string name="registration_code_equal">Registration Code =</string>
-    <string name="name_equal">Name =</string>
-    <string name="age_equal">Age =</string>
-    <string name="gender_equal">Gender =</string>
-    <string name="education_level_equal">Education Level =</string>
-    <string name="rating_score_equal">Rating Score =</string>
-    <string name="current_receiving_treatment_equal">Current Receiving Treatment =</string>
-    <string name="changes_summary">Changes Summary:</string>
+    <string name="user_id_equal">User ID = </string>
+    <string name="registration_code_equal">Registration Code = </string>
+    <string name="name_equal">Name = </string>
+    <string name="age_equal">Age = </string>
+    <string name="gender_equal">Gender = </string>
+    <string name="education_level_equal">Education Level = </string>
+    <string name="rating_score_equal">Rating Score = </string>
+    <string name="current_receiving_treatment_equal">Current Receiving Treatment = </string>
+    <string name="changes_summary">Changes Summary :</string>
 
 
 </resources>
