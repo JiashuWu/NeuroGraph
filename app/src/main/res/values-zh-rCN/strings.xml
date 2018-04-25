@@ -579,7 +579,10 @@
     <string name="calculating_the_test_result">计算测试结果</string>
     <string name="deletion_completed">删除已完成</string>
     <string name="delete">删除</string>
-
+    <string name="test_information">测试信息</string>
+    <string name="device_information_label">设备信息</string>
+    <string name="account_label">账户</string>
+    <string name="loading_data">数据加载中</string>
 
 
 </resources>

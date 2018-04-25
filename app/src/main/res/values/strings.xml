@@ -579,7 +579,10 @@
     <string name="calculating_the_test_result">Calculating the test results.</string>
     <string name="deletion_completed">Deletion Completed</string>
     <string name="delete">Delete</string>
-
+    <string name="test_information">Test Information</string>
+    <string name="device_information_label">Device Information</string>
+    <string name="account_label">Account</string>
+    <string name="loading_data">Loading Data</string>
 
 
 </resources>

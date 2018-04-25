@@ -87,7 +87,7 @@
         <activity
             android:name=".TestDetailScrollingActivity"
             android:configChanges="locale|fontScale"
-            android:label="Test Information"
+            android:label="@string/test_information"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransferActivity"
@@ -177,7 +177,7 @@
         <activity
             android:name=".DeviceInformationActivity"
             android:configChanges="locale|fontScale"
-            android:label="Device Information"
+            android:label="@string/device_information_label"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CopyrightInformationActivity"
@@ -192,7 +192,7 @@
         <activity
             android:name=".AccountCentreActivity"
             android:configChanges="locale|fontScale"
-            android:label="Account"
+            android:label="@string/account_label"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PersonalInformationActivity"
