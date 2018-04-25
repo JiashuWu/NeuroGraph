@@ -583,6 +583,18 @@
     <string name="device_information_label">Device Information</string>
     <string name="account_label">Account</string>
     <string name="loading_data">Loading Data</string>
+    <string name="calculating_results">Calculating Results</string>
+    <string name="generating_files_label">Generating Files</string>
+    <string name="sending_email_label">Sending Email</string>
+    <string name="select_duration_label">Select Duration and Width</string>
+    <string name="select_width_label">Select Width</string>
+    <string name="choose_image_label">Choose Image</string>
+    <string name="select_width_and_image_label">Select Width and Image</string>
+    <string name="practice_result_label">Practice Results</string>
+    <string name="send_data_email_label">Send Data Email</string>
+    <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
+    <string name="generate_datafiles_label">Generate Data Files</string>
+    <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
 
 
 </resources>

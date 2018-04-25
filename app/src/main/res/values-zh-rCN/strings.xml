@@ -583,6 +583,18 @@
     <string name="device_information_label">设备信息</string>
     <string name="account_label">账户</string>
     <string name="loading_data">数据加载中</string>
+    <string name="calculating_results">结果计算中</string>
+    <string name="generating_files_label">生成数据文件</string>
+    <string name="sending_email_label">发送数据邮件</string>
+    <string name="select_duration_label">选择时间间隔及画笔宽度</string>
+    <string name="select_width_label">选择画笔宽度</string>
+    <string name="choose_image_label">选择背景图片</string>
+    <string name="select_width_and_image_label">选择画笔宽度及背景图片</string>
+    <string name="practice_result_label">练习结果</string>
+    <string name="send_data_email_label">发送数据邮件</string>
+    <string name="welcon_to_neurograph_label">欢迎使用Neurograph</string>
+    <string name="generate_datafiles_label">生成数据文件</string>
+    <string name="neurograph_thank_you_label">Neurograph: 谢谢</string>
 
 
 </resources>
