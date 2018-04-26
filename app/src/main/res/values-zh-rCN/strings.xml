@@ -513,8 +513,8 @@
     <string name="press_again_to_switch_user">再次点击以切换用户</string>
     <string name="switch_user_upper">切换用户</string>
     <string name="store_data_file_before_switching_user">在切换用户之前存储数据文件</string>
-    <string name="display">显示</string>
-    <string name="total">共计</string>
+    <string name="display">显示 </string>
+    <string name="total">共计 </string>
     <string name="no_previous_entries">无上一条目</string>
     <string name="no_next_entries">无下一条目</string>
     <string name="generating_files_upper">正在生成文件</string>

@@ -513,8 +513,8 @@
     <string name="press_again_to_switch_user">Press again to switch user</string>
     <string name="switch_user_upper">SWITCH USER</string>
     <string name="store_data_file_before_switching_user">Store data files before switching user</string>
-    <string name="display">Display</string>
-    <string name="total">Total</string>
+    <string name="display">Display </string>
+    <string name="total">Total </string>
     <string name="no_previous_entries">No previous entries</string>
     <string name="no_next_entries">No next entries</string>
     <string name="generating_files_upper">Generating Files</string>
