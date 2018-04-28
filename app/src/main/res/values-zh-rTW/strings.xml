@@ -1,2 +1,611 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">NeuroGraph</string>
+    <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
+    <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
+    <string name="setting_page_choose_language">請選擇語言</string>
+    <string name="english">英語 (EN_GB)</string>
+    <string name="chinese_simplified">簡體中文 (CH_ZN)</string>
+    <string name="chinese_traditional">繁體中文 (CH_TW)</string>
+    <string-array name="language_array">
+        <item>英語</item>
+        <item>簡體中文</item>
+        <item>繁體中文</item>
+        <item>荷蘭語</item>
+        <item>法語</item>
+        <item>德語</item>
+        <item>義大利語</item>
+        <item>日語</item>
+        <item>葡萄牙語</item>
+        <item>俄語</item>
+        <item>西班牙語</item>
+    </string-array>
+
+    <string-array name="font_array">
+        <item>正常字型大小</item>
+        <item>大字型大小</item>
+    </string-array>
+    <string name="setting_page_choose_font_size">請選擇字體大小</string>
+    <string name="normal_font_size">正常字型大小</string>
+    <string name="large_font_size">大字型大小</string>
+
+    <string name="welcome">歡迎使用 NeuroGraph</string>
+
+    <string name="setting_page_start_button">開始</string>
+
+
+    <string name="information_collection_preface">我們需要獲取一些您的個人資訊，以便讓我們的應用更加準確</string>
+    <string name="full_name">姓名</string>
+    <string name="enter_full_name">請輸入姓名</string>
+    <string name="age">年齡</string>
+    <string name="enter_age">請輸入年齡</string>
+    <string name="gender">性別</string>
+    <string name="enter_gender">請輸入性別</string>
+    <string-array name="gender_list">
+        <item>男性</item>
+        <item>女性</item>
+        <item>其他</item>
+    </string-array>
+    <string name="select_education">請選擇您的教育程度</string>
+    <string-array name="education_level">
+        <item>小學學歷及以下</item>
+        <item>中學學歷</item>
+        <item>大學本科學歷</item>
+        <item>碩士學歷</item>
+        <item>博士學歷及以上</item>
+    </string-array>
+    <string name="rating_score">曾進行過的阿爾茨海默症測試評分， 若未曾進行過相關測試，請不要填寫</string>
+    <string name="enter_rating_score">請輸入測試評分</string>
+    <string name="current_receiving_treatment">您是否正在接受治療？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="next">下一步</string>
+    <string name="title_activity_information_collection">資訊收集</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+    <string name="action_settings">設置</string>
+    <string name="title_activity_test_selection">測試</string>
+
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">通知</string>
+
+
+    <string name="static_tests">靜態背景測試</string>
+    <string name="dynamic_tests">動態背景測試</string>
+    <string name="data_list">數據清單</string>
+
+    <string name="test1">測試 1</string>
+    <string name="test2">測試 2</string>
+    <string name="test3">測試 3</string>
+    <string name="test4">測試 4</string>
+    <string name="title_activity_image_selection">選擇圖片</string>
+
+    <string name="spiral_image">螺旋線</string>
+    <string name="pentagon_image">五邊形</string>
+
+    <string name="finish_button">完成</string>
+    <string name="clear_button">清除</string>
+
+    <string name="thank_you">謝謝您的參與</string>
+
+    <string name="information_empty">信息為空</string>
+    <string name="information_invalid">無效信息</string>
+    <string name="name_empty">姓名不能為空</string>
+    <string name="age_empty">年齡不能為空</string>
+    <string name="age_invalid">年齡無效</string>
+    <string name="rating_score_empty">測試評分不能為空</string>
+    <string name="rating_score_invalid">測試評分格式無效</string>
+
+    <string name="treatment_empty">請選擇治療資訊</string>
+
+    <string name="dismiss">解除</string>
+    <string name="title_activity_data_list">數據清單</string>
+
+    <string name="data_list_button">數據清單</string>
+    <string name="title_activity_test_detail_scrolling">關於測試的詳細資訊</string>
+
+    <string name="select_painter_width">請選擇畫筆線條寬度</string>
+
+    <string-array name="painter_width">
+        <item>寬度 5</item>
+        <item>寬度 10</item>
+        <item>寬度 15</item>
+    </string-array>
+
+    <string-array name="delete_options">
+        <item>清除所有測試資料</item>
+        <item>清除在特定日期前的所有測試資料</item>
+        <item>清除所有使用者及測試資料，這將重啟應用程式</item>
+    </string-array>
+
+    <string name="channel_name">Neurograph</string>
+
+    <string name="store_data_file_introduction_text">感謝您選擇 Neurograph。您可以將測試資料保存到檔中</string>
+
+    <string name="button_generate">生成</string>
+
+    <string name="button_introduction">簡介</string>
+    <string name="placeholder">PLACEHOLDER</string>
+    <string name="introduction_content">"Welcome to Neurograph.\n"
+        "This is an app which can be used to assist the diagnostics of Alzheimer\'s Disease.\n"
+        "By doing some tests like drawing a spiral or pentagon, we will analyse your drawing pattern and using artificial intelligence to predict the level of the disease.\n\n\n"
+        "Version 1.0 (2018.04)\n"
+        "This version contains ......\n"
+    </string>
+    <string name="notification_permission_title">通知許可權</string>
+    <string name="turn_on_notification">開啟通知</string>
+    <string name="button_dismiss">解除</string>
+    <string name="go_to_system_setting">前往系統設置</string>
+    <string name="network_error">網路異常</string>
+    <string name="network_unavailable_message">無網路，請檢查您的網路連接</string>
+    <string name="ok">好</string>
+    <string name="invalid_information">無效信息</string>
+    <string name="email_address_empty">收件人不得為空</string>
+    <string name="email_address_invalid">收件人無效</string>
+    <string name="email_subject_empty">郵件主題不得為空</string>
+    <string name="permission_not_granted">未取得許可權</string>
+    <string name="permission_not_granted_message">未取得相應許可權。請前往系統設置批准使用權限</string>
+    <string name="confirm">確認</string>
+    <string name="confirm_sending_email">確認發送此郵件？</string>
+    <string name="go_back">返回</string>
+    <string name="neurograph_notification">Neurograph通知</string>
+    <string name="successful_message_email_file">郵件發送成功</string>
+    <string name="successfully_sent">發送成功</string>
+    <string name="copy_file_path">複製檔路徑</string>
+    <string name="success_message1">郵件已成功發送，檔已存儲。</string>
+    <string name="cancel_sending">取消發送</string>
+    <string name="quit_message">確認推出並取消發送？</string>
+    <string name="exit_without_sending">退出並不發送</string>
+    <string name="send_email_introduction_text">發送資料郵件</string>
+    <string name="recipient">收件人</string>
+    <string name="subject">主題</string>
+    <string name="subject_cannot_empty">郵件主題不能為空</string>
+    <string name="email_address_format_requirement">郵箱位址需包含 @ 和 .</string>
+    <string name="email_checkbox_message">將測試資料顯示為郵件正文？</string>
+    <string name="send_button">發送</string>
+    <string name="cancel">取消</string>
+    <string name="instruction_of_test">測試指示</string>
+    <string name="start_test">開始測試</string>
+    <string name="spiral_introduction">測試將會使用螺旋線作為背景</string>
+    <string name="pentagon_image_title">五邊形背景</string>
+    <string name="spiral_image_title">螺旋線背景</string>
+    <string name="pentagon_introduction">測試將會使用五邊形作為背景</string>
+    <string name="generate_data_file_title">生成資料檔案</string>
+    <string name="practice">練習</string>
+    <string name="button_done">完成</string>
+    <string name="parallel_thank_you">
+        "謝謝您的參與。\n""正在計算您的測試結果。"</string>
+    <string name="button_tutorial">使用教程</string>
+    <string name="title_activity_tutorial">使用教程</string>
+    <string name="button_previous">上一個</string>
+    <string name="data_output_via_email">發送資料郵件</string>
+    <string name="full_background_test">全屏背景測試</string>
+    <string name="static_full_background_test">全屏背景靜態測試</string>
+    <string name="corner_background_test">角落背景靜態測試</string>
+    <string name="start_test_1">開始測試 1</string>
+    <string name="start_test_2">開始測試 2</string>
+    <string name="blank_background_test">動態背景測試</string>
+    <string name="start_test_3">開始測試 3</string>
+    <string name="seasonal_background_test">動態週期背景測試</string>
+    <string name="start_test_4">開始測試 4</string>
+    <string name="button_capture">截屏</string>
+
+    <string name="welcome_to_neurograph">" 歡迎使用\n"
+    "Neurograph"</string>
+    <string name="title_activity_info">信息</string>
+
+    <string-array name="circular_motion_image_type">
+        <item>紅點</item>
+        <item>藍點</item>
+        <item>黑點</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="title_activity_fullscreen">全屏活動</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="store_file_option">
+        <item>發送郵件並保存文件</item>
+        <item>保存檔</item>
+        <item>暫不保存</item>
+    </string-array>
+    <string name="title_activity_device_infomation">設備資訊</string>
+    <string name="title_activity_copyright_information">版權</string>
+    <string name="title_activity_personal_information_edit_page">修改資訊</string>
+    <string name="title_activity_account_centre">帳戶中心</string>
+    <string name="title_activity_user_information_page">個人資訊</string>
+    <string name="title_activity_personal_information">個人資訊</string>
+    <string name="title_activity_feedback">回饋</string>
+    <string name="delete_data">刪除測試資料</string>
+    <string name="Calculating">正在計算</string>
+    <string name="Loading">載入中</string>
+    <string name="generating_progress">正在生成</string>
+    <string name="sending_progress">正在發送</string>
+    <string name="select_image_type">請選擇測試圖片</string>
+    <string name="result">測試結果</string>
+    <string name="result_description">測試結果描述</string>
+    <string name="data_file_format_title">資料檔案格式 （可多選）</string>
+    <string name="csv">.csv</string>
+    <string name="txt">.txt</string>
+    <string name="db">.db</string>
+    <string name="readme">readme</string>
+    <string name="clean_data_after_storing_files">保存檔後清除測試資料</string>
+    <string name="clean_data_after_storing_data_files">存儲資料檔案完成後清除測試資料</string>
+    <string name="calculating_test_result">正在計算您的測試結果</string>
+    <string name="account_centre">帳戶中心</string>
+    <string name="new_user">新用戶</string>
+    <string name="new_user_description">作為新使用者，您需要先完成註冊。</string>
+    <string name="button_register">註冊</string>
+    <string name="old_user">老用戶</string>
+    <string name="enter_registration_code_title">請輸入註冊碼</string>
+    <string name="button_continue">繼續</string>
+    <string name="copyright_title">版權</string>
+    <string name="device_information">設備資訊</string>
+    <string name="registeration_code">註冊碼</string>
+    <string name="please_enter_a_registration_code">請輸入註冊碼</string>
+    <string name="personal_information">個人資訊</string>
+    <string name="edit_information">修改資訊</string>
+    <string name="edit_your_personal_information">修改個人資訊</string>
+    <string name="button_discard">放棄</string>
+    <string name="button_apply">應用</string>
+    <string name="title">TITLE</string>
+    <string name="store_data_files_and_clean_data_question_title">存儲資料檔案並清理測試資料?</string>
+    <string name="start_practice">開始練習</string>
+    <string name="parallel_line_test_description">這是平行線練習。請在畫板上畫兩條盡可能平行的平行線。</string>
+    <string name="parallel_line_test">平行線測試</string>
+    <string name="parallel_line_test_description1">這是平行線測試。您需要根據測試背景圖畫三條盡可能平行的平行線。</string>
+    <string name="circular_motion_test">圓圈測試</string>
+    <string name="circular_motion_test_description">這是圓圈測試。您需要以中心圓點為圓心畫一個盡可能圓的圓圈。</string>
+    <string name="static_full_background_test_description">這是靜態全屏背景測試。背景圖將以全屏的形式持續出現在螢幕上。請根據背景圖繪製制定的圖形。</string>
+    <string name="static_corner_background_test_description">這是靜態角落背景測試。配淨土將被放置在畫板的右上角並持續出現。</string>
+    <string name="dynamic_blank_background_test_description">這是動態背景測試。全屏背景圖將會先出現一段時間，之後消失。</string>
+    <string name="dynamic_seasonal_background_test_description">這是動態週期背景測試，正如其名，背景圖將會先出現一段時間，再消失一段時間，如此反復。</string>
+    <string name="tests">測試</string>
+    <string name="information">信息</string>
+    <string name="copyright">版權資訊</string>
+    <string name="edit_information1">修改資訊</string>
+    <string name="registration_code_invalid">註冊碼無效</string>
+    <string name="regist_first">註冊碼不存在，您需要先完成註冊</string>
+    <string name="got_it">知道了</string>
+    <string name="perfect">很棒</string>
+    <string name="make_changes">更改</string>
+    <string name="want_to_delete">確認刪除？</string>
+    <string name="button_delete">刪除</string>
+    <string name="detele_data_before_this_date">刪除此日期之前的測試資料</string>
+    <string name="your_device_information">您的設備資訊：</string>
+    <string name="device_brand">設備品牌：</string>
+    <string name="device_manufacturer">設備製造商：</string>
+    <string name="device_product_information">設備產品資訊：</string>
+    <string name="device_model">設備型號：</string>
+    <string name="device_system_version_code">設備系統版本碼：</string>
+    <string name="device_resolution">設備螢幕解析度：</string>
+    <string name="device_testing_area">設備測試區：</string>
+    <string name="device_navigation_bar_height">設備巡覽列高度：</string>
+    <string name="Processing">處理中</string>
+    <string name="calculating_test_result_do_not_close">處理過程中請不要關閉應用</string>
+    <string name="loading">載入中</string>
+    <string name="do_not_close">處理過程中請不要關閉應用</string>
+    <string name="file_location_text">您可以點擊複製檔路徑按鈕來複製所保存檔的路徑</string>
+    <string name="file_path_copied">將檔路徑複製到剪切板</string>
+    <string name="button_copy">複製</string>
+    <string name="sending">發送中</string>
+    <string name="button_exit">退出</string>
+    <string name="button_next">下一個</string>
+    <string name="button_all_done">完成</string>
+
+    <string name="navigation_drawer_open">開啟巡覽列</string>
+    <string name="navigation_drawer_close">關閉巡覽列</string>
+    <string name="dot_and_line">點與線</string>
+    <string name="view_user_information">查看使用者資訊</string>
+    <string name="switch_user">切換用戶</string>
+    <string name="setting">設置</string>
+    <string name="previous_1000_entries">顯示上1000條目</string>
+    <string name="next_1000_entries">顯示下1000條目</string>
+    <string name="clean_cache">清理緩存</string>
+    <string name="edit_user_information">修改使用者資訊</string>
+    <string name="home_page">主頁</string>
+    <string name="customization">自訂</string>
+    <string name="choose_language">選擇語言</string>
+    <string name="choose_font_fize">選擇字體大小</string>
+    <string name="choose_colour_theme">選擇顏色主題</string>
+    <string name="change_setting">更改設置</string>
+    <string name="about_your_device">關於設備</string>
+    <string name="view_copyright">查看版權資訊</string>
+    <string name="introduction_page">簡介</string>
+    <string name="account">帳戶</string>
+    <string name="information_collection">收集資訊</string>
+    <string name="parallel_line_practice">平行線練習</string>
+    <string name="practice_result">練習結果</string>
+    <string name="select_static_tests">選擇靜態測試</string>
+    <string name="select_dynamic_tests">選擇動態測試</string>
+    <string name="select_test_image">選擇測試圖片</string>
+    <string name="test_instruction">測試指示</string>
+    <string name="choose_interval_duration">選擇時間間隔</string>
+    <string name="choose_painter_width">選擇畫筆線條寬度</string>
+    <string name="draw_it">Draw It</string>
+    <string name="manage_data">管理資料</string>
+    <string name="processing">處理中</string>
+    <string name="view_data">查看數據</string>
+    <string name="long_click_to_delete">長按刪除</string>
+    <string name="send_data_email">發送資料郵件</string>
+    <string name="store_data_files">保存資料檔案</string>
+    <string name="choose_files_types">選擇檔案類型</string>
+    <string name="manage_personal_information">管理個人資訊</string>
+    <string name="view_personal_information">查看個人資訊</string>
+    <string name="edit_personal_information">修改個人資訊</string>
+    <string name="store_data_before_switching">在切換用戶之前保存資料檔案</string>
+    <string name="output_data">資料輸出</string>
+    <string name="store_date_file">保存資料檔案</string>
+    <string name="file_path">檔路徑</string>
+    <string name="neurograph">Neurograph</string>
+    <string name="test_1">測試 1</string>
+    <string name="zhangsan">張三</string>
+    <string name="test_date">測試時間</string>
+    <string name="test_type">測試類型</string>
+    <string name="image_type">圖片類型</string>
+    <string name="tutorials">使用教程</string>
+    <string name="choose_tutorial">您可以從左側的巡覽列選擇教程</string>
+    <string name="neurograph1">NEUROGRAPH</string>
+    <string name="version_1_0">版本 1.0</string>
+    <string name="copyright_2018_jiashu_wu_xuanchi_liu">Copyright©2018 Jiashu Wu Xuanchi Liu</string>
+    <string name="all_rights_reserved">All Rights Reserved</string>
+    <string name="press_again_to_exit">再次點擊以退出</string>
+    <string name="change_setting_text">您可在此更改語言及字體大小的設置</string>
+    <string name="store_data_after_switching">在切換使用者之前儲存資料檔案</string>
+    <string name="store_data_switching_text">您可以在切換用戶之前保存資料檔案</string>
+    <string name="switch_user_tutorial_text">您可以點擊這裡來切換用戶</string>
+    <string name="edit_information_tutorial_text">您可在此查看和編輯您的個人資訊</string>
+    <string name="view_information">查看信息</string>
+    <string name="view_information_tutorial_text">您可在此查看和編輯您的個人資訊</string>
+    <string name="delete_data_tutorial_text">您可以在這裡選擇刪除所有測試資料，刪除在特定日期之前的所有測試資料，或者刪除所有使用者及測試資料（清除所有資料將重啟應用）。</string>
+    <string name="choose_file_type">選擇檔案類型</string>
+    <string name="choose_file_type_tutorial_text">您可以選擇您想要保存的資料檔案類型。您可以選擇全部的資料檔案類型</string>
+    <string name="store_data_file">保存資料檔案</string>
+    <string name="store_data_file_tutorial_text">您可以將資料問價保存在設備中，通過連接電腦可將這些資料檔案匯出。您可以將資料檔案路徑複製到剪切板，簡單易用。</string>
+    <string name="copy_file_path_tutorial_text">您可以在這裡複製檔路徑</string>
+    <string name="send_data_email_tutorial_text">您可以通過發送郵件來匯出資料</string>
+    <string name="long_click_to_delete1">長按刪除</string>
+    <string name="long_click_to_delete_tutorial_text">長按可將資料刪除</string>
+    <string name="test_details">測試詳細資訊</string>
+    <string name="test_details_tutorial_text">您可以在這裡找到測試詳細資訊</string>
+    <string name="data_list_tutorial_text">您可以在這裡查看所有測試資料，包括測試ID，測試類型，背景圖片類型，測試點座標等。</string>
+    <string name="procesing">處理中</string>
+    <string name="processing_tutorial_text">每次測試完成後，應用會進行短暫的資料處理，請耐心等候。處理過程中請不要關閉應用。</string>
+    <string name="draw_it_tutorial_text">請根據測試指示繪圖。您可以點擊清除來清空畫板，點擊完成結束測試。</string>
+    <string name="choose_painter_width_tutorial_text">您可以選擇適合您的畫筆線條寬度。共三種選擇，細線條，中等線條和粗線條。</string>
+    <string name="choose_interval_duration_tutorial_text">您需要選擇圖片切換的時間間隔。只有動態測試才需要選擇時間間隔。</string>
+    <string name="test_instructions">測試指示</string>
+    <string name="test_instruction_tutorial_text">本也包含重要的測試指示，請仔細閱讀</string>
+    <string name="select_test_image_tutorial_text">在此選擇測試背景圖片。您可以選擇螺旋線或五邊形</string>
+    <string name="select_dynamic_tests_tutorial_text">在此選擇動態測試</string>
+    <string name="select_static_tests_tutorial_text">在此選擇靜態測試</string>
+    <string name="choose_background">選擇背景</string>
+    <string name="choose_background_tutorial_text">您可以選擇紅色圓點，藍色圓點過黑色圓點作為測試背景</string>
+    <string name="circular_motion_test_tutorial_text">在測試中您需要以中心圓點為圓心畫一個盡可能圓的圓圈</string>
+    <string name="parallel_line_test_tutorial_text">這是靜態平行線測試，您需要基於背景圖畫三條盡可能平行的線</string>
+    <string name="practice_results">練習測試結果</string>
+    <string name="practice_result_tutorial_text">您可在此查看您所繪製的兩條線是否真的平行。測試結果包括以下分類：很好，好，一般和差。</string>
+    <string name="practice_makes_perfect">練習</string>
+    <string name="practice_makes_perfect_tutorial_text">您可以在這裡進行練習繪製平行線。應用內置演算法將會判斷您所繪製的線條是否平行。</string>
+    <string name="information_collection_tutorial_text">我們需要收集一些您的個人資訊以便讓我們的診斷更加準確。需要採集的資訊包括您的姓名，年齡，性別，教育程度，之前進行過的測試的評分等。</string>
+    <string name="account_centre_tutorial_text">歡迎使用Neurograph。如果您第一次使用本應用進行測試，請先註冊。如果您之前完成過註冊，請輸入您的註冊碼，然後點擊繼續來開始測試。</string>
+    <string name="introduction_page_tutorial_text">您可以在這裡看到應用簡介，包括新版本的功能介紹。</string>
+    <string name="clean_cache_tutorial_text">您可以點擊這裡清除應用緩存。清除應用緩存不會影響內部存儲和資料庫資訊。</string>
+    <string name="view_copyright_tutorial_text">你可以在這裡找到關於版權的資訊</string>
+    <string name="about_your_device_tutorial_text">您可以在本頁找到所有關於設備的資訊，包括螢幕測試區域大小等。</string>
+    <string name="information_tutorial_text">你可以在這裡找到關於本應用的信息</string>
+    <string name="choose_your_theme">選擇顏色主題</string>
+    <string name="choose_your_theme_tutorial_text">您可以在這裡選擇您喜歡的顏色主題。應用支援藍色，淺藍色，綠色，紫色，粉色和橙色六中顏色。</string>
+    <string name="customise_font_size">選擇字體大小</string>
+    <string name="customise_font_size_tutorial_text">您可以在這裡更改字體大小，可選擇普通字型大小或大字型大小。此設置會立刻生效。</string>
+    <string name="choose_your_language">選擇語言</string>
+    <string name="choose_your_language_tutorial_text">您可在這裡更改應用語言設置，應用支援英語，簡體中文，繁體中文，法語，荷蘭語，德語，義大利語，日語，俄語，西班牙語和葡萄牙語。此設置會立刻生效。</string>
+    <string name="setting_page">設置頁</string>
+    <string name="setting_page_tutorial_text">歡迎來到主頁。在這裡您可以更改語言及字體大小。點擊簡介按鈕可以查看應用簡介。</string>
+    <string name="number_of_entries_per_page">單頁顯示條目數量</string>
+    <string name="proceed">開始處理</string>
+    <string name="title_activity_introduction_content">Neurograph</string>
+    <string name="thank_you_please_do_not_close">處理過程中請不要關閉應用</string>
+    <string name="thank_you_for_participation">謝謝您的參與</string>
+    <string name="want_to_switch_user">切換用戶？</string>
+    <string name="change_settings">更改設置</string>
+    <string name="apply">應用</string>
+    <string name="no_setting_changes">無設置更改</string>
+    <string name="setting_discarded">設置更改取消</string>
+    <string name="discard_changes">放棄更改</string>
+    <string name="press_again_to_switch_user">再次點擊以切換用戶</string>
+    <string name="switch_user_upper">切換用戶</string>
+    <string name="store_data_file_before_switching_user">在切換使用者之前存儲資料檔案</string>
+    <string name="display">顯示 </string>
+    <string name="total">共計 </string>
+    <string name="no_previous_entries">無上一條目</string>
+    <string name="no_next_entries">無下一條目</string>
+    <string name="generating_files_upper">正在生成檔</string>
+    <string name="generating_files">正在生成檔</string>
+    <string name="file_saved">檔已保存</string>
+    <string name="neurograph_notification1">Neurograph 通知</string>
+    <string name="no_test_data">無測試資料</string>
+    <string name="no_test_data_to_store">無測試資料可存儲</string>
+    <string name="help">幫助</string>
+    <string name="notification_permission">通知許可權</string>
+    <string name="go_to_setting">前往設置</string>
+    <string name="discard_storing_files">放棄保存檔</string>
+    <string name="discard_storing_data_files">確認放棄保存文件？</string>
+    <string name="discard">放棄</string>
+    <string name="please_choose_file_type">請選擇檔案類型</string>
+    <string name="choose_at_least_one_file_type">請至少選擇一個需要保存的檔案類型</string>
+    <string name="generating_data_files">正在生成資料檔案</string>
+    <string name="generating_data_files_please_wait">正在生成資料檔案，請稍後</string>
+    <string name="change_colour">更改顏色</string>
+    <string name="light_blue">淺藍色</string>
+    <string name="green">綠色</string>
+    <string name="purple">紫色</string>
+    <string name="orange">橙色</string>
+    <string name="pink">粉色</string>
+    <string name="blue">藍色</string>
+    <string name="clean_app_cache">清理應用程式緩存？</string>
+    <string name="clean">清理</string>
+    <string name="cache_cleaned">緩存已清理</string>
+    <string name="no_test_data_to_send">無測試資料可發送</string>
+    <string name="please_choose_at_least_one_file_type_to_send">請至少選擇一個需要發送的檔案類型</string>
+    <string name="registration_code_cannot_be_empty">註冊碼不得為空</string>
+    <string name="registration_code_empty">註冊碼為空</string>
+    <string name="registration_code_is_empty">註冊碼為空</string>
+    <string name="registration_code_invalid1">無效註冊碼，註冊碼只應包含數位及字母</string>
+    <string name="Registration_code_invalid2">無效註冊碼，註冊碼只應包含數位及字母</string>
+    <string name="duplicate_registration_code">重複的註冊碼</string>
+    <string name="registration_code_duplicate_please_try_another_one">該註冊碼已被註冊，請更換註冊碼</string>
+    <string name="name_cannot_be_empty">姓名不得為空</string>
+    <string name="age_cannot_be_empty">年齡不得為空</string>
+    <string name="invalid_age">年齡無效</string>
+    <string name="invalid_age_range">無效年齡範圍</string>
+    <string name="confirm_changes">確認更改</string>
+    <string name="edit">編輯</string>
+    <string name="discard_changes1">放棄更改</string>
+    <string name="discard_information_changes">確認放棄資訊更改？</string>
+    <string name="hello">你好</string>
+    <string name="registration_code_invalid_message">無效註冊碼，註冊碼只應包含數位及字母</string>
+    <string name="duplicate_registration_code_message">該註冊碼已被註冊，請更換註冊碼</string>
+    <string name="invalid_age1">年齡無效</string>
+    <string name="invalid_age_range1">年齡範圍無效</string>
+    <string name="static_full_background_test_instruction">這是靜態全屏背景測試。在測試過程中背景圖將會以全屏的形式持續出現。請在背景圖上描出制定圖形。</string>
+    <string name="static_corner_background_test_instruction">這是靜態角落背景測試。背景圖將會出現在螢幕的右上角。請在畫板上繪製與背景圖一致的圖形。</string>
+    <string name="parallel_line_practice_instruction">這是平行線練習。請在畫板上繪製兩條盡可能平行的平行線。</string>
+    <string name="parallel_line_test_instruction">這是平行線測試。包含三條平行線的背景圖將被作為背景圖片。請在背景圖上描出三條平行線，描繪需盡可能平行。</string>
+    <string name="current_time_interval">當前所選時間間隔</string>
+    <string name="second">秒</string>
+    <string name="dynamic_blank_background_test_instruction">這是動態背景測試。本事背景會先出現一段制定的時間，之後消失。請盡可能記住背景圖上面的圖案，並在背景圖消失之後再畫板上畫出背景圖中的圖案。</string>
+    <string name="dynamic_seasonal_background_test_instruction">這是動態週期背景測試。背景圖片將會出現消失出消失，圖冊反復。請在畫板上描繪出背景圖裡的圖案。</string>
+    <string name="copy_file_path_message">點擊複製檔路徑按鈕可以將所保存檔的路徑複製至剪切板</string>
+    <string name="file_path_">檔路徑 :</string>
+    <string name="processing_message">正在處理中，請不要關閉應用</string>
+    <string name="calculating_the_test_result">計算測試結果</string>
+    <string name="deletion_completed">刪除已完成</string>
+    <string name="delete">刪除</string>
+    <string name="test_information">測試信息</string>
+    <string name="device_information_label">設備資訊</string>
+    <string name="account_label">帳戶</string>
+    <string name="loading_data">數據載入中</string>
+    <string name="calculating_results">結果計算中</string>
+    <string name="generating_files_label">生成資料檔案</string>
+    <string name="sending_email_label">發送資料郵件</string>
+    <string name="select_duration_label">選擇時間間隔及畫筆寬度</string>
+    <string name="select_width_label">選擇畫筆寬度</string>
+    <string name="choose_image_label">選擇背景圖片</string>
+    <string name="select_width_and_image_label">選擇畫筆寬度及背景圖片</string>
+    <string name="practice_result_label">練習結果</string>
+    <string name="send_data_email_label">發送資料郵件</string>
+    <string name="welcon_to_neurograph_label">歡迎使用Neurograph</string>
+    <string name="generate_datafiles_label">生成資料檔案</string>
+    <string name="neurograph_thank_you_label">Neurograph: 謝謝</string>
+    <string name="information_label">關於應用</string>
+    <string name="user_id_equal">用戶 ID = </string>
+    <string name="registration_code_equal">註冊碼 = </string>
+    <string name="name_equal">姓名 = </string>
+    <string name="age_equal">年齡 = </string>
+    <string name="gender_equal">性別 = </string>
+    <string name="education_level_equal">教育程度 = </string>
+    <string name="rating_score_equal">測試評分 = </string>
+    <string name="current_receiving_treatment_equal">正在接受治療 = </string>
+    <string name="changes_summary">信息更新彙總套件：</string>
+
+
+</resources>
+
