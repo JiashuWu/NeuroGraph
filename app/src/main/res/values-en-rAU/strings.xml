@@ -1,2 +1,610 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">NeuroGraph</string>
+    <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
+    <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
+    <string name="setting_page_choose_language">Please choose language</string>
+    <string name="english">English (EN_GB)</string>
+    <string name="chinese_simplified">Simplified Chinese (CH_ZN)</string>
+    <string name="chinese_traditional">Traditional Chinese (CH_TW)</string>
+    <string-array name="language_array">
+        <item>English</item>
+        <item>Simplified Chinese</item>
+        <item>Traditional Chinese</item>
+        <item>Dutch</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <string-array name="font_array">
+        <item>Normal</item>
+        <item>Large</item>
+    </string-array>
+    <string name="setting_page_choose_font_size">Please choose font size</string>
+    <string name="normal_font_size">Normal</string>
+    <string name="large_font_size">Large</string>
+
+    <string name="welcome">Welcome to NeuroGraph</string>
+
+    <string name="setting_page_start_button">Let\'s Start</string>
+
+
+    <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Please Enter Your Full Name</string>
+    <string name="age">Age</string>
+    <string name="enter_age">Please Enter Your Age</string>
+    <string name="gender">Gender</string>
+    <string name="enter_gender">Please Select Your Gender</string>
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+    <string name="select_education">Please Select Your Education Level</string>
+    <string-array name="education_level">
+        <item>Primary School or below</item>
+        <item>High School</item>
+        <item>Undergraduate</item>
+        <item>Postgraduate</item>
+        <item>Doctor or higher</item>
+    </string-array>
+    <string name="rating_score">Previous Alzheimer Rating Score (If Applicable), otherwise leave it as blank</string>
+    <string name="enter_rating_score">Please Enter Your Rating Score</string>
+    <string name="current_receiving_treatment">Are you currently receiving treatment? </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="next">Next</string>
+    <string name="title_activity_information_collection">Collect some information</string>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_test_selection">Tests</string>
+
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="static_tests">Static Tests</string>
+    <string name="dynamic_tests">Dynamic Tests</string>
+    <string name="data_list">Data List</string>
+
+    <string name="test1">Test 1</string>
+    <string name="test2">Test 2</string>
+    <string name="test3">Test 3</string>
+    <string name="test4">Test 4</string>
+    <string name="title_activity_image_selection">ImageSelectionActivity</string>
+
+    <string name="spiral_image">Spiral</string>
+    <string name="pentagon_image">Pentagon</string>
+
+    <string name="finish_button">Finish</string>
+    <string name="clear_button">Clear</string>
+
+    <string name="thank_you">Thank you for your participation</string>
+
+    <string name="information_empty">Information Empty</string>
+    <string name="information_invalid">Information Invalid</string>
+    <string name="name_empty">Name cannot be empty</string>
+    <string name="age_empty">Age cannot be empty</string>
+    <string name="age_invalid">Invalid Age</string>
+    <string name="rating_score_empty">Rating score cannot be empty</string>
+    <string name="rating_score_invalid">Invalid rating score</string>
+
+    <string name="treatment_empty">Please select treatment information</string>
+
+    <string name="dismiss">Dismiss</string>
+    <string name="title_activity_data_list">Data List</string>
+
+    <string name="data_list_button">Data List</string>
+    <string name="title_activity_test_detail_scrolling">Detailed information about the test</string>
+
+    <string name="select_painter_width">Please select your preferred painter width</string>
+
+    <string-array name="painter_width">
+        <item>Width 5</item>
+        <item>Width 10</item>
+        <item>Width 15</item>
+    </string-array>
+
+    <string-array name="delete_options">
+        <item>Delete all test data</item>
+        <item>Delete test data before a specific date</item>
+        <item>Delete all user and test data, this will restart the app</item>
+    </string-array>
+
+    <string name="channel_name">Neurograph</string>
+
+    <string name="store_data_file_introduction_text">Thank you for using Neurograph. You can now store all test data into a data file in the Android file system.</string>
+
+    <string name="button_generate">Generate</string>
+
+    <string name="button_introduction">Introduction</string>
+    <string name="placeholder">PLACEHOLDER</string>
+    <string name="introduction_content">"Welcome to Neurograph.\n"
+        "This is an app which can be used to assist the diagnostics of Alzheimer\'s Disease.\n"
+        "By doing some tests like drawing a spiral or pentagon, we will analyse your drawing pattern and using artificial intelligence to predict the level of the disease.\n\n\n"
+        "Version 1.0 (2018.04)\n"
+        "This version contains ......\n"
+    </string>
+    <string name="notification_permission_title">Notification permission</string>
+    <string name="turn_on_notification">Turn on notification</string>
+    <string name="button_dismiss">Dismiss</string>
+    <string name="go_to_system_setting">Go To Setting</string>
+    <string name="network_error">Network Error</string>
+    <string name="network_unavailable_message">Network unavailable, please check your network connection.</string>
+    <string name="ok">OK</string>
+    <string name="invalid_information">Invalid Information</string>
+    <string name="email_address_empty">Email address cannot be empty</string>
+    <string name="email_address_invalid">Email address invalid</string>
+    <string name="email_subject_empty">Subject cannot be empty</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="permission_not_granted_message">Permission not granted. Please go to system setting to grant the app permission.</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_sending_email">Confirm sending this email ?</string>
+    <string name="go_back">Go Back</string>
+    <string name="neurograph_notification">Neurograph_Notification</string>
+    <string name="successful_message_email_file">Email sent and file saved</string>
+    <string name="successfully_sent">Successfully Sent</string>
+    <string name="copy_file_path">Copy File Path</string>
+    <string name="success_message1">The email has been successfully sent and the file has been saved into the file system.</string>
+    <string name="cancel_sending">Cancel Sending</string>
+    <string name="quit_message">Want to quit without sending?</string>
+    <string name="exit_without_sending">Exit without sending</string>
+    <string name="send_email_introduction_text">Outputting all your data via email</string>
+    <string name="recipient">Recipient</string>
+    <string name="subject">Subject</string>
+    <string name="subject_cannot_empty">Subject cannot be empty</string>
+    <string name="email_address_format_requirement">Email Address must contain @ and .</string>
+    <string name="email_checkbox_message">Also show data as text content?</string>
+    <string name="send_button">Send</string>
+    <string name="cancel">Cancel</string>
+    <string name="instruction_of_test">instruction of that test</string>
+    <string name="start_test">Start Test</string>
+    <string name="spiral_introduction">A spiral template will be used during the test.</string>
+    <string name="pentagon_image_title">Pentagon Image</string>
+    <string name="spiral_image_title">Spiral Image</string>
+    <string name="pentagon_introduction">A pentagon template will be used during the test.</string>
+    <string name="generate_data_file_title">Generate Data File</string>
+    <string name="practice">Practice</string>
+    <string name="button_done">Done</string>
+    <string name="parallel_thank_you">
+        "Thank you for your participation.\n""We are now calculating your test result."</string>
+    <string name="button_tutorial">Tutorial</string>
+    <string name="title_activity_tutorial">Tutorials</string>
+    <string name="button_previous">Previous</string>
+    <string name="data_output_via_email">Data output via email</string>
+    <string name="full_background_test">Full Background Test</string>
+    <string name="static_full_background_test">Static Full Background Test</string>
+    <string name="corner_background_test">Corner Background Test</string>
+    <string name="start_test_1">Start Test 1</string>
+    <string name="start_test_2">Start Test 2</string>
+    <string name="blank_background_test">Blank Background Test</string>
+    <string name="start_test_3">Start Test 3</string>
+    <string name="seasonal_background_test">Seasonal Background Test</string>
+    <string name="start_test_4">Start Test 4</string>
+    <string name="button_capture">Capture</string>
+
+    <string name="welcome_to_neurograph">" Welcome to\n"
+    "Neurograph"</string>
+    <string name="title_activity_info">Information</string>
+
+    <string-array name="circular_motion_image_type">
+        <item>Red Dot</item>
+        <item>Blue Dot</item>
+        <item>Black Dot</item>
+    </string-array>
+
+    <!-- DO NOT TRANSLATE -->
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="store_file_option">
+        <item>Send email and store files</item>
+        <item>Store files</item>
+        <item>Do not store</item>
+    </string-array>
+    <string name="title_activity_device_infomation">Device Information</string>
+    <string name="title_activity_copyright_information">Copyright</string>
+    <string name="title_activity_personal_information_edit_page">Edit Information</string>
+    <string name="title_activity_account_centre">Account Centre</string>
+    <string name="title_activity_user_information_page">Personal Information</string>
+    <string name="title_activity_personal_information">Personal Information</string>
+    <string name="title_activity_feedback">Feedback</string>
+    <string name="delete_data">Delete data</string>
+    <string name="Calculating">Calculating</string>
+    <string name="Loading">Loading</string>
+    <string name="generating_progress">Generating Progress</string>
+    <string name="sending_progress">Sending Progress</string>
+    <string name="select_image_type">Please select test image type</string>
+    <string name="result">RESULT</string>
+    <string name="result_description">Result Description</string>
+    <string name="data_file_format_title">Data File Format (multiple choice allowed)</string>
+    <string name="csv">.csv</string>
+    <string name="txt">.txt</string>
+    <string name="db">.db</string>
+    <string name="readme">readme</string>
+    <string name="clean_data_after_storing_files">Clean data after storing files</string>
+    <string name="clean_data_after_storing_data_files">Clean data after storing data files</string>
+    <string name="calculating_test_result">We are calculating your test result</string>
+    <string name="account_centre">Account Centre</string>
+    <string name="new_user">New User</string>
+    <string name="new_user_description">As a new user, you need to register first.</string>
+    <string name="button_register">Register</string>
+    <string name="old_user">Old User</string>
+    <string name="enter_registration_code_title">Please enter your registration code</string>
+    <string name="button_continue">Continue</string>
+    <string name="copyright_title">Copyright</string>
+    <string name="device_information">Device Information</string>
+    <string name="registeration_code">Registration Code</string>
+    <string name="please_enter_a_registration_code">Please enter a registration code</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="edit_information">Edit Information</string>
+    <string name="edit_your_personal_information">Edit your personal information.</string>
+    <string name="button_discard">Discard</string>
+    <string name="button_apply">Apply</string>
+    <string name="title">TITLE</string>
+    <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
+    <string name="start_practice">Start Practice</string>
+    <string name="parallel_line_test_description">This is a practice exercise. Please draw two line as parallel as possible !</string>
+    <string name="parallel_line_test">Parallel Line Test</string>
+    <string name="parallel_line_test_description1">This is the parallel line test. In this test you need to draw three parallel lines following the background pattern.</string>
+    <string name="circular_motion_test">Circular Motion Test</string>
+    <string name="circular_motion_test_description">This is the circular motion test. You need to draw a circle, using the red dot as the center.</string>
+    <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
+    <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
+    <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
+    <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
+    <string name="tests">Tests</string>
+    <string name="information">Information</string>
+    <string name="copyright">Copyright</string>
+    <string name="edit_information1">Edit Information</string>
+    <string name="registration_code_invalid">Registration Code Invalid</string>
+    <string name="regist_first">Registration code in invalid. You need to register first.</string>
+    <string name="got_it">Got It</string>
+    <string name="perfect">Perfect</string>
+    <string name="make_changes">Make Changes</string>
+    <string name="want_to_delete">Want to delete?</string>
+    <string name="button_delete">Delete</string>
+    <string name="detele_data_before_this_date">Delete data before this date</string>
+    <string name="your_device_information">Your device information :</string>
+    <string name="device_brand">Device Brand :</string>
+    <string name="device_manufacturer">Device Manufacturer :</string>
+    <string name="device_product_information">Device Product Information :</string>
+    <string name="device_model">Device Model :</string>
+    <string name="device_system_version_code">Device System Version Code :</string>
+    <string name="device_resolution">Device Resolution :</string>
+    <string name="device_testing_area">Device Testing Area :</string>
+    <string name="device_navigation_bar_height">Device Navigation Bar Height :</string>
+    <string name="Processing">Processing</string>
+    <string name="calculating_test_result_do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="loading">Loading</string>
+    <string name="do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="file_location_text">You can choose to copy the file location to Clipboard by simply clicking Copy File Path button.</string>
+    <string name="file_path_copied">File Path copied to clipboard.</string>
+    <string name="button_copy">Copy</string>
+    <string name="sending">Sending</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_next">Next</string>
+    <string name="button_all_done">All Done</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="dot_and_line">Dot and Line</string>
+    <string name="view_user_information">View User Information</string>
+    <string name="switch_user">Switch User</string>
+    <string name="setting">Setting</string>
+    <string name="previous_1000_entries">Previous 1000 entries</string>
+    <string name="next_1000_entries">Next 1000 entries</string>
+    <string name="clean_cache">Clean Cache</string>
+    <string name="edit_user_information">Edit user information</string>
+    <string name="home_page">Home Page</string>
+    <string name="customization">Customization</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="choose_font_fize">Choose Font Size</string>
+    <string name="choose_colour_theme">Choose Colour Theme</string>
+    <string name="change_setting">Change Setting</string>
+    <string name="about_your_device">About your device</string>
+    <string name="view_copyright">View Copyright</string>
+    <string name="introduction_page">Introduction Page</string>
+    <string name="account">Account</string>
+    <string name="information_collection">Information Collection</string>
+    <string name="parallel_line_practice">Parallel Line Practice</string>
+    <string name="practice_result">Practice Result</string>
+    <string name="select_static_tests">Select Static Tests</string>
+    <string name="select_dynamic_tests">Select Dynamic Tests</string>
+    <string name="select_test_image">Select Test Image</string>
+    <string name="test_instruction">Test Instruction</string>
+    <string name="choose_interval_duration">Choose Interval Duration</string>
+    <string name="choose_painter_width">Choose Painter Width</string>
+    <string name="draw_it">Draw It</string>
+    <string name="manage_data">Manage Data</string>
+    <string name="processing">Processing</string>
+    <string name="view_data">View Data</string>
+    <string name="long_click_to_delete">Long Click to Delete</string>
+    <string name="send_data_email">Send Data Email</string>
+    <string name="store_data_files">Store Data Files</string>
+    <string name="choose_files_types">Choose File Types</string>
+    <string name="manage_personal_information">Manage Personal Information</string>
+    <string name="view_personal_information">View Personal Information</string>
+    <string name="edit_personal_information">Edit Personal Information</string>
+    <string name="store_data_before_switching">Store Data Before Switching</string>
+    <string name="output_data">Output Data</string>
+    <string name="store_date_file">Store Date File</string>
+    <string name="file_path">File Path</string>
+    <string name="neurograph">Neurograph</string>
+    <string name="test_1">test 1</string>
+    <string name="zhangsan">zhangsan</string>
+    <string name="test_date">test date</string>
+    <string name="test_type">test type</string>
+    <string name="image_type">image type</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="choose_tutorial">You can choose tutorials from the navigation bar on the left hand side.</string>
+    <string name="neurograph1">NEUROGRAPH</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="copyright_2018_jiashu_wu_xuanchi_liu">Copyright©2018 Jiashu Wu Xuanchi Liu</string>
+    <string name="all_rights_reserved">All Rights Reserved</string>
+    <string name="press_again_to_exit">Press again to exit</string>
+    <string name="change_setting_text">You can change the language and font size setting here.</string>
+    <string name="store_data_after_switching">Store Data After Switching</string>
+    <string name="store_data_switching_text">You can choose to store data before switching user</string>
+    <string name="switch_user_tutorial_text">You can switch user here.</string>
+    <string name="edit_information_tutorial_text">You can view or edit your personal information here.</string>
+    <string name="view_information">View Information</string>
+    <string name="view_information_tutorial_text">You can view or edit your personal information here.</string>
+    <string name="delete_data_tutorial_text">Here you can delete all test data, delete test data prior to a specific data, or delete all data (This will restart the app)</string>
+    <string name="choose_file_type">Choose File Type</string>
+    <string name="choose_file_type_tutorial_text">You can choose which type of file you want to store, you can choose all of them.</string>
+    <string name="store_data_file">Store Data File</string>
+    <string name="store_data_file_tutorial_text">You can also store data file into Android file system, and send it to your PC by connecting your phone via a cable. You can copy the file path to clipboard. Easy to use!</string>
+    <string name="copy_file_path_tutorial_text">You can copy the file path here.</string>
+    <string name="send_data_email_tutorial_text">Want to outputting all test data? Send it via email.</string>
+    <string name="long_click_to_delete1">Long click to delete</string>
+    <string name="long_click_to_delete_tutorial_text">Delete a piece of data by long clicking it.</string>
+    <string name="test_details">Test Details</string>
+    <string name="test_details_tutorial_text">Here you can find the test details.</string>
+    <string name="data_list_tutorial_text">Here you can all the test data, including test ID, test type, image type, detailed coordinates and more!</string>
+    <string name="procesing">Processing</string>
+    <string name="processing_tutorial_text">After each test, it takes some time to process, please do not close the app during processing.</string>
+    <string name="draw_it_tutorial_text">Draw the required shape here. You can click \"Clear\" to clear the canvas, and click \"Finish\" to finish the test</string>
+    <string name="choose_painter_width_tutorial_text">You can choose the painter width you preferred. We have thin, normal and thick width available.</string>
+    <string name="choose_interval_duration_tutorial_text">You can choose the interval duration of the test. The interval duration only applies to dynamic tests.</string>
+    <string name="test_instructions">Test Instructions</string>
+    <string name="test_instruction_tutorial_text">This page contains some important test instructions. Remember to read them carefully.</string>
+    <string name="select_test_image_tutorial_text">Here you can choose the background image of the test. We have spiral and pentagon.</string>
+    <string name="select_dynamic_tests_tutorial_text">You can choose a dynamic test here.</string>
+    <string name="select_static_tests_tutorial_text">You can select a static test here.</string>
+    <string name="choose_background">Choose Background</string>
+    <string name="choose_background_tutorial_text">You can choose red, blue or black dot as the background.</string>
+    <string name="circular_motion_test_tutorial_text">You need to draw a circle around a dot in this test.</string>
+    <string name="parallel_line_test_tutorial_text">This is the static parallel test, you need to draw three horizontal parallel lines.</string>
+    <string name="practice_results">Practice Results</string>
+    <string name="practice_result_tutorial_text">Here you can see whether the two parallel lines you draw are indeed paralle. These grading level will be used: Perfect, Good, Acceptable and Bad.</string>
+    <string name="practice_makes_perfect">Practice Makes Perfect</string>
+    <string name="practice_makes_perfect_tutorial_text">This is a playground where you can practice drawing two parallel lines. Our specially designed algorithm will judge whether these two lines are indeed parallel. Have fun!</string>
+    <string name="information_collection_tutorial_text">We need to collect some information to make the diagnostic more precise. The information include your name, gender, education, previous rating score etc.</string>
+    <string name="account_centre_tutorial_text">For new user, you need to register before using, for old user, you can simply type in your registration code and start the tests.</string>
+    <string name="introduction_page_tutorial_text">Here you can find an introduction of this app, including what is new in this version of release.</string>
+    <string name="clean_cache_tutorial_text">Here you can the cache of the app. This won\'t affect internal storage or database.</string>
+    <string name="view_copyright_tutorial_text">You can find the copyright information here.</string>
+    <string name="about_your_device_tutorial_text">You can easily find all the information you need about your device in this page. This can help you figure out the useful information of your device including the size of testing area etc.</string>
+    <string name="information_tutorial_text">Here you can find the information about this app.</string>
+    <string name="choose_your_theme">Choose your theme</string>
+    <string name="choose_your_theme_tutorial_text">Here you can choose your favourite theme colour. We have blue, light blue, green, purple, pink and orange theme.</string>
+    <string name="customise_font_size">Customise font size</string>
+    <string name="customise_font_size_tutorial_text">Here you can customise the font size, normal or large. The change will take effect immediately.</string>
+    <string name="choose_your_language">Choose your language</string>
+    <string name="choose_your_language_tutorial_text">Here you can choose your preferred language, our app support English, Simplified Chinese, Traditional Chinese, French, Dutch, German, Italian, Japanese, Russian, Spanish and Portuguese. The change will take effect immediately.</string>
+    <string name="setting_page">Setting Page</string>
+    <string name="setting_page_tutorial_text">This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button.</string>
+    <string name="number_of_entries_per_page">Number of entries per page</string>
+    <string name="proceed">Proceed</string>
+    <string name="title_activity_introduction_content">Neurograph</string>
+    <string name="thank_you_please_do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="thank_you_for_participation">Thank you for your participation.</string>
+    <string name="want_to_switch_user">Want to switch user ?</string>
+    <string name="change_settings">Change Settings</string>
+    <string name="apply">Apply</string>
+    <string name="no_setting_changes">No setting changes</string>
+    <string name="setting_discarded">Setting discarded</string>
+    <string name="discard_changes">Discard changes</string>
+    <string name="press_again_to_switch_user">Press again to switch user</string>
+    <string name="switch_user_upper">SWITCH USER</string>
+    <string name="store_data_file_before_switching_user">Store data files before switching user</string>
+    <string name="display">Display </string>
+    <string name="total">Total </string>
+    <string name="no_previous_entries">No previous entries</string>
+    <string name="no_next_entries">No next entries</string>
+    <string name="generating_files_upper">Generating Files</string>
+    <string name="generating_files">Generating files</string>
+    <string name="file_saved">File Saved</string>
+    <string name="neurograph_notification1">Neurograph Notification</string>
+    <string name="no_test_data">No Test Data</string>
+    <string name="no_test_data_to_store">There is no test data to store</string>
+    <string name="help">Help</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="go_to_setting">Go To Setting</string>
+    <string name="discard_storing_files">Discard Storing Files</string>
+    <string name="discard_storing_data_files">Discard storing data files ?</string>
+    <string name="discard">Discard</string>
+    <string name="please_choose_file_type">Please Choose File Type</string>
+    <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
+    <string name="generating_data_files">Generating Data Files</string>
+    <string name="generating_data_files_please_wait">Generating data files may takes a few second. Please wait</string>
+    <string name="change_colour">Change Colour</string>
+    <string name="light_blue">Light Blue</string>
+    <string name="green">Green</string>
+    <string name="purple">Purple</string>
+    <string name="orange">Orange</string>
+    <string name="pink">Pink</string>
+    <string name="blue">Blue</string>
+    <string name="clean_app_cache">Clean app cache ?</string>
+    <string name="clean">Clean</string>
+    <string name="cache_cleaned">Cache Cleaned</string>
+    <string name="no_test_data_to_send">There is no test data to send</string>
+    <string name="please_choose_at_least_one_file_type_to_send">Please choose at least one file type to send</string>
+    <string name="registration_code_cannot_be_empty">Registration code cannot be empty</string>
+    <string name="registration_code_empty">Registration Code Empty</string>
+    <string name="registration_code_is_empty">Registration Code is empty</string>
+    <string name="registration_code_invalid1">Registration code invalid, should contains only alphabet and numbers</string>
+    <string name="Registration_code_invalid2">Registration code invalid. It should only contain alphabets or numbers.</string>
+    <string name="duplicate_registration_code">Duplicate Registration Code</string>
+    <string name="registration_code_duplicate_please_try_another_one">This registration code has been registered, please try another one</string>
+    <string name="name_cannot_be_empty">Name cannot be empty</string>
+    <string name="age_cannot_be_empty">Age cannot be empty</string>
+    <string name="invalid_age">Invalid Age</string>
+    <string name="invalid_age_range">Invalid age range</string>
+    <string name="confirm_changes">Confirm Changes</string>
+    <string name="edit">Edit</string>
+    <string name="discard_changes1">Discard Changes</string>
+    <string name="discard_information_changes">Discard information changes ?</string>
+    <string name="hello">G\' day</string>
+    <string name="registration_code_invalid_message">Registration code invalid. It should only contain alphabets or numbers.</string>
+    <string name="duplicate_registration_code_message">This registration code has been registered, please try another one</string>
+    <string name="invalid_age1">Invalid Age</string>
+    <string name="invalid_age_range1">Invalid Age Range</string>
+    <string name="static_full_background_test_instruction">This is the static full background test. During the test the background will always be here. Remember to follow the background image to draw the required shape.</string>
+    <string name="static_corner_background_test_instruction">This is the static corner background. The image template will always stays at the top right corner of the screen. Remember to follow the background to draw the required shape.</string>
+    <string name="parallel_line_practice_instruction">This is the parallel practice. You are required to draw exactly two lines on the screen, as parallel as possible.</string>
+    <string name="parallel_line_test_instruction">This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines.</string>
+    <string name="current_time_interval">Current time interval</string>
+    <string name="second">seconds</string>
+    <string name="dynamic_blank_background_test_instruction">This is the dynamic blank background test. The background will first appear for a given time period, then disappear. You need to remember the background pattern and draw it on a blank screen.</string>
+    <string name="dynamic_seasonal_background_test_instruction">This is the dynamic seasonal background test. The background image will keep appearing and disappearing, with certain time interval specified. You are required to follow the background image to draw the required shape.</string>
+    <string name="copy_file_path_message">You can choose to copy the file location to Clipboard by simply clicking Copy File Path button.</string>
+    <string name="file_path_">File path :</string>
+    <string name="processing_message">Please waiting while processing. Please DO NOT close the app while processing.</string>
+    <string name="calculating_the_test_result">Calculating the test results.</string>
+    <string name="deletion_completed">Deletion Completed</string>
+    <string name="delete">Delete</string>
+    <string name="test_information">Test Information</string>
+    <string name="device_information_label">Device Information</string>
+    <string name="account_label">Account</string>
+    <string name="loading_data">Loading Data</string>
+    <string name="calculating_results">Calculating Results</string>
+    <string name="generating_files_label">Generating Files</string>
+    <string name="sending_email_label">Sending Email</string>
+    <string name="select_duration_label">Select Duration and Width</string>
+    <string name="select_width_label">Select Width</string>
+    <string name="choose_image_label">Choose Image</string>
+    <string name="select_width_and_image_label">Select Width and Image</string>
+    <string name="practice_result_label">Practice Results</string>
+    <string name="send_data_email_label">Send Data Email</string>
+    <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
+    <string name="generate_datafiles_label">Generate Data Files</string>
+    <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
+    <string name="information_label">Information</string>
+    <string name="user_id_equal">User ID = </string>
+    <string name="registration_code_equal">Registration Code = </string>
+    <string name="name_equal">Name = </string>
+    <string name="age_equal">Age = </string>
+    <string name="gender_equal">Gender = </string>
+    <string name="education_level_equal">Education Level = </string>
+    <string name="rating_score_equal">Rating Score = </string>
+    <string name="current_receiving_treatment_equal">Current Receiving Treatment = </string>
+    <string name="changes_summary">Changes Summary :</string>
+
+
+</resources>
