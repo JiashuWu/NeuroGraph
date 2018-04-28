@@ -396,8 +396,8 @@
     <string name="view_user_information">查看用户信息</string>
     <string name="switch_user">切换用户</string>
     <string name="setting">设置</string>
-    <string name="previous_1000_entries">显示下1000条目</string>
-    <string name="next_1000_entries">显示上1000条目</string>
+    <string name="previous_1000_entries">显示上1000条目</string>
+    <string name="next_1000_entries">显示下1000条目</string>
     <string name="clean_cache">清理缓存</string>
     <string name="edit_user_information">修改用户信息</string>
     <string name="home_page">主页</string>
