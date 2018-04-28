@@ -284,6 +284,7 @@ public class MySurfaceViewForParallelLineTest extends SurfaceView implements Sur
         touch_point_size_list.clear();
         tool_type_list.clear();
         timestamp_list.clear();
+        mPath.reset();
 
         Sharing.number_of_item_in_total = 0;
     }
