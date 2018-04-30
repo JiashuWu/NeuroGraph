@@ -506,7 +506,7 @@ public class DataListActivity extends AppCompatActivity {
                 }
             });
 
-            builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getResources().getString(R.string.delete), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (delete_option.equalsIgnoreCase("all"))
