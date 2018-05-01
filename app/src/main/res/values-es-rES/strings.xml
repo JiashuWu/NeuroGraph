@@ -604,7 +604,7 @@
     <string name="education_level_equal">Education Level = </string>
     <string name="rating_score_equal">Rating Score = </string>
     <string name="current_receiving_treatment_equal">Current Receiving Treatment = </string>
-    <string name="changes_summary">resumen de cambios :</string>
+    <string name="changes_summary">resumen de cambios : </string>
 
 
 </resources>
