@@ -1,4 +1,7 @@
 <resources>
+
+    <!-- I will not provide japanese language translation -->
+
     <string name="app_name">NeuroGraph</string>
     <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
     <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
