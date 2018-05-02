@@ -28,7 +28,7 @@
     <string name="normal_font_size">Normal</string>
     <string name="large_font_size">Large</string>
 
-    <string name="welcome">Welcome to NeuroGraph</string>
+    <string name="welcome">Bienvenue à NeuroGraph</string>
 
     <string name="setting_page_start_button">Let\'s Start</string>
 
@@ -234,7 +234,7 @@
     <string name="go_to_system_setting">Go To Setting</string>
     <string name="network_error">Network Error</string>
     <string name="network_unavailable_message">Network unavailable, please check your network connection.</string>
-    <string name="ok">OK</string>
+    <string name="ok">D\'accord</string>
     <string name="invalid_information">Invalid Information</string>
     <string name="email_address_empty">Email address cannot be empty</string>
     <string name="email_address_invalid">Email address invalid</string>
@@ -243,7 +243,7 @@
     <string name="permission_not_granted_message">Permission not granted. Please go to system setting to grant the app permission.</string>
     <string name="confirm">Confirm</string>
     <string name="confirm_sending_email">Confirm sending this email ?</string>
-    <string name="go_back">Go Back</string>
+    <string name="go_back">Retourner</string>
     <string name="neurograph_notification">Neurograph_Notification</string>
     <string name="successful_message_email_file">Email sent and file saved</string>
     <string name="successfully_sent">Successfully Sent</string>
@@ -286,7 +286,7 @@
     <string name="start_test_4">Start Test 4</string>
     <string name="button_capture">Capture</string>
 
-    <string name="welcome_to_neurograph">" Welcome to\n"
+    <string name="welcome_to_neurograph">" Bienvenue à\n"
     "Neurograph"</string>
     <string name="title_activity_info">Information</string>
 
@@ -343,7 +343,7 @@
     <string name="personal_information">Personal Information</string>
     <string name="edit_information">Edit Information</string>
     <string name="edit_your_personal_information">Edit your personal information.</string>
-    <string name="button_discard">Discard</string>
+    <string name="button_discard">Jeter</string>
     <string name="button_apply">Apply</string>
     <string name="title">TITLE</string>
     <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
@@ -367,7 +367,7 @@
     <string name="perfect">Perfect</string>
     <string name="make_changes">Make Changes</string>
     <string name="want_to_delete">Want to delete?</string>
-    <string name="button_delete">Delete</string>
+    <string name="button_delete">Effacer</string>
     <string name="detele_data_before_this_date">Delete data before this date</string>
     <string name="your_device_information">Your device information :</string>
     <string name="device_brand">Device Brand :</string>
@@ -528,7 +528,7 @@
     <string name="go_to_setting">Go To Setting</string>
     <string name="discard_storing_files">Discard Storing Files</string>
     <string name="discard_storing_data_files">Discard storing data files ?</string>
-    <string name="discard">Discard</string>
+    <string name="discard">Jeter</string>
     <string name="please_choose_file_type">Please Choose File Type</string>
     <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
     <string name="generating_data_files">Generating Data Files</string>
@@ -560,7 +560,7 @@
     <string name="edit">Edit</string>
     <string name="discard_changes1">Discard Changes</string>
     <string name="discard_information_changes">Discard information changes ?</string>
-    <string name="hello">Hello</string>
+    <string name="hello">Bonjour</string>
     <string name="registration_code_invalid_message">Registration code invalid. It should only contain alphabets or numbers.</string>
     <string name="duplicate_registration_code_message">This registration code has been registered, please try another one</string>
     <string name="invalid_age1">Invalid Age</string>
@@ -578,7 +578,7 @@
     <string name="processing_message">Please waiting while processing. Please DO NOT close the app while processing.</string>
     <string name="calculating_the_test_result">Calculating the test results.</string>
     <string name="deletion_completed">Deletion Completed</string>
-    <string name="delete">Delete</string>
+    <string name="delete">Effacer</string>
     <string name="test_information">Test Information</string>
     <string name="device_information_label">Device Information</string>
     <string name="account_label">Account</string>
@@ -592,7 +592,7 @@
     <string name="select_width_and_image_label">Select Width and Image</string>
     <string name="practice_result_label">Practice Results</string>
     <string name="send_data_email_label">Send Data Email</string>
-    <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
+    <string name="welcon_to_neurograph_label">Bienvenue à Neurograph</string>
     <string name="generate_datafiles_label">Generate Data Files</string>
     <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
     <string name="information_label">Information</string>
