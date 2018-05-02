@@ -30,7 +30,7 @@ import java.util.Locale;
 
 
 
-
+// This is the file that control the CircularMotionTest
 
 public class CircularMotionTestActivity extends AppCompatActivity {
 
@@ -107,10 +107,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
 
     private ImageView centre_dot_imageView;
 
-
-
-
-
+    // This method switches the language setting
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -138,6 +135,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    // this method initialise the theme setting
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -152,6 +150,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         }
     }
 
+    // get the total number of points
     public int getNumber_of_item_in_total ()
     {
         databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -184,6 +183,7 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         return answer;
     }
 
+    // this method is a worker method which stores data
     public void storeDataWorker ()
     {
         x_list = Sharing.x_list;
@@ -465,14 +465,12 @@ public class CircularMotionTestActivity extends AppCompatActivity {
             }
         });
 
-
-
         /*
         capture_button = (Button) findViewById(R.id.static_background_test_capture_button);
         capture_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO IF YOU WANT A SCREENSHOT
+                // IF YOU WANT A SCREENSHOT
                 //getScreenShot();
                 Bitmap bitmap = takeScreenShot ();
                 saveBitmap (bitmap);
@@ -480,13 +478,11 @@ public class CircularMotionTestActivity extends AppCompatActivity {
         });
         */
 
-
-
         finish_button = (Button) findViewById(R.id.circular_motion_test_finish_button);
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO IF YOU WANT A SCREENSHOT
+                // IF YOU WANT A SCREENSHOT
                 // getScreenShot((View) getWindow().getDecorView());
                 calendar = Calendar.getInstance();
                 year = calendar.get(Calendar.YEAR);
@@ -497,36 +493,56 @@ public class CircularMotionTestActivity extends AppCompatActivity {
                 second = calendar.get(Calendar.SECOND);
                 millisecond = calendar.get(Calendar.MILLISECOND);
 
-                if (String.valueOf(month).length() == 1) {
+                if (String.valueOf(month).length() == 1)
+                {
                     month_s = "0" + String.valueOf(month);
-                } else {
+                }
+                else
+                {
                     month_s = String.valueOf(month);
                 }
-                if (String.valueOf(day).length() == 1) {
+                if (String.valueOf(day).length() == 1)
+                {
                     day_s = "0" + String.valueOf(day);
-                } else {
+                }
+                else
+                {
                     day_s = String.valueOf(day);
                 }
-                if (String.valueOf(hour).length() == 1) {
+                if (String.valueOf(hour).length() == 1)
+                {
                     hour_s = "0" + String.valueOf(hour);
-                } else {
+                }
+                else
+                {
                     hour_s = String.valueOf(hour);
                 }
-                if (String.valueOf(minute).length() == 1) {
+                if (String.valueOf(minute).length() == 1)
+                {
                     minute_s = "0" + String.valueOf(minute);
-                } else {
+                }
+                else
+                {
                     minute_s = String.valueOf(minute);
                 }
-                if (String.valueOf(second).length() == 1) {
+                if (String.valueOf(second).length() == 1)
+                {
                     second_s = "0" + String.valueOf(second);
-                } else {
+                }
+                else
+                {
                     second_s = String.valueOf(second);
                 }
-                if (String.valueOf(millisecond).length() == 1) {
+                if (String.valueOf(millisecond).length() == 1)
+                {
                     millisecond_s = "00" + String.valueOf(millisecond);
-                } else if (String.valueOf(millisecond).length() == 2) {
+                }
+                else if (String.valueOf(millisecond).length() == 2)
+                {
                     millisecond_s = "0" + String.valueOf(millisecond);
-                } else if (String.valueOf(millisecond).length() == 3) {
+                }
+                else if (String.valueOf(millisecond).length() == 3)
+                {
                     millisecond_s = String.valueOf(millisecond);
                 }
 
@@ -579,7 +595,6 @@ public class CircularMotionTestActivity extends AppCompatActivity {
     {
         super.onResume();
     }
-
 
     @Override
     public void onPause()
