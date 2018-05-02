@@ -40,7 +40,7 @@ public class AccountCentreActivity extends AppCompatActivity {
 
     private Cursor cursor;
 
-
+    // This method is used to choose colour theme
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -55,6 +55,7 @@ public class AccountCentreActivity extends AppCompatActivity {
         }
     }
 
+    // This method is used to switch language
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -81,7 +82,6 @@ public class AccountCentreActivity extends AppCompatActivity {
         resource.updateConfiguration(configuration, displayMetrics);
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
-
 
     /**
      *
@@ -180,6 +180,7 @@ public class AccountCentreActivity extends AppCompatActivity {
         });
     }
 
+    // Close the database connection in the onStop method
     @Override
     public void onStop ()
     {
@@ -198,6 +199,7 @@ public class AccountCentreActivity extends AppCompatActivity {
         super.onStop();;
     }
 
+    // Override the onKeyDown method, go back to SettingPageActivity;
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
