@@ -594,7 +594,7 @@
     <string name="send_data_email_label">Send Data Email</string>
     <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
     <string name="generate_datafiles_label">Generate Data Files</string>
-    <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
+    <string name="neurograph_thank_you_label">Neurograph: Gracias</string>
     <string name="information_label">Information</string>
     <string name="user_id_equal">User ID = </string>
     <string name="registration_code_equal">Registration Code = </string>

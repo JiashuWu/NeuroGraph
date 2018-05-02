@@ -7,30 +7,30 @@
     <string name="chinese_simplified">Simplified Chinese (CH_ZN)</string>
     <string name="chinese_traditional">Traditional Chinese (CH_TW)</string>
     <string-array name="language_array">
-        <item>Anglais</item>
-        <item>Chinois Simplifié</item>
-        <item>Chinois Traditionnel</item>
-        <item>Néerlandais</item>
-        <item>Français</item>
-        <item>Allemand</item>
-        <item>Italien</item>
-        <item>Japonais</item>
-        <item>Portugais</item>
-        <item>Russe</item>
-        <item>Espanol</item>
+        <item>English</item>
+        <item>Simplified Chinese</item>
+        <item>Traditional Chinese</item>
+        <item>Dutch</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
     </string-array>
 
     <string-array name="font_array">
-        <item>Ordinaire</item>
-        <item>Grand</item>
+        <item>Normal</item>
+        <item>Large</item>
     </string-array>
     <string name="setting_page_choose_font_size">Please choose font size</string>
-    <string name="normal_font_size">Ordinaire</string>
-    <string name="large_font_size">Grand</string>
+    <string name="normal_font_size">Normal</string>
+    <string name="large_font_size">Large</string>
 
-    <string name="welcome">Bienvenue à NeuroGraph</string>
+    <string name="welcome">Welcome to NeuroGraph</string>
 
-    <string name="setting_page_start_button">Commençons</string>
+    <string name="setting_page_start_button">Let\'s Start</string>
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
@@ -56,9 +56,9 @@
     <string name="rating_score">Previous Alzheimer Rating Score (If Applicable), otherwise leave it as blank</string>
     <string name="enter_rating_score">Please Enter Your Rating Score</string>
     <string name="current_receiving_treatment">Are you currently receiving treatment? </string>
-    <string name="yes">Oui</string>
-    <string name="no">Non</string>
-    <string name="next">Prochain</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="next">Next</string>
     <string name="title_activity_information_collection">Collect some information</string>
 
     <!-- DO NOT TRANSLATE -->
@@ -168,21 +168,21 @@
 
     <string name="static_tests">Static Tests</string>
     <string name="dynamic_tests">Dynamic Tests</string>
-    <string name="data_list">Liste de données</string>
+    <string name="data_list">Data List</string>
 
-    <string name="test1">Tester 1</string>
-    <string name="test2">Tester 2</string>
-    <string name="test3">Tester 3</string>
-    <string name="test4">Tester 4</string>
+    <string name="test1">Test 1</string>
+    <string name="test2">Test 2</string>
+    <string name="test3">Test 3</string>
+    <string name="test4">Test 4</string>
     <string name="title_activity_image_selection">ImageSelectionActivity</string>
 
-    <string name="spiral_image">Spirale</string>
-    <string name="pentagon_image">Pentagone</string>
+    <string name="spiral_image">Spiral</string>
+    <string name="pentagon_image">Pentagon</string>
 
-    <string name="finish_button">Terminer</string>
-    <string name="clear_button">Clair</string>
+    <string name="finish_button">Finish</string>
+    <string name="clear_button">Clear</string>
 
-    <string name="thank_you">Merci pour votre participation</string>
+    <string name="thank_you">Thank you for your participation</string>
 
     <string name="information_empty">Information Empty</string>
     <string name="information_invalid">Information Invalid</string>
@@ -194,18 +194,18 @@
 
     <string name="treatment_empty">Please select treatment information</string>
 
-    <string name="dismiss">Rejeter</string>
-    <string name="title_activity_data_list">Liste de données</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="title_activity_data_list">Data List</string>
 
-    <string name="data_list_button">Liste de données</string>
+    <string name="data_list_button">Data List</string>
     <string name="title_activity_test_detail_scrolling">Detailed information about the test</string>
 
     <string name="select_painter_width">Please select your preferred painter width</string>
 
     <string-array name="painter_width">
-        <item>Largeur 5</item>
-        <item>Largeur 10</item>
-        <item>Largeur 15</item>
+        <item>Width 5</item>
+        <item>Width 10</item>
+        <item>Width 15</item>
     </string-array>
 
     <string-array name="delete_options">
@@ -218,7 +218,7 @@
 
     <string name="store_data_file_introduction_text">Thank you for using Neurograph. You can now store all test data into a data file in the Android file system.</string>
 
-    <string name="button_generate">Produire</string>
+    <string name="button_generate">Generate</string>
 
     <string name="button_introduction">Introduction</string>
     <string name="placeholder">PLACEHOLDER</string>
@@ -230,70 +230,70 @@
     </string>
     <string name="notification_permission_title">Notification permission</string>
     <string name="turn_on_notification">Turn on notification</string>
-    <string name="button_dismiss">Rejeter</string>
+    <string name="button_dismiss">Dismiss</string>
     <string name="go_to_system_setting">Go To Setting</string>
-    <string name="network_error">Erreur réseau</string>
+    <string name="network_error">Network Error</string>
     <string name="network_unavailable_message">Network unavailable, please check your network connection.</string>
-    <string name="ok">D\'accord</string>
+    <string name="ok">OK</string>
     <string name="invalid_information">Invalid Information</string>
     <string name="email_address_empty">Email address cannot be empty</string>
     <string name="email_address_invalid">Email address invalid</string>
     <string name="email_subject_empty">Subject cannot be empty</string>
     <string name="permission_not_granted">Permission not granted</string>
     <string name="permission_not_granted_message">Permission not granted. Please go to system setting to grant the app permission.</string>
-    <string name="confirm">Confirmer</string>
+    <string name="confirm">Confirm</string>
     <string name="confirm_sending_email">Confirm sending this email ?</string>
-    <string name="go_back">Retourner</string>
+    <string name="go_back">Go Back</string>
     <string name="neurograph_notification">Neurograph_Notification</string>
     <string name="successful_message_email_file">Email sent and file saved</string>
-    <string name="successfully_sent">Envoyé avec succès</string>
-    <string name="copy_file_path">Copier le chemin du fichier</string>
+    <string name="successfully_sent">Successfully Sent</string>
+    <string name="copy_file_path">Copy File Path</string>
     <string name="success_message1">The email has been successfully sent and the file has been saved into the file system.</string>
     <string name="cancel_sending">Cancel Sending</string>
     <string name="quit_message">Want to quit without sending?</string>
     <string name="exit_without_sending">Exit without sending</string>
     <string name="send_email_introduction_text">Outputting all your data via email</string>
-    <string name="recipient">Bénéficiaire</string>
-    <string name="subject">Assujettir</string>
+    <string name="recipient">Recipient</string>
+    <string name="subject">Subject</string>
     <string name="subject_cannot_empty">Subject cannot be empty</string>
     <string name="email_address_format_requirement">Email Address must contain @ and .</string>
     <string name="email_checkbox_message">Also show data as text content?</string>
-    <string name="send_button">Envoyer</string>
-    <string name="cancel">Annuler</string>
+    <string name="send_button">Send</string>
+    <string name="cancel">Cancel</string>
     <string name="instruction_of_test">instruction of that test</string>
-    <string name="start_test">Test beginnen</string>
+    <string name="start_test">Start Test</string>
     <string name="spiral_introduction">A spiral template will be used during the test.</string>
-    <string name="pentagon_image_title">Pentagone Image</string>
-    <string name="spiral_image_title">Image en spirale</string>
+    <string name="pentagon_image_title">Pentagon Image</string>
+    <string name="spiral_image_title">Spiral Image</string>
     <string name="pentagon_introduction">A pentagon template will be used during the test.</string>
-    <string name="generate_data_file_title">Générer un fichier de données</string>
-    <string name="practice">Entraine toi</string>
-    <string name="button_done">Terminé</string>
+    <string name="generate_data_file_title">Generate Data File</string>
+    <string name="practice">Practice</string>
+    <string name="button_done">Done</string>
     <string name="parallel_thank_you">
-        "Merci pour votre participation.\n""Nous calculons maintenant votre résultat de test."</string>
-    <string name="button_tutorial">Didacticiel</string>
-    <string name="title_activity_tutorial">Didacticiel</string>
-    <string name="button_previous">précédent</string>
+        "Thank you for your participation.\n""We are now calculating your test result."</string>
+    <string name="button_tutorial">Tutorial</string>
+    <string name="title_activity_tutorial">Tutorials</string>
+    <string name="button_previous">Previous</string>
     <string name="data_output_via_email">Data output via email</string>
     <string name="full_background_test">Full Background Test</string>
     <string name="static_full_background_test">Static Full Background Test</string>
     <string name="corner_background_test">Corner Background Test</string>
-    <string name="start_test_1">Test beginnen 1</string>
-    <string name="start_test_2">Test beginnen 2</string>
+    <string name="start_test_1">Start Test 1</string>
+    <string name="start_test_2">Start Test 2</string>
     <string name="blank_background_test">Blank Background Test</string>
-    <string name="start_test_3">Test beginnen 3</string>
+    <string name="start_test_3">Start Test 3</string>
     <string name="seasonal_background_test">Seasonal Background Test</string>
-    <string name="start_test_4">Test beginnen 4</string>
+    <string name="start_test_4">Start Test 4</string>
     <string name="button_capture">Capture</string>
 
-    <string name="welcome_to_neurograph">" Bienvenue à\n"
+    <string name="welcome_to_neurograph">" Welcome to\n"
     "Neurograph"</string>
     <string name="title_activity_info">Information</string>
 
     <string-array name="circular_motion_image_type">
-        <item>Point rouge</item>
-        <item>Point bleu</item>
-        <item>Point noir</item>
+        <item>Red Dot</item>
+        <item>Blue Dot</item>
+        <item>Black Dot</item>
     </string-array>
 
     <!-- DO NOT TRANSLATE -->
@@ -306,20 +306,20 @@
         <item>Store files</item>
         <item>Do not store</item>
     </string-array>
-    <string name="title_activity_device_infomation">Informations sur le périphérique</string>
-    <string name="title_activity_copyright_information">Droits d\'auteur</string>
+    <string name="title_activity_device_infomation">Device Information</string>
+    <string name="title_activity_copyright_information">Copyright</string>
     <string name="title_activity_personal_information_edit_page">Edit Information</string>
-    <string name="title_activity_account_centre">Centre de compte</string>
-    <string name="title_activity_user_information_page">Informations personnelles</string>
-    <string name="title_activity_personal_information">Informations personnelles</string>
+    <string name="title_activity_account_centre">Account Centre</string>
+    <string name="title_activity_user_information_page">Personal Information</string>
+    <string name="title_activity_personal_information">Personal Information</string>
     <string name="title_activity_feedback">Feedback</string>
-    <string name="delete_data">Suprimmer les données</string>
-    <string name="Calculating">Calculateur</string>
-    <string name="Loading">Chargement</string>
-    <string name="generating_progress">Générer des progrès</string>
-    <string name="sending_progress">Progression de l\'envoi</string>
+    <string name="delete_data">Delete data</string>
+    <string name="Calculating">Calculating</string>
+    <string name="Loading">Loading</string>
+    <string name="generating_progress">Generating Progress</string>
+    <string name="sending_progress">Sending Progress</string>
     <string name="select_image_type">Please select test image type</string>
-    <string name="result">RÉSULTAT</string>
+    <string name="result">RESULT</string>
     <string name="result_description">Result Description</string>
     <string name="data_file_format_title">Data File Format (multiple choice allowed)</string>
     <string name="csv">.csv</string>
@@ -329,21 +329,21 @@
     <string name="clean_data_after_storing_files">Clean data after storing files</string>
     <string name="clean_data_after_storing_data_files">Clean data after storing data files</string>
     <string name="calculating_test_result">We are calculating your test result</string>
-    <string name="account_centre">Centre de compte</string>
-    <string name="new_user">Nouvel utilisateur</string>
+    <string name="account_centre">Account Centre</string>
+    <string name="new_user">New User</string>
     <string name="new_user_description">As a new user, you need to register first.</string>
-    <string name="button_register">Registre</string>
-    <string name="old_user">Ancien utilisateur</string>
+    <string name="button_register">Register</string>
+    <string name="old_user">Old User</string>
     <string name="enter_registration_code_title">Please enter your registration code</string>
-    <string name="button_continue">Continuer</string>
-    <string name="copyright_title">Droits d\'auteur</string>
-    <string name="device_information">Informations sur le périphérique</string>
-    <string name="registeration_code">Code d\'enregistrement</string>
+    <string name="button_continue">Continue</string>
+    <string name="copyright_title">Copyright</string>
+    <string name="device_information">Device Information</string>
+    <string name="registeration_code">Registration Code</string>
     <string name="please_enter_a_registration_code">Please enter a registration code</string>
     <string name="personal_information">Personal Information</string>
     <string name="edit_information">Edit Information</string>
     <string name="edit_your_personal_information">Edit your personal information.</string>
-    <string name="button_discard">Jeter</string>
+    <string name="button_discard">Discard</string>
     <string name="button_apply">Apply</string>
     <string name="title">TITLE</string>
     <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
@@ -359,15 +359,15 @@
     <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
     <string name="tests">Tests</string>
     <string name="information">Information</string>
-    <string name="copyright">Droits d\'auteur</string>
-    <string name="edit_information1">Modifier les informations</string>
+    <string name="copyright">Copyright</string>
+    <string name="edit_information1">Edit Information</string>
     <string name="registration_code_invalid">Registration Code Invalid</string>
     <string name="regist_first">Registration code in invalid. You need to register first.</string>
-    <string name="got_it">Je l\'ai</string>
-    <string name="perfect">Parfait</string>
-    <string name="make_changes">Faire des changements</string>
+    <string name="got_it">Got It</string>
+    <string name="perfect">Perfect</string>
+    <string name="make_changes">Make Changes</string>
     <string name="want_to_delete">Want to delete?</string>
-    <string name="button_delete">Effacer</string>
+    <string name="button_delete">Delete</string>
     <string name="detele_data_before_this_date">Delete data before this date</string>
     <string name="your_device_information">Your device information :</string>
     <string name="device_brand">Device Brand :</string>
@@ -378,24 +378,24 @@
     <string name="device_resolution">Device Resolution :</string>
     <string name="device_testing_area">Device Testing Area :</string>
     <string name="device_navigation_bar_height">Device Navigation Bar Height :</string>
-    <string name="Processing">En traitement</string>
-    <string name="calculating_test_result_do_not_close">Veuillez NE PAS fermer l\'application pendant le traitement.</string>
-    <string name="loading">Chargement</string>
-    <string name="do_not_close">Veuillez NE PAS fermer l\'application pendant le traitement.</string>
+    <string name="Processing">Processing</string>
+    <string name="calculating_test_result_do_not_close">Please DO NOT close the app while processing.</string>
+    <string name="loading">Loading</string>
+    <string name="do_not_close">Please DO NOT close the app while processing.</string>
     <string name="file_location_text">You can choose to copy the file location to Clipboard by simply clicking Copy File Path button.</string>
     <string name="file_path_copied">File Path copied to clipboard.</string>
-    <string name="button_copy">Copie</string>
-    <string name="sending">Envoi</string>
-    <string name="button_exit">Sortie</string>
-    <string name="button_next">Prochain</string>
-    <string name="button_all_done">Terminé</string>
+    <string name="button_copy">Copy</string>
+    <string name="sending">Sending</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_next">Next</string>
+    <string name="button_all_done">All Done</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="dot_and_line">Dot and Line</string>
     <string name="view_user_information">View User Information</string>
     <string name="switch_user">Switch User</string>
-    <string name="setting">Réglage</string>
+    <string name="setting">Setting</string>
     <string name="previous_1000_entries">Previous 1000 entries</string>
     <string name="next_1000_entries">Next 1000 entries</string>
     <string name="clean_cache">Clean Cache</string>
@@ -409,7 +409,7 @@
     <string name="about_your_device">About your device</string>
     <string name="view_copyright">View Copyright</string>
     <string name="introduction_page">Introduction Page</string>
-    <string name="account">Compte</string>
+    <string name="account">Account</string>
     <string name="information_collection">Information Collection</string>
     <string name="parallel_line_practice">Parallel Line Practice</string>
     <string name="practice_result">Practice Result</string>
@@ -466,7 +466,7 @@
     <string name="test_details">Test Details</string>
     <string name="test_details_tutorial_text">Here you can find the test details.</string>
     <string name="data_list_tutorial_text">Here you can all the test data, including test ID, test type, image type, detailed coordinates and more!</string>
-    <string name="procesing">En traitement</string>
+    <string name="procesing">Processing</string>
     <string name="processing_tutorial_text">After each test, it takes some time to process, please do not close the app during processing.</string>
     <string name="draw_it_tutorial_text">Draw the required shape here. You can click \"Clear\" to clear the canvas, and click \"Finish\" to finish the test</string>
     <string name="choose_painter_width_tutorial_text">You can choose the painter width you preferred. We have thin, normal and thick width available.</string>
@@ -500,20 +500,20 @@
     <string name="setting_page">Setting Page</string>
     <string name="setting_page_tutorial_text">This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button.</string>
     <string name="number_of_entries_per_page">Number of entries per page</string>
-    <string name="proceed">Procéder</string>
+    <string name="proceed">Proceed</string>
     <string name="title_activity_introduction_content">Neurograph</string>
     <string name="thank_you_please_do_not_close">Please DO NOT close the app while processing.</string>
     <string name="thank_you_for_participation">Thank you for your participation.</string>
     <string name="want_to_switch_user">Want to switch user ?</string>
     <string name="change_settings">Change Settings</string>
-    <string name="apply">Appliquer</string>
+    <string name="apply">Apply</string>
     <string name="no_setting_changes">No setting changes</string>
     <string name="setting_discarded">Setting discarded</string>
     <string name="discard_changes">Discard changes</string>
     <string name="press_again_to_switch_user">Press again to switch user</string>
     <string name="switch_user_upper">SWITCH USER</string>
     <string name="store_data_file_before_switching_user">Store data files before switching user</string>
-    <string name="display">Afficher </string>
+    <string name="display">Display </string>
     <string name="total"> Total </string>
     <string name="no_previous_entries">No previous entries</string>
     <string name="no_next_entries">No next entries</string>
@@ -523,17 +523,17 @@
     <string name="neurograph_notification1">Neurograph Notification</string>
     <string name="no_test_data">No Test Data</string>
     <string name="no_test_data_to_store">There is no test data to store</string>
-    <string name="help">Aidez-moi</string>
+    <string name="help">Help</string>
     <string name="notification_permission">Notification Permission</string>
     <string name="go_to_setting">Go To Setting</string>
     <string name="discard_storing_files">Discard Storing Files</string>
     <string name="discard_storing_data_files">Discard storing data files ?</string>
-    <string name="discard">Jeter</string>
+    <string name="discard">Discard</string>
     <string name="please_choose_file_type">Please Choose File Type</string>
     <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
     <string name="generating_data_files">Generating Data Files</string>
     <string name="generating_data_files_please_wait">Generating data files may takes a few second. Please wait</string>
-    <string name="change_colour">Changer la couleur</string>
+    <string name="change_colour">Change Colour</string>
     <string name="light_blue">Light Blue</string>
     <string name="green">Green</string>
     <string name="purple">Purple</string>
@@ -541,7 +541,7 @@
     <string name="pink">Pink</string>
     <string name="blue">Blue</string>
     <string name="clean_app_cache">Clean app cache ?</string>
-    <string name="clean">Nettoyer</string>
+    <string name="clean">Clean</string>
     <string name="cache_cleaned">Cache Cleaned</string>
     <string name="no_test_data_to_send">There is no test data to send</string>
     <string name="please_choose_at_least_one_file_type_to_send">Please choose at least one file type to send</string>
@@ -556,11 +556,11 @@
     <string name="age_cannot_be_empty">Age cannot be empty</string>
     <string name="invalid_age">Invalid Age</string>
     <string name="invalid_age_range">Invalid age range</string>
-    <string name="confirm_changes">Confirmer les modifications</string>
-    <string name="edit">Modifier</string>
-    <string name="discard_changes1">Annuler les modifications</string>
+    <string name="confirm_changes">Confirm Changes</string>
+    <string name="edit">Edit</string>
+    <string name="discard_changes1">Discard Changes</string>
     <string name="discard_information_changes">Discard information changes ?</string>
-    <string name="hello">Bonjour</string>
+    <string name="hello">Hello</string>
     <string name="registration_code_invalid_message">Registration code invalid. It should only contain alphabets or numbers.</string>
     <string name="duplicate_registration_code_message">This registration code has been registered, please try another one</string>
     <string name="invalid_age1">Invalid Age</string>
@@ -578,23 +578,23 @@
     <string name="processing_message">Please waiting while processing. Please DO NOT close the app while processing.</string>
     <string name="calculating_the_test_result">Calculating the test results.</string>
     <string name="deletion_completed">Deletion Completed</string>
-    <string name="delete">Effacer</string>
-    <string name="test_information">Informations de test</string>
-    <string name="device_information_label">Informations sur le périphérique</string>
-    <string name="account_label">Compte</string>
-    <string name="loading_data">Chargement des données</string>
-    <string name="calculating_results">Calcul des résultats</string>
-    <string name="generating_files_label">Générer des fichiers</string>
-    <string name="sending_email_label">Envoyer un e-mail</string>
+    <string name="delete">Delete</string>
+    <string name="test_information">Test Information</string>
+    <string name="device_information_label">Device Information</string>
+    <string name="account_label">Account</string>
+    <string name="loading_data">Loading Data</string>
+    <string name="calculating_results">Calculating Results</string>
+    <string name="generating_files_label">Generating Files</string>
+    <string name="sending_email_label">Sending Email</string>
     <string name="select_duration_label">Select Duration and Width</string>
     <string name="select_width_label">Select Width</string>
     <string name="choose_image_label">Choose Image</string>
     <string name="select_width_and_image_label">Select Width and Image</string>
     <string name="practice_result_label">Practice Results</string>
     <string name="send_data_email_label">Send Data Email</string>
-    <string name="welcon_to_neurograph_label">Bienvenue à Neurograph</string>
+    <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
     <string name="generate_datafiles_label">Generate Data Files</string>
-    <string name="neurograph_thank_you_label">Neurograph: Je vous remercie</string>
+    <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
     <string name="information_label">Information</string>
     <string name="user_id_equal">User ID = </string>
     <string name="registration_code_equal">Registration Code = </string>
