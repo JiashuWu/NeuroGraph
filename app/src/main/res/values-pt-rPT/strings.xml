@@ -2,35 +2,35 @@
     <string name="app_name">NeuroGraph</string>
     <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
     <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
-    <string name="setting_page_choose_language">Please choose language</string>
+    <string name="setting_page_choose_language">Por favor, escolha o idioma</string>
     <string name="english">English (EN_GB)</string>
     <string name="chinese_simplified">Simplified Chinese (CH_ZN)</string>
     <string name="chinese_traditional">Traditional Chinese (CH_TW)</string>
     <string-array name="language_array">
-        <item>English</item>
-        <item>Simplified Chinese</item>
-        <item>Traditional Chinese</item>
-        <item>Dutch</item>
-        <item>French</item>
-        <item>German</item>
-        <item>Italian</item>
-        <item>Japanese</item>
-        <item>Portuguese</item>
-        <item>Russian</item>
-        <item>Spanish</item>
+        <item>Inglês</item>
+        <item>Chinês simplificado</item>
+        <item>Chinês tradicional</item>
+        <item>Holandês</item>
+        <item>Francês</item>
+        <item>Alemão</item>
+        <item>Italiano</item>
+        <item>Japonês</item>
+        <item>Português</item>
+        <item>Russo</item>
+        <item>Espanhol</item>
     </string-array>
 
     <string-array name="font_array">
         <item>Normal</item>
-        <item>Large</item>
+        <item>Ampla</item>
     </string-array>
-    <string name="setting_page_choose_font_size">Please choose font size</string>
+    <string name="setting_page_choose_font_size">Por favor, escolha o tamanho da fonte</string>
     <string name="normal_font_size">Normal</string>
-    <string name="large_font_size">Large</string>
+    <string name="large_font_size">Ampla</string>
 
-    <string name="welcome">Welcome to NeuroGraph</string>
+    <string name="welcome">Bem-vindo ao NeuroGraph</string>
 
-    <string name="setting_page_start_button">Let\'s Start</string>
+    <string name="setting_page_start_button">Vamos começar</string>
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
@@ -56,10 +56,10 @@
     <string name="rating_score">Previous Alzheimer Rating Score (If Applicable), otherwise leave it as blank</string>
     <string name="enter_rating_score">Please Enter Your Rating Score</string>
     <string name="current_receiving_treatment">Are you currently receiving treatment? </string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="next">Next</string>
-    <string name="title_activity_information_collection">Collect some information</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="next">Próximo</string>
+    <string name="title_activity_information_collection">Colete algumas informações</string>
 
     <!-- DO NOT TRANSLATE -->
     <string name="large_text">
@@ -152,8 +152,9 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_test_selection">Tests</string>
+    <string name="action_settings">Configurações</string>
+    <string name="title_activity_test_selection">Testes</string>
+
 
 
     <!-- DO NOT TRANSLATE -->
