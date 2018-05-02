@@ -30,7 +30,7 @@
 
     <string name="welcome">Bienvenue à NeuroGraph</string>
 
-    <string name="setting_page_start_button">Let\'s Start</string>
+    <string name="setting_page_start_button">Commençons</string>
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
@@ -168,7 +168,7 @@
 
     <string name="static_tests">Static Tests</string>
     <string name="dynamic_tests">Dynamic Tests</string>
-    <string name="data_list">Data List</string>
+    <string name="data_list">Liste de données</string>
 
     <string name="test1">Test 1</string>
     <string name="test2">Test 2</string>
@@ -195,9 +195,9 @@
     <string name="treatment_empty">Please select treatment information</string>
 
     <string name="dismiss">Dismiss</string>
-    <string name="title_activity_data_list">Data List</string>
+    <string name="title_activity_data_list">Liste de données</string>
 
-    <string name="data_list_button">Data List</string>
+    <string name="data_list_button">Liste de données</string>
     <string name="title_activity_test_detail_scrolling">Detailed information about the test</string>
 
     <string name="select_painter_width">Please select your preferred painter width</string>
@@ -271,8 +271,8 @@
     <string name="button_done">Done</string>
     <string name="parallel_thank_you">
         "Thank you for your participation.\n""We are now calculating your test result."</string>
-    <string name="button_tutorial">Tutorial</string>
-    <string name="title_activity_tutorial">Tutorials</string>
+    <string name="button_tutorial">Didacticiel</string>
+    <string name="title_activity_tutorial">Didacticiel</string>
     <string name="button_previous">Previous</string>
     <string name="data_output_via_email">Data output via email</string>
     <string name="full_background_test">Full Background Test</string>
