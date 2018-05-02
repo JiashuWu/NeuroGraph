@@ -305,7 +305,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "static_corner_background";
                             intent.putExtra("test_type", test_type);
-                            // TODO FIX
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
 
@@ -336,7 +335,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "dynamic_blank_background";
                             intent.putExtra("test_type", test_type);
-                            // TODO FIX
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
 
@@ -350,7 +348,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                             intent.putExtra("user_id", String.valueOf(user_id));
                             test_type = "dynamic_seasonal_background";
                             intent.putExtra("test_type", test_type);
-                            // TODO FIX
                             startActivity(intent);
                             TestSelectionActivity.this.finish();
 
@@ -602,7 +599,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "static_corner_background";
                 intent.putExtra("test_type", test_type);
-                // TODO FIX
                 startActivity(intent);
                 TestSelectionActivity.this.finish();
 
@@ -616,7 +612,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "dynamic_blank_background";
                 intent.putExtra("test_type", test_type);
-                // TODO FIX
                 startActivity(intent);
                 TestSelectionActivity.this.finish();
 
@@ -630,7 +625,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                 intent.putExtra("user_id", String.valueOf(user_id));
                 test_type = "dynamic_seasonal_background";
                 intent.putExtra("test_type", test_type);
-                // TODO FIXES
 
                 startActivity(intent);
                 TestSelectionActivity.this.finish();
@@ -657,11 +651,6 @@ public class TestSelectionActivity extends AppCompatActivity {
             intent.putExtra("source", "test_selection");
             Sharing.redirect_source = "test_selection";
             Sharing.current_user_id = user_id;
-            // TODO FIX
-            // TODO TEMPORARY TOOLBAR BUTTON RELEASE
-
-
-            // TODO FIXES 2 ;;;;;;;
 
             startActivity(intent);
             TestSelectionActivity.this.finish();
@@ -730,8 +719,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                                     Sharing.redirect_source = "switch_setting";
                                     Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
 
-                                    // TODO FIXES 3 ;;;;;;
-
                                     startActivity(intent);
                                     TestSelectionActivity.this.finish();
 
@@ -741,7 +728,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                                     Sharing.redirect_source = "switch_setting";
                                     Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
 
-                                    // TODO FIXES 4 ;;;;;;;
 
                                     startActivity(intent);
                                     TestSelectionActivity.this.finish();
@@ -990,7 +976,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                                         Sharing.redirect_source = "switch_setting";
                                         Intent intent = new Intent (TestSelectionActivity.this, SendDataEmailActivity.class);
 
-                                        // TODO FIXES 5 ;;;;;;;
 
                                         startActivity(intent);
                                         TestSelectionActivity.this.finish();
@@ -1001,7 +986,6 @@ public class TestSelectionActivity extends AppCompatActivity {
                                         Sharing.redirect_source = "switch_setting";
                                         Intent intent = new Intent(TestSelectionActivity.this, StoreDataFileActivity.class);
 
-                                        // TODO FIXES 6 ;;;;;;;
 
                                         startActivity(intent);
                                         TestSelectionActivity.this.finish();

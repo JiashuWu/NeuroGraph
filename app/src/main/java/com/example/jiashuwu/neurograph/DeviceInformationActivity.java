@@ -159,6 +159,4 @@ public class DeviceInformationActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-
-
 }

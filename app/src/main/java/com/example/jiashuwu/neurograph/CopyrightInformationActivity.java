@@ -86,10 +86,6 @@ public class CopyrightInformationActivity extends AppCompatActivity {
         content_textview = (TextView) findViewById(R.id.copyright_information_activity_content_textview);
 
         content_textview.setText(SharingCopyright.copyright);
-
-
-
-
     }
 
     @Override
@@ -115,8 +111,6 @@ public class CopyrightInformationActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-
 
     @Override
     public void onStart ()
@@ -153,10 +147,5 @@ public class CopyrightInformationActivity extends AppCompatActivity {
     {
         super.onDestroy();
     }
-
-
-
-
-
 
 }

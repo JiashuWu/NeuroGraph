@@ -1499,13 +1499,8 @@ public class SettingPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingPageActivity.this, DataListActivity.class);
-                // TODO FIX
                 intent.putExtra("source", "setting");
                 Sharing.redirect_source = "setting";
-
-                // TODO FIXES
-
-                // TODO FIXES 1 ;;;;;;;
 
                 startActivity(intent);
                 // Setting page should finish at this point
@@ -1519,7 +1514,7 @@ public class SettingPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingPageActivity.this, IntroductionPageActivity.class);
-                // TODO FIX
+
                 startActivity(intent);
                 SettingPageActivity.this.finish();
             }

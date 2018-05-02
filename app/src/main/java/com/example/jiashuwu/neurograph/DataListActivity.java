@@ -313,8 +313,6 @@ public class DataListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         data_listview = (ListView) findViewById(R.id.data_listview);
 
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
