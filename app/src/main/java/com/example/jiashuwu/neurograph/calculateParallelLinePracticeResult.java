@@ -11,6 +11,8 @@ import static java.lang.Math.min;
  * Created by Jiashu Wu on 29/03/2018.
  */
 
+// This class is used to calculate the parallel line practice result
+
 public class calculateParallelLinePracticeResult {
 
     public static ArrayList<Float> x_list;
@@ -38,8 +40,6 @@ public class calculateParallelLinePracticeResult {
         summary_slope_line_1 = 0;
         summary_slope_line_2 = 0;
         final_result = 0;
-
-
 
         boolean judge = true;
         x_list = Sharing.x_list;
@@ -116,8 +116,6 @@ public class calculateParallelLinePracticeResult {
             judge = false;
         }
 
-
-
         if (final_result <= 0.15)
         {
             result = "Perfect";
@@ -144,7 +142,7 @@ public class calculateParallelLinePracticeResult {
             result_description = "No drawing detected! ";
         }
 
-        /* TODO
+        /*
         if ((y_list_line_1.get(0) - y_list_line_1.get(y_list_line_1.size()-1)) * (y_list_line_2.get(0) - y_list_line_2.size()-1) < 0)
         {
             result = "Crossing";
@@ -152,10 +150,7 @@ public class calculateParallelLinePracticeResult {
         }
         */
 
-        // TODO
         // DECIDE WHETHER TWO LINES ARE CROSSING EACH OTHER
-
-
         if (judge)
         {
             if (Math.min(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) <= Math.max(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) && Math.min(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1)) <= Math.max(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) && Math.min(x_list_line_2.get(0), x_list_line_2.get(x_list_line_2.size() - 1)) <= Math.max(x_list_line_1.get(0), x_list_line_1.get(x_list_line_1.size() - 1)) && Math.min(y_list_line_1.get(0), y_list_line_1.get(y_list_line_1.size() - 1)) <= Math.max(y_list_line_2.get(0), y_list_line_2.get(y_list_line_2.size() - 1))) {
@@ -165,5 +160,4 @@ public class calculateParallelLinePracticeResult {
         }
         return new String[]{result, result_description};
     }
-
 }
