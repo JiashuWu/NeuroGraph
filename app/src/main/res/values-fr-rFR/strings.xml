@@ -310,8 +310,8 @@
     <string name="title_activity_copyright_information">Droits d\'auteur</string>
     <string name="title_activity_personal_information_edit_page">Edit Information</string>
     <string name="title_activity_account_centre">Centre de compte</string>
-    <string name="title_activity_user_information_page">Personal Information</string>
-    <string name="title_activity_personal_information">Personal Information</string>
+    <string name="title_activity_user_information_page">Informations personnelles</string>
+    <string name="title_activity_personal_information">Informations personnelles</string>
     <string name="title_activity_feedback">Feedback</string>
     <string name="delete_data">Suprimmer les données</string>
     <string name="Calculating">Calculateur</string>
