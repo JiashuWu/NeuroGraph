@@ -28,9 +28,9 @@
     <string name="normal_font_size">Normal</string>
     <string name="large_font_size">Large</string>
 
-    <string name="welcome">Welcome to NeuroGraph</string>
+    <string name="welcome">Willkommen zu NeuroGraph</string>
 
-    <string name="setting_page_start_button">Let\'s Start</string>
+    <string name="setting_page_start_button">Lasst uns beginnen</string>
 
 
     <string name="information_collection_preface">Here, we need to collect some of your personal information in order to make the service better and more accurate.</string>
@@ -168,7 +168,7 @@
 
     <string name="static_tests">Static Tests</string>
     <string name="dynamic_tests">Dynamic Tests</string>
-    <string name="data_list">Data List</string>
+    <string name="data_list">Datenliste</string>
 
     <string name="test1">Test 1</string>
     <string name="test2">Test 2</string>
@@ -195,9 +195,9 @@
     <string name="treatment_empty">Please select treatment information</string>
 
     <string name="dismiss">Dismiss</string>
-    <string name="title_activity_data_list">Data List</string>
+    <string name="title_activity_data_list">Datenliste</string>
 
-    <string name="data_list_button">Data List</string>
+    <string name="data_list_button">Datenliste</string>
     <string name="title_activity_test_detail_scrolling">Detailed information about the test</string>
 
     <string name="select_painter_width">Please select your preferred painter width</string>
@@ -220,7 +220,7 @@
 
     <string name="button_generate">Generate</string>
 
-    <string name="button_introduction">Introduction</string>
+    <string name="button_introduction">Einführung</string>
     <string name="placeholder">PLACEHOLDER</string>
     <string name="introduction_content">"Welcome to Neurograph.\n"
         "This is an app which can be used to assist the diagnostics of Alzheimer\'s Disease.\n"
@@ -243,7 +243,7 @@
     <string name="permission_not_granted_message">Permission not granted. Please go to system setting to grant the app permission.</string>
     <string name="confirm">Confirm</string>
     <string name="confirm_sending_email">Confirm sending this email ?</string>
-    <string name="go_back">Go Back</string>
+    <string name="go_back">geh zurück</string>
     <string name="neurograph_notification">Neurograph_Notification</string>
     <string name="successful_message_email_file">Email sent and file saved</string>
     <string name="successfully_sent">Successfully Sent</string>
@@ -266,13 +266,13 @@
     <string name="pentagon_image_title">Pentagon Image</string>
     <string name="spiral_image_title">Spiral Image</string>
     <string name="pentagon_introduction">A pentagon template will be used during the test.</string>
-    <string name="generate_data_file_title">Generate Data File</string>
+    <string name="generate_data_file_title">Datendatei generieren</string>
     <string name="practice">Practice</string>
     <string name="button_done">Done</string>
     <string name="parallel_thank_you">
         "Thank you for your participation.\n""We are now calculating your test result."</string>
-    <string name="button_tutorial">Tutorial</string>
-    <string name="title_activity_tutorial">Tutorials</string>
+    <string name="button_tutorial">Anleitung</string>
+    <string name="title_activity_tutorial">Anleitung</string>
     <string name="button_previous">Previous</string>
     <string name="data_output_via_email">Data output via email</string>
     <string name="full_background_test">Full Background Test</string>
@@ -286,7 +286,7 @@
     <string name="start_test_4">Start Test 4</string>
     <string name="button_capture">Capture</string>
 
-    <string name="welcome_to_neurograph">" Welcome to\n"
+    <string name="welcome_to_neurograph">" Willkommen zu\n"
     "Neurograph"</string>
     <string name="title_activity_info">Information</string>
 
@@ -343,8 +343,8 @@
     <string name="personal_information">Personal Information</string>
     <string name="edit_information">Edit Information</string>
     <string name="edit_your_personal_information">Edit your personal information.</string>
-    <string name="button_discard">Discard</string>
-    <string name="button_apply">Apply</string>
+    <string name="button_discard">Verwerfen</string>
+    <string name="button_apply">Sich bewerben</string>
     <string name="title">TITLE</string>
     <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
     <string name="start_practice">Start Practice</string>
@@ -367,7 +367,7 @@
     <string name="perfect">Perfect</string>
     <string name="make_changes">Make Changes</string>
     <string name="want_to_delete">Want to delete?</string>
-    <string name="button_delete">Delete</string>
+    <string name="button_delete">löschen</string>
     <string name="detele_data_before_this_date">Delete data before this date</string>
     <string name="your_device_information">Your device information :</string>
     <string name="device_brand">Device Brand :</string>
@@ -424,7 +424,7 @@
     <string name="processing">Processing</string>
     <string name="view_data">View Data</string>
     <string name="long_click_to_delete">Long Click to Delete</string>
-    <string name="send_data_email">Send Data Email</string>
+    <string name="send_data_email">Senden Sie Daten-E-Mail</string>
     <string name="store_data_files">Store Data Files</string>
     <string name="choose_files_types">Choose File Types</string>
     <string name="manage_personal_information">Manage Personal Information</string>
@@ -506,7 +506,7 @@
     <string name="thank_you_for_participation">Thank you for your participation.</string>
     <string name="want_to_switch_user">Want to switch user ?</string>
     <string name="change_settings">Change Settings</string>
-    <string name="apply">Apply</string>
+    <string name="apply">Sich bewerben</string>
     <string name="no_setting_changes">No setting changes</string>
     <string name="setting_discarded">Setting discarded</string>
     <string name="discard_changes">Discard changes</string>
@@ -528,7 +528,7 @@
     <string name="go_to_setting">Go To Setting</string>
     <string name="discard_storing_files">Discard Storing Files</string>
     <string name="discard_storing_data_files">Discard storing data files ?</string>
-    <string name="discard">Discard</string>
+    <string name="discard">Verwerfen</string>
     <string name="please_choose_file_type">Please Choose File Type</string>
     <string name="choose_at_least_one_file_type">Please choose at least one file type to store</string>
     <string name="generating_data_files">Generating Data Files</string>
@@ -578,7 +578,7 @@
     <string name="processing_message">Please waiting while processing. Please DO NOT close the app while processing.</string>
     <string name="calculating_the_test_result">Calculating the test results.</string>
     <string name="deletion_completed">Deletion Completed</string>
-    <string name="delete">Delete</string>
+    <string name="delete">löschen</string>
     <string name="test_information">Test Information</string>
     <string name="device_information_label">Device Information</string>
     <string name="account_label">Account</string>
@@ -591,9 +591,9 @@
     <string name="choose_image_label">Choose Image</string>
     <string name="select_width_and_image_label">Select Width and Image</string>
     <string name="practice_result_label">Practice Results</string>
-    <string name="send_data_email_label">Send Data Email</string>
-    <string name="welcon_to_neurograph_label">Welcome to Neurograph</string>
-    <string name="generate_datafiles_label">Generate Data Files</string>
+    <string name="send_data_email_label">Senden Sie Daten-E-Mail</string>
+    <string name="welcon_to_neurograph_label">Willkommen zu Neurograph</string>
+    <string name="generate_datafiles_label">Datendatei generieren</string>
     <string name="neurograph_thank_you_label">Neurograph: Thank you</string>
     <string name="information_label">Information</string>
     <string name="user_id_equal">User ID = </string>
