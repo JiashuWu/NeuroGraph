@@ -261,7 +261,7 @@
     <string name="send_button">Envoyer</string>
     <string name="cancel">Annuler</string>
     <string name="instruction_of_test">instruction of that test</string>
-    <string name="start_test">Start Test</string>
+    <string name="start_test">Test beginnen</string>
     <string name="spiral_introduction">A spiral template will be used during the test.</string>
     <string name="pentagon_image_title">Pentagone Image</string>
     <string name="spiral_image_title">Image en spirale</string>
@@ -278,12 +278,12 @@
     <string name="full_background_test">Full Background Test</string>
     <string name="static_full_background_test">Static Full Background Test</string>
     <string name="corner_background_test">Corner Background Test</string>
-    <string name="start_test_1">Start Test 1</string>
-    <string name="start_test_2">Start Test 2</string>
+    <string name="start_test_1">Test beginnen 1</string>
+    <string name="start_test_2">Test beginnen 2</string>
     <string name="blank_background_test">Blank Background Test</string>
-    <string name="start_test_3">Start Test 3</string>
+    <string name="start_test_3">Test beginnen 3</string>
     <string name="seasonal_background_test">Seasonal Background Test</string>
-    <string name="start_test_4">Start Test 4</string>
+    <string name="start_test_4">Test beginnen 4</string>
     <string name="button_capture">Capture</string>
 
     <string name="welcome_to_neurograph">" Bienvenue à\n"
