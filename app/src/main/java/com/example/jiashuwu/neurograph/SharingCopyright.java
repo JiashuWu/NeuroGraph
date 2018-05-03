@@ -6,9 +6,9 @@ package com.example.jiashuwu.neurograph;
 
 public class SharingCopyright {
 
-    public static String copyright = "                                 Apache License\n" +
-            "                           Version 2.0, January 2004\n" +
-            "                        http://www.apache.org/licenses/\n" +
+    public static String copyright = "   Apache License\n" +
+            "   Version 2.0, January 2004\n" +
+            "   http://www.apache.org/licenses/\n" +
             "\n" +
             "   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n" +
             "\n" +
