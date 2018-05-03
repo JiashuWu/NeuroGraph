@@ -605,6 +605,7 @@
     <string name="rating_score_equal">Rating Score = </string>
     <string name="current_receiving_treatment_equal">Current Receiving Treatment = </string>
     <string name="changes_summary">resumen de cambios : </string>
+    <string name="circular_motion_test_instruction">This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre.</string>
 
 
 </resources>

@@ -605,6 +605,7 @@
     <string name="rating_score_equal">測試評分 = </string>
     <string name="current_receiving_treatment_equal">正在接受治療 = </string>
     <string name="changes_summary">信息更新彙總套件：</string>
+    <string name="circular_motion_test_instruction">這是圓圈測試。在測試過程中，一個包含圓點的背景圖片會持續顯示在螢幕上。你需要以該遠點為圓心，畫一個儘量圓的圓。</string>
 
 
 </resources>

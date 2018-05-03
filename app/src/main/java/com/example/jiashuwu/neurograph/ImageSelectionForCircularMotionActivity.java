@@ -159,7 +159,7 @@ public class ImageSelectionForCircularMotionActivity extends AppCompatActivity {
 
         image_selection_for_circular_motion_test_instruction = (TextView) findViewById(R.id.image_selection_for_circular_motion_test_instruction);
 
-        image_selection_for_circular_motion_test_instruction.setText("This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre. ");
+        image_selection_for_circular_motion_test_instruction.setText(R.string.circular_motion_test_instruction);
 
 
         start_test_button = (Button) findViewById(R.id.image_selection_for_circular_motion_start_test_button);
