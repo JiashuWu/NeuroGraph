@@ -161,7 +161,6 @@ public class ImageSelectionForCircularMotionActivity extends AppCompatActivity {
 
         image_selection_for_circular_motion_test_instruction.setText(R.string.circular_motion_test_instruction);
 
-
         start_test_button = (Button) findViewById(R.id.image_selection_for_circular_motion_start_test_button);
         start_test_button.setOnClickListener(new View.OnClickListener() {
             @Override
