@@ -105,6 +105,9 @@ public class TestSelectionActivity extends AppCompatActivity {
     private ArrayAdapter store_file_option_adapter;
 
 
+    /**
+     * This method is used to change the locale and language settings.
+     */
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -132,6 +135,9 @@ public class TestSelectionActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    /**
+     * This method is used to change the theme.
+     */
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -146,6 +152,10 @@ public class TestSelectionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method is used to get the total number of items
+     * @return
+     */
     public int getNumber_of_test_in_total ()
     {
         int answer = 0;
@@ -178,6 +188,9 @@ public class TestSelectionActivity extends AppCompatActivity {
         return answer;
     }
 
+    /**
+     *
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
