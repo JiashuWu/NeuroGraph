@@ -608,4 +608,5 @@
     <string name="circular_motion_test_instruction">This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre.</string>
 
 
+
 </resources>
