@@ -426,7 +426,7 @@ public class DataListActivity extends AppCompatActivity {
 
                     }
                 });
-                builder.setPositiveButton("Go Back", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(getResources().getString(R.string.go_back), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Should do nothing here;
