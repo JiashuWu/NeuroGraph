@@ -261,7 +261,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
             start_test_button = (Button) findViewById(R.id.duration_selection_page_start_test_button);
             duration_seekbar = (SeekBar) findViewById(R.id.duration_selection_seekbar);
             duration_progress_textview = (TextView) findViewById(R.id.duration_progress_textview);
-            duration_progress_textview.setText(getString(R.string.current_time_interval) + duration_seekbar.getProgress() + getString(R.string.second));
+            duration_progress_textview.setText(getString(R.string.current_time_interval) + " " + duration_seekbar.getProgress() + " " + getString(R.string.second));
             duration_test_instruction = (TextView) findViewById(R.id.duration_selection_page_test_instruction);
 
             if (test_type.equalsIgnoreCase("dynamic_blank_background"))
@@ -277,7 +277,7 @@ public class DurationSelectionActivity extends AppCompatActivity {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean b)
                 {
-                    duration_progress_textview.setText(getString(R.string.current_time_interval) + progress + getString(R.string.second));
+                    duration_progress_textview.setText(getString(R.string.current_time_interval) + " " + progress + " " + getString(R.string.second));
                 }
 
                 @Override
