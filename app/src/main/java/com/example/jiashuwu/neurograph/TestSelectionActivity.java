@@ -189,7 +189,7 @@ public class TestSelectionActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Set up for Navigation Bar at the bottom.
      */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
