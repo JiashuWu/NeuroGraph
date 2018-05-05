@@ -77,28 +77,29 @@ public class WelcomeActivity extends AppCompatActivity {
         // get the system language
         language = Locale.getDefault().toString();
         Log.d("language_code", language);
-        switch (language.toLowerCase())
+        switch (language)
         {
-            case "zh_CN": language = "Simplified Chinese";break;
-            case "zh_TW": language = "Traditional Chinese";break;
-            case "zh_HK": language = "Traditional Chinese";break;
-            case "nl_NL": language = "Dutch";break;
-            case "en_AU": language = "English";break;
-            case "en_CA": language = "English";break;
-            case "en_NZ": language = "English";break;
-            case "en_GB": language = "English";break;
-            case "en_US": language = "English";break;
-            case "fr_FR": language = "French";break;
-            case "de_DE": language = "German";break;
-            case "it_IT": language = "Italian";break;
-            case "ja_JP": language = "Japanese";break;
-            case "pt_PT": language = "Portuguese";break;
-            case "ru_RU": language = "Russian";break;
-            case "es_ES": language = "Spanish";break;
-            default: language = "English";break;
+            case "zh_CN": Sharing.language = "Simplified Chinese";break;
+            case "zh_TW": Sharing.language = "Traditional Chinese";break;
+            case "zh_HK": Sharing.language = "Traditional Chinese";break;
+            case "nl_NL": Sharing.language = "Dutch";break;
+            case "en_AU": Sharing.language = "English";break;
+            case "en_CA": Sharing.language = "English";break;
+            case "en_NZ": Sharing.language = "English";break;
+            case "en_GB": Sharing.language = "English";break;
+            case "en_US": Sharing.language = "English";break;
+            case "fr_FR": Sharing.language = "French";break;
+            case "de_DE": Sharing.language = "German";break;
+            case "it_IT": Sharing.language = "Italian";break;
+            case "ja_JP": Sharing.language = "Japanese";break;
+            case "pt_PT": Sharing.language = "Portuguese";break;
+            case "ru_RU": Sharing.language = "Russian";break;
+            case "es_ES": Sharing.language = "Spanish";break;
+            default: Sharing.language = "English";break;
         }
-        Sharing.language = language;
-        Log.d("language", Sharing.language);
+        //Sharing.language = language;
+        Log.d("language_code", Sharing.language);
+        //Log.d("language", Sharing.language);
 
         new Handler().postDelayed(new Runnable() {
             @Override
