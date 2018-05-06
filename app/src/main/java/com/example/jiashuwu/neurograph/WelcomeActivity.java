@@ -74,6 +74,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Sharing.device_testing_area_height = displayHeight;
 
+        // Change the app initial language setting to follow the system language
         // get the system language
         language = Locale.getDefault().toString();
         Log.d("language_code", language);
