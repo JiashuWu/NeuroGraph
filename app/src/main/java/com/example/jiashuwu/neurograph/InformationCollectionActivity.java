@@ -65,6 +65,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
     private long exitTime;
 
+    // Initialise the theme
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -79,6 +80,7 @@ public class InformationCollectionActivity extends AppCompatActivity {
         }
     }
 
+    // Initialise the language settings
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -511,9 +513,6 @@ public class InformationCollectionActivity extends AppCompatActivity {
 
 
     }
-
-
-    // TODO OPTIONAL 4/4
 
 
 
