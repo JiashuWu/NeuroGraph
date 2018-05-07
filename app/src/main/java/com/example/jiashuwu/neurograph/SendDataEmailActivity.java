@@ -141,6 +141,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
 
 
+    // Initialise the language
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -168,6 +169,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    // Initialise the colour themes
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -187,6 +189,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
     // GENERATE STRING FROM THE DATABASE
 
 
+    // Generate string from database, this is used for generating the email content and data file contents.
     public String generate_string_from_database ()
     {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -437,6 +440,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
     }
 
 
+    // If the notification permission is not granted, direct the user to go to the system setting to turn it on.
     private void goToSetting(){
         if (Build.VERSION.SDK_INT >= 26) {
             Intent intent = new Intent(Settings.ACTION_SETTINGS);
@@ -460,12 +464,18 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
 
 
+    // Check whether the READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE permission is granted or not.
     private boolean checkPermission() {
         int read_permission = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
         int write_permission = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
 
         return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
     }
+
+
+    // A worker thread which is used to send email, this is a new thread which runs in the background.
+    // Close the app during the sending process will kill this thread, so
+    // DO NOT CLOSE THE APP WHILE SENDING THE EMAIL.
 
     private void sendEmailWorker ()
     {
@@ -569,6 +579,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
 
     }
 
+    // Get total number of tests
     public int getNumber_of_test_in_total ()
     {
         int answer = 0;
@@ -602,6 +613,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         return answer;
     }
 
+    // Get total number of points in all tests
     public int getNumber_of_item_in_total ()
     {
         databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -634,6 +646,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
         return answer;
     }
 
+    // onCreate() method.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
