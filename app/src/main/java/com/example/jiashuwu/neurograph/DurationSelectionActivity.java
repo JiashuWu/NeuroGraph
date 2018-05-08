@@ -111,6 +111,10 @@ public class DurationSelectionActivity extends AppCompatActivity {
 
         if (test_type.contains("static") || test_type.contains("parallel") || test_type.contains("circular"))
         {
+            // Static tests and dynamic tests will use different layout file.
+            // For static tests, the layout file doesn't contain the seekbar
+            // While for dynamic tests, the layout file contains a seekbar which is used for user to choose duration interval.
+
             setContentView(R.layout.activity_duration_selection_without_seekbar);
 
             duration_selection_page_without_seekbar_width_spinner = (Spinner) findViewById(R.id.duration_without_seekbar_width_spinner);
