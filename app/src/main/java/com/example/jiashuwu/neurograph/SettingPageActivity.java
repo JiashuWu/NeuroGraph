@@ -1296,6 +1296,7 @@ public class SettingPageActivity extends AppCompatActivity {
     */
 
 
+    // This is used for cleaning cache
     public void deleteFileByDirectory (File directory)
     {
         if (directory != null && directory.exists() && directory.isDirectory())
