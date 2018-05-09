@@ -1,0 +1,508 @@
+public void showAppTutorialDeleteData ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Delete Data");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can delete all test data, delete test data prior to a specific data, or delete all data (This will restart the app) ");
+        builder.setPositiveButton("All Done", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Should do nothing here;
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialStoreDataFile();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialStoreDataFile ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Store data file");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can also store data file into Android file system, and send it to your PC by connecting your phone via a cabel. You can copy the file path to clipboard. Easy to use! ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDeleteData();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSendEmail();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialSendEmail ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Send data email");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Want to outputting all test data? Send it via email. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialStoreDataFile();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialLongClickDelete();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialLongClickDelete ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Long click to delete");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Delete a piece of data by long clicking it. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSendEmail();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDataList();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialDataList ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Data list");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can all the test data, including test ID, test type, image type, detailed coordinates and more! ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialLongClickDelete();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialTestCanvas();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialTestCanvas ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Draw it");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Draw the required shape here. You can click \"Clear\" to clear the canvas, and click \"Finish\" to finish the test");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDataList();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialWidth();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialWidth ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Choose painter width");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can choose the painter width you preferred. We have thin, normal and thick width available. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialTestCanvas();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDuration();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialDuration ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Choose interval duration");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can choose the interval duration of the test. The interval duration only applies to dynamic tests. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialWidth();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialTestInstruction();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialTestInstruction ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Test instructions");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("This page contains some important test instructions. Remember to read them carefully.");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDuration();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialImageSelection();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialImageSelection ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Select test image");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can choose the background image of the test. We have spiral and pentagon.");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialTestInstruction();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDynamicTestSelection();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialDynamicTestSelection ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Select dynamic tests");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can choose a dynamic test here.");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialImageSelection();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialStaticTestSelection();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialStaticTestSelection ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Select static tests");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("You can select a static test here. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialDynamicTestSelection();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelTest();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialParallelTest ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Static Parallel Test");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("This is the static parallel test, you need to draw three horizontal parallel lines. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialStaticTestSelection();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelPractice();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialParallelPracticeResult ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Practice Results");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can see whether the two parallel lines you draw are indeed paralle. These grading level will be used: Perfect, Good, Acceptable and Bad. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelTest();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelPractice();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialParallelPractice ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Practice makes perfect");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("This is a playground where you can practice drawing two parallel lines. Our specially designed algorithm will judge whether these two lines are indeed parallel. Have fun! ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelPracticeResult();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialInformationCollectionPage();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialInformationCollectionPage ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("InformationCollection");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("We need to collect some information to mage the diagnostic more precise. The information include your name, gender, education, previous rating score etc. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialParallelPractice();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSettingPageFont();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialSettingPageFont ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Customise font size");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can customise the font size, normal or large. The change will take effect immediately. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialInformationCollectionPage();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSettingPageLanguage();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void showAppTutorialSettingPageLanguage ()
+    {
+        LayoutInflater inflater = LayoutInflater.from(SettingPageActivity.this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SettingPageActivity.this);
+        builder.setTitle("Choose your language");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("Here you can choose your preferred language, our app support English, Simplified Chinese, Traditional Chinese, French, Dutch, German, Italian, Japanese, Russian, Spanish and Portuguese. The change will take effect immediately. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSettingPageFont();
+            }
+        });
+        builder.setNegativeButton("Previous", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showAppTutorialSettingPage();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+
+    public void showAppTutorialSettingPage ()
+    {
+        Log.d("tutorial", "Starting_tutorials");
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.activity_setting_page_tutorial_alertdialog, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Setting Page");
+        builder.setCancelable(false);
+        builder.setView(view);
+        tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
+        tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
+        tutorial_text.setText("This is the setting page, you can change the app settings like language or font size, you can also find the app introduction information by clicking \"Introduction\" button. ");
+        builder.setPositiveButton("Next", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //showAppTutorialSettingPageLanguage();
+            }
+        });
+        builder.create();
+        builder.show();
+    }

@@ -1,0 +1,358 @@
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_preface"
+            android:text="@string/information_collection_preface"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_centerHorizontal="true" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_name_textview"
+            android:text="@string/full_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="36dp"
+            android:layout_below="@id/information_collection_preface" />
+        
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_name_edittext"
+            android:hint="@string/enter_full_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_name_textview" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_age_textview"
+            android:text="@string/age"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_name_edittext" />
+        
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_age_edittext"
+            android:hint="@string/enter_age"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_age_textview" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_gender_textview"
+            android:text="@string/gender"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_age_edittext" />
+        
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_gender_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_gender_textview" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_education_textview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_gender_spinner" />
+        
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_education_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_education_textview" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_ratingscore_textview"
+            android:text="@string/rating_score"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_education_spinner" />
+        
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_rating_score"
+            android:id="@+id/information_collection_ratingscore_edittext"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_ratingscore_textview" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_treatment_textview"
+            android:text="@string/current_receiving_treatment"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_ratingscore_edittext" />
+        
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_radiogroup"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/information_collection_treatment_textview" >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:checked="false"
+                android:id="@+id/information_collection_radio_yes"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:checked="false"
+                android:id="@+id/information_collection_radio_no"/>
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/information_collection_next_button"
+            android:layout_below="@id/information_collection_radiogroup"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/next" />
+        
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+package com.example.jiashuwu.myapplication;
+
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+// ref http://www.jb51.net/article/80263.htm
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Display;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceHolder.Callback;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+
+import java.util.Calendar;
+
+public class MainActivity extends Activity {
+    public void onCreate(Bundle s){
+        super.onCreate(s);
+        //全屏显示
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(new MyView(this));
+        //setContentView(R.layout.activity_main);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu)
+    {
+        menu.add(0, 1, 1, "clear");
+        menu.add(0, 2, 2, "finish");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem menuItem)
+    {
+        return super.onOptionsItemSelected(menuItem);
+
+    }
+
+    public class MyView extends SurfaceView implements Callback,Runnable{
+
+
+        public static final int TIME_IN_FRAME =50;
+
+        Paint mPaint = null;
+        Paint mTextPaint = null;
+        SurfaceHolder mSurfaceHolder = null;
+
+
+        boolean mRunning = false;
+
+
+        Canvas mCanvas = null;
+
+
+        private Path mPath;
+
+        private float mPosX,mPosY;
+        private float mPressure;
+
+
+
+        public MyView(Context context){
+            super(context);
+            this.setFocusable(true);
+            this.setFocusableInTouchMode(true);
+            mSurfaceHolder = this.getHolder();
+            mSurfaceHolder.addCallback(this);
+
+            mCanvas = new Canvas();
+
+
+
+            mPaint = new Paint();
+            mPaint.setColor(Color.BLACK);
+
+
+            mPaint.setAntiAlias(true);
+
+            mPaint.setStyle(Paint.Style.STROKE);
+
+
+            mPaint.setStrokeCap(Paint.Cap.ROUND);
+
+
+            mPaint.setStrokeWidth(6);
+
+            mPath = new Path();
+
+
+            mTextPaint = new Paint();
+
+            mTextPaint.setColor(Color.BLACK);
+
+            mTextPaint.setTextSize(15);
+
+        }
+        public boolean onTouchEvent(MotionEvent event){
+            int action = event.getAction();
+            float x = event.getX();
+            float y = event.getY();
+            float pressure = event.getPressure();
+            switch(action){
+                case MotionEvent.ACTION_DOWN:
+                    mPath.moveTo(x, y);
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    mPath.quadTo(mPosX, mPosY, x, y);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    //mPath.reset();
+                    break;
+            }
+            //记录当前触摸点得当前得坐标
+            mPosX = x;
+            mPosY = y;
+            mPressure = pressure;
+            Calendar calendar = Calendar.getInstance();
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH) + 1;
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int second = calendar.get(Calendar.SECOND);
+            int millsecond = calendar.get(Calendar.MILLISECOND);
+            Log.d("TAG", year + "/" + month + "/" + day + "/" + hour + "/" + minute + "/" + second + "/" + millsecond + " " + mPosX + " " + mPosY + " " + mPressure);
+
+
+            return true;
+        }
+        private void draw(){
+
+            mCanvas.drawColor(Color.WHITE);
+            Display display = getWindowManager().getDefaultDisplay();
+            int displayWidth = display.getWidth();
+            int displayHeight = display.getHeight();
+
+            mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background1), 120, 120, true),displayWidth-120,0,null);//top-right corner
+            //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.background1), displayWidth, displayHeight, true),0,0,null);//full screen
+
+//绘制曲线
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.background1);
+            //mCanvas.drawBitmap(Bitmap.createBitmap(bitmap, displayWidth - 120, 120, 120, 120));
+
+            mCanvas.drawPath(mPath, mPaint);
+            mCanvas.drawText("当前触笔X："+mPosX,0,20,mTextPaint);
+            mCanvas.drawText("当前触笔Y:"+mPosY,0,40,mTextPaint);
+            mCanvas.drawText("当前触笔压力:"+mPressure, 0, 60, mTextPaint);
+
+        }
+        public void run() {
+// TODO Auto-generated method stub
+            while(mRunning){
+                long startTime = System.currentTimeMillis();
+                synchronized(mSurfaceHolder){
+                    mCanvas = mSurfaceHolder.lockCanvas();
+                    draw();
+                    mSurfaceHolder.unlockCanvasAndPost(mCanvas);
+                }
+                long endTime = System.currentTimeMillis();
+                int diffTime = (int) (endTime - startTime);
+                while(diffTime<=TIME_IN_FRAME){
+                    diffTime =(int)(System.currentTimeMillis()-startTime);
+                    Thread.yield();
+                }
+            }
+        }
+
+        @Override
+        public void surfaceChanged(SurfaceHolder holder, int format, int width,
+                                   int height) {
+// TODO Auto-generated method stub
+        }
+
+        @Override
+        public void surfaceCreated(SurfaceHolder holder) {
+            mRunning = true;
+            new Thread(this).start();
+        }
+
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+// TODO Auto-generated method stub
+            mRunning = false;
+        }
+
+    }
+}
