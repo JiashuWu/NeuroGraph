@@ -8,6 +8,10 @@ import android.util.DisplayMetrics;
  * Created by Jiashu Wu on 20/03/2018.
  */
 
+/**
+ * This class is used to change the font size of the app on Android O and above
+ */
+
 public class TextScaleUtils {
     public static void scaleTextSize (Activity activity,boolean isScale)
     {
