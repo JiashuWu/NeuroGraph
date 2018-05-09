@@ -158,6 +158,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
 
     private ImageView help_imageview;
 
+    // Change the language
     public void initLocaleLanguage ()
     {
         Resources resource = getApplicationContext().getResources();
@@ -185,6 +186,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    // Change the theme
     public void init_theme ()
     {
         switch (Sharing.colour)
@@ -199,6 +201,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         }
     }
 
+    // Direct the user to the setting page to turn on notification
     private void goToSetting(){
         if (Build.VERSION.SDK_INT >= 26) {
             Intent intent = new Intent(Settings.ACTION_SETTINGS);
@@ -219,6 +222,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         }
     }
 
+    // get total number of tests
     public int getNumber_of_test_in_total ()
     {
         int answer = 0;
@@ -252,6 +256,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         return answer;
     }
 
+    // get total number of items
     public int getNumber_of_item_in_total ()
     {
         databaseHelper1 = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -317,6 +322,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         }).start();
     }
 
+    // generate string needed for txt file and csv file
     public String generate_string_from_database ()
     {
         databaseHelper = new MyDatabaseHelper (this, databaseName, null, databaseVersion);
@@ -579,6 +585,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         return read_permission == PackageManager.PERMISSION_GRANTED  && write_permission == PackageManager.PERMISSION_GRANTED;
     }
 
+    // A worker thread which is used to store data.
     private void storeDataFileWorker ()
     {
         Log.d("WORKER_STARTED", "WORKER_STARTED");
@@ -1182,6 +1189,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    // Run the worker thread to store data in onStop() method.
     @Override
     public void onStop ()
     {
