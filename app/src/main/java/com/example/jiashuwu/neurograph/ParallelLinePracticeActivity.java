@@ -112,6 +112,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         }
     }
 
+    // This is a worker thread which is used to store data in the background.
     public void storeDataWorker ()
     {
         x_list = Sharing.x_list;
@@ -206,6 +207,7 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
             databaseHelper.close();
         }
 
+        // Sending a broadcast after finish storing the data.
         Sharing.stop_showing_process = 0;
         Intent broadcastMessage = new Intent ();
         broadcastMessage.setAction("com.example.jiashuwu.neurograph.action.MyReceiver");
@@ -397,6 +399,8 @@ public class ParallelLinePracticeActivity extends AppCompatActivity {
         });
     }
 
+    // onKeyDown method
+    // When the down key is pressed, ask user if they want to exit, press back again.
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
