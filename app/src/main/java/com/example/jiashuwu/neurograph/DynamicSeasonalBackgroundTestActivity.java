@@ -111,6 +111,7 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, null);
     }
 
+    // This is the worker thread which is used to upload data after the test.
     public void storeDataWorker ()
     {
         x_list = Sharing.x_list;
@@ -328,6 +329,7 @@ public class DynamicSeasonalBackgroundTestActivity extends AppCompatActivity {
 
         viewForDynamicSeasonalBackground = (MySurfaceViewForDynamicSeasonalBackground) findViewById(R.id.mySurfaceViewForDynamicSeasonalBackground);
 
+        // Clean the screen
         clear_button = (Button) findViewById(R.id.dynamic_seasonal_background_test_clear_button);
         clear_button.setTextColor(Color.RED);
         clear_button.setOnClickListener(new View.OnClickListener() {

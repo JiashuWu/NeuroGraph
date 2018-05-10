@@ -69,12 +69,14 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
     public String millisecond_s;
 
 
+    // Constructor
     public MySurfaceViewForStaticBackground(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         initView();
     }
 
+    // Initialise the view
     private void initView()
     {
         mSurfaceHolder = getHolder();
@@ -104,6 +106,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         }
     }
 
+    // Run during the surface is being created
     @Override
     public void surfaceCreated(SurfaceHolder holder)
     {
@@ -118,6 +121,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         // Nothing here
     }
 
+    // Run when the surface is being destroyed
     @Override
     public void surfaceDestroyed(SurfaceHolder holder)
     {
@@ -176,6 +180,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         }
     }
 
+    // When there is touch events.
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
@@ -279,6 +284,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
         return true;
     }
 
+    // Save screenshot of the drawing.
     public void saveScreenShot ()
     {
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
@@ -286,6 +292,7 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
 
     }
 
+    // Reset all drawings.
     public void reset()
     {
         x_list.clear();

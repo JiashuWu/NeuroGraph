@@ -290,6 +290,7 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
             millisecond_s = String.valueOf(millisecond);
         }
 
+        // Dynamically change the background base on system time.
         current_time = String.valueOf(year) + "-" + month_s + "-" + day_s + " " + hour_s + ":" + minute_s + ":" + second_s + "." + millisecond_s;
 
         //current_time = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day) + "-" + String.valueOf(hour) + ":" + String.valueOf(minute) + ":" + String.valueOf(second) + "." + String.valueOf(millisecond);
