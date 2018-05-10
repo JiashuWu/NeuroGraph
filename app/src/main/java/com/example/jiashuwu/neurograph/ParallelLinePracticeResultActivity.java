@@ -95,6 +95,7 @@ public class ParallelLinePracticeResultActivity extends AppCompatActivity {
             Log.d("TAG_X_LIST", String.valueOf(Sharing.x_list.get(i)));
         }
 
+        // Show the practice resulr
         String [] results = calculateParallelLinePracticeResult.calculateParallelLinePracticeResult();
         parallel_line_result_result.setText(results[0]);
         parallel_line_result_description.setText(results[1]);
