@@ -88,7 +88,7 @@ public class calculateParallelLinePracticeResult {
             for (i = 0; i < slope_list_line_1.size(); i++) {
                 summary_slope_line_1 = summary_slope_line_1 + count * slope_list_line_1.get(i);
                 sum = sum + count;
-                count = count + (float) 1;
+                count = count + (float) 8;
             }
             Log.d("summary=", String.valueOf(summary_slope_line_1));
             Log.d("sum", String.valueOf(sum));
@@ -98,7 +98,7 @@ public class calculateParallelLinePracticeResult {
             for (i = 0; i < slope_list_line_2.size(); i++) {
                 summary_slope_line_2 = summary_slope_line_2 + count * slope_list_line_2.get(i);
                 sum = sum + count;
-                count = count + (float) 1;
+                count = count + (float) 8;
             }
             summary_slope_line_2 = summary_slope_line_2 / sum;
 
