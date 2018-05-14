@@ -233,6 +233,7 @@ public class TestDetailScrollingActivity extends AppCompatActivity {
     }
 
 
+    // Control the toolbar, switch data detail pages;
     @Override
     public boolean onOptionsItemSelected (MenuItem menuItem)
     {
