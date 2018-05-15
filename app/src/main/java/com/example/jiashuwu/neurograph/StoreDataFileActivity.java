@@ -795,7 +795,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 manager.createNotificationChannel(channel);
             }
             Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                    .setSmallIcon(R.drawable.spiral1)
+                    .setSmallIcon(R.drawable.spiral1) // TODO ICON
                     .setContentTitle(getString(R.string.file_saved))
                     .setContentInfo("Neurograph Notification")
                     .setContentText(Sharing.file_path)
@@ -812,7 +812,7 @@ public class StoreDataFileActivity extends AppCompatActivity {
         else
         {
             Notification notification = new NotificationCompat.Builder(getApplicationContext())
-                    .setSmallIcon(R.drawable.spiral1)
+                    .setSmallIcon(R.drawable.spiral1) // TODO ICON
                     .setTicker("Neurograph Notification")
                     .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
