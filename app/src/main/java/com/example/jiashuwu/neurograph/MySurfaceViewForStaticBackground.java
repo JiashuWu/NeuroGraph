@@ -148,13 +148,17 @@ public class MySurfaceViewForStaticBackground extends SurfaceView implements Sur
             int displayHeight = display.getHeight();
             if (Sharing.sharing_image.equalsIgnoreCase("spiral"))
             {
+                Log.d("DIMENSION", String.valueOf(displayHeight));
+
                 //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_matlab_corrected_version_1), displayWidth, displayHeight, true), 0, 0, null);
+                //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_new), (int)(displayHeight * 1181 / 720), displayHeight, true), (int)((displayWidth - displayHeight * 1181 / 720) / 2), 0, null);
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_new), displayWidth, displayHeight, true), 0, 0, null);
             }
             if (Sharing.sharing_image.equalsIgnoreCase("pentagon"))
             {
                 //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon1), displayWidth, displayHeight, true),0,0,null);//top-right corner
-                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), displayWidth, displayHeight, true),0,0,null);//top-right corner
+                //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), (int)(displayHeight * 1181 / 720), displayHeight, true),(int)((displayWidth - displayHeight * 1181 / 720) / 2),0,null);//top-right corner
+                mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), displayWidth, displayHeight, true), 0,0,null);
             }
 
             mpaint.setStyle(Paint.Style.STROKE);
