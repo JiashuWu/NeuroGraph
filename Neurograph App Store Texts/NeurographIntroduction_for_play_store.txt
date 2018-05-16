@@ -1,3 +1,7 @@
+An app which can be used to assist the diagnostics of Alzheimer's Disease.
+
+
+
 Welcome to Neurograph.
 
 This is an mobile phone application which can be used to assist the diagnostics of Alzheimer's Disease. By doing some tests like drawing a spiral or tracing some parallel lines, we will analyse your drawing pattern and using Artificial Intelligence to detect the level of the disease.
