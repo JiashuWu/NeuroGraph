@@ -1168,7 +1168,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_language);
+        tutorial_image.setImageResource(R.drawable.screenshot_info_page);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.information_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
