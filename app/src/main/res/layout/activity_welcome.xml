@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:id="@+id/welcome_activity_icon"
-            android:src="@drawable/spiral_templete01"
+            android:src="@drawable/icon_new"
             />
 
         <!-- TODO ICON -->

@@ -16,7 +16,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/spiral_small_fixed"
+            android:src="@drawable/icon_new"
             android:id="@+id/info_page_icon_imageview"/>
 
         <!-- TODO ICON -->
