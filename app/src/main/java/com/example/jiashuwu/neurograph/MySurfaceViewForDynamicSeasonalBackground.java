@@ -189,11 +189,13 @@ public class MySurfaceViewForDynamicSeasonalBackground extends SurfaceView imple
             {
                 if (Sharing.image_type.equalsIgnoreCase("spiral"))
                 {
+                    // TODO SOLUTION
                     //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_matlab_corrected_version_1), (int)(displayHeight * 1181 / 720), displayHeight, true), (int)((displayWidth - displayHeight * 1181 / 720) / 2), 0, null);//top-right corner);
                     mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spiral_matlab_corrected_version_1), displayWidth, displayHeight, true), 0, 0, null);//top-right corner);
                 }
                 if (Sharing.image_type.equalsIgnoreCase("pentagon"))
                 {
+                    // TODO SOLUTION
                     //mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), (int)(displayHeight * 1181 / 720), displayHeight, true), (int)((displayWidth - displayHeight * 1181 / 720) / 2), 0, null);//top-right corner);
                     mCanvas.drawBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pentagon_matlab_corrected_version_fixed_1), displayWidth, displayHeight, true), 0, 0, null);//top-right corner);
                 }
