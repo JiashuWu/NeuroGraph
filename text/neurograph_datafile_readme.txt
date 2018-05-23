@@ -238,6 +238,7 @@ is scale during test
 
 TESTEE INFORMATION
 user name
+registration code
 age
 gender
 	This can be:

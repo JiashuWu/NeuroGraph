@@ -246,6 +246,7 @@ public class SharingReadMe {
             "\n" +
             "TESTEE INFORMATION\n" +
             "user name\n" +
+            "registration code\n" +
             "age\n" +
             "gender\n" +
             "\tThis can be:\n" +
