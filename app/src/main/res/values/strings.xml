@@ -351,8 +351,8 @@
     <string name="parallel_line_test_description">This is a practice exercise. Please draw two line as parallel as possible !</string>
     <string name="parallel_line_test">Parallel Lines</string>
     <string name="parallel_line_test_description1">This is the parallel lines. In this test you need to draw three parallel lines following the background pattern.</string>
-    <string name="circular_motion_test">Circular Motion Test</string>
-    <string name="circular_motion_test_description">This is the circular motion test. You need to draw a circle, using the red dot as the center.</string>
+    <string name="circular_motion_test">Circle Drawing</string>
+    <string name="circular_motion_test_description">This is the Circle Drawing. You need to draw a circle, using the red dot as the center.</string>
     <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
     <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
     <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
@@ -605,7 +605,7 @@
     <string name="rating_score_equal">Rating Score = </string>
     <string name="current_receiving_treatment_equal">Current Receiving Treatment = </string>
     <string name="changes_summary">Changes Summary :</string>
-    <string name="circular_motion_test_instruction">This is the circular motion test. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre.</string>
+    <string name="circular_motion_test_instruction">This is the Circle Drawing. During the test the background, which contains a red circle in the centre of the screen, will always be here. Your task is to draw a circle using this red circle as the centre.</string>
 
 
 
