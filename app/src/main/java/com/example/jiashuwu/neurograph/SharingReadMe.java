@@ -89,13 +89,13 @@ public class SharingReadMe {
             "\t(7) Dynamic Tracing\n" +
             "16: image type\n" +
             "\tIt contains the following possible image types:\n" +
-            "\t(1) blank\n" +
-            "\t(2) parallel_line\n" +
-            "\t(3) red_dot\n" +
-            "\t(4) blue_dot\n" +
-            "\t(5) black_dot\n" +
-            "\t(6) spiral\n" +
-            "\t(7) pentagon\n" +
+            "\t(1) Blank\n" +
+            "\t(2) Parallel Line\n" +
+            "\t(3) Red Dot\n" +
+            "\t(4) Blue Dot\n" +
+            "\t(5) Black Dot\n" +
+            "\t(6) Spiral\n" +
+            "\t(7) Pentagon\n" +
             "17: interval duration\n" +
             "\t(a) For static tests, parallel line test, parallel line practice and circular motion test, the interval duration is 0\n" +
             "\t(b) For dynamic blank background test, the interval duration is the duration for image appearing at the beginning of the test\n" +
@@ -204,13 +204,13 @@ public class SharingReadMe {
             "\t(7) Dynamic Tracing\n" +
             "image type\n" +
             "\tIt contains the following possible image types:\n" +
-            "\t(1) blank\n" +
-            "\t(2) parallel_line\n" +
-            "\t(3) red_dot\n" +
-            "\t(4) blue_dot\n" +
-            "\t(5) black_dot\n" +
-            "\t(6) spiral\n" +
-            "\t(7) pentagon\n" +
+            "\t(1) Blank\n" +
+            "\t(2) Parallel Line\n" +
+            "\t(3) Red Dot\n" +
+            "\t(4) Blue Dot\n" +
+            "\t(5) Black Dot\n" +
+            "\t(6) Spiral\n" +
+            "\t(7) Pentagon\n" +
             "interval duration\n" +
             "\t(a) For static tests, parallel line test, parallel line practice and circular motion test, the interval duration is 0\n" +
             "\t(b) For dynamic blank background test, the interval duration is the duration for image appearing at the beginning of the test\n" +

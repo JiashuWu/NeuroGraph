@@ -81,13 +81,13 @@ Meaning of each column in the csv data file:
 	(7) Dynamic Tracing
 16: image type
 	It contains the following possible image types:
-	(1) blank
-	(2) parallel_line
-	(3) red_dot
-	(4) blue_dot
-	(5) black_dot
-	(6) spiral
-	(7) pentagon
+	(1) Blank
+	(2) Parallel Line
+	(3) Red Dot
+	(4) Blue Dot
+	(5) Black Dot
+	(6) Spiral
+	(7) Pentagon
 17: interval duration
 	(a) For static tests, parallel line test, parallel line practice and circular motion test, the interval duration is 0
 	(b) For dynamic blank background test, the interval duration is the duration for image appearing at the beginning of the test
@@ -196,13 +196,13 @@ test type
 	(7) Dynamic Tracing
 image type
 	It contains the following possible image types:
-	(1) blank
-	(2) parallel_line
-	(3) red_dot
-	(4) blue_dot
-	(5) black_dot
-	(6) spiral
-	(7) pentagon
+	(1) Blank
+	(2) Parallel Line
+	(3) Red Dot
+	(4) Blue Dot
+	(5) Black Dot
+	(6) Spiral
+	(7) Pentagon
 interval duration
 	(a) For static tests, parallel line test, parallel line practice and circular motion test, the interval duration is 0
 	(b) For dynamic blank background test, the interval duration is the duration for image appearing at the beginning of the test
