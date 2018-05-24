@@ -353,10 +353,10 @@
     <string name="parallel_line_test_description1">This is the parallel lines. In this test you need to draw three parallel lines following the background pattern.</string>
     <string name="circular_motion_test">Circle Drawing</string>
     <string name="circular_motion_test_description">This is the Circle Drawing. You need to draw a circle, using the red dot as the center.</string>
-    <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
-    <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
-    <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
-    <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
+    <string name="static_full_background_test_description">This is the Static Tracing (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
+    <string name="static_corner_background_test_description">This is the Static Tracing (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
+    <string name="dynamic_blank_background_test_description">This is the Memory Tracing. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
+    <string name="dynamic_seasonal_background_test_description">This is the Dynamic Tracing. The background image will keep appearing and disappearing with a given time frequency.</string>
     <string name="tests">Tests</string>
     <string name="information">Information</string>
     <string name="copyright">Copyright</string>
