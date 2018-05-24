@@ -275,14 +275,14 @@
     <string name="title_activity_tutorial">Anleitung</string>
     <string name="button_previous">Bisherige</string>
     <string name="data_output_via_email">Datenausgabe per E-Mail</string>
-    <string name="full_background_test">Full Background Test</string>
-    <string name="static_full_background_test">Static Full Background Test</string>
-    <string name="corner_background_test">Corner Background Test</string>
+    <string name="full_background_test">Static Tracing</string>
+    <string name="static_full_background_test">Static Tracing</string>
+    <string name="corner_background_test">Copying</string>
     <string name="start_test_1">Starten Sie den Test 1</string>
     <string name="start_test_2">Starten Sie den Test 2</string>
-    <string name="blank_background_test">Blank Background Test</string>
+    <string name="blank_background_test">Memory Tracing</string>
     <string name="start_test_3">Starten Sie den Test 3</string>
-    <string name="seasonal_background_test">Seasonal Background Test</string>
+    <string name="seasonal_background_test">Dynamic Tracing</string>
     <string name="start_test_4">Starten Sie den Test 4</string>
     <string name="button_capture">Capture</string>
 
@@ -353,10 +353,10 @@
     <string name="parallel_line_test_description1">This is the Parallel Lines. In this test you need to draw three parallel lines following the background pattern.</string>
     <string name="circular_motion_test">Circle Drawing</string>
     <string name="circular_motion_test_description">This is the Circle Drawing. You need to draw a circle, using the red dot as the center.</string>
-    <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
-    <string name="static_corner_background_test_description">This is the static background (top-right corner) test. The image will be shown on the top right corner of the screen, and will never disappear.</string>
-    <string name="dynamic_blank_background_test_description">This is the dynamic background test. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
-    <string name="dynamic_seasonal_background_test_description">This is the seasonal background test. The background image will keep appearing and disappearing with a given time frequency.</string>
+    <string name="static_full_background_test_description">This is the Static Tracing (full screen). The image will be shown in full screen mode and will appear constantly.</string>
+    <string name="static_corner_background_test_description">This is the Copying (top-right corner). The image will be shown on the top right corner of the screen, and will never disappear.</string>
+    <string name="dynamic_blank_background_test_description">This is the Memory Tracing. This full screen background image will only appear once for a certain interval of time length, then disappears.</string>
+    <string name="dynamic_seasonal_background_test_description">This is the Dynamic Tracing. The background image will keep appearing and disappearing with a given time frequency.</string>
     <string name="tests">Tests</string>
     <string name="information">Information</string>
     <string name="copyright">Urheberrechte ©</string>
