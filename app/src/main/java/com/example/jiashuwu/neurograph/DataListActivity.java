@@ -264,7 +264,7 @@ public class DataListActivity extends AppCompatActivity {
             map.put("user_id", user_id);
             map.put("test_starting_time", test_starting_time);
             map.put("test_ending_time", test_ending_time);
-            map.put("test_type", test_type);
+            map.put("test_type", new_test_name);
             map.put("image_type", image_type);
             map.put("interval_duration", interval_duration);
             map.put("number_of_points", number_of_points);
