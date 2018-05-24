@@ -42,7 +42,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/duration_selection_page_test_instruction"
-            android:max="100"
+            android:max="30"
             android:progress="5"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
