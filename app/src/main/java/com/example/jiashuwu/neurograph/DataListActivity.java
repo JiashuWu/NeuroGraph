@@ -247,6 +247,18 @@ public class DataListActivity extends AppCompatActivity {
 
             Map<String, Object> map = new HashMap <> ();
 
+            String new_test_name = "";
+            switch (test_type)
+            {
+                case "parallel_line_test": new_test_name = "Parallel Lines";break;
+                case "static_full_background": new_test_name = "Static Tracing";break;
+                case "static_corner_background": new_test_name = "Copying";break;
+                case "dynamic_blank_background": new_test_name = "Memory Tracing";break;
+                case "dynamic_seasonal_background": new_test_name = "Dynamic Tracing";break;
+                case "circular_motion_test": new_test_name = "Circle Drawing";break;
+
+            }
+
             map.put("test_id", test_id);
             map.put("name", name);
             map.put("user_id", user_id);
