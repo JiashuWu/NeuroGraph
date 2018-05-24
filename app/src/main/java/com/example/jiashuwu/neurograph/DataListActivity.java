@@ -247,16 +247,28 @@ public class DataListActivity extends AppCompatActivity {
 
             Map<String, Object> map = new HashMap <> ();
 
-            String new_test_name = "";
+            String new_test_type_name = "";
             switch (test_type)
             {
-                case "parallel_line_test": new_test_name = "Parallel Lines";break;
-                case "static_full_background": new_test_name = "Static Tracing";break;
-                case "static_corner_background": new_test_name = "Copying";break;
-                case "dynamic_blank_background": new_test_name = "Memory Tracing";break;
-                case "dynamic_seasonal_background": new_test_name = "Dynamic Tracing";break;
-                case "circular_motion_test": new_test_name = "Circle Drawing";break;
+                case "parallel_line_test": new_test_type_name = "Parallel Lines";break;
+                case "static_full_background": new_test_type_name = "Static Tracing";break;
+                case "static_corner_background": new_test_type_name = "Copying";break;
+                case "dynamic_blank_background": new_test_type_name = "Memory Tracing";break;
+                case "dynamic_seasonal_background": new_test_type_name = "Dynamic Tracing";break;
+                case "circular_motion_test": new_test_type_name = "Circle Drawing";break;
 
+            }
+
+            String new_image_type_name = "";
+            switch (image_type)
+            {
+                case "spiral": new_image_type_name = "Spiral";break;
+                case "pentagon": new_image_type_name = "Pentagon";break;
+                case "red_dot": new_image_type_name = "Red Dot";break;
+                case "black_dot": new_image_type_name = "Black Dot";break;
+                case "blue_dot": new_image_type_name = "Blue Dot";break;
+                case "parallel_line": new_image_type_name = "Parallel Line";break;
+                case "blank": new_image_type_name = "Blank";break;
             }
 
             map.put("test_id", test_id);
@@ -264,8 +276,8 @@ public class DataListActivity extends AppCompatActivity {
             map.put("user_id", user_id);
             map.put("test_starting_time", test_starting_time);
             map.put("test_ending_time", test_ending_time);
-            map.put("test_type", new_test_name);
-            map.put("image_type", image_type);
+            map.put("test_type", new_test_type_name);
+            map.put("image_type", new_image_type_name);
             map.put("interval_duration", interval_duration);
             map.put("number_of_points", number_of_points);
 
