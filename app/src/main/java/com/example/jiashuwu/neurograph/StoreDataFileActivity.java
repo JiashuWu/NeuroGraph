@@ -415,6 +415,15 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 case "dynamic_blank_background": new_test_type_name = "Memory Tracing";break;
                 case "dynamic_seasonal_background": new_test_type_name = "Dynamic Tracing";break;
                 case "circular_motion_test": new_test_type_name = "Circle Drawing";break;
+                case "parallel_line_practice": new_test_type_name = "Parallel Line Practice";break;
+
+                case "Parallel Lines": new_test_type_name = "Parallel Lines";break;
+                case "Static Tracing": new_test_type_name = "Static Tracing";break;
+                case "Copying": new_test_type_name = "Copying";break;
+                case "Memory Tracing": new_test_type_name = "Memory Tracing";break;
+                case "Dynamic Tracing": new_test_type_name = "Dynamic Tracing";break;
+                case "Circle Drawing": new_test_type_name = "Circle Drawing";break;
+                case "Parallel Line Practice": new_test_type_name = "Parallel Line Practice";break;
 
             }
 
@@ -428,6 +437,14 @@ public class StoreDataFileActivity extends AppCompatActivity {
                 case "blue_dot": new_image_type_name = "Blue Dot";break;
                 case "parallel_line": new_image_type_name = "Parallel Line";break;
                 case "blank": new_image_type_name = "Blank";break;
+
+                case "Spiral": new_image_type_name = "Spiral";break;
+                case "Pentagon": new_image_type_name = "Pentagon";break;
+                case "Red Dot": new_image_type_name = "Red Dot";break;
+                case "Black Dot": new_image_type_name = "Black Dot";break;
+                case "Blue Dot": new_image_type_name = "Blue Dot";break;
+                case "Parallel Line": new_image_type_name = "Parallel Line";break;
+                case "Blank": new_image_type_name = "Blank";break;
             }
 
             output_string = output_string + "TEST INFORMATION" + "\n";
