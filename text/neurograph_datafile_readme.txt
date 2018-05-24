@@ -72,13 +72,13 @@ Meaning of each column in the csv data file:
 14: test ID
 15: test type
 	It contains the following possible test types:
-	(1) parallel_line_practice
-	(2) parallel_line_test
-	(3) circular_motion
-	(4) static_full_background
-	(5) static_corner_background
-	(6) dynamic_blank_background
-	(7) dynamic_seasonal_background
+	(1) Parallel Line Practice
+	(2) Parallel Lines
+	(3) Circle Drawing
+	(4) Static Tracing
+	(5) Copying
+	(6) Memory Tracing
+	(7) Dynamic Tracing
 16: image type
 	It contains the following possible image types:
 	(1) blank
@@ -187,13 +187,13 @@ test ending time
 	FORMAT YYYY-MM-DD HH:MM:SS.SSS
 test type
 	It contains the following possible test types:
-	(1) parallel_line_practice
-	(2) parallel_line_test
-	(3) circular_motion
-	(4) static_full_background
-	(5) static_corner_background
-	(6) dynamic_blank_background
-	(7) dynamic_seasonal_background
+	(1) Parallel Line Practice
+	(2) Parallel Lines
+	(3) Circle Drawing
+	(4) Static Tracing
+	(5) Copying
+	(6) Memory Tracing
+	(7) Dynamic Tracing
 image type
 	It contains the following possible image types:
 	(1) blank

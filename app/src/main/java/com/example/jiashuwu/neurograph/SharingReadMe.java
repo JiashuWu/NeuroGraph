@@ -80,13 +80,13 @@ public class SharingReadMe {
             "14: test ID\n" +
             "15: test type\n" +
             "\tIt contains the following possible test types:\n" +
-            "\t(1) parallel_line_practice\n" +
-            "\t(2) parallel_line_test\n" +
-            "\t(3) circular_motion\n" +
-            "\t(4) static_full_background\n" +
-            "\t(5) static_corner_background\n" +
-            "\t(6) dynamic_blank_background\n" +
-            "\t(7) dynamic_seasonal_background\n" +
+            "\t(1) Parallel Line Practice\n" +
+            "\t(2) Parallel Lines\n" +
+            "\t(3) Circle Drawing\n" +
+            "\t(4) Static Tracing\n" +
+            "\t(5) Copying\n" +
+            "\t(6) Memory Tracing\n" +
+            "\t(7) Dynamic Tracing\n" +
             "16: image type\n" +
             "\tIt contains the following possible image types:\n" +
             "\t(1) blank\n" +
@@ -195,13 +195,13 @@ public class SharingReadMe {
             "\tFORMAT YYYY-MM-DD HH:MM:SS.SSS\n" +
             "test type\n" +
             "\tIt contains the following possible test types:\n" +
-            "\t(1) parallel_line_practice\n" +
-            "\t(2) parallel_line_test\n" +
-            "\t(3) circular_motion\n" +
-            "\t(4) static_full_background\n" +
-            "\t(5) static_corner_background\n" +
-            "\t(6) dynamic_blank_background\n" +
-            "\t(7) dynamic_seasonal_background\n" +
+            "\t(1) Parallel Line Practice\n" +
+            "\t(2) Parallel Lines\n" +
+            "\t(3) Circle Drawing\n" +
+            "\t(4) Static Tracing\n" +
+            "\t(5) Copying\n" +
+            "\t(6) Memory Tracing\n" +
+            "\t(7) Dynamic Tracing\n" +
             "image type\n" +
             "\tIt contains the following possible image types:\n" +
             "\t(1) blank\n" +
