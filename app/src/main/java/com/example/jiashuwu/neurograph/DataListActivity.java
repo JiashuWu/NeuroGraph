@@ -141,14 +141,55 @@ public class DataListActivity extends AppCompatActivity {
     public void loadItemWorker ()
     {
         Sharing.test_detail_arraylist.clear();
+
+        String new_test_type_name = "";
+        Log.d("TEST_TYPE", test_type);
+        switch (test_type)
+        {
+            case "parallel_line_test": new_test_type_name = "Parallel Lines";break;
+            case "static_full_background": new_test_type_name = "Static Tracing";break;
+            case "static_corner_background": new_test_type_name = "Copying";break;
+            case "dynamic_blank_background": new_test_type_name = "Memory Tracing";break;
+            case "dynamic_seasonal_background": new_test_type_name = "Dynamic Tracing";break;
+            case "circular_motion_test": new_test_type_name = "Circle Drawing";break;
+
+            case "Parallel Lines": new_test_type_name = "Parallel Lines";break;
+            case "Static Tracing": new_test_type_name = "Static Tracing";break;
+            case "Copying": new_test_type_name = "Copying";break;
+            case "Memory Tracing": new_test_type_name = "Memory Tracing";break;
+            case "Dynamic Tracing": new_test_type_name = "Dynamic Tracing";break;
+            case "Circle Drawing": new_test_type_name = "Circle Drawing";break;
+
+        }
+
+        String new_image_type_name = "";
+        switch (image_type)
+        {
+            case "spiral": new_image_type_name = "Spiral";break;
+            case "pentagon": new_image_type_name = "Pentagon";break;
+            case "red_dot": new_image_type_name = "Red Dot";break;
+            case "black_dot": new_image_type_name = "Black Dot";break;
+            case "blue_dot": new_image_type_name = "Blue Dot";break;
+            case "parallel_line": new_image_type_name = "Parallel Line";break;
+            case "blank": new_image_type_name = "Blank";break;
+
+            case "Spiral": new_image_type_name = "Spiral";break;
+            case "Pentagon": new_image_type_name = "Pentagon";break;
+            case "Red Dot": new_image_type_name = "Red Dot";break;
+            case "Black Dot": new_image_type_name = "Black Dot";break;
+            case "Blue Dot": new_image_type_name = "Blue Dot";break;
+            case "Parallel Line": new_image_type_name = "Parallel Line";break;
+            case "Blank": new_image_type_name = "Blank";break;
+        }
+
         test_detail =
                 "test_id = " + String.valueOf(test_id) + "\n"
                         + "name = " + name + "\n"
                         + "user_id = " + String.valueOf(user_id) + "\n"
                         + "test_starting_time = " + test_starting_time + "\n"
                         + "test_ending_time = " + test_ending_time + "\n"
-                        + "test type = " + test_type + "\n"
-                        + "image type = " + image_type + "\n"
+                        + "test type = " + new_test_type_name + "\n"
+                        + "image type = " + new_image_type_name + "\n"
                         + "interval duration = " + String.valueOf(interval_duration) + "\n"
                         + "number of points = " + String.valueOf(number_of_points) + "\n";
 
@@ -159,8 +200,8 @@ public class DataListActivity extends AppCompatActivity {
                 "User ID = " + String.valueOf(user_id) + "\n" +
                 "Test Starting Time = " + test_starting_time + "\n" +
                 "Test Ending Time = " + test_ending_time + "\n" +
-                "Test Type = " + test_type + "\n" +
-                "Image Type = " + image_type + "\n" +
+                "Test Type = " + new_test_type_name + "\n" +
+                "Image Type = " + new_image_type_name + "\n" +
                 "Interval Duration = " + String.valueOf(interval_duration) + "\n" +
                 "Number of Points = " + String.valueOf(number_of_points) + "\n";
 
