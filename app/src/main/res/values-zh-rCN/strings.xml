@@ -349,7 +349,7 @@
     <string name="store_data_files_and_clean_data_question_title">存储数据文件并清理测试数据?</string>
     <string name="start_practice">开始练习</string>
     <string name="parallel_line_test_description">这是平行线练习。请在画板上画两条尽可能平行的平行线。</string>
-    <string name="parallel_line_test">平行线测试</string>
+    <string name="parallel_line_test">平行线</string>
     <string name="parallel_line_test_description1">这是平行线测试。您需要根据测试背景图画三条尽可能平行的平行线。</string>
     <string name="circular_motion_test">圆圈测试</string>
     <string name="circular_motion_test_description">这是圆圈测试。您需要以中心圆点为圆心画一个尽可能圆的圆圈。</string>

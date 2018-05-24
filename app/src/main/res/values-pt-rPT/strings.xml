@@ -350,8 +350,8 @@
     <string name="store_data_files_and_clean_data_question_title">Store data files and clean the data ?</string>
     <string name="start_practice">Comece a praticar</string>
     <string name="parallel_line_test_description">This is a practice exercise. Please draw two line as parallel as possible !</string>
-    <string name="parallel_line_test">Parallel Line Test</string>
-    <string name="parallel_line_test_description1">This is the parallel line test. In this test you need to draw three parallel lines following the background pattern.</string>
+    <string name="parallel_line_test">Parallel Lines</string>
+    <string name="parallel_line_test_description1">This is the Parallel Lines. In this test you need to draw three parallel lines following the background pattern.</string>
     <string name="circular_motion_test">Circular Motion Test</string>
     <string name="circular_motion_test_description">This is the circular motion test. You need to draw a circle, using the red dot as the center.</string>
     <string name="static_full_background_test_description">This is the static background (full screen) test. The image will be shown in full screen mode and will appear constantly.</string>
@@ -569,7 +569,7 @@
     <string name="static_full_background_test_instruction">This is the static full background test. During the test the background will always be here. Remember to follow the background image to draw the required shape.</string>
     <string name="static_corner_background_test_instruction">This is the static corner background. The image template will always stays at the top right corner of the screen. Remember to follow the background to draw the required shape.</string>
     <string name="parallel_line_practice_instruction">This is the parallel practice. You are required to draw exactly two lines on the screen, as parallel as possible.</string>
-    <string name="parallel_line_test_instruction">This is the parallel line test. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines.</string>
+    <string name="parallel_line_test_instruction">This is the Parallel Lines. The background, which contains three parallel lines, will always appear as the full background of the screen. Remember to follow the background to draw three parallel lines.</string>
     <string name="current_time_interval">Current time interval </string>
     <string name="second"> seconds</string>
     <string name="dynamic_blank_background_test_instruction">This is the dynamic blank background test. The background will first appear for a given time period, then disappear. You need to remember the background pattern and draw it on a blank screen.</string>
