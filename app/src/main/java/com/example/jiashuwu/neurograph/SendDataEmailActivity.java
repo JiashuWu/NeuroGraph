@@ -271,6 +271,30 @@ public class SendDataEmailActivity extends AppCompatActivity {
                 cursor1.close();
             }
 
+            String new_test_type_name = "";
+            switch (test_type)
+            {
+                case "parallel_line_test": new_test_type_name = "Parallel Lines";break;
+                case "static_full_background": new_test_type_name = "Static Tracing";break;
+                case "static_corner_background": new_test_type_name = "Copying";break;
+                case "dynamic_blank_background": new_test_type_name = "Memory Tracing";break;
+                case "dynamic_seasonal_background": new_test_type_name = "Dynamic Tracing";break;
+                case "circular_motion_test": new_test_type_name = "Circle Drawing";break;
+
+            }
+
+            String new_image_type_name = "";
+            switch (image_type)
+            {
+                case "spiral": new_image_type_name = "Spiral";break;
+                case "pentagon": new_image_type_name = "Pentagon";break;
+                case "red_dot": new_image_type_name = "Red Dot";break;
+                case "black_dot": new_image_type_name = "Black Dot";break;
+                case "blue_dot": new_image_type_name = "Blue Dot";break;
+                case "parallel_line": new_image_type_name = "Parallel Line";break;
+                case "blank": new_image_type_name = "Blank";break;
+            }
+
             output_string = output_string + "TEST INFORMATION" + "\n";
 
             output_string = output_string + "test_id = " + String.valueOf(test_id) + "\n";
@@ -281,9 +305,9 @@ public class SendDataEmailActivity extends AppCompatActivity {
             // output_csv_strings.add("test_starting_time = " + test_starting_time + "\n");
             output_string = output_string + "test_ending_time = " + test_ending_time + "\n";
             // output_csv_strings.add("test_ending_time = " + test_ending_time + "\n");
-            output_string = output_string + "test_type = " + test_type + "\n";
+            output_string = output_string + "test_type = " + new_test_type_name + "\n";
             // output_csv_strings.add("test_type = " + test_type + "\n");
-            output_string = output_string + "image_type = " + image_type + "\n";
+            output_string = output_string + "image_type = " + new_image_type_name + "\n";
             // output_csv_strings.add("image_type = " + image_type + "\n");
             output_string = output_string + "interval duration = " + String.valueOf(interval_duration) + "\n";
             // output_csv_strings.add("interval duration = " + String.valueOf(interval_duration) + "\n");
@@ -408,7 +432,7 @@ public class SendDataEmailActivity extends AppCompatActivity {
                     time_minute = "0" + time_minute;
                 }
                 */
-                String new_csv_line = point_serial_number + "," + time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(tool_type) + "," + String.valueOf(test_id) + "," + test_type + "," + image_type + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(painter_width) + "," + language_during_test + "," + is_scale_during_test + "," + String.valueOf(user_id) + "," + registration_code + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "," + BuildConfig.VERSION_NAME + "\n";
+                String new_csv_line = point_serial_number + "," + time_year + "," + time_month + "," + time_day + "," + time_hour + "," + time_minute + "," + new_time_second + "," + time_millisecond + "," + String.valueOf(x) + "," + String.valueOf(y) + "," + String.valueOf(pressure) + "," + String.valueOf(touch_point_size) + "," + String.valueOf(tool_type) + "," + String.valueOf(test_id) + "," + new_test_type_name + "," + new_image_type_name + "," + String.valueOf(interval_duration) + "," + String.valueOf(number_of_points) + "," + test_starting_time_number_only.substring(0, 8) + "," + test_starting_time_number_only.substring(8) + "," + test_ending_time_number_only.substring(0, 8) + "," + test_ending_time_number_only.substring(8) + "," + String.valueOf(painter_width) + "," + language_during_test + "," + is_scale_during_test + "," + String.valueOf(user_id) + "," + registration_code + "," + name + "," + String.valueOf(age) + "," + gender + "," + education + "," + rating_score + "," + current_receive_treatment + "," + Sharing.device_brand + "," + Sharing.device_model + "," + Sharing.device_product_name + "," + Sharing.device_manufacturer + "," + Sharing.device_height_in_pixels + "," + Sharing.device_width_in_pixels + "," + Sharing.device_testing_area_height + "," + Sharing.device_testing_area_width + "," + Sharing.device_navigation_bar_height + "," + Sharing.device_system_version_code + "," + BuildConfig.VERSION_NAME + "\n";
                 output_csv_strings.add(new_csv_line);
             }
 
