@@ -6,8 +6,8 @@ android {
         applicationId "com.neurograph.usydjiashuwu.neurograph"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 4
-        versionName "1.0.1"
+        versionCode 7
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
