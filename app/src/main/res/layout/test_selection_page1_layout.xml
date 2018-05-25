@@ -40,7 +40,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/spiral_test_screenshot_oo"
+                android:src="@drawaspiral_test_screenshot_oo1111t_oo"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:id="@+id/test_selection_test1_image"
