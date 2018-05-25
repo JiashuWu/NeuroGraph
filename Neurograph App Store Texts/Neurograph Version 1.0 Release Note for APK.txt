@@ -1,0 +1,39 @@
+<en-US>
+Version 1.0 (2018.06)
+User can do parallel line test, circular motion test, static background test, static corner background test, dynamic blank background test and dynamic seasonal background test.
+User can choose the test background images like spiral or pentagon
+User can choose their preferred painter width used in the tests
+The interval duration can be chosen for each dynamic test
+User can store data file in several different formats
+And more.
+</en-US>
+
+<zh-CN>
+版本 1.0 （2018.06）
+
+用户可以再开始测试之前进行画平行线的练习
+用户可以选择进行平行线测试，圆圈测试，全屏背景测试，角落背景静态测试，动态背景测试以及动态周期背景测试
+用户可以选择测试背景图，比如螺旋线或五边形
+用户可以选择测试时使用的画笔线条宽度
+用户可以选择在动态测试里背景图闪现的时间间隔
+在测试之前显示具体的测试指示
+新用户可以通过注册来开始测试，老用户可以通过注册码继续测试
+可以在完成测试之后切换用户
+用户可以查看并更改个人信息
+用户可以选择在切换用户之前储存数据文件并清除数据
+数据列表页面可以显示所有的测试信息，用户可以查看或删除测试信息
+用户可以发送数据文件邮件
+用户可以储存多种不同格式的数据文件
+用户可以在存储完数据文件之后复制文件存储路径
+应用会通知用户文件已经成功储存
+支持六种颜色主题
+支持11种语言
+支持两种应用字体大小
+提供应用教程帮助操作应用
+简介页面包含应用版本信息
+信息页面包含版权信息
+设备页面包含关于测试设备的信息
+用户可以再登录前或登录后更改应用设置
+用户可以清理应用缓存
+</zh-CN>
+
