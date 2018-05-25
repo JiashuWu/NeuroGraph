@@ -46,7 +46,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_change_setting_new);
+        tutorial_image.setImageResource(R.drawable.change_setting_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.change_setting_text);
         builder.setPositiveButton(R.string.button_all_done, new DialogInterface.OnClickListener() {
@@ -82,7 +82,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_sending_before_switch_user_new);
+        tutorial_image.setImageResource(R.drawable.store_data_after_switching_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.store_data_switching_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
@@ -117,7 +117,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_switch_user_new);
+        tutorial_image.setImageResource(R.drawable.switch_user_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.switch_user_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
@@ -223,7 +223,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_delete_all_data_new);
+        tutorial_image.setImageResource(R.drawable.delete_data_new_screenshots);
         tutorial_text.setText(R.string.delete_data_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -398,7 +398,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_delete_single_data_new);
+        tutorial_image.setImageResource(R.drawable.long_click_to_delete_new_screenshot);
         tutorial_text.setText(R.string.long_click_to_delete_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -433,7 +433,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_view_data_detail_new);
+        tutorial_image.setImageResource(R.drawable.test_detail_new_screenshot);
         tutorial_text.setText(R.string.test_details_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -468,7 +468,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_data_list_new);
+        tutorial_image.setImageResource(R.drawable.data_list_new_screenshot);
         tutorial_text.setText(R.string.data_list_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -573,7 +573,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_choose_painter_width_new);
+        tutorial_image.setImageResource(R.drawable.choose_painter_width_new_screenshot);
         tutorial_text.setText(R.string.choose_painter_width_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -608,7 +608,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_duration_selection_with_seekbar_new);
+        tutorial_image.setImageResource(R.drawable.duration_selection_new_screensot);
         tutorial_text.setText(R.string.choose_interval_duration_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -643,7 +643,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_choose_width_new);
+        tutorial_image.setImageResource(R.drawable.test_instruction_new_screenshot);
         tutorial_text.setText(R.string.test_instruction_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -714,7 +714,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_dynamic_test_selection_new);
+        tutorial_image.setImageResource(R.drawable.dynamic_test_selection_new_screenshot);
         tutorial_text.setText(R.string.select_dynamic_tests_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -749,7 +749,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
-        tutorial_image.setImageResource(R.drawable.screen_static_test_selection_new);
+        tutorial_image.setImageResource(R.drawable.static_test_selection_new_screenshot);
         tutorial_text.setText(R.string.select_static_tests_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
             @Override
@@ -783,7 +783,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_circular_motion_choose_background);
+        tutorial_image.setImageResource(R.drawable.circle_dwaring_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.choose_background_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
@@ -923,7 +923,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_practice);
+        tutorial_image.setImageResource(R.drawable.parallel_line_practice_with_red_square_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.practice_makes_perfect_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
@@ -958,7 +958,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screen_information_collection_new);
+        tutorial_image.setImageResource(R.drawable.registration_page_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.information_collection_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
@@ -1168,7 +1168,7 @@ public class TutorialActivity extends AppCompatActivity
         builder.setCancelable(false);
         builder.setView(view);
         tutorial_image = (ImageView) view.findViewById(R.id.tutorial_alertdialog_image);
-        tutorial_image.setImageResource(R.drawable.screenshot_info_page);
+        tutorial_image.setImageResource(R.drawable.info_page_new_screenshot);
         tutorial_text = (TextView) view.findViewById(R.id.tutorial_alertdialog_text);
         tutorial_text.setText(R.string.information_tutorial_text);
         builder.setPositiveButton(R.string.button_next, new DialogInterface.OnClickListener() {
