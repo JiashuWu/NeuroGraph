@@ -1,0 +1,20 @@
+<en-US>
+Neurograph Version 1.1
+
+This version contains:
+Test type name changes
+UI Optimisations
+Some bug fixes
+And some minor changes and adjustments
+</en-US>
+
+<zh-CN>
+Neurograph 版本 1.1
+
+此版本包括:
+测试名称更改及调整
+用户界面优化
+错误修正
+其他调整和更改
+</zh-CN>
+
