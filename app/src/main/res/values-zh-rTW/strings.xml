@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">NeuroGraph</string>
-    <string name="welcome_activity_bottom_text">© Copyright Jiashu Wu and Xuanchi Liu</string>
+    <string name="welcome_activity_bottom_text">© Copyright MHTI Lab</string>
     <string name="welcome_activity_bottom_date">The University of Sydney 2018.3</string>
     <string name="setting_page_choose_language">請選擇語言</string>
     <string name="english">英語 (EN_GB)</string>
